@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lachlan Cooke</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../style/custom.css" rel="stylesheet">
+  <link href="../../style/custom.css" rel="stylesheet">
 </head>
 <body>
 
@@ -34,10 +34,20 @@
     </div>
  </nav>
 
-<!-- Main content of the page -->
+<!-- Title -->
 <div class="container">
-  <h1>Newcomer PDF Generator</h1>
-  <p>Generates custom newcomer PDFs for use at WCA competition check-ins..</p>
+    <div class="row">
+        <div class="col text-center mt-5">
+            <h1 class="display-4 font-weight-bolder">Newcomer PDF Generator</h1>
+            <p class="lead">Generates custom newcomer PDFs for use at WCA competition check-ins.</p>
+        </div>
+    </div>
+</div>
+
+<!-- File explorer/upload -->
+<div class="container mt-5">
+    <input type="file" id="csvFileInput" accept=".csv">
+    <button class="btn btn-primary mt-3" onclick="generatePDF()">Generate PDF</button>
 </div>
 
 
@@ -50,8 +60,14 @@
 </footer>
 
 
+<!-- JavaScript -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.11/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="newcomerpdfgen.js"></script> 
+
 </body>
 </html>
