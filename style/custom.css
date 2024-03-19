@@ -1,5 +1,22 @@
-body{
-    background: #ffffff;
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+.content-wrap {
+  flex: 1;
+}
+
+footer {
+  background-color: #e3f2fd;
+  padding: 20px;
+  width: 100%;
 }
 
 h1{
