@@ -6,6 +6,7 @@
   <title>Lachlan Cooke</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="../../style/custom.css" rel="stylesheet">
+  <link href="newcomerpdfgen.css" rel="stylesheet">
 </head>
 <body>
 
@@ -45,9 +46,16 @@
 </div>
 
 <!-- File explorer/upload -->
-<div class="container mt-5">
-    <input type="file" id="csvFileInput" accept=".csv">
-    <button class="btn btn-primary mt-3" onclick="generatePDF()">Generate PDF</button>
+<div class="file-upload-container">
+    <div class="custom-file">
+        <label class="custom-file-label" for="csvFileInput">Choose file</label>
+        <input type="file" class="custom-file-input" id="csvFileInput">
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <button class="btn btn-primary mt-3" onclick="generatePDF()">Generate PDF</button>
+        </div>
+    </div>
 </div>
 
 
@@ -68,7 +76,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
 
-<script src="newcomerpdfgen.js"></script> 
+<script src="newcomerpdfgen.js"></script>
+
+<script>
+    function updateLabel() {
+        var input = document.getElementById('csvFileInput');
+        var label = input.nextElementSibling;
+        var fileName = input.files[0].name;
+        label.innerHTML = fileName;
+    }
+</script>
 
 </body>
 </html>

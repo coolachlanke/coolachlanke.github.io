@@ -1,0 +1,19 @@
+.file-upload-container {
+    max-width: 50vw;
+    margin: 0 auto;
+    padding: 5%;
+}
+
+.custom-file {
+    max-width: 100%; /* Ensure it doesn't exceed the container's width */
+}
+
+.custom-file-input {
+    width: 50%; /* Make the input take up all the available width within the .custom-file */
+}
+
+.custom-file-label {
+    white-space: nowrap; /* Prevent the label from expanding beyond the max width */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add an ellipsis if the content is too long */
+}
