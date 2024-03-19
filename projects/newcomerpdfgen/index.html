@@ -43,7 +43,7 @@
         <div class="row">
             <div class="col text-center mt-5">
                 <h1 class="display-4 font-weight-bolder">Newcomer PDF Generator</h1>
-                <p class="lead">Generates custom newcomer PDFs for use at WCA competition check-ins.</p>
+                <p class="lead">Generates custom newcomer check-in PDFs for use at WCA competitions.</p>
             </div>
         </div>
     </div>
@@ -59,6 +59,11 @@
                 <button class="btn btn-primary mt-3" onclick="generatePDF()">Generate PDF</button>
             </div>
         </div>
+    </div>
+
+    <!-- PDF iframe -->
+    <div id="pdfResult" style="display: none;">
+        <iframe id="pdfViewer" frameborder="0"></iframe>
     </div>
 
 </div>

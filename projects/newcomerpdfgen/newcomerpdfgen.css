@@ -5,15 +5,31 @@
 }
 
 .custom-file {
-    max-width: 100%; /* Ensure it doesn't exceed the container's width */
+    max-width: 100%;
 }
 
 .custom-file-input {
-    width: 50%; /* Make the input take up all the available width within the .custom-file */
+    width: 50%;
 }
 
 .custom-file-label {
-    white-space: nowrap; /* Prevent the label from expanding beyond the max width */
+    white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; /* Add an ellipsis if the content is too long */
+    text-overflow: ellipsis;
+}
+
+#pdfResult {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 1000px;
+}
+
+#pdfViewer {
+    display: flex;
+    width: 60%;
+    height: 100%;
+    margin: auto;
+    border: none;
 }
