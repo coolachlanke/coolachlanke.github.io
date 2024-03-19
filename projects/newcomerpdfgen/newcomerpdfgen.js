@@ -67,6 +67,13 @@ function createPDF(newcomers) {
         theme: 'grid'
     });
 
+    const pdfBlob = doc.output('blob');
+
+    // Display the PDF in the iframe
+    const pdfUrl = URL.createObjectURL(pdfBlob);
+    document.getElementById('pdfViewer').src = pdfUrl;
+    document.getElementById('pdfResult').style.display = 'block';
+
     // Save the PDF
-    doc.save('newcomers.pdf');
+    doc.save('newcomers_checkin_list.pdf');
 }
