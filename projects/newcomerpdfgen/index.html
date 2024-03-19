@@ -10,52 +10,57 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/">Lachlan Cooke</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="/projects">Projects</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/about">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/contact">Contact</a>
-            </li>
-        </ul>
-        </div>
-    </div>
- </nav>
+<!-- Main body content -->
+<div class="content-wrap">
 
-<!-- Title -->
-<div class="container">
-    <div class="row">
-        <div class="col text-center mt-5">
-            <h1 class="display-4 font-weight-bolder">Newcomer PDF Generator</h1>
-            <p class="lead">Generates custom newcomer PDFs for use at WCA competition check-ins.</p>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Lachlan Cooke</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+            </div>
         </div>
-    </div>
-</div>
+    </nav>
 
-<!-- File explorer/upload -->
-<div class="file-upload-container">
-    <div class="custom-file">
-        <label class="custom-file-label" for="csvFileInput">Choose file</label>
-        <input type="file" class="custom-file-input" id="csvFileInput">
-    </div>
-    <div class="row">
-        <div class="col text-center">
-            <button class="btn btn-primary mt-3" onclick="generatePDF()">Generate PDF</button>
+    <!-- Title -->
+    <div class="container">
+        <div class="row">
+            <div class="col text-center mt-5">
+                <h1 class="display-4 font-weight-bolder">Newcomer PDF Generator</h1>
+                <p class="lead">Generates custom newcomer PDFs for use at WCA competition check-ins.</p>
+            </div>
         </div>
     </div>
+
+    <!-- File explorer/upload -->
+    <div class="file-upload-container">
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="csvFileInput" onchange="updateLabel()">
+            <label class="custom-file-label" for="csvFileInput">Choose file</label>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <button class="btn btn-primary mt-3" onclick="generatePDF()">Generate PDF</button>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 
