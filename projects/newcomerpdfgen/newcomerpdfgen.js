@@ -1,3 +1,13 @@
+// Load Oswald font
+// const oswaldFont = {
+//     src: 'oswald.ttf', // Replace '/path/to/oswald.ttf' with the actual path or URL to your Oswald font file
+//     family: 'Oswald'
+// };
+
+function hidePDFViewer() {
+    document.getElementById('pdfResult').style.display = 'none';
+}
+
 function showLoadingIndicator() {
     document.getElementById('loadingIndicator').style.display = 'block';
 }
@@ -15,6 +25,7 @@ function showPDFViewer() {
 }
 
 function generatePDF() {
+    hidePDFViewer(); // Hide the PDF viewer if it's already visible
     showLoadingIndicator();
 
     const fileInput = document.getElementById('csvFileInput');
@@ -26,7 +37,7 @@ function generatePDF() {
             header: true,
             complete: function(results) {
                 const data = results.data;
-                let newcomers = data//.filter(row => row['WCA ID'] === ''); // Filter out the returning competitors
+                let newcomers = data.filter(row => row['WCA ID'] === ''); // Filter out the returning competitors
                 newcomers = newcomers.filter(row => row['Name'] && row['Country'] && row['Birth Date'] && row['Gender']);
 
                 // Remove local names in parentheses from the 'Name' field and sort by name alphabetically
@@ -77,7 +88,16 @@ function createPDF(newcomers) {
         format: 'a4'
     });
 
+    // Load Oswald font
+    console.log("got");
+    doc.addFileToVFS('oswald.ttf', 'oswald');
+    console.log("he");
+    doc.addFont('oswald.ttf', 'oswald', 'normal');
+    console.log("re");
+
     const pageWidth = doc.internal.pageSize.getWidth();
+    const pageHeight = doc.internal.pageSize.getHeight();
+
     // Column names, which will appear as headers of the table
     const columns = [['Name'], ['Country'], ['Birth Date'], ['Gender'], ['Check']];
 
@@ -88,7 +108,8 @@ function createPDF(newcomers) {
     doc.addImage(wcaLogoUrl, 'PNG', pageWidth - 40, 10, 20, 20);
 
     // Add the 'NEWCOMERS' title centered at the top
-    doc.setFontSize(30);
+    doc.setFont('courier');
+    doc.setFontSize(40);
     doc.text('NEWCOMERS', pageWidth/2, 30, 'center');
 
     doc.autoTable({
@@ -102,21 +123,29 @@ function createPDF(newcomers) {
             }
             // Check if we're in the body section and in the 'Country' column
             if (data.row.section === 'body' && data.column.dataKey === 1 && data.cell.raw !== 'Australia') {
-                data.cell.styles.fillColor = [255, 182, 193]; // Pastel pink
+                data.cell.styles.fillColor = [217, 178, 250]; // Pastel pink
             }
         },
         columnStyles: {
-            0: { cellWidth: 70 },
-            1: { cellWidth: 40 },
-            2: { cellWidth: 30 },
-            3: { cellWidth: 20 }, 
-            4: { cellWidth: 20 }
+            0: { cellWidth: 70, lineWidth: 0.3, lineColor: [0, 0, 0] },
+            1: { cellWidth: 40, lineWidth: 0.3, lineColor: [0, 0, 0] },
+            2: { cellWidth: 30, lineWidth: 0.3, lineColor: [0, 0, 0] },
+            3: { cellWidth: 20, lineWidth: 0.3, lineColor: [0, 0, 0] },
+            4: { cellWidth: 20, lineWidth: 0.3, lineColor: [0, 0, 0] }
         },
-        styles: { font: 'helvetica', fontSize: 10 },
-        headStyles: { fillColor: [22, 160, 133], textColor: [255, 255, 255] },
-        margin: { top: 10 },
+        styles: { font: 'helvetica', fontSize: 10, lineWidth: 0.3, lineColor: [0, 0, 0], textColor: [0, 0, 0] }, // Black text color for body cells
+        headStyles: { fillColor: [22, 160, 133], textColor: [255, 255, 255], lineWidth: 0.3, lineColor: [0, 0, 0] },
+        margin: { top: 10 , bottom: 20},
         theme: 'grid'
     });
+
+    const totalPages = doc.internal.getNumberOfPages();
+
+    for (let i = 1; i <= totalPages; i++) {
+        doc.setPage(i);
+        doc.setFontSize(10);
+        doc.text(`Page ${i} of ${totalPages}`, pageWidth / 2, pageHeight - 10, 'center');
+    }
 
     const pdfBlob = doc.output('blob');
 
@@ -124,6 +153,6 @@ function createPDF(newcomers) {
     const pdfUrl = URL.createObjectURL(pdfBlob);
     document.getElementById('pdfViewer').src = pdfUrl;
 
-    // Save the PDF
-    doc.save('newcomers_checkin_list.pdf');
+    // Save the PDF --> user can do it for themself via the iframe
+    // doc.save('newcomers_checkin_list.pdf');
 }
