@@ -22,6 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
     width: 100%;
     height: 1000px;
 }
@@ -45,7 +46,7 @@
     top:50%;
     left:50%;
     text-align:center;
-    margin: 20px 0 0 -30px;
+    margin: 80px 0 0 -30px;
     border-radius:100px;
     z-index:1
 }
@@ -61,7 +62,7 @@
     left:50%;
     top:50%;
     opacity:0;
-    margin:-80px 0 0 -80px;
+    margin: -80px 0 0 -80px;
     border-radius:100px;
     -webkit-animation:ripple 1.8s infinite;
     animation:ripple 1.8s infinite
@@ -98,4 +99,22 @@
 .intro-banner-vdo-play-btn .ripple:nth-child(3){
     animation-delay:.6s;
     -webkit-animation-delay:.6s
+}
+
+#generateBtn {
+    background-color: #64c4ff;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 10px;
+    font-size: 16px;
+    color: #fff;
+}
+
+#generateBtn:hover {
+    background-color: #ADD8E6;
+}
+
+.btn:focus, .btn:active, .btn:hover {
+    outline: none !important;
+    box-shadow: none !important;
 }

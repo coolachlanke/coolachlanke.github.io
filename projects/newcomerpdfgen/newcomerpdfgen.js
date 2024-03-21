@@ -15,13 +15,13 @@ function showLoadingIndicator() {
 function hideLoadingIndicator() {
     setTimeout(function() {
         document.getElementById('loadingIndicator').style.display = 'none';
-    }, 500); // Delay hiding the loading indicator for 500ms
+    }, 1000); // Delay hiding the loading indicator for 500ms
 }
 
 function showPDFViewer() {
     setTimeout(function() {
         document.getElementById('pdfResult').style.display = 'block';
-    }, 500); // Delay showing the PDF viewer for 500ms
+    }, 1000); // Delay showing the PDF viewer for 500ms
 }
 
 function generatePDF() {

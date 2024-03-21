@@ -50,16 +50,16 @@
     </div>
 
     <!-- File explorer/upload -->
-    <div class="file-upload-container">
+    <div class="file-upload-container mt-4">
         <div class="custom-file mt-1">
             <input type="file" class="custom-file-input" id="csvFileInput" onchange="updateLabel()" accept=".csv">
             <label class="custom-file-label" for="csvFileInput" id="fileLabel">Choose file</label>
             <div id="errorMessage" style="color: red; display: none;">Please upload a .csv file.</div>
         </div>
-        <div class="row">
-            <div class="col text-center">
-                <button class="btn btn-primary mt-3" onclick="generatePDF()">Generate</button>
-            </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col text-center">
+            <button id="generateBtn" type="button" class="btn btn-primary btn-lg rounded-pill px-5 py-3" onclick="generatePDF()">Generate</button>
         </div>
     </div>
 
