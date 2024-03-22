@@ -13,6 +13,16 @@ body {
   flex: 1;
 }
 
+.navbar-nav .nav-link {
+  color: black;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.navbar-brand {
+  color: black !important;
+  font-size: 1.4em;
+}
+
 footer {
   background-color: #e3f2fd;
   padding: 20px;
