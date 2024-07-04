@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lachlan Cooke</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../style/custom.css" rel="stylesheet">
+  <link href="wcacompvoronoi.css" rel="stylesheet">
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js",
+        "three/examples/jsm/controls/OrbitControls.js": "https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/controls/OrbitControls.js"
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="circliful.js"></script>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="images/favicon/site.webmanifest">
+</head>
+<body>
+
+<!-- Main body content -->
+<div class="content-wrap">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand text-dark" href="/">
+            <img src="../../images/lc_site_lgooo.png" alt="LC" style="height: 48px; margin-right: 10px;">
+            Lachlan Cooke
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="/projects">Projects</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-dark" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark" href="/contact">Contact</a>
+                </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <!-- Title and Description -->
+    <div class="container">
+        <div class="row">
+            <div class="col text-center mt-5 mb-2">
+                <h1 class="display-4 font-weight-bolder">WCA Competition Global Centroid Explorer</h1>
+            </div>
+        </div>
+        <!-- Description text in a centered container with left alignment -->
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-12 text-left"> <!-- Adjust the col sizes as needed -->
+                <p class="lead">This tool allows you to visualise the geographical spread of WCA competitions you’ve attended. By entering your WCA ID, you can see markers representing each competition location on an interactive 3D globe. The tool calculates and displays the centroid of all your competitions, showing the average geographical center of your competition history inside the globe. Scroll below to see how it works!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ripple animation -->
+    <div class="container" id="loadingIndicator" style="display: none;">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <a href="#" class="intro-banner-vdo-play-btn pinkBg" target="_blank">
+                        <i class="glyphicon glyphicon-play whiteText" aria-hidden="true"></i>
+                        <span class="ripple pinkBg"></span>
+                        <span class="ripple pinkBg"></span>
+                        <span class="ripple pinkBg"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enter WCA ID -->
+    <div class="input-container mt-4">
+        <div class="form-group mt-1">
+            <input type="text" class="form-control custom-width mx-auto" id="wcaIdInput" placeholder="Enter WCA ID">
+            <div id="errorMessage" class="text-center" style="color: red; display: none;">Please enter a valid WCA ID.</div>
+            <div id="fetchErrorMessage" class="text-center" style="color: red; display: none;">Error fetching competition data. Please try again.</div>
+        </div>
+    </div>
+    <div class="row mt-3 justify-content-center button-container">
+        <div class="col-auto">
+            <button id="addCompetitionsBtn" type="button" class="btn btn-primary btn-lg rounded-pill px-5 py-3" onclick="addCompetitions()">Add</button>
+        </div>
+        <div class="col-auto">
+            <button id="clearCompetitionsBtn" type="button" class="btn btn-secondary btn-lg rounded-pill px-5 py-3" onclick="clearCompetitions()">Clear</button>
+        </div>
+    </div>
+
+    <!-- World Map -->
+    <div id="container"></div>
+
+        <!-- Distance Statistics -->
+        <div class="stat-wrapper">
+            <ul class="circles">
+                <li class="distance-stat" id="distance-stat" data-dimension="250" data-text="0%" data-info="Distance to Center" data-width="30" data-fontsize="38" data-percent="0" data-fgcolor="#32c3e0" data-bgcolor="#eee"></li>
+            </ul>
+        </div>
+        <div class="stat-wrapper2">
+            <ul class="circles">
+                <li class="distance-stat" id="distanceper-stat" data-dimension="250" data-text="0%" data-info="Radii Ratio" data-width="30" data-fontsize="38" data-percent="0" data-fgcolor="#45fdaf" data-bgcolor="#eee"></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- How It Works Section -->
+    <div class="container mt-4 how-it-works">
+        <h2 class="display-4 text-center font-weight-bolder" id="shitter">How It Works</h2>
+        <p class="lead">This tool visualises your competition history on an interactive 3D globe and calculates the centroid of all competition locations. Here's how it works:</p>
+
+        <h3 class="display-5 font-weight-bolder">1. Fetching Competition Data</h3>
+        <p class="lead">We first fetch the latitude and longitude of each competition a competitor has attended using the WCA API. By entering a WCA ID, we retrieve the competition data and extract the geographical coordinates.</p>
+        
+        <pre><code class="language-javascript">const wcaApiUrl = `https://www.worldcubeassociation.org/api/v0/persons/${wcaId}/competitions`;
+
+    fetch(wcaApiUrl)
+        .then(response => response.json())
+        .then(data => {
+            const competitions = data.competitions;
+            // Extract latitude and longitude
+            competitions.forEach(comp => {
+                const lat = comp.latitude_degrees;
+                const lon = comp.longitude_degrees;
+                // Further processing...
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching competition data:', error);
+        });
+    </code></pre>
+
+        <h3 class="display-5 font-weight-bolder">2. Converting from Spherical to Cartesian Coordinates</h3>
+        <p class="lead">The geographic coordinate system (GCS) describes points on the Earth's surface via a tuple of latitude and longitude, \(\left(\text{lat}, \text{lng}\right)\). The origin, i.e.\(\left(0^{\circ}, 0^{\circ}\right)\) lies in the Gulf of Guinea off the west coast of Africa. In this definition \(0^{\circ}\) latitude is the equator and \(0^{\circ}\) longitude is the Prime Meridian which passes through Greenwich, London, UK. As it is much more mathematically amenable, we first convert these coordinates in to spherical coordinates.  We take the latitude (\(\text{lat}\)) and longitude (\(\text{lng}\)) of each competition location and convert them into spherical coordinates using the following equations:</p>
+        <p class="lead">\(\phi = 90^\circ - \text{lat}\)</p>
+        <p class="lead">\(\theta = \text{lng} + 180^\circ\)</p>
+        <p class="lead">The first angle, \phi, is the \textit{azimuthal} angle and represents This is essentially a just a transformation between where the angular origins are set in the geographic coordinate system (GCS), verses a spherical coordinate system.</p>
+        <p class="lead">Next, we convert these spherical coordinates to Cartesian coordinates (\(x, y, z\)) using the following equations:</p>
+        <p class="lead">\(x = r \sin(\phi) \cos(\theta)\)</p>
+        <p class="lead">\(y = r \cos(\phi)\)</p>
+        <p class="lead">\(z = r \sin(\phi) \sin(\theta)\)</p>
+        <p class="lead">where \(r\) is the normalized radius of the Earth (set to 1).</p>
+
+        <h3 class="display-5 font-weight-bolder">4. Averaging the Points</h3>
+        <p class="lead">We compute the arithmetic mean of all competition locations in Cartesian coordinates to find the centroid:</p>
+        <p class="lead">\( \text{centroid}_x = \frac{1}{n} \sum x_i \)</p>
+        <p class="lead">\( \text{centroid}_y = \frac{1}{n} \sum y_i \)</p>
+        <p class="lead">\( \text{centroid}_z = \frac{1}{n} \sum z_i \)</p>
+        <p class="lead">where \(n\) is the number of competitions.</p>
+
+        <h3 class="display-5 font-weight-bolder">5. Normalising the Centroid</h3>
+        <p class="lead">Since the Earth's radius is normalised to 1, we normalize the centroid to place it back on the sphere's surface:</p>
+        <p class="lead">\(\text{normalized\_centroid} = \frac{\text{centroid}}{||\text{centroid}||}\)</p>
+        <p class="lead">where \(||\text{centroid}||\) is the Euclidean norm of the centroid vector.</p>
+
+        <h3 class="display-5 font-weight-bolder">6. Calculating the Distance</h3>
+        <p class="lead">To find the distance from the centroid to the center of the Earth, we use the Euclidean distance formula:</p>
+        <p class="lead">\(\text{distance} = \sqrt{x^2 + y^2 + z^2} \times r_e\)</p>
+        <p class="lead">where \(r_e\) is the actual radius of the Earth (6371 km).</p>
+
+        <h3 class="display-5 font-weight-bolder">7. Visual Representation</h3>
+        <p class="lead">The centroid is then displayed along with the Euclidean distance from the Earth's center, providing a unique visualization of a competitor's geographic distribution of competitions.</p>
+        
+        <h3 class="display-5 font-weight-bolder">Mathematical Representation and Diagrams</h3>
+        <p class="lead"><strong>Spherical to Cartesian Conversion Diagram</strong></p>
+        <img src="https://www.researchgate.net/publication/311779320/figure/fig4/AS:713543452262406@1549760531302/Spherical-coordinates-and-their-conversion-to-Cartesian-coordinates.png" alt="Spherical to Cartesian Conversion" style="width: 100%; max-width: 600px;">
+
+        <p class="lead"><strong>Euclidean Distance Formula</strong></p>
+        <p class="lead">The Euclidean distance formula is used to calculate the distance between the centroid and the center of the Earth.</p>
+        <p class="lead">\(d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}\)</p>
+        <p class="lead">In our case, \((x_1, y_1, z_1)\) is the center of the Earth (0, 0, 0) and \((x_2, y_2, z_2)\) is the centroid.</p>
+
+        <h3 class="display-5 font-weight-bolder">Conclusion</h3>
+        <p class="lead">This tool visualizes a competitor's competition history on a 3D globe and calculates the centroid of all competition locations. The centroid is then displayed along with the Euclidean distance from the Earth's center, providing a unique visualization of a competitor's geographic distribution of competitions.</p>
+
+        <p class="lead">Feel free to explore and see how your competition history is distributed across the globe!</p>
+    </div>
+
+
+</main>
+
+</div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted" style="background-color: #e3f2fd; padding: 20px; position: relative; top: 500px; width: 100%;">
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <div class="me-5 d-none d-lg-block">
+            <span>&copy; 2024 Lachlan Cooke</span>
+        </div>
+    </section>
+</footer>
+
+<!-- JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script type="module" src="wcacompvoronoi.js"></script>
+  
+</body>
+</html>
