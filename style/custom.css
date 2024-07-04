@@ -10,7 +10,9 @@ body {
 }
 
 .content-wrap {
-  flex: 1;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar-nav .nav-link {
@@ -18,10 +20,12 @@ body {
   font-size: 1.1em;
   font-weight: bold;
 }
+
 .navbar-brand {
   color: black !important;
   font-size: 1.4em;
 }
+
 .navbar-light {
   background-color: rgb(215, 232, 255) !important;
   border: none !important;
@@ -48,6 +52,9 @@ body {
 footer {
   background-color: #e3f2fd;
   padding: 20px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
   width: 100%;
 }
 
@@ -58,8 +65,6 @@ h1{
 .lead{
     color:#5a5a5a;
 }
-    
-.wrapper{margin:10vh}
     
 .card{
     border: none;
