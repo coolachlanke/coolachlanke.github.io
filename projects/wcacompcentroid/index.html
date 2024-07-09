@@ -150,49 +150,52 @@
     </code></pre>
 
         <h3 class="display-5 font-weight-bolder">2. Converting from Spherical to Cartesian Coordinates</h3>
-        <p class="lead">The geographic coordinate system (GCS) describes points on the Earth's surface via a tuple of latitude and longitude, \(\left(\text{lat}, \text{lng}\right)\). The origin, i.e.\(\left(0^{\circ}, 0^{\circ}\right)\) lies in the Gulf of Guinea off the west coast of Africa. In this definition \(0^{\circ}\) latitude is the equator and \(0^{\circ}\) longitude is the Prime Meridian which passes through Greenwich, London, UK. As it is much more mathematically amenable, we first convert these coordinates in to spherical coordinates.  We take the latitude (\(\text{lat}\)) and longitude (\(\text{lng}\)) of each competition location and convert them into spherical coordinates using the following equations:</p>
-        <p class="lead">\(\phi = 90^\circ - \text{lat}\)</p>
-        <p class="lead">\(\theta = \text{lng} + 180^\circ\)</p>
-        <p class="lead">The first angle, \phi, is the \textit{azimuthal} angle and represents This is essentially a just a transformation between where the angular origins are set in the geographic coordinate system (GCS), verses a spherical coordinate system.</p>
-        <p class="lead">Next, we convert these spherical coordinates to Cartesian coordinates (\(x, y, z\)) using the following equations:</p>
-        <p class="lead">\(x = r \sin(\phi) \cos(\theta)\)</p>
-        <p class="lead">\(y = r \cos(\phi)\)</p>
-        <p class="lead">\(z = r \sin(\phi) \sin(\theta)\)</p>
-        <p class="lead">where \(r\) is the normalized radius of the Earth (set to 1).</p>
-
-        <h3 class="display-5 font-weight-bolder">4. Averaging the Points</h3>
-        <p class="lead">We compute the arithmetic mean of all competition locations in Cartesian coordinates to find the centroid:</p>
-        <p class="lead">\( \text{centroid}_x = \frac{1}{n} \sum x_i \)</p>
-        <p class="lead">\( \text{centroid}_y = \frac{1}{n} \sum y_i \)</p>
-        <p class="lead">\( \text{centroid}_z = \frac{1}{n} \sum z_i \)</p>
-        <p class="lead">where \(n\) is the number of competitions.</p>
-
-        <h3 class="display-5 font-weight-bolder">5. Normalising the Centroid</h3>
-        <p class="lead">Since the Earth's radius is normalised to 1, we normalize the centroid to place it back on the sphere's surface:</p>
-        <p class="lead">\(\text{normalized\_centroid} = \frac{\text{centroid}}{||\text{centroid}||}\)</p>
-        <p class="lead">where \(||\text{centroid}||\) is the Euclidean norm of the centroid vector.</p>
-
-        <h3 class="display-5 font-weight-bolder">6. Calculating the Distance</h3>
-        <p class="lead">To find the distance from the centroid to the center of the Earth, we use the Euclidean distance formula:</p>
-        <p class="lead">\(\text{distance} = \sqrt{x^2 + y^2 + z^2} \times r_e\)</p>
-        <p class="lead">where \(r_e\) is the actual radius of the Earth (6371 km).</p>
-
-        <h3 class="display-5 font-weight-bolder">7. Visual Representation</h3>
-        <p class="lead">The centroid is then displayed along with the Euclidean distance from the Earth's center, providing a unique visualization of a competitor's geographic distribution of competitions.</p>
+        <p class="lead">The geographic coordinate system (GCS) describes points on the Earth's surface via a tuple of latitude and longitude, \(\left(\text{lat}, \text{lng}\right)\). The origin, i.e.\(\left(0^{\circ}, 0^{\circ}\right)\) lies in the Gulf of Guinea off the west coast of Africa. In this definition \(0^{\circ}\) latitude is the equator and \(0^{\circ}\) longitude is the Prime Meridian which passes through Greenwich, London, UK. As it is much more mathematically amenable, we first convert these coordinates in to spherical coordinates.  We take the latitude (\(\text{lat}\)) and longitude (\(\text{lng}\)) of each competition location and convert them into spherical angles using the following equations:</p>
         
-        <h3 class="display-5 font-weight-bolder">Mathematical Representation and Diagrams</h3>
-        <p class="lead"><strong>Spherical to Cartesian Conversion Diagram</strong></p>
-        <img src="https://www.researchgate.net/publication/311779320/figure/fig4/AS:713543452262406@1549760531302/Spherical-coordinates-and-their-conversion-to-Cartesian-coordinates.png" alt="Spherical to Cartesian Conversion" style="width: 100%; max-width: 600px;">
+        <p class="lead math-equation">\(\phi = 90^\circ - \text{lat}\)</p>
+        <p class="lead math-equation">\(\theta = \text{lng} + 180^\circ\)</p>
 
-        <p class="lead"><strong>Euclidean Distance Formula</strong></p>
-        <p class="lead">The Euclidean distance formula is used to calculate the distance between the centroid and the center of the Earth.</p>
-        <p class="lead">\(d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}\)</p>
-        <p class="lead">In our case, \((x_1, y_1, z_1)\) is the center of the Earth (0, 0, 0) and \((x_2, y_2, z_2)\) is the centroid.</p>
+        <p class="lead">The first angle, \(\phi\), is the <em>polar angle</em> and is measured from the positive \(z\)-axis to the radial line, \(r\). The second angle, \(\phi\), is the <em>azimuthal angle</em> and is measured between the orthogonal projection of the radial line \(r\) onto the reference \(xy\)-plane. One can see where these definitions come from in the diagram below. The equations above are just a transformation between where the angular origins are set in the geographic coordinate system (GCS), verses the spherical coordinate system.</p>
+        
+        <img class="padded-image" src="../../images/spherical.png" alt="Spherical to Cartesian Conversion" style="width: 100%; max-width: 600px;">
+        
+        <p class="lead">Next, we convert these spherical coordinates, (\(r, \theta, \phi\)), to Cartesian coordinates, (\(x, y, z\)), using the following equations:</p>
+        
+        <p class="lead math-equation">\(x = r \sin(\theta) \cos(\phi)\)</p>
+        <p class="lead math-equation">\(y = r \sin(\theta) \sin(\phi)\)</p>
+        <p class="lead math-equation">\(z = r \cos(\theta)\)</p>
+        
+        <p class="lead">These equations can be seen from simple triginometry in the diagram above. To simplify computation, we normalise the radius of the Earth, \(r\), to \(1\). Hence, the transformation we'll use is</p>
+        
+        <p class="lead math-equation">\(x = \sin(\theta) \cos(\phi)\)</p>
+        <p class="lead math-equation">\(y = \sin(\theta) \sin(\phi)\)</p>
+        <p class="lead math-equation">\(z = \cos(\theta)\)</p>
 
-        <h3 class="display-5 font-weight-bolder">Conclusion</h3>
-        <p class="lead">This tool visualizes a competitor's competition history on a 3D globe and calculates the centroid of all competition locations. The centroid is then displayed along with the Euclidean distance from the Earth's center, providing a unique visualization of a competitor's geographic distribution of competitions.</p>
+        <p class="lead">Now, we can compute a (normalised) vector from the center of the Earth to each competition location (\(\mathbf{c_{i}}\)).</p>
 
-        <p class="lead">Feel free to explore and see how your competition history is distributed across the globe!</p>
+        <p class="lead math-equation">\(\mathbf{c_{i}} = \langle x_{i}, y_{i}, z_{i} \rangle = \langle \sin(\theta_{i})\cos(\phi_{i}), sin(\theta_{i})\sin(\phi_{i}), \cos(\theta_{i})\rangle\)</p>
+
+        <h3 class="display-5 font-weight-bolder">4. Averaging the Competition Vectors</h3>
+        <p class="lead">We compute the arithmetic mean of all competition vectors to find the centroid vector, \(\mathbf{C}\)</p>
+        <p class="lead math-equation">\( \mathbf{C} = \frac{1}{n} \sum_{i=1}^{n} \mathbf{c_{i}} \)</p>
+        <p class="lead math-equation">\( \mathbf{C} = \frac{1}{n} \sum_{i=1}^{n} \langle x_{i}, y_{i}, z_{i} \rangle \)</p>
+        <p class="lead math-equation">\( \mathbf{C} = \langle \frac{1}{n}\sum_{i=1}^{n} x_{i}, \frac{1}{n}\sum_{i=1}^{n} y_{i}, \frac{1}{n}\sum_{i=1}^{n} z_{i} \rangle \)</p>
+        <p class="lead">where \(n\) is the number of competitions. This vector is then plotted inside the interative globe.</p>
+
+        <h3 class="display-5 font-weight-bolder">5. Calculating the Centroid Radius</h3>
+        <p class="lead">To find the normalised distance from the centroid to the center of the Earth (radii ratio), we use the Euclidean norm on \(\mathbf{C}\)</p>
+        
+        <p class="lead math-equation">\(\text{normalised distance} = \lVert C \rVert = \sqrt{x_{C}^2 + y_{C}^2 + z_{C}^2}\)</p>
+
+        <p class="lead">where</p>
+
+        <p class="lead math-equation">\(x_{C} = \frac{1}{n}\sum_{i=1}^{n} x_{i}\)</p>
+        <p class="lead math-equation">\(y_{C} = \frac{1}{n}\sum_{i=1}^{n} y_{i}\)</p>
+        <p class="lead math-equation">\(z_{C} = \frac{1}{n}\sum_{i=1}^{n} z_{i}\)</p>
+
+        <p class="lead">To find the actual distance (in km) between the center of the Earth and the centroid, we multiply this normalised distance by the radius of the Earth, \(r_e = 6371\) km.</p>
+
+        <p class="lead math-equation">\(\text{distance} = r_{e} \times \text{normalised distance}\)</p>
     </div>
 
 
