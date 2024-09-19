@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WCA Competition Total Travelled Distance</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../style/custom.css" rel="stylesheet">
+    <link href="wcacompdistance.css" rel="stylesheet">
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js",
+        "three/examples/jsm/controls/OrbitControls.js": "https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/controls/OrbitControls.js"
+      }
+    }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="circliful.js"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+</head>
+<body>
+
+<!-- Main body content -->
+<div class="content-wrap">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand text-dark" href="/">
+            <img src="../../images/lc_site_lgooo.png" alt="LC" style="height: 48px; margin-right: 10px;">
+            Lachlan Cooke
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="/projects">Projects</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-dark" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark" href="/contact">Contact</a>
+                </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <!-- Title and Description -->
+    <div class="container">
+        <div class="row">
+            <div class="col text-center mt-5 mb-2">
+                <h1 class="display-4 font-weight-bolder">WCA Competition Total Travelled Distance</h1>
+            </div>
+        </div>
+        <!-- Description text in a centered container with left alignment -->
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-12 text-left"> <!-- Adjust the col sizes as needed -->
+                <p class="lead">This tool visualizes the geographical travel distance of WCA competitions you’ve attended. By entering your WCA ID, you can see the travel path and total distance on an interactive 3D globe. Scroll below to see how it works!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enter WCA ID -->
+    <div class="input-container mt-4">
+        <div class="form-group mt-1">
+            <input type="text" class="form-control custom-width mx-auto" id="wcaIdInput" placeholder="Enter WCA ID">
+            <div id="errorMessage" class="text-center" style="color: red; display: none;">Please enter a valid WCA ID.</div>
+            <div id="fetchErrorMessage" class="text-center" style="color: red; display: none;">Error fetching competition data. Please try again.</div>
+        </div>
+    </div>
+    <div class="row mt-3 justify-content-center button-container">
+        <div class="col-auto">
+            <button id="addCompetitionsBtn" type="button" class="btn btn-primary btn-lg rounded-pill px-5 py-3" onclick="addCompetitions()">Add</button>
+        </div>
+        <div class="col-auto">
+            <button id="clearCompetitionsBtn" type="button" class="btn btn-secondary btn-lg rounded-pill px-5 py-3" onclick="clearCompetitions()">Clear</button>
+        </div>
+    </div>
+
+    <!-- World Map -->
+    <div id="container"></div>
+
+    <!-- Travel Distance Statistics -->
+    <div class="stat-wrapper">
+        <ul class="circles">
+            <li class="distance-stat" id="distance-stat" data-dimension="250" data-text="0 km" data-info="Total Travel Distance" data-width="30" data-fontsize="38" data-percent="0" data-fgcolor="#32c3e0" data-bgcolor="#eee"></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted" style="background-color: #e3f2fd; padding: 20px; position: relative; bottom: 0; width: 100%;">
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <div class="me-5 d-none d-lg-block">
+            <span>&copy; 2024 Lachlan Cooke</span>
+        </div>
+    </section>
+</footer>
+
+<!-- JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script type="module" src="wcacompdistance.js"></script>
+
+</body>
+</html>

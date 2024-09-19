@@ -244,10 +244,6 @@ function plotMeanPoint(locations) {
   $('#distance-stat').data('percent', 100 * normalizedDistance.toFixed(2));
   $('#distance-stat').circliful();
   $('#distanceper-stat').circliful();
-  /*document.getElementById('distanceDisplay').innerText = `Distance to Center: ${(distance * EARTH_RADIUS).toFixed(4)}km (${distance.toFixed(2)}re)`;
-  console.log(`Distance from center: ${(distance * EARTH_RADIUS).toFixed(4)}`);*/
-  /*document.getElementById('distanceDisplay').innerHTML = `Distance to Center: \\({${distance.toFixed(0)}}\\)km \\(\\left({${normalizedDistance.toFixed(3)}}{r_e}\\right) \\)`;
-  MathJax.typeset(); // Render the LaTeX*/
 }
 
 // Function to show stats

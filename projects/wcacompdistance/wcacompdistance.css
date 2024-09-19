@@ -1,0 +1,67 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+.content-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.stat-wrapper {
+  position: absolute;
+  top: 20px; /* Adjust padding as needed */
+  right: 20px; /* Adjust padding as needed */
+  z-index: 1000; /* Ensure it stays on top */
+  width: 250px; /* Adjust size as needed */
+  height: 250px; /* Adjust size as needed */
+  pointer-events: none; /* Ensure it doesn't block mouse interactions with the Three.js canvas */
+}
+
+.file-upload-container {
+  max-width: 50vw;
+  margin: 0 auto;
+  padding: 5%;
+}
+
+.custom-width {
+  max-width: 15%; /* Adjust this value to the desired width */
+}
+
+.button-container {
+  margin-bottom: 2rem; /* Add space below buttons */
+}
+
+.circliful {
+  position: relative;
+}
+
+.circle-text, .circle-info {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  display: inline-block;
+}
+
+.circle-info {
+  color: #999;
+}
+
+.circliful .fa {
+  margin: -10px 3px 0 3px;
+  position: relative;
+  bottom: 4px;
+}
