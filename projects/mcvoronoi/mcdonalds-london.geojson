@@ -1,0 +1,3578 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2024-09-19T18:39:14Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/45298307",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/romford/harold-hill/straight-road/8260825.html",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 06:30-23:30",
+        "phone": "+44 1708 345698",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2113795,
+          51.6004092
+        ]
+      },
+      "id": "node/45298307"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/251296273",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/ealing/ealing-broadway/units-1322c-the-arcadia-centre/8260455.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+44 20 8840 6160",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3041769,
+          51.5134741
+        ]
+      },
+      "id": "node/251296273"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/260124921",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "201-217",
+        "addr:postcode": "E1 2BT",
+        "addr:street": "Commercial Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/tower-hamlets/commercial-road/201217-commercial-road/8261127.html",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "fhrs:id": "73600",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+44 20 7790 8238",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0596548,
+          51.5148992
+        ]
+      },
+      "id": "node/260124921"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/264515707",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "112",
+        "addr:postcode": "WC1V 6JS",
+        "addr:street": "High Holborn",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/holborn/holborn/112-high-holborn/8260228.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "423781",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+44 20 7404 0162",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.119722,
+          51.5177884
+        ]
+      },
+      "id": "node/264515707"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/293509935",
+        "addr:city": "London",
+        "addr:housenumber": "198-200",
+        "addr:postcode": "SE17 1JJ",
+        "addr:street": "Walworth Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/southwark/walworth-rd/198200-walworth-road/8260060.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "364375",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+44 20 7708 1185",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0967312,
+          51.4895387
+        ]
+      },
+      "id": "node/293509935"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/312915333",
+        "addr:postcode": "HA2 0AE",
+        "addr:street": "Shaftesbury Circle",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "fhrs:id": "276617",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+44 20 8864 5794",
+        "self_service": "yes",
+        "source": "localmint",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/south-harrow/south-harrow---shaftesbury/9-shaftesbury-circle/8261005.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.353683,
+          51.5727033
+        ]
+      },
+      "id": "node/312915333"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/331362135",
+        "addr:city": "London",
+        "addr:street": "High Road",
+        "addr:suburb": "Wood Green",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/wood-green/wood-green/97101-high-road/8260021.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-We 07:00-23:00; Th 07:00-04:59; Fr-Sa 05:00-04:59; Su 05:00-23:00",
+        "phone": "+44 20 8888 1120",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1068298,
+          51.5929728
+        ]
+      },
+      "id": "node/331362135"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/370464409",
+        "addr:city": "London",
+        "addr:housenumber": "36-42",
+        "addr:postcode": "E8 2JP",
+        "addr:street": "Kingsland High Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/dalston/dalston/3642-kingsland-high-street/8260262.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "468822",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 05:00-02:30",
+        "phone": "+44 20 7254 0310",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0754086,
+          51.547246
+        ]
+      },
+      "id": "node/370464409"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/385591326",
+        "addr:housenumber": "8-10",
+        "addr:street": "Oxford Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/westminster/oxford-street-1/810-oxford-street/8260028.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 05:00-02:45; Fr-Sa 00:00-24:00; Su 05:00-02:45",
+        "outdoor_seating": "no",
+        "phone": "+44 20 7636 4350",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1308683,
+          51.5164921
+        ]
+      },
+      "id": "node/385591326"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/410949909",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/cricklewood/cricklewood/136140-cricklewood-broadway/8260340.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Sa 07:00-24:00; Su 08:00-23:00",
+        "phone": "+44 20 8450 9263",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2139919,
+          51.5558344
+        ]
+      },
+      "id": "node/410949909"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/411306427",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/edgware/stanmore-cornerhouse/154-stonegrove/8260770.html",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 00:00-24:00",
+        "phone": "+44 20 8958 3482",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2917129,
+          51.6214428
+        ]
+      },
+      "id": "node/411306427"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/412849560",
+        "addr:city": "London",
+        "addr:housenumber": "241",
+        "addr:postcode": "EC1V 1JQ",
+        "addr:street": "City Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/islington/city-road/241-city-road/8260603.html",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "fhrs:id": "468751",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+44 20 7336 6411",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0947754,
+          51.5297809
+        ]
+      },
+      "id": "node/412849560"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/420771825",
+        "addr:city": "Bromley",
+        "addr:housenumber": "1 - 3",
+        "addr:postcode": "BR1 1NA",
+        "addr:street": "Market Square",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/bromley/bromley/13-market-square/8260024.html",
+        "cuisine": "burger",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "drive_through": "no",
+        "fhrs:id": "1061954",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "level": "0",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-23:00; Fr-Sa 06:00-03:00; Su 06:00-23:00",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+44 20 8460 7370",
+        "self_service": "yes",
+        "source": "survey",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0145631,
+          51.4057545
+        ]
+      },
+      "id": "node/420771825"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/425720510",
+        "addr:city": "London",
+        "addr:floor": "Ground And First Floors",
+        "addr:housenumber": "2",
+        "addr:postcode": "N1 9AA",
+        "addr:street": "York Way",
+        "addr:suburb": "Islington",
+        "alt_name": "McDonald's King's Cross",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "cuisine": "burger",
+        "diet:vegetarian": "yes",
+        "drive_through": "no",
+        "fhrs:id": "416086",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "name:ja": "マクドナルド",
+        "outdoor_seating": "no",
+        "phone": "+44 20 7837 5015",
+        "self_service": "yes",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/kings-cross/kings-cross---ex-wendys/2-york-way/8261041.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1223214,
+          51.530898
+        ]
+      },
+      "id": "node/425720510"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/426753681",
+        "addr:city": "Orpington",
+        "addr:postcode": "BR5 3AE",
+        "addr:street": "Sevenoaks Way",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/orpington/orpington-broomwood/sevenoaks-way/8261385.html",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "fhrs:id": "432974",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 06:00-23:00",
+        "phone": "+44 1689 834007",
+        "self_service": "yes",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1126197,
+          51.4022142
+        ]
+      },
+      "id": "node/426753681"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/444686854",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "49",
+        "addr:postcode": "SW3 4NJ",
+        "addr:street": "King's Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/chelsea/chelsea-kings-road/49-kings-road/8260388.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 05:00-23:00",
+        "phone": "+44 20 7824 8133",
+        "self_service": "yes",
+        "source:addr:postcode": "telephone box",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1628221,
+          51.4898503
+        ]
+      },
+      "id": "node/444686854"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/449117212",
+        "addr:city": "Dagenham",
+        "addr:housename": "Eldonwall Trading Estate",
+        "addr:postcode": "RM8 1AT",
+        "addr:street": "Whalebone Lane South",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/dagenham/dagenham-fs-dt/whalebone-lane-south/8260300.html",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "fhrs:id": "128791",
+        "fhrs:local_authority_id": "5905",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 05:00-01:00; Fr-Sa 05:00-02:00; Su 05:00-01:00",
+        "operator": "McDonald's Restaurants Ltd",
+        "phone": "+44 20 8593 6616",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1451656,
+          51.5652681
+        ]
+      },
+      "id": "node/449117212"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/477991330",
+        "addr:housenumber": "36-40",
+        "addr:postcode": "KT19 8AH",
+        "addr:street": "High Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/epsom/epsom/3640-high-street/8260036.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "9044",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 06:00-24:00",
+        "phone": "+44 1372 741962",
+        "self_service": "yes",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2654204,
+          51.3339713
+        ]
+      },
+      "id": "node/477991330"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/478551912",
+        "addr:city": "Kingston upon Thames",
+        "addr:housenumber": "82",
+        "addr:postcode": "KT1 1DJ",
+        "addr:street": "Eden Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/kingston-upon-thames/kingston-upon-thames/82-eden-street/8260385.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "1646580",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 05:00-24:00; Fr-Sa 05:00-02:00; Su 05:00-24:00",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+44 20 8541 4393",
+        "self_service": "yes",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3022531,
+          51.410061
+        ]
+      },
+      "id": "node/478551912"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/506167690",
+        "addr:city": "Borehamwood",
+        "addr:housenumber": "213",
+        "addr:postcode": "WD6 1TE",
+        "addr:street": "Shenley Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/borehamwood/borehamwood/213-shenley-road/8260499.html",
+        "cuisine": "burger",
+        "diet:vegetarian": "yes",
+        "drive_through": "yes",
+        "fhrs:id": "434662",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 00:00-24:00",
+        "outdoor_seating": "yes",
+        "phone": "+44 20 8207 5756",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2714734,
+          51.6584963
+        ]
+      },
+      "id": "node/506167690"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/515636688",
+        "addr:city": "Uxbridge",
+        "addr:country": "GB",
+        "addr:housenumber": "37",
+        "addr:postcode": "UB9 4DA",
+        "addr:street": "Oxford Road",
+        "addr:suburb": "New Denham",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "fhrs:id": "1580164",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "outdoor_seating": "yes",
+        "phone": "+44 1895 238360",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/uxbridge/denham/37-oxford-road/8261164.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4890146,
+          51.5532328
+        ]
+      },
+      "id": "node/515636688"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/519175222",
+        "addr:city": "London",
+        "addr:housenumber": "178-180",
+        "addr:postcode": "W2 2DS",
+        "addr:street": "Edgware Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/westminster/edgware-road/178180-edgware-road/8260019.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "427961",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 05:00-23:45; Fr-Sa 00:00-24:00; Su 05:00-23:45",
+        "phone": "+44 20 7258 1850",
+        "self_service": "yes",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1662871,
+          51.5175418
+        ]
+      },
+      "id": "node/519175222"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/528100159",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/uxbridge/chimes/unit-103-104-intu-shopping-centre/8261166.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "519188",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "level": "0",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Sa 08:00-20:00; Su 11:00-17:00",
+        "phone": "+44 1895 259328",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4775712,
+          51.5455777
+        ]
+      },
+      "id": "node/528100159"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/529116494",
+        "addr:city": "London",
+        "addr:housenumber": "502-504",
+        "addr:postcode": "N17 9JF",
+        "addr:street": "High Road",
+        "addr:suburb": "Tottenham",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/tottenham/tottenham/500508-high-road/8260078.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "1132514",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-02:45; Fr 06:00-04:45; Sa 05:00-04:45; Su 06:00-02:45",
+        "phone": "+44 20 8808 9661",
+        "self_service": "yes",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.069358,
+          51.5938529
+        ]
+      },
+      "id": "node/529116494"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/571285807",
+        "addr:city": "London",
+        "addr:housenumber": "1-2",
+        "addr:postcode": "E15 1XA",
+        "addr:street": "The Mall",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/stratford/stratford-the-mall/stratford-centre/8260944.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "1455092",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 05:00-01:00; Fr-Sa 05:00-02:00; Su 05:00-01:00",
+        "phone": "+44 20 8534 4935",
+        "self_service": "yes",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes",
+        "was:fhrs:id": "654117",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0011609,
+          51.5410162
+        ]
+      },
+      "id": "node/571285807"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/611877871",
+        "addr:city": "Bromley",
+        "addr:postcode": "BR1 4JY",
+        "addr:street": "Bromley Hill",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "fhrs:id": "255428",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "phone": "+44 20 8460 4160",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/bromley/bromley---garden-gate/old-bromley-road/8260997.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0027366,
+          51.4214095
+        ]
+      },
+      "id": "node/611877871"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/676855031",
+        "addr:city": "London",
+        "addr:housenumber": "4",
+        "addr:parentstreet": "Finchley Road",
+        "addr:postcode": "NW3 6JP",
+        "addr:street": "Harben Parade",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/swiss-cottage/swiss-cottage/4-harben-parade-right/8260042.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:authority": "Camden",
+        "fhrs:id": "424027",
+        "fhrs:local_authority_id": "2002",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 06:00-00:30",
+        "phone": "+44 20 7722 7084",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.176145,
+          51.5444796
+        ]
+      },
+      "id": "node/676855031"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/883455416",
+        "addr:city": "Watford",
+        "addr:housenumber": "128-130",
+        "addr:interpolation": "even",
+        "addr:postcode": "WD17 2BJ",
+        "addr:street": "High Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/watford/watford-high-street/128130-high-street/8260389.html",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 06:00-23:00",
+        "outdoor_seating": "no",
+        "phone": "+44 1923 228734",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3942317,
+          51.6540813
+        ]
+      },
+      "id": "node/883455416"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/885384766",
+        "addr:city": "Enfield",
+        "addr:country": "GB",
+        "addr:housenumber": "4-5",
+        "addr:parentstreet": "Church Street",
+        "addr:postcode": "EN2 6AA",
+        "addr:substreet": "Market Chambers",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/enfield/enfield/45-market-chambers/8260041.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "316859",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:00-23:00",
+        "phone": "+44 20 8364 5352",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0829398,
+          51.6522826
+        ]
+      },
+      "id": "node/885384766"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/915100779",
+        "addr:city": "Harrow",
+        "addr:country": "GB",
+        "addr:housenumber": "361-363",
+        "addr:postcode": "HA1 2AW",
+        "addr:street": "Station Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/harrow/harrow/361363-station-road/8260047.html",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "diet:vegetarian": "yes",
+        "drive_through": "no",
+        "fhrs:id": "276326",
+        "franchise": "McDonald's",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "level": "0",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-01:00; Fr-Sa 06:00-02:45; Su 06:00-01:00",
+        "operator": "K & G Restaurants Ltd",
+        "outdoor_seating": "no",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+44 20 8861 2896",
+        "self_service": "yes",
+        "smoking": "no",
+        "source": "survey",
+        "source:addr": "FHRS Open Data",
+        "source:addr:postcode": "survey",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3341898,
+          51.5796753
+        ]
+      },
+      "id": "node/915100779"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/971874127",
+        "addr:city": "Surbiton",
+        "addr:housenumber": "70 - 71",
+        "addr:postcode": "KT6 4NR",
+        "addr:street": "Victoria Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/surbiton/surbiton/7071-victoria-road/8260292.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "1653690",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "level": "0",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:00-22:30",
+        "phone": "+44 20 8399 1042",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3058997,
+          51.3923897
+        ]
+      },
+      "id": "node/971874127"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1096803396",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/hounslow/hounslow/200202-high-street/8260020.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 05:00-24:00",
+        "phone": "+44 20 8572 1160",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3628812,
+          51.4688124
+        ]
+      },
+      "id": "node/1096803396"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1110998246",
+        "addr:city": "London",
+        "addr:housenumber": "130-134",
+        "addr:postcode": "SW4 7UH",
+        "addr:street": "Clapham High Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/clapham/clapham/130134-clapham-high-street/8260379.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:authority": "Lambeth",
+        "fhrs:id": "483955",
+        "fhrs:inspectiondate": "2013-12-05",
+        "fhrs:rating": "5",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-24:00; Fr-Sa 06:00-03:00; Su 06:00-24:00",
+        "phone": "+44 20 7498 7813",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1354917,
+          51.4628328
+        ]
+      },
+      "id": "node/1110998246"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1112279309",
+        "addr:city": "London",
+        "addr:housenumber": "30-32",
+        "addr:postcode": "SW11 1PW",
+        "addr:street": "St. John's Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/clapham/clapham-junction/3032-st-johns-road/8260048.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "1571767",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-02:00; Fr-Sa 06:00-03:00; Su 06:00-01:45",
+        "phone": "+44 20 7738 0882",
+        "self_service": "yes",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1678031,
+          51.4628493
+        ]
+      },
+      "id": "node/1112279309"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1400917652",
+        "addr:city": "London",
+        "addr:housename": "Crescent Arcade",
+        "addr:housenumber": "2",
+        "addr:postcode": "SE10 9EJ",
+        "addr:street": "Crescent Arcade",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/greenwich/greenwich-cutty-sark/2-crescent-arcade/8261246.html",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "drive_through": "no",
+        "fhrs:id": "695444",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Su-Th 06:00-24:00; Fr-Sa 06:00-25:00",
+        "outdoor_seating": "no",
+        "phone": "+44 20 8305 9582",
+        "self_service": "yes",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0107947,
+          51.4817158
+        ]
+      },
+      "id": "node/1400917652"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1409601922",
+        "addr:city": "London",
+        "addr:postcode": "N12 0GL",
+        "addr:street": "Chaplin Square",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/north-finchley/finchley-lido/great-north-leisure-park/8260654.html",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "fhrs:id": "1567684",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 00:00-23:59",
+        "phone": "+44 20 8445 6101",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1731294,
+          51.6048035
+        ]
+      },
+      "id": "node/1409601922"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1472157547",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "outdoor_seating": "yes",
+        "phone": "+44 20 8830 2364",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/brent-park/brent-park/139-north-circular-road/8260779.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2616947,
+          51.5516702
+        ]
+      },
+      "id": "node/1472157547"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1634398567",
+        "addr:housenumber": "102",
+        "addr:postcode": "EN5 5XQ",
+        "addr:street": "High Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/barnet/barnet/102-high-street/8260055.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "1096544",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-24:00; Fr,Sa 06:00-22:00; Su 07:00-24:00",
+        "phone": "+44 20 8441 1013",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2013498,
+          51.6538959
+        ]
+      },
+      "id": "node/1634398567"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1706048232",
+        "addr:city": "London",
+        "addr:housenumber": "432-436",
+        "addr:postcode": "E2 0DJ",
+        "addr:street": "Bethnal Green Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "contact:phone": "+44 20 7729 6660",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/bethnal-green/bethnal-green/432436-bethnal-green-road/8260190.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "148439",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-We 05:00-02:00; Th-Sa 05:00-05:00; Su 05:00-02:00",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0594012,
+          51.5268978
+        ]
+      },
+      "id": "node/1706048232"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1721040742",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "258-260",
+        "addr:postcode": "E17 3AX",
+        "addr:street": "Hoe Street",
+        "addr:suburb": "Walthamstow",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/walthamstow/walthamstow/258260-hoe-street/8260037.html",
+        "cuisine": "burger",
+        "diet:vegetarian": "yes",
+        "drive_through": "no",
+        "fhrs:id": "514389",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 05:00-02:00; Fr-Sa 00:00-24:00; Su 05:00-02:00",
+        "operator": "McDonald's",
+        "phone": "+44 20 8520 2372",
+        "self_service": "yes",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0191679,
+          51.5835823
+        ]
+      },
+      "id": "node/1721040742"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1798336833",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/watford/bushey/north-western-avenue/8260863.html",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 00:00-24:00",
+        "outdoor_seating": "yes",
+        "phone": "+44 20 8950 9970",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3507493,
+          51.658492
+        ]
+      },
+      "id": "node/1798336833"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1852968863",
+        "addr:city": "New Malden",
+        "addr:housenumber": "81 - 83",
+        "addr:postcode": "KT3 4BT",
+        "addr:street": "High Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/new-malden/new-malden/7783-high-street/8260250.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "1653689",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:00-23:00",
+        "phone": "+44 20 8336 5852",
+        "self_service": "yes",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2562088,
+          51.4012921
+        ]
+      },
+      "id": "node/1852968863"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1888837656",
+        "addr:city": "Croydon",
+        "addr:housename": "Norfolk House",
+        "addr:postcode": "CR0 1LG",
+        "addr:street": "George Street",
+        "addr:unit": "23",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/croydon/croydon-4-east-croydon/unit-23-norfolk-house/8261280.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "2420",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Su-Th 05:00-23:00; Fr-Sa 00:00-24:00",
+        "phone": "+44 20 8688 9431",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0961327,
+          51.374388
+        ]
+      },
+      "id": "node/1888837656"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2472822082",
+        "addr:city": "London",
+        "addr:housenumber": "55-61",
+        "addr:postcode": "SE9 1TD",
+        "addr:street": "Eltham High Street",
+        "addr:suburb": "Eltham",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "cuisine": "burger",
+        "delivery": "no",
+        "drive_through": "no",
+        "fhrs:id": "694287",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 05:00-26:00",
+        "phone": "+44 20 8859 4622",
+        "self_service": "yes",
+        "smoking": "no",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/eltham/eltham/5561-high-street/8260029.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0524722,
+          51.4509208
+        ]
+      },
+      "id": "node/2472822082"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2499436449",
+        "addr:housenumber": "208",
+        "addr:street": "Earl's Court Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/earls-court/earls-court/208-earls-court-road/8260015.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 05:00-02:00",
+        "phone": "+44 20 7373 2355",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1935674,
+          51.4924139
+        ]
+      },
+      "id": "node/2499436449"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2499624218",
+        "addr:city": "London",
+        "addr:postcode": "SW1V 1JT",
+        "addr:street": "Terminus Place",
+        "addr:unit": "Unit 4",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/westminster/victoria-station/main-concourse/8261011.html",
+        "cuisine": "burger",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "drive_through": "no",
+        "fhrs:id": "428000",
+        "indoor_seating": "no",
+        "internet_access": "wlan",
+        "level": "0",
+        "name": "McDonald's",
+        "outdoor_seating": "no",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+44 20 7802 9730",
+        "takeaway": "only"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1429868,
+          51.495073
+        ]
+      },
+      "id": "node/2499624218"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2531024404",
+        "addr:city": "London",
+        "addr:floor": "Ground Floor And Basement",
+        "addr:housenumber": "251-252",
+        "addr:postcode": "N1 1RU",
+        "addr:street": "Upper Street",
+        "addr:suburb": "Islington",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/islington/highbury-corner/251252-upper-street/8261134.html",
+        "cuisine": "burger",
+        "diet:vegetarian": "yes",
+        "drive_through": "no",
+        "fhrs:id": "929537",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 05:00-01:45",
+        "outdoor_seating": "no",
+        "phone": "+44 20 7354 4392",
+        "self_service": "yes",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1034306,
+          51.5455816
+        ]
+      },
+      "id": "node/2531024404"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2613591906",
+        "addr:city": "Sutton",
+        "addr:country": "GB",
+        "addr:housenumber": "168-172",
+        "addr:postcode": "SM1 1NL",
+        "addr:street": "High Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:authority": "Sutton",
+        "fhrs:id": "30200",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "phone": "+44 20 8643 0207",
+        "self_service": "yes",
+        "source": "survey;fhrs",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/surrey/sutton/168172-high-street/8260027.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1937082,
+          51.3651146
+        ]
+      },
+      "id": "node/2613591906"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2659475639",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/westminster/shaftesbury-avenue---2/2527-shaftesbury-avenue/8261063.html",
+        "cuisine": "burger",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-23:45; Fr-Sa 06:00-00:45; Su 06:00-22:45",
+        "phone": "+44 20 7287 1106",
+        "takeaway": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1338613,
+          51.5109861
+        ]
+      },
+      "id": "node/2659475639"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3357928813",
+        "addr:housenumber": "177",
+        "addr:street": "Brompton Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/kensington/brompton-rd/177-brompton-road/8260437.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 05:00-23:45",
+        "phone": "+44 20 7584 5096",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "toilets:wheelchair": "no",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1658235,
+          51.4982955
+        ]
+      },
+      "id": "node/3357928813"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4509307756",
+        "addr:city": "Ilford",
+        "addr:housenumber": "231-233",
+        "addr:postcode": "IG1 1NE",
+        "addr:street": "High Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/ilford/ilford-1/231233-high-road/8260014.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "443347",
+        "fhrs:local_authority_id": "154853",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "note": "This restaurant has phone/laptop charging points.",
+        "opening_hours": "Mo-Su 06:00-23:00",
+        "phone": "+44 20 8514 1172",
+        "smoking": "no",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0767018,
+          51.5598357
+        ]
+      },
+      "id": "node/4509307756"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4536287100",
+        "addr:city": "London",
+        "addr:floor": "0",
+        "addr:housenumber": "1-3",
+        "addr:postcode": "SW19 1PS",
+        "addr:street": "The Broadway",
+        "amenity": "fast_food",
+        "branch": "Wimbledon",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "drive_through": "no",
+        "fhrs:id": "1363396",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "operator": "McDonald's",
+        "outdoor_seating": "no",
+        "phone": "+44 20 8946 7411",
+        "self_service": "yes",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/wimbledon/wimbledon---the-broadway/1---3-the-broadway/8261590.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2059955,
+          51.4206151
+        ]
+      },
+      "id": "node/4536287100"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4566976689",
+        "addr:city": "London",
+        "addr:housenumber": "42",
+        "addr:postcode": "SW18 4FT",
+        "addr:street": "Garratt Lane",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "cuisine": "burger",
+        "fhrs:authority": "Wandsworth",
+        "fhrs:id": "1595541",
+        "fhrs:local_authority_id": "PI/000357110",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "outdoor_seating": "no",
+        "phone": "+44 20 8870 5637",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/wandsworth/wandsworth-south-shopping-centre-relo/garratt-lane/8261657.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1928647,
+          51.4555855
+        ]
+      },
+      "id": "node/4566976689"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4638675725",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/edmonton/edmonton/118-fore-street/8260328.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-00:45; Fr-Sa 06:00-03:45; Su 06:00-00:45",
+        "phone": "+44 20 8807 8584",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0646504,
+          51.6123667
+        ]
+      },
+      "id": "node/4638675725"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4706662255",
+        "addr:city": "Cobham",
+        "addr:country": "GB",
+        "addr:housename": "Food Court Building",
+        "addr:place": "Cobham Motorway Service Area",
+        "addr:postcode": "KT11 3DB",
+        "addr:unit": "4",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "operator": "McDonald's Restaurants Limited",
+        "phone": "+44 1932 863927",
+        "self_service": "yes",
+        "smoking": "no",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/cobham/cobham-msa/unit-4-food-court-building/8261393.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4054347,
+          51.304178
+        ]
+      },
+      "id": "node/4706662255"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4939214931",
+        "addr:city": "Watford",
+        "addr:country": "GB",
+        "addr:housenumber": "331",
+        "addr:postcode": "WD24 6PP",
+        "addr:street": "St Albans Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/north-watford/watford-hertfordshire-arms/331-st-albans-road/8260906.html",
+        "cuisine": "burger",
+        "delivery": "no",
+        "drive_through": "yes",
+        "fhrs:id": "278472",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 05:00-24:00",
+        "outdoor_seating": "yes",
+        "phone": "+44 1923 229319",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3972732,
+          51.6771619
+        ]
+      },
+      "id": "node/4939214931"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5060805697",
+        "addr:city": "London",
+        "addr:housenumber": "48",
+        "addr:postcode": "WC2H 7LU",
+        "addr:street": "Leicester Square",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/city-of-westminster/leicester-square/48-leicester-square/8261495.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "email": "01495@uk.mcd.com",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "name:ja": "マクドナルド",
+        "opening_hours": "Mo-Su 05:00-02:45",
+        "operator": "Capital Arches Group Ltd",
+        "phone": "+44 20 7930 9442",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1308179,
+          51.5102554
+        ]
+      },
+      "id": "node/5060805697"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5114253632",
+        "addr:city": "London",
+        "addr:housenumber": "166-172",
+        "addr:postcode": "SE13 6JL",
+        "addr:street": "Lewisham High Street",
+        "addr:suburb": "Hither Green",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/lewisham/lewisham/166172-lewisham-high-street/8260281.html",
+        "cuisine": "burger",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "drive_through": "no",
+        "fhrs:id": "1600534;1598635",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 06:00-23:00",
+        "outdoor_seating": "no",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+44 20 8318 4325",
+        "self_service": "yes",
+        "survey:date": "2022-03-21",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0112095,
+          51.4605362
+        ]
+      },
+      "id": "node/5114253632"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5224647982",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/westminster/victoria-place/115-buckingham-palace-road/8260374.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 06:00-23:00",
+        "phone": "+44 20 7233 7192",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1461115,
+          51.4942897
+        ]
+      },
+      "id": "node/5224647982"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5236017721",
+        "addr:housenumber": "78",
+        "addr:street": "Queensway",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/westminster/queensway---london/7678-queensway/8261096.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 05:00-24:00",
+        "phone": "+44 20 7727 5486",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.187464,
+          51.5127541
+        ]
+      },
+      "id": "node/5236017721"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5370783635",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/romford/romford/119129-south-street/8260018.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-23:45; Fr-Sa 06:00-04:00; Su 07:00-24:00",
+        "phone": "+44 1708 740840",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1833469,
+          51.5755378
+        ]
+      },
+      "id": "node/5370783635"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5791585150",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/westminster/west-one-shopping-centre/west-one-shopping-centre/8260750.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Fr 06:30-21:45; Sa 08:00-21:45; Su 11:00-19:45",
+        "phone": "+44 20 7491 2619",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.149632,
+          51.5138554
+        ]
+      },
+      "id": "node/5791585150"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5828192860",
+        "addr:city": "London",
+        "addr:housename": "Food Court",
+        "addr:postcode": "E20 1EH",
+        "addr:street": "Montfichet Road",
+        "addr:unit": "1",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/westfield-stratford-city/westfield-stratford-city/1-food-court/8261376.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "1455093",
+        "internet_access": "wlan",
+        "level": "-1",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Sa 07:00-21:45; Su 11:00-18:00",
+        "phone": "+44 20 8522 0432",
+        "self_service": "yes",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0066033,
+          51.5437467
+        ]
+      },
+      "id": "node/5828192860"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6022819591",
+        "addr:city": "Croydon",
+        "addr:country": "GB",
+        "addr:housename": "ASDA",
+        "addr:postcode": "CR0 4XS",
+        "addr:street": "Marlowe Way",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/wallington/asda-wallington/marlowe-way/8261311.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:authority": "Sutton",
+        "fhrs:id": "706916",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Sa 07:00-23:00; Su 08:00-20:00",
+        "phone": "+44 20 8665 6433",
+        "source": "survey",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1305904,
+          51.3769096
+        ]
+      },
+      "id": "node/6022819591"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6049817028",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/ashford/staines---ashford/554-london-road/8261459.html",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "outdoor_seating": "yes",
+        "phone": "+44 1784 246637",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.474745,
+          51.4423295
+        ]
+      },
+      "id": "node/6049817028"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6293625844",
+        "addr:city": "Grays",
+        "addr:postcode": "RM20 2ZF",
+        "addr:street": "West Thurrock Way",
+        "addr:unit": "64",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "building:part:levels": "1",
+        "check_date": "2024-08-31",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "level": "0",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Sa 08:15-21:00; Su 08:45-17:00",
+        "phone": "+44 1708 863616",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/grays/lakeside-2/unit-64-lakeside-shopping-centre/8260510.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2827688,
+          51.489225
+        ]
+      },
+      "id": "node/6293625844"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6329192111",
+        "addr:city": "London",
+        "addr:housename": "London Bridge Station",
+        "addr:housenumber": "60",
+        "addr:postcode": "SE1 2TF",
+        "addr:street": "Tooley Street",
+        "addr:unit": "SU74 London Bridge Station",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/london-bridge/london-bridge/tooley-street/8261542.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "1110687",
+        "internet_access": "wlan",
+        "level": "0",
+        "name": "McDonald's",
+        "opening_hours": "Su-Th 05:00-23:45, Fr,Sa 05:00-00:45",
+        "phone": "+44 20 7357 6676",
+        "self_service": "yes",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0849181,
+          51.5052434
+        ]
+      },
+      "id": "node/6329192111"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6338252675",
+        "addr:housenumber": "122",
+        "addr:street": "Baker Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/westminster/baker-street/122-baker-street/8260009.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 05:00-23:45",
+        "phone": "+44 20 7487 4003",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1569625,
+          51.5213681
+        ]
+      },
+      "id": "node/6338252675"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6553257207",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/brent-cross/brent-cross/brent-cross-shopping-centre/8260395.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "level": "1",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Fr 09:00-21:00; Sa 08:30-21:00; Su 11:00-19:00",
+        "phone": "+44 20 8203 8412",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2230401,
+          51.5772299
+        ]
+      },
+      "id": "node/6553257207"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7011165386",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/dartford/bluewater/bluewater-shopping-centre/8260950.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "level": "0",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Sa 07:00-22:00; Su 07:00-20:00",
+        "phone": "+44 1322 624596",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2736568,
+          51.439532
+        ]
+      },
+      "id": "node/7011165386"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7144594937",
+        "addr:housenumber": "108/110",
+        "addr:street": "Notting Hill Gate",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/notting-hill-gate/notting-hill-gate/108110-notting-hill-gate/8260500.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 05:00-24:00",
+        "phone": "+44 20 7792 4151",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1981225,
+          51.508951
+        ]
+      },
+      "id": "node/7144594937"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7519079321",
+        "addr:housenumber": "108-110",
+        "addr:street": "Kensington High Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/kensington/kensington/sundial-house/8260006.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 00:00-24:00",
+        "phone": "+44 20 7937 3705",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1930728,
+          51.5011953
+        ]
+      },
+      "id": "node/7519079321"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7794944150",
+        "addr:city": "London",
+        "addr:housenumber": "31",
+        "addr:postcode": "SW15 3DT",
+        "addr:street": "Roehampton Vale",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "drive_through": "no",
+        "fhrs:id": "1573311",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "phone": "+44 20 8780 0723",
+        "self_service": "yes",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/roehampton/roehampton---asda/31-roehampton-vale/8261566.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2464914,
+          51.4394126
+        ]
+      },
+      "id": "node/7794944150"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7982762839",
+        "addr:city": "London",
+        "addr:country": "GB",
+        "addr:housenumber": "31,33",
+        "addr:postcode": "N14 5BP",
+        "addr:street": "Chase Side",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/southgate/southgate/3133-chase-side/8260031.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "316243",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:00-24:00",
+        "phone": "+44 20 8886 1519",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1295393,
+          51.632808
+        ]
+      },
+      "id": "node/7982762839"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8259947893",
+        "addr:city": "London",
+        "addr:housenumber": "10",
+        "addr:postcode": "E16 1ED",
+        "addr:street": "Silvertown Way",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/canning-town/canning-town---hallsville-quarter/10-silvertown-way/8261598.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "1300100",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 06:00-24:00",
+        "phone": "+44 20 7511 1761",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.009348,
+          51.5143445
+        ]
+      },
+      "id": "node/8259947893"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8347107884",
+        "addr:city": "London",
+        "addr:housename": "Asda",
+        "addr:housenumber": "2-20",
+        "addr:postcode": "NW10 7LW",
+        "addr:street": "Western Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-04-07",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/park-royal/park-royal---asda/2-20-western-road/8261569.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Fr 07:00-23:00; Sa 07:00-22:00; Su 11:00-17:00",
+        "phone": "+44 20 8838 3664",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2697674,
+          51.5288766
+        ]
+      },
+      "id": "node/8347107884"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8406599520",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/romford/romford-2/liberty-shopping-centre/8260381.html",
+        "cuisine": "burger",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 07:00-20:00; Fr-Sa 07:00-21:00; Su 08:30-18:30",
+        "phone": "+44 1708 733022",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1854318,
+          51.5795998
+        ]
+      },
+      "id": "node/8406599520"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8605453807",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/tooting/tooting/4244-mitcham-road/8260082.html",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-02:00; Fr-Sa 06:00-03:00; Su 06:00-02:00",
+        "outdoor_seating": "no",
+        "phone": "+44 20 8672 4305",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1667131,
+          51.4268426
+        ]
+      },
+      "id": "node/8605453807"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8823911542",
+        "addr:city": "Wembley",
+        "addr:country": "GB",
+        "addr:postcode": "HA9 9EX",
+        "addr:street": "Forty Lane",
+        "addr:unit": "D",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/wembley/wembley---asda/forty-lane/8261568.html",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+44 20 8908 5980",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2752744,
+          51.5650398
+        ]
+      },
+      "id": "node/8823911542"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8880553719",
+        "addr:city": "London",
+        "addr:postcode": "SW19 2TY",
+        "addr:street": "Tandem Way",
+        "addr:unit": "11",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "cuisine": "burger",
+        "fhrs:id": "1676937",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Sa 07:00-23:30; Su 07:00-23:00",
+        "phone": "+44 20 8640 3747",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/colliers-wood/colliers-wood/unit-11-the-tandem-centre/8261708.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1779609,
+          51.413632
+        ]
+      },
+      "id": "node/8880553719"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9192910260",
+        "addr:housenumber": "7-8",
+        "addr:street": "Broadway Shopping Centre",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "cuisine": "burger",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "outdoor_seating": "no",
+        "phone": "+44 20 8563 1514",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/london/hammersmith-2-broadway-centre/units-7-broadway-shopping-centre/8260658.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2240956,
+          51.4922298
+        ]
+      },
+      "id": "node/9192910260"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9254777155",
+        "addr:city": "Grays",
+        "addr:postcode": "RM20 2ZH",
+        "addr:street": "West Thurrock Way",
+        "addr:unit": "344",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "building:part:levels": "1",
+        "check_date": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/grays/thurrock-lakeside/unit-344-lakeside-shopping-centre/8260357.html",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "customers",
+        "level": "1",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Sa 08:15-21:00; Su 10:00-17:00",
+        "phone": "+44 1708 861650",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2846,
+          51.4858232
+        ]
+      },
+      "id": "node/9254777155"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9378706902",
+        "addr:city": "Watford",
+        "addr:country": "GB",
+        "addr:housename": "Asda",
+        "addr:postcode": "WD24 7RT",
+        "addr:street": "St Albans Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "cuisine": "burger",
+        "fhrs:id": "1085093",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo 06:00-04:59; Tu-Fr 00:00-24:00; Sa 05:00-22:00; Su 10:00-16:00",
+        "phone": "+44 1923 253538",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/watford/asda---watford-dome-roundabout/odhams-industrial-estate/8261531.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3901701,
+          51.6799674
+        ]
+      },
+      "id": "node/9378706902"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9872205049",
+        "addr:city": "London",
+        "addr:housenumber": "147-151",
+        "addr:postcode": "W3 6LP",
+        "addr:street": "High Street",
+        "addr:town": "Acton",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "cuisine": "burger",
+        "fhrs:id": "1032957",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 05:00-24:00; Fr-Sa 05:00-01:00; Su 05:00-24:00",
+        "phone": "+44 20 8993 4480",
+        "self_service": "yes",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/acton/acton/147151-high-street/8260066.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2703185,
+          51.5068903
+        ]
+      },
+      "id": "node/9872205049"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10078324936",
+        "addr:city": "London",
+        "addr:housenumber": "4-5",
+        "addr:postcode": "E6 5LX",
+        "addr:street": "Mary Rose Mall",
+        "addr:suburb": "Beckton",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/beckton/beckton---asda/tollgate-road/8261575.html",
+        "fhrs:id": "1453332",
+        "fhrs:local_authority_id": "22/00055/FOOD",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Sa 07:00-22:00; Su 07:00-24:00",
+        "phone": "+44 20 7476 9807",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0581168,
+          51.5145487
+        ]
+      },
+      "id": "node/10078324936"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10095833010",
+        "addr:city": "London",
+        "addr:housenumber": "56-58",
+        "addr:postcode": "SE18 6LQ",
+        "addr:street": "Powis Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/woolwich/woolwich/5658-powis-street/8260001.html",
+        "cuisine": "burger",
+        "fhrs:id": "694651",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 06:00-24:00",
+        "phone": "+44 20 8317 0102",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.066571,
+          51.4915042
+        ]
+      },
+      "id": "node/10095833010"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10101213927",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/croydon/croydon---colonnades/unit-7a-colonnades/8261554.html",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+44 20 8686 1008",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1138135,
+          51.3562866
+        ]
+      },
+      "id": "node/10101213927"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10215220407",
+        "addr:city": "London",
+        "addr:housenumber": "772 - 774",
+        "addr:postcode": "N12 9QH",
+        "addr:street": "High Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "cuisine": "burger",
+        "fhrs:id": "1559858",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Fr 00:00-01:00,06:00-24:00; Sa,Su 00:00-24:00",
+        "phone": "+44 20 8446 8301",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/north-finchley/north-finchley/772774-high-road/8260420.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1764915,
+          51.6155916
+        ]
+      },
+      "id": "node/10215220407"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10728607776",
+        "addr:city": "Ilford",
+        "addr:country": "GB",
+        "addr:housenumber": "21",
+        "addr:postcode": "IG6 2AW",
+        "addr:street": "High Street",
+        "addr:suburb": "Barkingside",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "444027",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Sa 07:00-22:30; Su 07:00-22:00",
+        "phone": "+44 20 8551 2016",
+        "self_service": "yes",
+        "source": "local knowledge;survey;streetlevel imagery",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/barkingside/barkingside-london/21-high-street/8260309.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0805558,
+          51.5887145
+        ]
+      },
+      "id": "node/10728607776"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10763797815",
+        "addr:city": "London",
+        "addr:postcode": "SE18 5NS",
+        "addr:street": "Ruston Road",
+        "addr:suburb": "Woolwich",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "contact:website": "https://www.mcdonalds.com/gb/en-gb/location/woolwich/woolwich---church-street/ruston-road/8261449.html",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "drive_through": "yes",
+        "fhrs:id": "712606",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "outdoor_seating": "yes",
+        "phone": "+44 20 8854 9882",
+        "self_service": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.04625,
+          51.4928543
+        ]
+      },
+      "id": "node/10763797815"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10794710566",
+        "addr:city": "Hayes",
+        "addr:housenumber": "22-24",
+        "addr:postcode": "UB3 4DA",
+        "addr:street": "Station Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "cuisine": "burger",
+        "fhrs:id": "520397",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 06:00-23:00",
+        "outdoor_seating": "no",
+        "phone": "+44 20 8573 9328",
+        "self_service": "yes",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/hayes/hayes/2224-station-road/8260201.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4192445,
+          51.5063624
+        ]
+      },
+      "id": "node/10794710566"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10964249988",
+        "addr:suburb": "Palmers Green",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "cuisine": "burger",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "outdoor_seating": "no",
+        "phone": "+44 20 8886 9591",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/palmers-green/palmers-green/286-green-lanes/8261086.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1078209,
+          51.618192
+        ]
+      },
+      "id": "node/10964249988"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11194590043",
+        "addr:city": "South Ruislip",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "phone": "+44 20 8845 0402",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/south-ruislip/ruislip---dairy-lane/old-dairy-lane/8262033.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4001859,
+          51.5591737
+        ]
+      },
+      "id": "node/11194590043"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11197775539",
+        "addr:city": "Bromley",
+        "addr:housename": "The Glades Shopping Centre",
+        "addr:postcode": "BR1 1DN",
+        "addr:street": "High Street",
+        "addr:unit": "271",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "contact:phone": "+44 20 8313 1987",
+        "cuisine": "burger",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "drive_through": "no",
+        "email": "00456@uk.mcd.com",
+        "fhrs:id": "358236",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "level": "1",
+        "name": "McDonald's",
+        "outdoor_seating": "no",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "ref:vatin": "GB879354371",
+        "self_service": "yes",
+        "smoking": "no",
+        "source": "survey",
+        "source:addr": "FHRS Open Data",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/bromley/bromley-glades/the-glades-shopping-centre/8260456.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0163972,
+          51.4031319
+        ]
+      },
+      "id": "node/11197775539"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11233922712",
+        "addr:city": "Southall",
+        "addr:country": "GB",
+        "addr:housenumber": "170",
+        "addr:postcode": "UB1 1NN",
+        "addr:street": "The Broadway",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "fhrs:id": "1494901",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "phone": "+44 20 8893 6655",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/southall/southall-the-broadway/170-the-broadway/8260904.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3841869,
+          51.5125477
+        ]
+      },
+      "id": "node/11233922712"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11233980152",
+        "addr:housenumber": "585",
+        "addr:postcode": "SM3 9AG",
+        "addr:street": "London Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "fhrs:id": "1171854",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "phone": "+44 20 8335 0958",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/sutton/north-cheam/585-london-road/8260892.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2260003,
+          51.3732438
+        ]
+      },
+      "id": "node/11233980152"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11234007409",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "phone": "+44 20 8598 9078",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/romford/marks-gate/marks-gate/8261219.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1423918,
+          51.589472
+        ]
+      },
+      "id": "node/11234007409"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11234010838",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "phone": "+44 20 8599 5572",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/ilford/seven-kings/700-high-road/8261073.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.103713,
+          51.5650122
+        ]
+      },
+      "id": "node/11234010838"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11397015245",
+        "addr:city": "London",
+        "addr:housename": "Hollywood Green",
+        "addr:housenumber": "180",
+        "addr:postcode": "N22 6EJ",
+        "addr:street": "High Road",
+        "addr:unit": "Unit 3",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "cuisine": "burger",
+        "fhrs:id": "422417",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Tu 06:00-01:45; We 06:00-04:59; Th-Sa 00:00-24:00; Su 05:00-01:45",
+        "phone": "+44 20 8881 2138",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/wood-green/wood-green---spouters-corner/unit-3-hollywood-green/8261067.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1089379,
+          51.5968262
+        ]
+      },
+      "id": "node/11397015245"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11397027355",
+        "addr:place": "St Georges Shopping Centre",
+        "addr:postcode": "HA1 1HS",
+        "addr:unit": "29",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "cuisine": "burger",
+        "fhrs:id": "1604083",
+        "fixme": "Location not accurate",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "level": "1",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:00-24:00",
+        "operator": "Kylu Limited",
+        "outdoor_seating": "no",
+        "phone": "+44 20 8863 4655",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/harrow/harrow-leisure-centre/29-st-georges-shopping--leisure/8260675.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3393731,
+          51.581363
+        ]
+      },
+      "id": "node/11397027355"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11414591404",
+        "addr:city": "London",
+        "addr:housenumber": "28-32",
+        "addr:postcode": "E6 2HJ",
+        "addr:street": "High Street North",
+        "addr:suburb": "East Ham",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "fhrs:id": "742154",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 06:00-23:00",
+        "phone": "+44 20 8470 3028",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/east-ham/east-ham/2832-high-street-north/8260039.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0537756,
+          51.5340318
+        ]
+      },
+      "id": "node/11414591404"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11462559148",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "level": "1",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Sa 08:00-23:00; Su 11:00-20:00",
+        "phone": "+44 20 8740 8893",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/ariel-way/london---westfield/westfield-white-city/8261673.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2234909,
+          51.5078978
+        ]
+      },
+      "id": "node/11462559148"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11559792123",
+        "addr:city": "London",
+        "addr:housenumber": "1",
+        "addr:postcode": "SE7 7TZ",
+        "addr:street": "Peninsular Park Road",
+        "addr:suburb": "Charlton",
+        "amenity": "fast_food",
+        "branch": "Peninsular Retail Park",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2024-08-31",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "fhrs:id": "1519324",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "nohousenumber": "yes",
+        "opening_hours": "24/7",
+        "outdoor_seating": "yes",
+        "phone": "+44 20 8853 0529",
+        "self_service": "yes",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/gb/en-gb/location/bugsbys-way/charlton---relo/peninsular-retail-park/8261663.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0209289,
+          51.4896205
+        ]
+      },
+      "id": "node/11559792123"
+    }
+  ]
+}

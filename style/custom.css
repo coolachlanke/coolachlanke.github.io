@@ -6,7 +6,21 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
   background: #ffffff;
+}
+
+main {
+  flex: 1; /* This makes the main content take up the remaining space */
+}
+
+footer {
+  background-color: #e3f2fd;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
 .content-wrap {
@@ -47,15 +61,6 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-}
-
-footer {
-  background-color: #e3f2fd;
-  padding: 20px;
-  text-align: center;
-  position: relative;
-  bottom: 0;
-  width: 100%;
 }
 
 h1{
