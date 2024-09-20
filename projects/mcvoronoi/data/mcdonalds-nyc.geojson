@@ -1,0 +1,3467 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2024-09-20T01:55:15Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/474741174",
+        "addr:city": "Bronx",
+        "addr:housenumber": "1600",
+        "addr:postcode": "10473",
+        "addr:state": "NY",
+        "addr:street": "Bruckner Boulevard",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-23:00; Fr-Sa 06:00-24:00; Su 06:00-23:00",
+        "phone": "+1 718-617-0869",
+        "survey:date": "2024-06-09",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/4234.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.874704,
+          40.8233844
+        ]
+      },
+      "id": "node/474741174"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/474743493",
+        "addr:city": "Bronx",
+        "addr:housenumber": "1865",
+        "addr:postcode": "10472",
+        "addr:state": "NY",
+        "addr:street": "Bruckner Boulevard",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 718-863-7289",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2686.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8616069,
+          40.8262918
+        ]
+      },
+      "id": "node/474743493"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/622228254",
+        "addr:city": "Brooklyn",
+        "addr:housenumber": "652",
+        "addr:postcode": "11222",
+        "addr:state": "NY",
+        "addr:street": "Meeker Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-24:00; Fr-Sa 06:00-01:00; Su 06:00-24:00",
+        "phone": "+1 718-486-6195",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/23533.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9404458,
+          40.7220373
+        ]
+      },
+      "id": "node/622228254"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/832002267",
+        "addr:city": "Long Beach",
+        "addr:housenumber": "665",
+        "addr:postcode": "11561",
+        "addr:state": "NY",
+        "addr:street": "Long Beach Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "05:30-23:30",
+        "phone": "+1 516-432-6442",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2969.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.6574581,
+          40.5927159
+        ]
+      },
+      "id": "node/832002267"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/889485115",
+        "addr:city": "New York",
+        "addr:country": "US",
+        "addr:housenumber": "167",
+        "addr:postcode": "10013",
+        "addr:state": "NY",
+        "addr:street": "Chambers Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 212-608-2405",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/11163.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0106665,
+          40.7162978
+        ]
+      },
+      "id": "node/889485115"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1377430469",
+        "addr:city": "Bronx",
+        "addr:housename": "McDonald's",
+        "addr:housenumber": "85",
+        "addr:postcode": "10454",
+        "addr:state": "NY",
+        "addr:street": "Bruckner Boulevard",
+        "alt_name": "85 Bruckner",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "int_name": "McDonald's",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-24:00; Fr-Sa 06:00-01:00; Su 06:00-24:00",
+        "phone": "+1 718-585-8368",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/5632.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9256662,
+          40.8063321
+        ]
+      },
+      "id": "node/1377430469"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1419714676",
+        "addr:city": "New Rochelle",
+        "addr:housenumber": "270",
+        "addr:postcode": "10801",
+        "addr:state": "NY",
+        "addr:street": "Main Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:website": "https://www.mcdonalds.com/",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 914-576-4972",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2923.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.7734445,
+          40.9134159
+        ]
+      },
+      "id": "node/1419714676"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1426190404",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "fixme:atp": "Check if still exists. No corresponding ATP object.",
+        "name": "McDonald's",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9804635,
+          40.7514749
+        ]
+      },
+      "id": "node/1426190404"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1740694091",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "takeaway": "yes",
+        "website": "http://www.mcnewyork.com/6971"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98472,
+          40.7587753
+        ]
+      },
+      "id": "node/1740694091"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1740694092",
+        "addr:city": "New York",
+        "addr:housenumber": "1651",
+        "addr:postcode": "10019",
+        "addr:state": "NY",
+        "addr:street": "BROADWAY",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Tu 06:00-24:00; We-Su 05:00-04:00",
+        "phone": "+1 212-586-5530",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/18884.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98375,
+          40.762234
+        ]
+      },
+      "id": "node/1740694092"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1740707014",
+        "addr:city": "New York",
+        "addr:country": "US",
+        "addr:housenumber": "444",
+        "addr:postcode": "10030",
+        "addr:state": "NY",
+        "addr:street": "Lenox Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 212-283-7798",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/3660.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9418363,
+          40.8122296
+        ]
+      },
+      "id": "node/1740707014"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1899033652",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "fixme:atp": "Check if still exists. No corresponding ATP object.",
+        "name": "McDonald's",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9889244,
+          40.7581196
+        ]
+      },
+      "id": "node/1899033652"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2018701207",
+        "addr:city": "Brooklyn",
+        "addr:housenumber": "7124",
+        "addr:postcode": "11209",
+        "addr:state": "NY",
+        "addr:street": "3rd Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-23:00; Fr-Sa 06:00-24:00; Su 06:00-23:00",
+        "phone": "+1 718-491-0223",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/20200.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.027066,
+          40.633655
+        ]
+      },
+      "id": "node/2018701207"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2045635528",
+        "addr:city": "New York",
+        "addr:housenumber": "401",
+        "addr:postcode": "10016",
+        "addr:state": "NY",
+        "addr:street": "Park Avenue South",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "McDonald's",
+        "name:fa": "مک‌دونالد",
+        "opening_hours": "24/7",
+        "phone": "+1 212-683-4919",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/14971.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9839473,
+          40.7431278
+        ]
+      },
+      "id": "node/2045635528"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2065155710",
+        "addr:city": "Long Island City",
+        "addr:housenumber": "3802",
+        "addr:postcode": "11101",
+        "addr:state": "NY",
+        "addr:street": "Queens Boulevard",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 06:00-24:00",
+        "opening_hours:drive_through": "24/7",
+        "phone": "+1 347-345-2474",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2955.html",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.926869,
+          40.743549
+        ]
+      },
+      "id": "node/2065155710"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2067404600",
+        "addr:city": "Long Island City",
+        "addr:housenumber": "32-55",
+        "addr:postcode": "11106",
+        "addr:state": "NY",
+        "addr:street": "31st Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "delivery": "no",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "06:00-04:00",
+        "outdoor_seating": "no",
+        "phone": "+1 718-545-6803",
+        "smoking": "no",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2179.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9261864,
+          40.760611
+        ]
+      },
+      "id": "node/2067404600"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2275835633",
+        "addr:city": "Astoria",
+        "addr:housenumber": "31-67",
+        "addr:postcode": "11103",
+        "addr:state": "NY",
+        "addr:street": "Steinway Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-23:00; Fr-Sa 06:00-24:00; Su 06:00-23:00",
+        "phone": "+1 718-267-1343",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/3025.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9183791,
+          40.7594955
+        ]
+      },
+      "id": "node/2275835633"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2348610315",
+        "addr:city": "New York",
+        "addr:country": "US",
+        "addr:housenumber": "208",
+        "addr:postcode": "10034",
+        "addr:state": "NY",
+        "addr:street": "Dyckman Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 212-569-2909",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/7762.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9275289,
+          40.8651691
+        ]
+      },
+      "id": "node/2348610315"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2377128170",
+        "addr:city": "New York",
+        "addr:country": "US",
+        "addr:housenumber": "335",
+        "addr:postcode": "10001",
+        "addr:state": "NY",
+        "addr:street": "8th Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "takeaway": "yes",
+        "website": "http://www.mcnewyork.com/3653"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9971461,
+          40.7475198
+        ]
+      },
+      "id": "node/2377128170"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2412364226",
+        "addr:city": "New York",
+        "addr:housenumber": "26",
+        "addr:postcode": "10010",
+        "addr:state": "NY",
+        "addr:street": "East 23rd Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "outdoor_seating": "no",
+        "phone": "+1 646-682-9277",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/33536.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9878454,
+          40.7406342
+        ]
+      },
+      "id": "node/2412364226"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2443892135",
+        "addr:city": "New York",
+        "addr:country": "US",
+        "addr:housenumber": "2049",
+        "addr:postcode": "10023",
+        "addr:state": "NY",
+        "addr:street": "Broadway",
+        "air_conditioning": "yes",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "level": "0",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "outdoor_seating": "no",
+        "payment:american_express": "yes",
+        "payment:coins": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "yes",
+        "payment:visa": "yes",
+        "phone": "+1 212-724-0435",
+        "smoking": "no",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2292.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9825105,
+          40.7778959
+        ]
+      },
+      "id": "node/2443892135"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2477144568",
+        "addr:city": "Jamaica",
+        "addr:housenumber": "159-01",
+        "addr:postcode": "11432",
+        "addr:state": "NY",
+        "addr:street": "Jamaica Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "5:30-2:00",
+        "phone": "+1 718-526-3725",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/10482.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8000747,
+          40.7035448
+        ]
+      },
+      "id": "node/2477144568"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2488911818",
+        "addr:city": "Hollis",
+        "addr:housenumber": "204-11",
+        "addr:postcode": "11423",
+        "addr:state": "NY",
+        "addr:street": "Hillside Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "06:00-23:00",
+        "phone": "+1 718-217-7405",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/16765.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.7610809,
+          40.7208443
+        ]
+      },
+      "id": "node/2488911818"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2543498694",
+        "addr:city": "Queens",
+        "addr:housenumber": "75-15",
+        "addr:postcode": "11416",
+        "addr:state": "NY",
+        "addr:street": "Liberty Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "06:00-24:00",
+        "phone": "+1 718-845-1010",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2659.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8617268,
+          40.6795479
+        ]
+      },
+      "id": "node/2543498694"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2545661854",
+        "addr:city": "Glen Oaks",
+        "addr:housenumber": "256-01",
+        "addr:postcode": "11004",
+        "addr:state": "NY",
+        "addr:street": "Union Turnpike",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "06:00-22:30",
+        "phone": "+1 718-343-5367",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/27388.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.7153732,
+          40.7454535
+        ]
+      },
+      "id": "node/2545661854"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2547218198",
+        "addr:city": "New York",
+        "addr:housenumber": "404",
+        "addr:postcode": "10009",
+        "addr:state": "NY",
+        "addr:street": "East 14th Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "name:fa": "مک‌دونالد",
+        "opening_hours": "24/7",
+        "phone": "+1 212-598-0045",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/13064.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9822614,
+          40.7310359
+        ]
+      },
+      "id": "node/2547218198"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2551686759",
+        "addr:city": "Flushing",
+        "addr:housenumber": "72-69",
+        "addr:postcode": "11367",
+        "addr:state": "NY",
+        "addr:street": "Kissena Boulevard",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "delivery": "no",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "outdoor_seating": "no",
+        "phone": "+1 718-263-4295",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/3162.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8124537,
+          40.7273963
+        ]
+      },
+      "id": "node/2551686759"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2562449629",
+        "addr:city": "New York",
+        "addr:housenumber": "208",
+        "addr:postcode": "10014",
+        "addr:state": "NY",
+        "addr:street": "Varick Street",
+        "air_conditioning": "yes",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "level": "0,1",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:00-22:30",
+        "outdoor_seating": "no",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "phone": "+1 646-483-9817",
+        "smoking": "no",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "toilets:unisex": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/23318.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0050826,
+          40.7287971
+        ]
+      },
+      "id": "node/2562449629"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2569807532",
+        "addr:city": "Forest Hills",
+        "addr:housenumber": "106-11",
+        "addr:postcode": "11375",
+        "addr:state": "NY",
+        "addr:street": "71st Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-We 06:00-24:00; Th-Sa 00:00-24:00; Su 04:00-24:00",
+        "phone": "+1 718-793-8181",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/1898.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8450575,
+          40.7200188
+        ]
+      },
+      "id": "node/2569807532"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2588151831",
+        "addr:city": "New York",
+        "addr:housenumber": "18",
+        "addr:postcode": "10017",
+        "addr:state": "NY",
+        "addr:street": "East 42nd Street",
+        "air_conditioning": "yes",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "level": "0;1",
+        "name": "McDonald's",
+        "opening_hours": "07:00-23:00",
+        "outdoor_seating": "no",
+        "phone": "+1 212-599-2127",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/25696.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9802777,
+          40.753027
+        ]
+      },
+      "id": "node/2588151831"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2603955351",
+        "addr:city": "New York",
+        "addr:housenumber": "4040",
+        "addr:postcode": "10033",
+        "addr:state": "NY",
+        "addr:street": "Broadway",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 212-923-9582",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/3095.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9390062,
+          40.8425888
+        ]
+      },
+      "id": "node/2603955351"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2723681306",
+        "addr:city": "New York",
+        "addr:country": "US",
+        "addr:housenumber": "1286",
+        "addr:postcode": "10021",
+        "addr:state": "NY",
+        "addr:street": "1st Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-09-01",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 212-249-3551",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/14780.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9571707,
+          40.7659
+        ]
+      },
+      "id": "node/2723681306"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2765415612",
+        "addr:city": "New York",
+        "addr:housenumber": "2142",
+        "addr:postcode": "10035",
+        "addr:state": "NY",
+        "addr:street": "3rd Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 347-637-0574",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/4825.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9397679,
+          40.7985984
+        ]
+      },
+      "id": "node/2765415612"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2781182645",
+        "addr:city": "Brooklyn",
+        "addr:housenumber": "267",
+        "addr:postcode": "11211",
+        "addr:state": "NY",
+        "addr:street": "Broadway",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:website": "https://www.mcdonalds.com/",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "06:00-24:00",
+        "phone": "+1 718-302-3177",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "walkup_window": "pickup",
+        "website": "https://www.mcdonalds.com/us/en-us/location/21402.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9589467,
+          40.7089178
+        ]
+      },
+      "id": "node/2781182645"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2796929069",
+        "addr:city": "New York",
+        "addr:housenumber": "3809",
+        "addr:postcode": "10032",
+        "addr:state": "NY",
+        "addr:street": "Broadway",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-05-19",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-We 06:00-23:00; Th-Fr 06:00-24:00; Sa-Su 06:00-23:00",
+        "phone": "+1 212-568-7903",
+        "takeaway": "yes",
+        "walkup_window": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/34458.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9443185,
+          40.8352848
+        ]
+      },
+      "id": "node/2796929069"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2846027235",
+        "addr:city": "Elmhurst",
+        "addr:housenumber": "90-15",
+        "addr:postcode": "11373",
+        "addr:street": "Queens Boulevard",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2014-05-09",
+        "cuisine": "burger",
+        "fixme:atp": "Check if still exists. No corresponding ATP object.",
+        "level": "0",
+        "name": "McDonald's",
+        "phone": "+1 718-271-2032",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.868785,
+          40.734768
+        ]
+      },
+      "id": "node/2846027235"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2859500880",
+        "addr:city": "New York",
+        "addr:country": "US",
+        "addr:housenumber": "14",
+        "addr:postcode": "10017",
+        "addr:state": "NY",
+        "addr:street": "East 47th Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 646-649-2822",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/7552.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9777885,
+          40.7561935
+        ]
+      },
+      "id": "node/2859500880"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2884439236",
+        "addr:city": "Little Neck",
+        "addr:country": "US",
+        "addr:housenumber": "250-01",
+        "addr:postcode": "11363",
+        "addr:state": "NY",
+        "addr:street": "Northern Boulevard",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-02-01",
+        "check_date:opening_hours": "2024-02-01",
+        "check_date:opening_hours:drive_through": "2024-02-01",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 06:00-23:00",
+        "opening_hours:drive_through": "24/7",
+        "phone": "+1 718-229-7701",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/1172.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.7374993,
+          40.7688015
+        ]
+      },
+      "id": "node/2884439236"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2902118048",
+        "addr:city": "Bayside",
+        "addr:housenumber": "203-11",
+        "addr:postcode": "11361",
+        "addr:state": "NY",
+        "addr:street": "Northern Boulevard",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:website": "https://www.mcdonalds.com/",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "06:00-01:00",
+        "phone": "+1 718-423-1577",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/11468.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.7797234,
+          40.7578494
+        ]
+      },
+      "id": "node/2902118048"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2956616033",
+        "addr:city": "Brooklyn",
+        "addr:housenumber": "5713",
+        "addr:postcode": "11203",
+        "addr:state": "NY",
+        "addr:street": "Church Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-24:00; Fr-Sa 06:00-02:00; Su 06:00-24:00",
+        "phone": "+1 718-922-6085",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/17166.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9232026,
+          40.6526958
+        ]
+      },
+      "id": "node/2956616033"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2956616333",
+        "addr:city": "Brooklyn",
+        "addr:housenumber": "3525",
+        "addr:postcode": "11218",
+        "addr:state": "NY",
+        "addr:street": "Fort Hamilton Parkway",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "07:00-23:00",
+        "phone": "+1 718-285-0617",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/3880.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9877106,
+          40.6445841
+        ]
+      },
+      "id": "node/2956616333"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2956616733",
+        "addr:city": "Flushing",
+        "addr:housenumber": "136-61",
+        "addr:postcode": "11355",
+        "addr:state": "NY",
+        "addr:street": "Roosevelt Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2017-07-09",
+        "cuisine": "burger",
+        "delivery": "no",
+        "fixme:atp": "Check if still exists. No corresponding ATP object.",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 05:30-12:30",
+        "phone": "718-353-1471",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8279768,
+          40.7603337
+        ]
+      },
+      "id": "node/2956616733"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3153601006",
+        "addr:city": "Brooklyn",
+        "addr:housenumber": "741",
+        "addr:postcode": "11211",
+        "addr:state": "NY",
+        "addr:street": "Grand Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:website": "https://www.mcdonalds.com/",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-23:00; Fr-Sa 06:00-24:00; Su 06:00-23:00",
+        "phone": "+1 718-302-2450",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/11012.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9432788,
+          40.7118221
+        ]
+      },
+      "id": "node/3153601006"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3807812786",
+        "addr:city": "Brooklyn",
+        "addr:housenumber": "2800",
+        "addr:postcode": "11207",
+        "addr:state": "NY",
+        "addr:street": "Atlantic Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 718-647-7818",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/3839.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8907053,
+          40.6762519
+        ]
+      },
+      "id": "node/3807812786"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3835810347",
+        "addr:city": "New York",
+        "addr:housenumber": "966",
+        "addr:postcode": "10022",
+        "addr:state": "NY",
+        "addr:street": "3rd Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "capacity": "242",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "McDonald's",
+        "opening_hours": "Mo-We, Su 06:00-24:00; Th-Sa 00:00-24:00",
+        "phone": "+1 212-753-5360",
+        "seats": "82",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2663.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.967355,
+          40.7608498
+        ]
+      },
+      "id": "node/3835810347"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4092436129",
+        "addr:city": "Brooklyn",
+        "addr:housenumber": "1275",
+        "addr:postcode": "11216",
+        "addr:state": "NY",
+        "addr:street": "Fulton Steet",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "07:00-23:00",
+        "outdoor_seating": "no",
+        "phone": "+1 999-999-9999",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/13070.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9503295,
+          40.6805576
+        ]
+      },
+      "id": "node/4092436129"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4109967907",
+        "addr:city": "Jamaica",
+        "addr:postcode": "11430",
+        "addr:state": "NY",
+        "airside": "yes",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-06-01",
+        "cuisine": "burger",
+        "diet:vegan": "no",
+        "diet:vegetarian": "yes",
+        "internet_access": "wlan",
+        "level": "2",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 718-751-4288",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/36312.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.780802,
+          40.643914
+        ]
+      },
+      "id": "node/4109967907"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4202805400",
+        "addr:city": "New York",
+        "addr:housenumber": "724",
+        "addr:postcode": "10003",
+        "addr:state": "NY",
+        "addr:street": "Broadway",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 212-529-9660",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/10407.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9932306,
+          40.7291001
+        ]
+      },
+      "id": "node/4202805400"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4388530060",
+        "addr:city": "New York",
+        "addr:housenumber": "114",
+        "addr:postcode": "10002",
+        "addr:state": "NY",
+        "addr:street": "Delancey Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 212-529-9770",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/20219.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9882731,
+          40.7188143
+        ]
+      },
+      "id": "node/4388530060"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4412656401",
+        "addr:city": "Staten Island",
+        "addr:housenumber": "501",
+        "addr:postcode": "10304",
+        "addr:state": "NY",
+        "addr:street": "Bay Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-We 06:00-23:00; Th-Sa 06:00-04:00; Su 06:00-23:00",
+        "phone": "+1 718-273-6688",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/11112.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0763527,
+          40.6299339
+        ]
+      },
+      "id": "node/4412656401"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4875073021",
+        "addr:city": "New York",
+        "addr:housenumber": "1188",
+        "addr:postcode": "10036",
+        "addr:state": "NY",
+        "addr:street": "6th Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "name:en": "McDonald's",
+        "opening_hours": "Mo-Su 06:00-21:00",
+        "phone": "+1 917-965-2723",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/14106.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9818383,
+          40.7576352
+        ]
+      },
+      "id": "node/4875073021"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4995853545",
+        "addr:city": "Bronx",
+        "addr:housenumber": "51-67",
+        "addr:postcode": "10451",
+        "addr:state": "NY",
+        "addr:street": "East 161st Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 05:00-24:00; Fr-Sa 05:00-01:00; Su 05:00-24:00",
+        "phone": "+1 718-590-1990",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/5016.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9253385,
+          40.8279618
+        ]
+      },
+      "id": "node/4995853545"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5088726754",
+        "addr:city": "Bronx",
+        "addr:housenumber": "2055",
+        "addr:postcode": "10453",
+        "addr:state": "NY",
+        "addr:street": "Jerome Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-We 05:00-23:00; Th-Fr 05:00-24:00; Sa-Su 05:00-23:00",
+        "phone": "+1 718-733-2819",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2793.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9072167,
+          40.8543058
+        ]
+      },
+      "id": "node/5088726754"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5136637552",
+        "addr:city": "Bronx",
+        "addr:housenumber": "1",
+        "addr:postcode": "10452",
+        "addr:state": "NY",
+        "addr:street": "West Mount Eden Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "04:30-23:00",
+        "phone": "+1 718-901-4930",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/22381.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9150043,
+          40.8446346
+        ]
+      },
+      "id": "node/5136637552"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5147602826",
+        "addr:city": "Jackson Heights",
+        "addr:housenumber": "37-59",
+        "addr:postcode": "11372",
+        "addr:state": "NY",
+        "addr:street": "82nd Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "07:00-23:00",
+        "outdoor_seating": "no",
+        "phone": "+1 718-476-0747",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/12449.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8838636,
+          40.7480546
+        ]
+      },
+      "id": "node/5147602826"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5179183767",
+        "addr:city": "Bronx",
+        "addr:housenumber": "4174",
+        "addr:postcode": "10466",
+        "addr:state": "NY",
+        "addr:street": "White Plains Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 718-547-1823",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/16495.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8575146,
+          40.8927761
+        ]
+      },
+      "id": "node/5179183767"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5198187665",
+        "addr:city": "Bronx",
+        "addr:housenumber": "1982",
+        "addr:postcode": "10462",
+        "addr:state": "NY",
+        "addr:street": "Westchester Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-23:00; Fr-Sa 06:00-24:00; Su 06:00-23:00",
+        "phone": "+1 347-802-4395",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2938.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8585072,
+          40.8332467
+        ]
+      },
+      "id": "node/5198187665"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5214031642",
+        "addr:city": "New York",
+        "addr:housenumber": "541",
+        "addr:postcode": "10011",
+        "addr:state": "NY",
+        "addr:street": "6th Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 212-463-8869",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2968.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9967494,
+          40.7378693
+        ]
+      },
+      "id": "node/5214031642"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5221398240",
+        "addr:city": "Brooklyn",
+        "addr:housenumber": "2411",
+        "addr:postcode": "11214",
+        "addr:state": "NY",
+        "addr:street": "86th Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "06:00-01:00",
+        "phone": "+1 718-303-4200",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2467.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9889717,
+          40.5992746
+        ]
+      },
+      "id": "node/5221398240"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5234741021",
+        "addr:city": "South Richmond Hill",
+        "addr:housenumber": "119-05",
+        "addr:postcode": "11419",
+        "addr:state": "NY",
+        "addr:street": "Liberty Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 347-508-5818",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/12938.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.823951,
+          40.6864682
+        ]
+      },
+      "id": "node/5234741021"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5265745626",
+        "addr:city": "New York",
+        "addr:housenumber": "686",
+        "addr:postcode": "10010",
+        "addr:state": "NY",
+        "addr:street": "6th Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "capacity": "96",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "operator": "Lewis Foods of 6th & 21st, LLC",
+        "phone": "+1 212-604-0621",
+        "seats": "8",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "website": "https://www.mcdonalds.com/us/en-us/location/17480.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9932565,
+          40.7419301
+        ]
+      },
+      "id": "node/5265745626"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5423615843",
+        "addr:city": "Far Rockaway",
+        "addr:housenumber": "2141",
+        "addr:postcode": "11691",
+        "addr:state": "NY",
+        "addr:street": "Mott Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 718-868-2289",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2646.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.7551144,
+          40.6051049
+        ]
+      },
+      "id": "node/5423615843"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5425891935",
+        "addr:city": "Woodhaven",
+        "addr:housenumber": "91-01",
+        "addr:postcode": "11421",
+        "addr:state": "NY",
+        "addr:street": "Jamaica Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "06:30-01:00",
+        "phone": "+1 718-849-1979",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/15269.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8537523,
+          40.6931997
+        ]
+      },
+      "id": "node/5425891935"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5444219403",
+        "addr:city": "Rosedale",
+        "addr:housenumber": "244-16",
+        "addr:postcode": "11422",
+        "addr:state": "NY",
+        "addr:street": "Merrick Boulevard",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 718-978-4803",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/1074.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.7288869,
+          40.6739069
+        ]
+      },
+      "id": "node/5444219403"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5453170015",
+        "addr:city": "Flushing",
+        "addr:housenumber": "40-18",
+        "addr:postcode": "11354",
+        "addr:state": "NY",
+        "addr:street": "Main Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "description": "Classic, long-running fast-food chain known for its burgers, fries & shakes.",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 05:00-02:00",
+        "phone": "+1 718-939-1881",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2300.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8301067,
+          40.759063
+        ]
+      },
+      "id": "node/5453170015"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5491655523",
+        "addr:city": "Whitestone",
+        "addr:housenumber": "19-29",
+        "addr:postcode": "11357",
+        "addr:state": "NY",
+        "addr:street": "Francis Lewis Boulevard",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 718-746-6063",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2120.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8023433,
+          40.7806406
+        ]
+      },
+      "id": "node/5491655523"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5532127441",
+        "addr:city": "New York",
+        "addr:housenumber": "262",
+        "addr:postcode": "10013",
+        "addr:state": "NY",
+        "addr:street": "Canal Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "name:zh": "麥當勞",
+        "opening_hours": "07:00-24:00",
+        "phone": "+1 212-941-5823",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/4682.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0010744,
+          40.7185828
+        ]
+      },
+      "id": "node/5532127441"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5538367713",
+        "addr:city": "Exten",
+        "addr:housenumber": "395",
+        "addr:postcode": "11201",
+        "addr:state": "NY",
+        "addr:street": "Flatbush Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drink:coffee": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 347-315-3511",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/4025.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.980678,
+          40.6889804
+        ]
+      },
+      "id": "node/5538367713"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5546420105",
+        "addr:city": "Bronx",
+        "addr:housenumber": "1540",
+        "addr:postcode": "10472",
+        "addr:state": "NY",
+        "addr:street": "Westchester Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "06:30-23:00",
+        "phone": "+1 347-963-9691",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/3366.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8780463,
+          40.8284317
+        ]
+      },
+      "id": "node/5546420105"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5564315079",
+        "addr:city": "Bronx",
+        "addr:housenumber": "1101",
+        "addr:postcode": "10460",
+        "addr:state": "NY",
+        "addr:street": "East Tremont Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-We 05:00-23:00; Th-Fr 05:00-24:00; Sa-Su 05:00-23:00",
+        "phone": "+1 718-824-4123",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/14518.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8768909,
+          40.8403893
+        ]
+      },
+      "id": "node/5564315079"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5567489944",
+        "addr:city": "Ridgewood",
+        "addr:housenumber": "54-04",
+        "addr:postcode": "11385",
+        "addr:state": "NY",
+        "addr:street": "Myrtle Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+1 718-456-7287",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2478.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9104947,
+          40.69949
+        ]
+      },
+      "id": "node/5567489944"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5616255180",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "fixme:atp": "Check if still exists. No corresponding ATP object.",
+        "name": "McDonald's",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9892273,
+          40.7128315
+        ]
+      },
+      "id": "node/5616255180"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5673830851",
+        "addr:city": "Ridgewood",
+        "addr:housenumber": "54-29",
+        "addr:postcode": "11385",
+        "addr:state": "NY",
+        "addr:street": "Metropolitan Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 718-821-8769",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "toilets:access": "permissive",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2240.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9097256,
+          40.7133033
+        ]
+      },
+      "id": "node/5673830851"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5747387744",
+        "addr:city": "Brooklyn",
+        "addr:housenumber": "1883",
+        "addr:postcode": "11207",
+        "addr:state": "NY",
+        "addr:street": "Atlantic Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-24:00; Fr-Sa 06:00-01:00; Su 06:00-24:00",
+        "phone": "+1 718-953-5864",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/28112.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9225457,
+          40.677335
+        ]
+      },
+      "id": "node/5747387744"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5799923766",
+        "addr:city": "New York",
+        "addr:housenumber": "1499",
+        "addr:postcode": "10028",
+        "addr:state": "NY",
+        "addr:street": "3rd Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-11:00; Sa 00:00-24:00; Su 00:00-05:00, 06:00-23:00; Fr 05:00-00:00",
+        "phone": "+1 212-628-8100",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2814.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9545025,
+          40.77777
+        ]
+      },
+      "id": "node/5799923766"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5806989346",
+        "addr:city": "Springfield Gardens",
+        "addr:housenumber": "221-12",
+        "addr:postcode": "11413",
+        "addr:state": "NY",
+        "addr:street": "So Conduit Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "06:00-01:00",
+        "phone": "+1 718-276-6230",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/3392.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.7561989,
+          40.6652506
+        ]
+      },
+      "id": "node/5806989346"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5856271836",
+        "addr:city": "New York",
+        "addr:housenumber": "336",
+        "addr:postcode": "10010",
+        "addr:state": "NY",
+        "addr:street": "East 23rd Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "name:fa": "مک‌دونالد",
+        "opening_hours": "Mo-Sa 07:00-22:00; Su 08:00-20:00",
+        "phone": "+1 212-228-5529",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2241.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9791955,
+          40.73694
+        ]
+      },
+      "id": "node/5856271836"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5891289418",
+        "addr:city": "New York",
+        "addr:housenumber": "661",
+        "addr:postcode": "10036",
+        "addr:state": "NY",
+        "addr:street": "8th Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 212-320-2267",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/39704.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.989917,
+          40.757554
+        ]
+      },
+      "id": "node/5891289418"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5906982688",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "fixme:atp": "Check if still exists. No corresponding ATP object.",
+        "name": "McDonald's",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.7913868,
+          40.6474147
+        ]
+      },
+      "id": "node/5906982688"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5925524829",
+        "addr:city": "Brooklyn",
+        "addr:housenumber": "3143",
+        "addr:postcode": "11208-1937",
+        "addr:state": "NY",
+        "addr:street": "Atlantic Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "06:00-24:00",
+        "phone": "+1 718-964-9600",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/35598.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8791391,
+          40.6797595
+        ]
+      },
+      "id": "node/5925524829"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5978556760",
+        "addr:city": "New York",
+        "addr:housenumber": "160",
+        "addr:postcode": "10038",
+        "addr:state": "NY",
+        "addr:street": "Broadway",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 212-385-2066",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/10528.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0100706,
+          40.7094918
+        ]
+      },
+      "id": "node/5978556760"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6030620305",
+        "addr:city": "Brooklyn",
+        "addr:housenumber": "2028",
+        "addr:postcode": "11236",
+        "addr:state": "NY",
+        "addr:street": "Rockaway Parkway",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "outdoor_seating": "no",
+        "phone": "+1 718-241-0006",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/26796.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8898259,
+          40.633137
+        ]
+      },
+      "id": "node/6030620305"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6047027643",
+        "addr:city": "Bronx",
+        "addr:housenumber": "597",
+        "addr:postcode": "10451",
+        "addr:state": "NY",
+        "addr:street": "Grand Concourse",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "operator": "Toli Management",
+        "outdoor_seating": "no",
+        "phone": "+1 718-402-8608",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/13508.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9270452,
+          40.8198106
+        ]
+      },
+      "id": "node/6047027643"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6047297780",
+        "addr:city": "West Hempstead",
+        "addr:housenumber": "856",
+        "addr:postcode": "11552",
+        "addr:state": "NY",
+        "addr:street": "Hemp Stead Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Sa 06:00-22:00; Su 07:00-22:00",
+        "phone": "+1 516-485-4191",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/19312.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.6602761,
+          40.686869
+        ]
+      },
+      "id": "node/6047297780"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6247194775",
+        "addr:city": "Bronx",
+        "addr:housenumber": "2170",
+        "addr:postcode": "10462",
+        "addr:state": "NY",
+        "addr:street": "White Plains Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "06:00-23:00",
+        "phone": "+1 718-931-5822",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/19862.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.867522,
+          40.8555261
+        ]
+      },
+      "id": "node/6247194775"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6371366885",
+        "addr:city": "New York",
+        "addr:housenumber": "824",
+        "addr:postcode": "10022",
+        "addr:state": "NY",
+        "addr:street": "Third Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 646-918-6867",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/17631.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9707413,
+          40.7561694
+        ]
+      },
+      "id": "node/6371366885"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6595255521",
+        "addr:city": "Brooklyn",
+        "addr:housenumber": "178",
+        "addr:postcode": "11226",
+        "addr:state": "NY",
+        "addr:street": "Parkside Avenue",
+        "amenity": "fast_food",
+        "atm": "yes",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "06:00-23:00",
+        "phone": "+1 718-282-2289",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/3391.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9616933,
+          40.6547858
+        ]
+      },
+      "id": "node/6595255521"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6622063385",
+        "addr:city": "New York",
+        "addr:housenumber": "556",
+        "addr:postcode": "10018",
+        "addr:state": "NY",
+        "addr:street": "7th Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "name:fa": "مک‌دونالد",
+        "opening_hours": "Mo-We 06:00-24:00; Th 06:00-03:59; Fr-Sa 04:00-03:59; Su 04:00-24:00",
+        "phone": "+1 212-869-1918",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/4019.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9881821,
+          40.7546612
+        ]
+      },
+      "id": "node/6622063385"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6744698202",
+        "addr:city": "Astoria",
+        "addr:housenumber": "22-50",
+        "addr:postcode": "11105",
+        "addr:state": "NY",
+        "addr:street": "31st Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-23:00; Fr-Sa 06:00-24:00; Su 06:00-23:00",
+        "phone": "+1 718-932-8690",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2892.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9121494,
+          40.7751863
+        ]
+      },
+      "id": "node/6744698202"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6775487653",
+        "addr:city": "Staten Island",
+        "addr:housenumber": "3267",
+        "addr:postcode": "10312",
+        "addr:state": "NY",
+        "addr:street": "Richmond Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Fr 06:00-24:00; Sa-Su 06:30-24:00",
+        "phone": "+1 929-256-2626",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/4555.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.1681833,
+          40.5596807
+        ]
+      },
+      "id": "node/6775487653"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6933231463",
+        "addr:city": "Brooklyn",
+        "addr:housenumber": "82",
+        "addr:postcode": "11201",
+        "addr:state": "NY",
+        "addr:street": "Court Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 05:30-24:00; Fr-Sa 05:30-03:00; Su 06:30-24:00",
+        "outdoor_seating": "no",
+        "phone": "+1 718-852-2626",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/4705.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9917238,
+          40.6913807
+        ]
+      },
+      "id": "node/6933231463"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7024236396",
+        "addr:city": "New York",
+        "addr:country": "US",
+        "addr:housenumber": "2549",
+        "addr:postcode": "10025",
+        "addr:state": "NY",
+        "addr:street": "Broadway",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "McDonald's",
+        "nycdoitt:bin": "1033694",
+        "opening_hours": "24/7",
+        "phone": "+1 212-864-8138",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2002.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9723549,
+          40.7943776
+        ]
+      },
+      "id": "node/7024236396"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7343651428",
+        "addr:city": "Bronx",
+        "addr:housenumber": "86",
+        "addr:postcode": "10452",
+        "addr:state": "NY",
+        "addr:street": "East 167th Street",
+        "air_conditioning": "yes",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "description": "Classic, long-running fast-food chain known for its burgers, fries & shakes.",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Su-Th 06:00-24:00, Fr-Sa 06:00-01:00",
+        "phone": "+1 718-992-8642",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/21653.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9198904,
+          40.83515
+        ]
+      },
+      "id": "node/7343651428"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7543205680",
+        "addr:city": "Mount Vernon",
+        "addr:housenumber": "470",
+        "addr:postcode": "10550",
+        "addr:state": "NY",
+        "addr:street": "South Fulton Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "05:00-23:00",
+        "phone": "+1 914-699-4296",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/3296.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8272652,
+          40.9009364
+        ]
+      },
+      "id": "node/7543205680"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8266771712",
+        "addr:city": "Staten Island",
+        "addr:housenumber": "803",
+        "addr:postcode": "10310",
+        "addr:state": "NY",
+        "addr:street": "Forest Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-We 06:00-23:00; Th-Sa 06:00-04:00; Su 06:00-23:00",
+        "phone": "+1 718-876-6088",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/11129.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.1159529,
+          40.6292625
+        ]
+      },
+      "id": "node/8266771712"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8930858818",
+        "addr:city": "Bronx",
+        "addr:housenumber": "2010",
+        "addr:postcode": "10470",
+        "addr:state": "NY",
+        "addr:street": "Bartow Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Tu 06:00-23:00; We-Fr 00:00-24:00; Sa-Su 06:00-23:00",
+        "phone": "+1 718-320-2749",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/26810.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8306014,
+          40.8687074
+        ]
+      },
+      "id": "node/8930858818"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9181435423",
+        "addr:city": "Bronx",
+        "addr:housenumber": "16",
+        "addr:place": "Westchester Square",
+        "addr:postcode": "10461",
+        "addr:state": "NY",
+        "addr:street": "Lane Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "06:00-04:00",
+        "phone": "+1 718-239-2500",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/37347.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8435287,
+          40.840374
+        ]
+      },
+      "id": "node/9181435423"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9247618369",
+        "addr:city": "Bronx",
+        "addr:housenumber": "1826",
+        "addr:postcode": "10461",
+        "addr:state": "NY",
+        "addr:street": "Eastchester Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo 06:00-24:00; Tu-Su 00:00-24:00",
+        "phone": "+1 718-239-8660",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/32513.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8447194,
+          40.8495387
+        ]
+      },
+      "id": "node/9247618369"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9311390246",
+        "addr:city": "Bronx",
+        "addr:housenumber": "3550",
+        "addr:postcode": "10475",
+        "addr:state": "NY",
+        "addr:street": "Conner Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "06:00-23:00",
+        "phone": "+1 718-994-2083",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/10522.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8269749,
+          40.8856356
+        ]
+      },
+      "id": "node/9311390246"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9545065099",
+        "addr:city": "Corona",
+        "addr:housenumber": "40-12",
+        "addr:postcode": "11368",
+        "addr:state": "NY",
+        "addr:street": "National Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "07:00-23:00",
+        "phone": "+1 718-424-5106",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/17754.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8629906,
+          40.7495891
+        ]
+      },
+      "id": "node/9545065099"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9646862886",
+        "addr:city": "New York",
+        "addr:housenumber": "2726",
+        "addr:postcode": "10025",
+        "addr:state": "NY",
+        "addr:street": "Broadway",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "diet:meat": "yes",
+        "diet:vegetarian": "no",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "outdoor_seating": "no",
+        "phone": "+1 212-222-8714",
+        "smoking": "no",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/31749.html",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9678175,
+          40.7999642
+        ]
+      },
+      "id": "node/9646862886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9716252318",
+        "addr:city": "Bronx",
+        "addr:housenumber": "2516",
+        "addr:postcode": "10467",
+        "addr:state": "NY",
+        "addr:street": "White Plains Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "06:00-23:00",
+        "phone": "+1 718-882-7541",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2658.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8671015,
+          40.8640286
+        ]
+      },
+      "id": "node/9716252318"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9741552410",
+        "addr:city": "Flushing",
+        "addr:housenumber": "3001",
+        "addr:postcode": "11354",
+        "addr:state": "NY",
+        "addr:street": "Stratton Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "06:00-23:00",
+        "phone": "+1 718-539-4570",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/3063.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8345094,
+          40.7700922
+        ]
+      },
+      "id": "node/9741552410"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9845281852",
+        "addr:city": "Brooklyn",
+        "addr:housenumber": "1983",
+        "addr:postcode": "11214",
+        "addr:state": "NY",
+        "addr:street": "86th Street",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-23:00; Fr-Sa 06:00-24:00; Su 06:00-23:00",
+        "phone": "+1 718-449-7432",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/20199.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9982672,
+          40.6048135
+        ]
+      },
+      "id": "node/9845281852"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10103169868",
+        "addr:city": "Forest Hills",
+        "addr:country": "US",
+        "addr:housenumber": "98-01",
+        "addr:postcode": "11375",
+        "addr:state": "NY",
+        "addr:street": "Metropolitan Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-04-29",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 718-263-7281",
+        "ref": "3222",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/3222.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8544649,
+          40.7111893
+        ]
+      },
+      "id": "node/10103169868"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10837753886",
+        "addr:city": "Bronx",
+        "addr:housenumber": "925",
+        "addr:postcode": "10474",
+        "addr:state": "NY",
+        "addr:street": "Hunts Point Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 718-215-8275",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/35813.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8910655,
+          40.8202572
+        ]
+      },
+      "id": "node/10837753886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10837792780",
+        "addr:city": "Bronx",
+        "addr:housenumber": "1212",
+        "addr:postcode": "10469",
+        "addr:state": "NY",
+        "addr:street": "East Gun Hill Road",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "06:00-24:00",
+        "phone": "+1 718-798-6196",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/1059.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8522509,
+          40.8726787
+        ]
+      },
+      "id": "node/10837792780"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10931807792",
+        "addr:city": "New Hyde Park",
+        "addr:housenumber": "2045",
+        "addr:postcode": "11040",
+        "addr:state": "NY",
+        "addr:street": "Jericho Turnpike",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "building": "retail",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "07:00-23:00",
+        "phone": "+1 516-488-1950",
+        "source": "New York State OpenData http://data.ny.gov",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/12000.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.6733369,
+          40.7365322
+        ]
+      },
+      "id": "node/10931807792"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10960870136",
+        "addr:city": "New York",
+        "addr:housenumber": "1528",
+        "addr:postcode": "10036",
+        "addr:state": "NY",
+        "addr:street": "Broadway",
+        "air_conditioning": "yes",
+        "amenity": "fast_food",
+        "branch": "Times Square",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "outdoor_seating": "no",
+        "phone": "+1 917-409-5946",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/39147.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.985331,
+          40.7577347
+        ]
+      },
+      "id": "node/10960870136"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11258364010",
+        "addr:city": "Queens",
+        "addr:housenumber": "88-14",
+        "addr:postcode": "11427",
+        "addr:state": "NY",
+        "addr:street": "Springfield Boulevard",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 718-217-1585",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/1065.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.7443899,
+          40.7292429
+        ]
+      },
+      "id": "node/11258364010"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11399372272",
+        "addr:city": "New York",
+        "addr:housenumber": "429",
+        "addr:postcode": "10001",
+        "addr:state": "NY",
+        "addr:street": "7th Avenue",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "McDonald's",
+        "nycdoitt:bin": "1015194",
+        "opening_hours": "24/7",
+        "phone": "+1 212-736-7890",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/2276.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.990701,
+          40.750526
+        ]
+      },
+      "id": "node/11399372272"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11986013351",
+        "addr:country": "US",
+        "addr:housenumber": "2505",
+        "addr:postcode": "10458",
+        "addr:state": "NY",
+        "addr:street": "Southern Boulevard",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "check_date": "2024-02-01",
+        "check_date:opening_hours": "2024-02-01",
+        "check_date:opening_hours:drive_through": "2024-02-01",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 06:00-24:00; Fr-Sa 06:00-01:00; Su 06:00-24:00",
+        "opening_hours:drive_through": "24/7",
+        "phone": "+1 718-364-2493",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/ny/bronx/2505-southern-blvd/7975.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8811507,
+          40.8565733
+        ]
+      },
+      "id": "node/11986013351"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12010174626",
+        "addr:city": "Staten Island",
+        "addr:housenumber": "2154",
+        "addr:postcode": "10306",
+        "addr:state": "NY",
+        "addr:street": "Hylan Boulevard",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "phone": "+1 929-256-2500",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com/us/en-us/location/3774.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.1021565,
+          40.5774429
+        ]
+      },
+      "id": "node/12010174626"
+    }
+  ]
+}

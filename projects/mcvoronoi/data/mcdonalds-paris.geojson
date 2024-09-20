@@ -1,0 +1,2923 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2024-09-20T01:46:05Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/276919019",
+        "addr:housenumber": "234",
+        "addr:street": "Avenue de Versailles",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date:opening_hours": "2023-04-17",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:00-24:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 81 69 54 91",
+        "takeaway": "yes",
+        "website": "https://www.restaurants.mcdonalds.fr/PARIS-PORTE-DE-SAINT-CLOUD"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2578229,
+          48.8383152
+        ]
+      },
+      "id": "node/276919019"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/281001425",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "name:ru": "Макдак",
+        "opening_hours": "Mo-Su 10:00-02:00",
+        "operator": "McDonald's",
+        "outdoor_seating": "no",
+        "phone": "+33 1 40 22 98 85",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-bonne-nouvelle/432",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3477192,
+          48.870959
+        ]
+      },
+      "id": "node/281001425"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/294162536",
+        "addr:city": "Paris",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date:opening_hours": "2024-09-16",
+        "cuisine": "burger",
+        "indoor_seating": "yes",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:30-02:00",
+        "operator": "McDonald's",
+        "outdoor_seating": "no",
+        "phone": "+33 1 42 06 15 50",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-stalingrad/201",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3705591,
+          48.8822632
+        ]
+      },
+      "id": "node/294162536"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/308113486",
+        "addr:postcode": "75015",
+        "addr:street": "Rue Linois",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "contact:city": "Paris",
+        "contact:postcode": "75015",
+        "contact:street": "Rue Linois",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "name:ru": "МакДоналдс",
+        "opening_hours": "Mo-Su 07:30-02:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 81 69 54 92",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-beaugrenelle/1197"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2850171,
+          48.8469061
+        ]
+      },
+      "id": "node/308113486"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/320800037",
+        "addr:city": "Paris",
+        "addr:street": "Rue du Renard",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "indoor_seating": "yes",
+        "name": "McDonald's",
+        "name:ru": "МакДоналдс",
+        "opening_hours": "Mo-Tu 09:00-01:00; We-Sa 09:00-02:00; Su 09:00-01:00",
+        "operator": "McDonald's",
+        "outdoor_seating": "no",
+        "phone": "+33 1 40 27 04 21",
+        "smoking": "no",
+        "source": "survey",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-hotel-de-ville/103",
+        "wheelchair": "yes",
+        "wheelchair:description": "Entrée du côté du mac café"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.351487,
+          48.8579329
+        ]
+      },
+      "id": "node/320800037"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/320991843",
+        "addr:housenumber": "211-213",
+        "addr:postcode": "75013",
+        "addr:street": "Boulevard Vincent Auriol",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 09:00-01:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 45 85 98 18",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3566884,
+          48.8307218
+        ]
+      },
+      "id": "node/320991843"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/418053067",
+        "addr:city": "Paris",
+        "addr:housenumber": "19",
+        "addr:postcode": "75003",
+        "addr:street": "Place de la République",
+        "air_conditioning": "yes",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "level": "0;1",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "operator": "McDonald's",
+        "outdoor_seating": "no",
+        "payment:cash": "yes",
+        "payment:coins": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+33 1 42 72 97 87",
+        "takeaway": "yes",
+        "toilets:wheelchair": "no",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-republique/82",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3623607,
+          48.8676055
+        ]
+      },
+      "id": "node/418053067"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/418062331",
+        "access:covid19": "yes",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "check_date": "2023-03-12",
+        "cuisine": "burger",
+        "delivery:covid19": "yes",
+        "description:covid19": "Click & Collect",
+        "drive_through:covid19": "no",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 09:00-06:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 43 55 25 10",
+        "takeaway": "yes",
+        "takeaway:covid19": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-parmentier/455"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3747464,
+          48.8654797
+        ]
+      },
+      "id": "node/418062331"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/418073938",
+        "access:covid19": "yes",
+        "addr:city": "Paris",
+        "addr:housenumber": "1",
+        "addr:postcode": "75011",
+        "addr:street": "Boulevard de Belleville",
+        "air_conditioning": "no",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "delivery:covid19": "yes",
+        "description:covid19": "Click & Collect",
+        "drive_through": "no",
+        "drive_through:covid19": "no",
+        "level": "0",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Fr 07:30-02:00, Sa-Su 05:00-02:00",
+        "operator": "McDonald's",
+        "outdoor_seating": "yes",
+        "phone": "+33 1 43 38 55 15",
+        "smoking": "outside",
+        "takeaway": "yes",
+        "takeaway:covid19": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-menilmontant/309",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3824226,
+          48.8670436
+        ]
+      },
+      "id": "node/418073938"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/418389703",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "08:30-02:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 81 69 54 70",
+        "takeaway": "yes",
+        "toilets:wheelchair": "no",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-rue-de-rennes/69",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3247331,
+          48.8445017
+        ]
+      },
+      "id": "node/418389703"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/427941445",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Su-Th 07:30-24:00, Fr,Sa 07:30-01:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 45 89 43 66",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-tolbiac/118",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3570144,
+          48.8259948
+        ]
+      },
+      "id": "node/427941445"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/429464096",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "indoor_seating": "yes",
+        "name": "McDonald's",
+        "opening_hours": "09:00-03:00, Fr-Sa 09:00-05:00",
+        "operator": "McDonald's",
+        "outdoor_seating": "no",
+        "phone": "+33 1 45 35 16 72",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-gobelins/856",
+        "wheelchair": "yes",
+        "wheelchair:description": "1 entrée sur le côté pour les PMR. Toilettes à l'étage accessibles par ascenseur"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3506956,
+          48.8366655
+        ]
+      },
+      "id": "node/429464096"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/430932287",
+        "addr:city": "Paris",
+        "addr:housenumber": "5",
+        "addr:postcode": "75014",
+        "addr:street": "Avenue du Général Leclerc",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "check_date:opening_hours": "2024-08-17",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "diet:vegetarian": "yes",
+        "indoor_seating": "yes",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Tu 08:30-02:00; We-Th 08:30-03:00; Fr-Sa 08:30-05:45; Su 08:30-02:00",
+        "opening_hours:signed": "no",
+        "operator": "McDonald's",
+        "outdoor_seating": "no",
+        "phone": "+33 1 42 18 03 78",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-denfert-rochereau/96",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3318037,
+          48.8332009
+        ]
+      },
+      "id": "node/430932287"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/441975540",
+        "addr:housenumber": "1",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 09:30-24:00",
+        "phone": "+33 1 41 18 91 91",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-suresnes/445"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2271623,
+          48.8703952
+        ]
+      },
+      "id": "node/441975540"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/446151690",
+        "addr:city": "Vanves",
+        "addr:housenumber": "110-112",
+        "addr:postcode": "92170",
+        "addr:street": "Rue Jean Bleuzen",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "drive_through": "yes",
+        "name": "McDonald's Porte de Brancion",
+        "opening_hours": "Mo-Su 10:30-03:00",
+        "phone": "+33 1 47 36 32 30",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-vanves-porte-de-brancion/727"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2992548,
+          48.8244557
+        ]
+      },
+      "id": "node/446151690"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/446781227",
+        "addr:city": "Paris",
+        "addr:housenumber": "1",
+        "addr:postcode": "75019",
+        "addr:street": "Avenue Simón Bolívar",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-08-10",
+        "cuisine": "burger",
+        "diet:vegetarian": "yes",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 08:30-01:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 42 06 89 62",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-rue-de-belleville/398",
+        "wheelchair": "yes",
+        "wheelchair:description": "C'est une entrée spéciale avec une rampe sur le côté"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.384842,
+          48.8738345
+        ]
+      },
+      "id": "node/446781227"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/452420241",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "check_date": "2023-05-31",
+        "cuisine": "burger",
+        "diet:kosher": "no",
+        "diet:vegan": "no",
+        "diet:vegetarian": "yes",
+        "indoor_seating": "yes",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:30-01:00; PH 07:30-01:00",
+        "outdoor_seating": "no",
+        "phone": "+33 1 82 39 03 94",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-vincennes/77",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.437064,
+          48.8472595
+        ]
+      },
+      "id": "node/452420241"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/470328719",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "08:30-24:00",
+        "opening_hours:drive_through": "Su-Tu 08:30-00:45, We-Th 08:30-01:45, Fr-Sa 08:30-03:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 53 68 64 50",
+        "source": "survey",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-convention/573",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2956006,
+          48.8374673
+        ]
+      },
+      "id": "node/470328719"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/471042290",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 10:00-07:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 43 64 00 00",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-porte-de-bagnolet/489",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4083438,
+          48.8646486
+        ]
+      },
+      "id": "node/471042290"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/472351948",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "check_date": "2023-04-02",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 00:00-02:00,09:00-24:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 46 28 00 51",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-porte-doree/328"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4060799,
+          48.8354775
+        ]
+      },
+      "id": "node/472351948"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/475710757",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "indoor_seating": "yes",
+        "name": "McDonald's",
+        "opening_hours": "PH,Mo-Su 07:30-24:00",
+        "operator": "McDonald's",
+        "outdoor_seating": "no",
+        "phone": "+33 1 81 69 54 74",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-avenue-de-choisy/866",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3639393,
+          48.8206897
+        ]
+      },
+      "id": "node/475710757"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/495370374",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Fr 08:00-24:00; Sa,Su 06:00-24:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 43 62 06 62",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-les-lilas/140",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4164057,
+          48.879954
+        ]
+      },
+      "id": "node/495370374"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/536576926",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "delivery": "no",
+        "drive_through": "no",
+        "level": "0",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:30-26:00",
+        "operator": "McDonald's",
+        "outdoor_seating": "yes",
+        "phone": "+33 1 44 23 88 00",
+        "smoking": "no",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-olympiades/405",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3666605,
+          48.8269269
+        ]
+      },
+      "id": "node/536576926"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/546475298",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "check_date": "2023-07-25",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "operator": "McDonald's",
+        "takeaway": "yes",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3255792,
+          48.8752761
+        ]
+      },
+      "id": "node/546475298"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/546922397",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 09:00-01:45",
+        "operator": "McDonald's",
+        "phone": "+33 1 48 74 17 00",
+        "survey:date": "2017-07-04",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-place-de-clichy/330",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3282798,
+          48.8835297
+        ]
+      },
+      "id": "node/546922397"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/573225935",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "name": "McDonald's",
+        "opening_hours": "24/7",
+        "operator": "McDonald's",
+        "phone": "+33 1 49 46 04 74",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-saint-denis-stade-de-france/664"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3630738,
+          48.9214477
+        ]
+      },
+      "id": "node/573225935"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/599814685",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2023-06-01",
+        "contact:city": "Paris",
+        "contact:housenumber": "57",
+        "contact:phone": "+33 1 45 22 02 11",
+        "contact:postcode": "75017",
+        "contact:street": "Avenue de Clichy",
+        "contact:website": "https://www.restaurants.mcdonalds.fr/PARIS-LA-FOURCHE",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 07:00-01:00; Fr,Sa 07:00-01:30; Su 07:00-01:00",
+        "operator": "McDonald's",
+        "smoking": "outside",
+        "source": "local_knowledge/survey:2015-03-26",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3252141,
+          48.8875232
+        ]
+      },
+      "id": "node/599814685"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/632962188",
+        "addr:city": "Issy-les-Moulineaux",
+        "addr:postcode": "92130",
+        "addr:street": "Rue du Général Leclerc",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 08:30-02:00",
+        "phone": "+33 1 41 08 87 98",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-issy-les-moulineaux/366",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2787952,
+          48.8268164
+        ]
+      },
+      "id": "node/632962188"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/637464449",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "diet:halal": "yes",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "name": "McDonald's",
+        "opening_hours": "PH,Mo-Su 10:00-24:00",
+        "phone": "+33 1 40 11 54 73",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-saint-ouen/174"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3320515,
+          48.9061312
+        ]
+      },
+      "id": "node/637464449"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/677731329",
+        "addr:city": "Paris",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "diet:vegan": "no",
+        "diet:vegetarian": "yes",
+        "indoor_seating": "yes",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:30-01:00; PH 07:30-01:00",
+        "operator": "McDonald's",
+        "outdoor_seating": "no",
+        "smoking": "no",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes",
+        "wheelchair:description": "Ascenseur pour l'étage. Wc handicapés fermés pour cause de dégats des eaux"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3461106,
+          48.8593448
+        ]
+      },
+      "id": "node/677731329"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/677967806",
+        "air_conditioning": "yes",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "contact:city": "Paris",
+        "contact:housenumber": "12/14",
+        "contact:postcode": "75001",
+        "contact:street": "Rue Berger",
+        "cuisine": "burger",
+        "indoor_seating": "yes",
+        "name": "McDonald's",
+        "operator": "McDonald's",
+        "outdoor_seating": "yes",
+        "smoking": "outside",
+        "source": "survey 2013",
+        "takeaway": "yes",
+        "toilets:wheelchair": "no",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3482188,
+          48.8610121
+        ]
+      },
+      "id": "node/677967806"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/696671077",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "indoor_seating": "yes",
+        "name": "McDonald's",
+        "opening_hours": "PH,Mo-Su 08:30-01:00",
+        "operator": "McDonald's",
+        "outdoor_seating": "yes",
+        "phone": "+33 1 81 69 54 75",
+        "smoking": "outside",
+        "source": "survey 2013",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-cluny/37",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3437555,
+          48.85142
+        ]
+      },
+      "id": "node/696671077"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/706373145",
+        "addr:city": "Asnières-sur-Seine",
+        "addr:housenumber": "32",
+        "addr:postcode": "92600",
+        "addr:street": "Rue Teddy Riner",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "check_date": "2023-12-15",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "drive_through": "yes",
+        "name": "McDonald's",
+        "opening_hours": "Su-Th 09:00-02:00; Fr,Sa 09:00-04:00",
+        "phone": "+33 1 47 93 28 97",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-asnieres-reloc/1654"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.282531,
+          48.9320489
+        ]
+      },
+      "id": "node/706373145"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/726579050",
+        "addr:housenumber": "65",
+        "addr:street": "Boulevard Saint-Michel",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "check_date": "2023-10-30",
+        "cuisine": "burger",
+        "delivery": "no",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Tu-Sa 07:00-01:00; Su-Mo 07:00-24:00",
+        "operator": "McDonald's",
+        "outdoor_seating": "no",
+        "payment:cash": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+33 1 81 69 54 77",
+        "smoking": "no",
+        "takeaway": "yes",
+        "toilets:wheelchair": "no",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-luxembourg-pantheon/43",
+        "wheelchair": "limited",
+        "wheelchair:description": "Marche haute comme un trottoir. Toilettes à l'étage mais il faut demander au comptoir car il faut passer par la cuisine pour accéder à l'ascenseur"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3409919,
+          48.8471056
+        ]
+      },
+      "id": "node/726579050"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/739797917",
+        "addr:postcode": "75005",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "diet:vegan": "no",
+        "diet:vegetarian": "yes",
+        "name": "McDonald's",
+        "opening_hours": "Su-Th 08:30-23:00; Fr-Sa 08:30-23:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 81 69 54 78",
+        "source": "survey 2015",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-austerlitz/102",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3637042,
+          48.8430647
+        ]
+      },
+      "id": "node/739797917"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/820938903",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 10:00-20:00",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2370668,
+          48.8913168
+        ]
+      },
+      "id": "node/820938903"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/838145929",
+        "addr:housenumber": "2",
+        "addr:postcode": "75017",
+        "addr:street": "Rue Troyon",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "indoor_seating": "yes",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 09:00-01:45",
+        "operator": "McDonald's",
+        "outdoor_seating": "no",
+        "phone": "+33 1 47 63 16 10",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010",
+        "takeaway": "yes",
+        "toilets:wheelchair": "no",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-wagram/91",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2960624,
+          48.8755989
+        ]
+      },
+      "id": "node/838145929"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/840652130",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date:opening_hours": "2024-05-28",
+        "contact:city": "Paris",
+        "contact:housenumber": "140",
+        "contact:postcode": "75008",
+        "contact:street": "Avenue des Champs-Élysées",
+        "cuisine": "burger",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 00:00-02:00,07:00-24:00",
+        "operator": "McDonald's",
+        "outdoor_seating": "yes",
+        "phone": "+33 1 53 77 21 00",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-champs-elysees/76",
+        "wheelchair": "yes",
+        "wheelchair:description:de": "Aber mit Begleitung super eng"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2990372,
+          48.8728804
+        ]
+      },
+      "id": "node/840652130"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/863507442",
+        "addr:city": "Paris",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Su-Th 09:00-01:00; Fr-Sa 09:00-02:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 42 45 40 12",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-porte-de-pantin/384",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3927911,
+          48.8885213
+        ]
+      },
+      "id": "node/863507442"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/912272499",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "check_date": "2024-08-25",
+        "cuisine": "burger",
+        "indoor_seating": "yes",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:00-23:00",
+        "operator": "McDonald's",
+        "outdoor_seating": "no",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2010",
+        "takeaway": "yes",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.356348,
+          48.8763139
+        ]
+      },
+      "id": "node/912272499"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/914789303",
+        "addr:city": "Paris",
+        "addr:housenumber": "2",
+        "addr:postcode": "75018",
+        "addr:street": "Rue d'Orsel",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Su-Th 09:00-23:00, Fr,Sa 09:00-24:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 42 54 65 27",
+        "source": "http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfast_food",
+        "takeaway": "yes",
+        "toilets:wheelchair": "no",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-orsel-clignancourt/34",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3467162,
+          48.8839633
+        ]
+      },
+      "id": "node/914789303"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/952229133",
+        "access:covid19": "yes",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "delivery:covid19": "yes",
+        "description:covid19": "Click & Collect",
+        "drive_through:covid19": "no",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 09:30-06:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 42 39 14 14",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010",
+        "takeaway": "yes",
+        "takeaway:covid19": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-porte-des-lilas/653",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4062673,
+          48.8772291
+        ]
+      },
+      "id": "node/952229133"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/960563296",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-03-18",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Su-Th 07:30-24:00, Fr,Sa 07:30-01:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 81 69 54 90",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010",
+        "takeaway": "yes",
+        "toilets:wheelchair": "no",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-rue-de-passy/350",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2776817,
+          48.8576118
+        ]
+      },
+      "id": "node/960563296"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/974661734",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "contact:city": "Paris",
+        "contact:housenumber": "277",
+        "contact:phone": "+33 1 53 81 61 62",
+        "contact:postcode": "75017",
+        "contact:street": "Boulevard Pereire",
+        "contact:website": "https://m.restaurants.mcdonalds.fr/mcdonalds-paris-porte-maillot",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:00-02:00",
+        "operator": "McDonald's",
+        "outdoor_seating": "no",
+        "smoking": "no",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.284676,
+          48.877682
+        ]
+      },
+      "id": "node/974661734"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/987112188",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 10:00-01:00; Fr-Sa 10:00-02:00; Su 10:00-01:00",
+        "phone": "+33 1 46 24 47 16",
+        "source": "survey",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-neuilly-sur-seine/84",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2719963,
+          48.8814515
+        ]
+      },
+      "id": "node/987112188"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/987919085",
+        "addr:city": "Paris",
+        "addr:housenumber": "3",
+        "addr:postcode": "75019",
+        "addr:street": "Allée Darius Milhaud",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Su-Th 09:00-23:00, Fr,Sa 09:00-24:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 42 03 73 12",
+        "smoking": "no",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-buttes-chaumont/1259",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3854424,
+          48.8833178
+        ]
+      },
+      "id": "node/987919085"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1015358428",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-02-03",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:00-02:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 42 67 11 50",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-porte-de-champerret/770",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2920818,
+          48.885445
+        ]
+      },
+      "id": "node/1015358428"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1137858684",
+        "addr:city": "Puteaux",
+        "addr:housenumber": "109",
+        "addr:postcode": "92800",
+        "addr:street": "Rue Jean Jaurès",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "delivery:covid19": "yes",
+        "indoor_seating": "yes",
+        "name": "McDonald's",
+        "opening_hours": "Su-Th 08:00-23:30, Fr,Sa 08:00-24:00",
+        "outdoor_seating": "no",
+        "phone": "+33 1 47 78 19 04",
+        "smoking": "no",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-puteaux/792"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2390861,
+          48.8817413
+        ]
+      },
+      "id": "node/1137858684"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1163568199",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "check_date": "2024-04-11",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "highchair": "yes",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:30-02:00",
+        "operator": "McDonald's",
+        "outdoor_seating": "no",
+        "phone": "+33 1 45 75 98 01",
+        "smoking": "no",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-rue-du-commerce/675",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2977794,
+          48.8488396
+        ]
+      },
+      "id": "node/1163568199"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1232685214",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "contact:city": "Paris",
+        "contact:housenumber": "96",
+        "contact:postcode": "75009",
+        "contact:street": "Rue de Provence",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:30-22:00",
+        "operator": "McDonald's",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2011",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3300164,
+          48.8742961
+        ]
+      },
+      "id": "node/1232685214"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1243136011",
+        "addr:city": "Paris",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Tu-Su 08:00-22:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 43 45 91 00",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-reuilly-diderot/391",
+        "wheelchair": "yes",
+        "wheelchair:description": "Toilettes accessibles par ascenseur"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3866836,
+          48.8471787
+        ]
+      },
+      "id": "node/1243136011"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1330574426",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "drive_in": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo 08:30-21:30; Tu-Su 08:30-22:30",
+        "operator": "McDonald's",
+        "outdoor_seating": "yes",
+        "phone": "+33 1 40 34 01 89",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-villette/1272",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3871195,
+          48.8966206
+        ]
+      },
+      "id": "node/1330574426"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1342681649",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "diet:vegetarian": "yes",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 08:00-02:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 42 46 67 80",
+        "takeaway": "yes",
+        "toilets:wheelchair": "no",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-opera-bld-des-italiens/90",
+        "wheelchair": "limited",
+        "wheelchair:description": "L'une des 2 entrées est accessible"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3350843,
+          48.8713129
+        ]
+      },
+      "id": "node/1342681649"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1382743817",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "check_date": "2024-03-17",
+        "contact:housenumber": "65",
+        "contact:street": "Rue La Fayette",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "08:00-01:45",
+        "operator": "McDonald's",
+        "phone": "+33 1 45 26 67 78",
+        "source": "local_knowledge",
+        "takeaway": "yes",
+        "toilets:wheelchair": "no",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-cadet/1001",
+        "wheelchair": "yes",
+        "wheelchair:description": "Toiletten nicht erreichbar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3441613,
+          48.8761563
+        ]
+      },
+      "id": "node/1382743817"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1462242164",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "contact:city": "Paris",
+        "contact:housenumber": "131",
+        "contact:phone": "+33 1 47 55 45 45",
+        "contact:postcode": "75016",
+        "contact:street": "Avenue Victor Hugo",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:30-02:00",
+        "operator": "McDonald's",
+        "source": "survey",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-victor-hugo/327"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2813559,
+          48.8678431
+        ]
+      },
+      "id": "node/1462242164"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1528451267",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "diet:vegetarian": "yes",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:00-24:00",
+        "operator": "McDonald's",
+        "phone": "+33140239132",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-gare-du-nord/128",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3538055,
+          48.8799786
+        ]
+      },
+      "id": "node/1528451267"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1544866113",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 09:00-02:00; Fr-Sa 09:00-04:00; Su 09:00-02:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 40 09 70 88",
+        "takeaway": "yes",
+        "toilets:wheelchair": "no",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-porte-montreuil/107",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4103453,
+          48.8533426
+        ]
+      },
+      "id": "node/1544866113"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1579650013",
+        "air_conditioning": "yes",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "diet:vegetarian": "yes",
+        "indoor_seating": "yes",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:00-02:00",
+        "operator": "McDonald's",
+        "outdoor_seating": "no",
+        "phone": "+33 1 53 91 20 91",
+        "smoking": "no",
+        "source": "survey",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-alesia/559",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3276848,
+          48.8283989
+        ]
+      },
+      "id": "node/1579650013"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1635071891",
+        "addr:housenumber": "29",
+        "addr:street": "Rue du Faubourg du Temple",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "check_date": "2024-08-31",
+        "check_date:opening_hours": "2022-01-03",
+        "cuisine": "burger",
+        "diet:vegetarian": "yes",
+        "drive_through": "no",
+        "level": "0",
+        "name": "McDonald's",
+        "opening_hours": "Mo-We 09:00-02:00; Th-Su 05:00-02:00",
+        "operator": "McDonald's",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+33 1 44 52 71 73",
+        "source": "survey",
+        "takeaway": "yes",
+        "toilets:wheelchair": "no",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-faubourg-du-temple/137/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3676791,
+          48.8689587
+        ]
+      },
+      "id": "node/1635071891"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1729160221",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "entrance": "yes",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 00:00-01:00,07:00-24:00",
+        "phone": "+33 1 46 91 04 00",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-courbevoie/458",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2487626,
+          48.895977
+        ]
+      },
+      "id": "node/1729160221"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1785271498",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 09:30-02:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 53 46 61 55",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-ledru-rollin/674",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3762533,
+          48.8511306
+        ]
+      },
+      "id": "node/1785271498"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1821967209",
+        "addr:city": "Paris",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-03-18",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "We-Sa 07:00-02:00, Mo,Tu 07:00-24:00, Su 10:00-24:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 40 22 06 51",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-montmartre/27",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3402693,
+          48.8721385
+        ]
+      },
+      "id": "node/1821967209"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1831749505",
+        "addr:housenumber": "93",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 09:00-24:00; PH 09:00-24:00",
+        "phone": "+33 1 47 31 49 18",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-clichy-la-garenne/108",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3037109,
+          48.9028613
+        ]
+      },
+      "id": "node/1831749505"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1896176720",
+        "addr:city": "Paris",
+        "addr:housenumber": "77",
+        "addr:postcode": "75018",
+        "addr:street": "Boulevard Ornano",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "check_date": "2023-05-04",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "We-Sa 10:00-02:00; Su-Tu 10:00-24:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 53 41 00 06",
+        "source": "survey",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3445957,
+          48.8972576
+        ]
+      },
+      "id": "node/1896176720"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1896234316",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 10:00-23:30; PH 10:00-23:30",
+        "operator": "McDonald's",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3465728,
+          48.8959431
+        ]
+      },
+      "id": "node/1896234316"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1919225886",
+        "access:covid19": "no",
+        "addr:city": "Paris",
+        "addr:housenumber": "20",
+        "addr:postcode": "75018",
+        "addr:street": "Boulevard de Clichy",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2023-11-27",
+        "contact:phone": "+33 1 42 23 27 27",
+        "cuisine": "burger",
+        "drive_through:covid19": "no",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 08:00-02:00",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-place-pigalle/749"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3377557,
+          48.8825599
+        ]
+      },
+      "id": "node/1919225886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2201780145",
+        "access:covid19": "yes",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "delivery:covid19": "yes",
+        "description:covid19": "Click & Collect",
+        "drive_through:covid19": "no",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su,PH 09:00-02:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 46 36 00 66",
+        "takeaway": "yes",
+        "takeaway:covid19": "yes",
+        "toilets:wheelchair": "no",
+        "website": "http://www.mcdonalds.fr/restaurant#js-big-map",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3979134,
+          48.8647591
+        ]
+      },
+      "id": "node/2201780145"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2279711305",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Su-We 07:00-01:00, Th-Sa 07:00-02:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 46 07 92 83",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-marx-dormoy/170"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3602364,
+          48.8906117
+        ]
+      },
+      "id": "node/2279711305"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2364457586",
+        "addr:city": "Paris",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2024-04-13",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo 09:00-02:00; Tu-Su 08:30-02:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 55 25 88 88",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-leon-blum/700",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3802834,
+          48.8574812
+        ]
+      },
+      "id": "node/2364457586"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2433858103",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 09:00-02:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 49 29 70 32",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-bastille/388",
+        "wheelchair": "yes",
+        "wheelchair:description": "Petit espace pour manger accessible"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3699964,
+          48.8540476
+        ]
+      },
+      "id": "node/2433858103"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2497946429",
+        "addr:city": "Paris",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 09:00-24:00, Fr 09:00-01:00, Sa 06:00-01:00, Su 06:00-24:00",
+        "operator": "McDonald's",
+        "smoking": "no",
+        "takeaway": "yes",
+        "toilets:wheelchair": "no",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.32838,
+          48.8754564
+        ]
+      },
+      "id": "node/2497946429"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2606083332",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "diet:vegan": "no",
+        "name": "McDonald's",
+        "opening_hours": "Su-Th 10:00-01:00, Fr,Sa 10:00-06:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 43 67 40 44",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-porte-de-vincennes/641",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4107917,
+          48.8474749
+        ]
+      },
+      "id": "node/2606083332"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2680563141",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "level": "-1",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 11:00-24:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 42 89 20 87",
+        "source": "survey",
+        "takeaway": "yes",
+        "toilets:wheelchair": "no",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-champs-elysees-galerie/681",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3041019,
+          48.8714523
+        ]
+      },
+      "id": "node/2680563141"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2826860415",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 09:00-24:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 40 36 28 04",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-crimee/765"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3752178,
+          48.8898348
+        ]
+      },
+      "id": "node/2826860415"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2830798362",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "fixme": "A placer",
+        "is_in": "Centre Commercial des 3 Moulins - Allée Sainte-Lucie",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Sa 08:30-21:45",
+        "phone": "+33 1 46 45 69 50",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-issy-les-moulineaux-trois-moulins/547"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2513762,
+          48.8204837
+        ]
+      },
+      "id": "node/2830798362"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3102982920",
+        "addr:postcode": "75015",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 08:00-00:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 81 70 69 68",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-aquaboulevard/738"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.276038,
+          48.8308126
+        ]
+      },
+      "id": "node/3102982920"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3374115766",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 10:00-01:00; Fr-Sa 10:00-05:00; Su 10:00-01:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 43 96 33 12",
+        "ref:FR:SIRET": "40808884700020",
+        "source": "survey",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-charenton-le-pont/494"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4143918,
+          48.8208614
+        ]
+      },
+      "id": "node/3374115766"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3394922495",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:00-24:00, Sa,Su 00:00-01:00",
+        "phone": "+33 1 40 87 11 02",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-levallois-perret/125",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.291034,
+          48.891479
+        ]
+      },
+      "id": "node/3394922495"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3401728087",
+        "addr:city": "Saint-Denis",
+        "addr:housenumber": "2",
+        "addr:postcode": "93200",
+        "addr:street": "Boulevard Félix Faure",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 10:30-23:00",
+        "phone": "+33 1 42 43 54 32",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-saint-denis-basilique/78"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3565032,
+          48.9384429
+        ]
+      },
+      "id": "node/3401728087"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3980173944",
+        "addr:city": "Paris",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "opening_hours": "09:00-24:00, Fr-Sa 09:00-02:00",
+        "operator": "McDonald's",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3336977,
+          48.8634247
+        ]
+      },
+      "id": "node/3980173944"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4204904189",
+        "addr:city": "Ivry-sur-Seine",
+        "addr:housenumber": "30",
+        "addr:postcode": "94200",
+        "addr:street": "Boulevard Paul Vaillant-Couturier",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Sa 11:00-21:00",
+        "phone": "+33 1 49 60 62 60",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-ivry-sur-seine-grand-ciel/645",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3952383,
+          48.8191747
+        ]
+      },
+      "id": "node/4204904189"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4211617262",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "contact:city": "Le Kremlin-Bicêtre",
+        "contact:housenumber": "63",
+        "contact:postcode": "94270",
+        "contact:street": "Avenue de Fontainebleau",
+        "cuisine": "burger",
+        "delivery": "no",
+        "drive_through": "no",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Sa 08:30-22:00",
+        "operator": "McDonald's Corporation",
+        "phone": "+33 1 43 90 05 99",
+        "smoking": "outside",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-kremlin-bicetre-okabe/1281"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3624694,
+          48.8120168
+        ]
+      },
+      "id": "node/4211617262"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4246088133",
+        "addr:city": "Paris",
+        "addr:postcode": "75001",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "indoor_seating": "yes",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:00-23:00",
+        "operator": "McDonald's",
+        "outdoor_seating": "no",
+        "phone": "+33 1 42 36 15 80",
+        "smoking": "no",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-forum/35"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3438921,
+          48.862302
+        ]
+      },
+      "id": "node/4246088133"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4246099576",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "contact:city": "Paris",
+        "contact:housenumber": "99",
+        "contact:postcode": "75001",
+        "contact:street": "Rue de Rivoli",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "operator": "McDonald's",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3347579,
+          48.8624513
+        ]
+      },
+      "id": "node/4246099576"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4246118167",
+        "addr:city": "Paris",
+        "addr:housenumber": "17",
+        "addr:postcode": "75001",
+        "addr:street": "Rue de l'Arc en Ciel",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "indoor": "yes",
+        "indoor_seating": "yes",
+        "level": "-3",
+        "name": "McDonald's",
+        "operator": "McDonald's",
+        "outdoor_seating": "no",
+        "smoking": "no",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3458867,
+          48.8619547
+        ]
+      },
+      "id": "node/4246118167"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4246170325",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "contact:city": "Paris",
+        "contact:housenumber": "30 bis",
+        "contact:postcode": "75013",
+        "contact:street": "Avenue d'Italie",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "level": "-1",
+        "name": "McDonald's",
+        "operator": "McDonald's",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3552522,
+          48.828851
+        ]
+      },
+      "id": "node/4246170325"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4292615730",
+        "air_conditioning": "yes",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "drive_through": "no",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 09:00-24:00, Fr 09:00-01:59, Sa 11:00-01:59, Su 11:00-24:00",
+        "outdoor_seating": "no",
+        "payment:cash": "yes",
+        "payment:coins": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+33 1 48 97 18 77",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-montreuil/1346"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4425591,
+          48.8612006
+        ]
+      },
+      "id": "node/4292615730"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4432628691",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:30-24:00",
+        "phone": "+33 1 41 71 09 52",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-pantin/1509"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4023945,
+          48.8917607
+        ]
+      },
+      "id": "node/4432628691"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4721664299",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "check_date:opening_hours": "2022-11-17",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 07:30-24:00",
+        "operator": "McDonald's",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3224546,
+          48.8415813
+        ]
+      },
+      "id": "node/4721664299"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5893147085",
+        "access:covid19": "no",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 11:00-24:00",
+        "operator": "McDonald's",
+        "phone": "+33 1 42 77 91 38",
+        "takeaway": "yes",
+        "takeaway:covid19": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-originals-lecourbe/1548"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3049491,
+          48.8431672
+        ]
+      },
+      "id": "node/5893147085"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5957859699",
+        "addr:city": "Paris",
+        "air_conditioning": "yes",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "indoor_seating": "yes",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 08:30-01:00",
+        "operator": "McDonald's",
+        "outdoor_seating": "no",
+        "phone": "+33 1 42 21 44 01",
+        "smoking": "no",
+        "source": "survey 01/2019",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-montorgueil/1589",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3471574,
+          48.8672677
+        ]
+      },
+      "id": "node/5957859699"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6151864109",
+        "addr:city": "Aubervilliers",
+        "addr:postcode": "93300",
+        "addr:street": "Avenue Victor Hugo",
+        "air_conditioning": "yes",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Th 11:00-24:00; Fr-Sa 11:00-04:00; Su 11:30-24:00",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:coins": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_electron": "yes",
+        "phone": "+33.1 48 34 60 60",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-aubervilliers-marche/522"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.380592,
+          48.91316
+        ]
+      },
+      "id": "node/6151864109"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6393463952",
+        "addr:city": "Paris",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "check_date": "2023-07-07",
+        "cuisine": "burger",
+        "indoor_seating": "yes",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 10:00-02:00",
+        "operator": "McDonald's",
+        "outdoor_seating": "no",
+        "phone": "+33 1 40 15 03 05",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-sebastopol/1571"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3538974,
+          48.8691527
+        ]
+      },
+      "id": "node/6393463952"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6724901768",
+        "addr:postcode": "94110",
+        "air_conditioning": "no",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "level": "1",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Sa 10:00-23:00; Su 10:00-19:00",
+        "outdoor_seating": "no",
+        "phone": "01 49 85 93 38",
+        "smoking": "no",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-arcueil-la-vache-noire/1198",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.328153,
+          48.8105904
+        ]
+      },
+      "id": "node/6724901768"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7855005062",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "07:30-02:30",
+        "phone": "+33 1 41 11 02 02",
+        "takeaway": "yes",
+        "website": "https://www.restaurants.mcdonalds.fr/mcdonalds-asnieres-centre"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2851611,
+          48.9066684
+        ]
+      },
+      "id": "node/7855005062"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9221195751",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "level": "0",
+        "name": "McDonald's",
+        "opening_hours": "Mo-Su 09:00-17:00",
+        "outdoor_seating": "yes",
+        "phone": "+33 1 57 25 30 00",
+        "smoking": "outside",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-porte-de-versailles-areas/1559",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2892305,
+          48.830698
+        ]
+      },
+      "id": "node/9221195751"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9464215625",
+        "air_conditioning": "yes",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "McDonald's",
+        "opening_hours": "Su-Th 08:45-24:00, Fr,Sa 08:45-02:00",
+        "phone": "+33 1 42 36 26 22",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-paris-madeleine/1667"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3269851,
+          48.8695593
+        ]
+      },
+      "id": "node/9464215625"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9602970987",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "fr:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "opening_hours": "Su-Th 07:30-24:00, Fr,Sa 07:30-01:00",
+        "phone": "+33 1 47 12 01 02",
+        "ref:FR:SIRET": "50113748300035",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.mcdonalds.fr/restaurants/mcdonalds-boulogne-billancourt/115",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2430344,
+          48.8341047
+        ]
+      },
+      "id": "node/9602970987"
+    }
+  ]
+}

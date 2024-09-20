@@ -1,0 +1,106 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2024-09-20T02:00:42Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/263682609",
+        "addr:postcode": "2500",
+        "addr:state": "NSW",
+        "addr:suburb": "Wollongong",
+        "air_conditioning": "yes",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "drive_through": "yes",
+        "internet_access": "wlan",
+        "name": "McDonald's",
+        "outdoor_seating": "no",
+        "source": "survey;local knowledge",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          150.8998096,
+          -34.4272857
+        ]
+      },
+      "id": "node/263682609"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/289561141",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "takeaway": "yes",
+        "website": "https://www.mcdonalds.com.au/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          150.7934507,
+          -34.4958309
+        ]
+      },
+      "id": "node/289561141"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/303477298",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "name": "McDonald's",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          150.8622381,
+          -34.4344913
+        ]
+      },
+      "id": "node/303477298"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7281076120",
+        "addr:postcode": "2500",
+        "addr:state": "NSW",
+        "addr:suburb": "Wollongong",
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "drive_through": "no",
+        "name": "McDonald's",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          150.8929103,
+          -34.4245031
+        ]
+      },
+      "id": "node/7281076120"
+    }
+  ]
+}
