@@ -1,0 +1,35 @@
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #video-player, #cube-visualization {
+        height: 40vh; /* Reduce size on smaller screens */
+    }
+
+    #video-section, #cube-section {
+        height: auto; /* Allow auto height on smaller screens */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Reduce heading size on smaller screens */
+    }
+
+    .form-control, textarea {
+        font-size: 1rem; /* Reduce input and textarea font size on smaller screens */
+    }
+
+    .btn {
+        font-size: 1rem; /* Reduce button size on smaller screens */
+    }
+}
+
+/* Ensure the video player container maintains a 16:9 aspect ratio */
+#video-player {
+    width: 100%;
+    background-color: black;
+    position: relative;
+    padding-bottom: 56.25%;  /* Aspect ratio 16:9 */
+    height: 0;               /* Set height to 0 to trigger aspect ratio */
+    overflow: hidden;        /* No overflow */
+}
+
