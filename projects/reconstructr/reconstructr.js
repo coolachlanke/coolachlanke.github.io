@@ -462,6 +462,7 @@ function rotateFace(face, direction, rotationAmount, onComplete) {
     let axis = new THREE.Vector3();
     
     switch (face) {
+        // Regular Face Moves
         case 'U':
             cubeletsToRotate = cubeGroup.children.filter(c => Math.round(c.userData.y) === 1);
             axis.set(0, 1, 0);
@@ -486,7 +487,7 @@ function rotateFace(face, direction, rotationAmount, onComplete) {
             cubeletsToRotate = cubeGroup.children.filter(c => Math.round(c.userData.x) === -1);
             axis.set(-1, 0, 0);
             break;
-        
+
         // Slice Moves
         case 'M':  // Middle slice between R and L (same direction as L)
             cubeletsToRotate = cubeGroup.children.filter(c => Math.round(c.userData.x) === 0);
@@ -667,7 +668,7 @@ function parseAndExecuteMoves(moves) {
     moveList.forEach(move => {
         if (!move) return;
 
-        const moveType = move.charAt(0).toLowerCase();  // Either face move, wide move, or slice move
+        const face = move.charAt(0);  // Keep case to differentiate wide vs regular moves
         let direction = 1;
         let rotationAmount = 1;  // Default to 90°
 
@@ -684,20 +685,17 @@ function parseAndExecuteMoves(moves) {
             }
         }
 
-        // Check if the move is a slice move (M, S, E)
-        if (['m', 's', 'e'].includes(moveType)) {
-            rotateFace(moveType.toUpperCase(), -direction, rotationAmount);
+        // Handle wide moves (lowercase)
+        if (face >= 'a' && face <= 'z') {
+            rotateFace(face, -direction, rotationAmount);
         }
-        // Check if it's a wide move (lowercase)
-        else if (['r', 'l', 'u', 'd', 'f', 'b'].includes(moveType)) {
-            rotateFace(moveType, -direction, rotationAmount);
-        }
-        // Regular face moves
+        // Handle regular face moves (uppercase)
         else {
-            rotateFace(moveType.toUpperCase(), -direction, rotationAmount);
+            rotateFace(face.toUpperCase(), -direction, rotationAmount);
         }
     });
 }
+
 
 
 
