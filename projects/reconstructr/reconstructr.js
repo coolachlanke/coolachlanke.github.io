@@ -450,8 +450,6 @@ let isRotating = false;
 let moveQueue = [];
 
 function rotateFace(face, direction, rotationAmount, onComplete) {
-    //direction = -direction // Account for mismatch between rotation direction assumption
-
     if (isRotating) {
         moveQueue.push({ face, direction, rotationAmount, onComplete });
         return;
@@ -488,16 +486,57 @@ function rotateFace(face, direction, rotationAmount, onComplete) {
             cubeletsToRotate = cubeGroup.children.filter(c => Math.round(c.userData.x) === -1);
             axis.set(-1, 0, 0);
             break;
+        
+        // Slice Moves
+        case 'M':  // Middle slice between R and L (same direction as L)
+            cubeletsToRotate = cubeGroup.children.filter(c => Math.round(c.userData.x) === 0);
+            axis.set(-1, 0, 0);  // Same direction as L
+            break;
+        case 'S':  // Middle slice between F and B (same direction as F)
+            cubeletsToRotate = cubeGroup.children.filter(c => Math.round(c.userData.z) === 0);
+            axis.set(0, 0, 1);  // Same direction as F
+            break;
+        case 'E':  // Middle slice between U and D (same direction as D)
+            cubeletsToRotate = cubeGroup.children.filter(c => Math.round(c.userData.y) === 0);
+            axis.set(0, -1, 0);  // Same direction as D
+            break;
+
+        // Wide Moves (two layers: face + adjacent slice)
+        case 'r':  // Right wide move (rotate R face and adjacent slice)
+            cubeletsToRotate = cubeGroup.children.filter(c => Math.round(c.userData.x) === 1 || Math.round(c.userData.x) === 0);
+            axis.set(1, 0, 0);
+            break;
+        case 'l':  // Left wide move (rotate L face and adjacent slice)
+            cubeletsToRotate = cubeGroup.children.filter(c => Math.round(c.userData.x) === -1 || Math.round(c.userData.x) === 0);
+            axis.set(-1, 0, 0);
+            break;
+        case 'u':  // Up wide move (rotate U face and adjacent slice)
+            cubeletsToRotate = cubeGroup.children.filter(c => Math.round(c.userData.y) === 1 || Math.round(c.userData.y) === 0);
+            axis.set(0, 1, 0);
+            break;
+        case 'd':  // Down wide move (rotate D face and adjacent slice)
+            cubeletsToRotate = cubeGroup.children.filter(c => Math.round(c.userData.y) === -1 || Math.round(c.userData.y) === 0);
+            axis.set(0, -1, 0);
+            break;
+        case 'f':  // Front wide move (rotate F face and adjacent slice)
+            cubeletsToRotate = cubeGroup.children.filter(c => Math.round(c.userData.z) === 1 || Math.round(c.userData.z) === 0);
+            axis.set(0, 0, 1);
+            break;
+        case 'b':  // Back wide move (rotate B face and adjacent slice)
+            cubeletsToRotate = cubeGroup.children.filter(c => Math.round(c.userData.z) === -1 || Math.round(c.userData.z) === 0);
+            axis.set(0, 0, -1);
+            break;
+
         default:
-            console.warn(`Invalid face: ${face}`);
+            console.warn(`Invalid face or move: ${face}`);
             isRotating = false;
             if (onComplete) onComplete();
             return;
     }
 
     let angle = 0;
-    const targetAngle = (Math.PI / 2) * rotationAmount * direction;
-    const rotationSpeed = (Math.PI / 2) / 20; // Adjust for desired turn speed
+    const targetAngle = (Math.PI / 2) * rotationAmount * direction;  // Modify based on rotationAmount
+    const rotationSpeed = (Math.PI / 2) / 20;  // Adjust for desired speed
 
     function rotate() {
         const delta = Math.min(rotationSpeed, Math.abs(targetAngle - angle));
@@ -509,22 +548,19 @@ function rotateFace(face, direction, rotationAmount, onComplete) {
         });
 
         if (Math.abs(angle - targetAngle) < 0.0001) {
-            // Snap rotations to multiples of 90 degrees
+            // Correct for floating-point errors and snap to 90-degree increments
             cubeletsToRotate.forEach(cubelet => {
                 cubelet.rotation.x = Math.round(cubelet.rotation.x / (Math.PI / 2)) * (Math.PI / 2);
                 cubelet.rotation.y = Math.round(cubelet.rotation.y / (Math.PI / 2)) * (Math.PI / 2);
                 cubelet.rotation.z = Math.round(cubelet.rotation.z / (Math.PI / 2)) * (Math.PI / 2);
 
-                // Snap positions to multiples of (cubeSize + 0.01)
-                cubelet.position.y = Math.round(cubelet.position.y / (cubeSize + expansion)) * (cubeSize + expansion);
                 cubelet.position.x = Math.round(cubelet.position.x / (cubeSize + expansion)) * (cubeSize + expansion);
+                cubelet.position.y = Math.round(cubelet.position.y / (cubeSize + expansion)) * (cubeSize + expansion);
                 cubelet.position.z = Math.round(cubelet.position.z / (cubeSize + expansion)) * (cubeSize + expansion);
 
-                // Update userData positions
                 cubelet.userData.x = Math.round(cubelet.position.x / (cubeSize + expansion));
                 cubelet.userData.y = Math.round(cubelet.position.y / (cubeSize + expansion));
                 cubelet.userData.z = Math.round(cubelet.position.z / (cubeSize + expansion));
-
             });
 
             isRotating = false;
@@ -537,11 +573,75 @@ function rotateFace(face, direction, rotationAmount, onComplete) {
             }
             return;
         }
-
         requestAnimationFrame(rotate);
     }
     rotate();
 }
+
+
+function rotateCube(axis, direction, rotationAmount, onComplete) {
+    if (isRotating) {
+        moveQueue.push({ axis, direction, rotationAmount, onComplete });
+        return;
+    }
+
+    isRotating = true;
+
+    // Set up rotation axis (x, y, z) for full cube rotation
+    let rotationAxis = new THREE.Vector3();
+
+    switch (axis) {
+        case 'x':
+            rotationAxis.set(1, 0, 0);  // X-axis rotation
+            break;
+        case 'y':
+            rotationAxis.set(0, 1, 0);  // Y-axis rotation
+            break;
+        case 'z':
+            rotationAxis.set(0, 0, 1);  // Z-axis rotation
+            break;
+        default:
+            console.warn(`Invalid axis: ${axis}`);
+            isRotating = false;
+            if (onComplete) onComplete();
+            return;
+    }
+
+    let angle = 0;
+    const targetAngle = (Math.PI / 2) * rotationAmount * direction;  // Modify based on rotationAmount (90° or 180°)
+    const rotationSpeed = (Math.PI / 2) / 20;  // Adjust speed if necessary
+
+    function rotate() {
+        const delta = Math.min(rotationSpeed, Math.abs(targetAngle - angle));
+        const deltaAngle = delta * Math.sign(targetAngle);
+        angle += deltaAngle;
+
+        // Apply rotation to the entire cube
+        cubeGroup.rotation[axis] += deltaAngle;
+
+        if (Math.abs(angle - targetAngle) < 0.0001) {
+            // Snap rotation to a multiple of 90 degrees
+            cubeGroup.rotation[axis] = Math.round(cubeGroup.rotation[axis] / (Math.PI / 2)) * (Math.PI / 2);
+
+            isRotating = false;
+            if (onComplete) onComplete();
+
+            // Process the next move in the queue
+            if (moveQueue.length > 0) {
+                const nextMove = moveQueue.shift();
+                if (nextMove.axis) {
+                    rotateCube(nextMove.axis, nextMove.direction, nextMove.rotationAmount, nextMove.onComplete);
+                } else {
+                    rotateFace(nextMove.face, nextMove.direction, nextMove.rotationAmount, nextMove.onComplete);
+                }
+            }
+            return;
+        }
+        requestAnimationFrame(rotate);
+    }
+    rotate();
+}
+
 
 
 
@@ -564,15 +664,14 @@ function parseAndExecuteMoves(moves) {
     // Handle moves as a string or an array
     const moveList = Array.isArray(moves) ? moves : moves.trim().split(/\s+/);
 
-    console.log(moveList);
-
     moveList.forEach(move => {
         if (!move) return;
 
-        const face = move.charAt(0).toUpperCase();
+        const moveType = move.charAt(0).toLowerCase();  // Either face move, wide move, or slice move
         let direction = 1;
         let rotationAmount = 1;  // Default to 90°
 
+        // Check for prime (counterclockwise) and double moves
         if (move.length > 1) {
             const modifier = move.slice(1);
             if (modifier === "'") {
@@ -585,9 +684,21 @@ function parseAndExecuteMoves(moves) {
             }
         }
 
-        rotateFace(face, -direction, rotationAmount);
+        // Check if the move is a slice move (M, S, E)
+        if (['m', 's', 'e'].includes(moveType)) {
+            rotateFace(moveType.toUpperCase(), -direction, rotationAmount);
+        }
+        // Check if it's a wide move (lowercase)
+        else if (['r', 'l', 'u', 'd', 'f', 'b'].includes(moveType)) {
+            rotateFace(moveType, -direction, rotationAmount);
+        }
+        // Regular face moves
+        else {
+            rotateFace(moveType.toUpperCase(), -direction, rotationAmount);
+        }
     });
 }
+
 
 
 
