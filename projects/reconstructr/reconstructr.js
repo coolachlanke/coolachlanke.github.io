@@ -376,7 +376,7 @@ function initializeCube() {
     const controls = new OrbitControls(camera, renderer.domElement);
 
     // Disable zoom
-    controls.enableZoom = true;
+    controls.enableZoom = false;
 
     // Create the Rubik's Cube
     createRubiksCube(faceMaterials);
@@ -449,9 +449,11 @@ function createCubelet(x, y, z, cubeSize, faceMaterials) {
 let isRotating = false;
 let moveQueue = [];
 
-function rotateFace(face, direction, onComplete) {
+function rotateFace(face, direction, rotationAmount, onComplete) {
+    //direction = -direction // Account for mismatch between rotation direction assumption
+
     if (isRotating) {
-        moveQueue.push({ face, direction, onComplete });
+        moveQueue.push({ face, direction, rotationAmount, onComplete });
         return;
     }
 
@@ -460,40 +462,31 @@ function rotateFace(face, direction, onComplete) {
     // Determine which cubelets to rotate and the rotation axis
     let cubeletsToRotate = [];
     let axis = new THREE.Vector3();
-
-    // Invert direction for specific faces
-    let adjustedDirection = direction;
-
+    
     switch (face) {
         case 'U':
             cubeletsToRotate = cubeGroup.children.filter(c => Math.round(c.userData.y) === 1);
             axis.set(0, 1, 0);
-            adjustedDirection = -direction;
             break;
         case 'D':
             cubeletsToRotate = cubeGroup.children.filter(c => Math.round(c.userData.y) === -1);
             axis.set(0, -1, 0);
-            adjustedDirection = -direction;
             break;
         case 'F':
             cubeletsToRotate = cubeGroup.children.filter(c => Math.round(c.userData.z) === 1);
             axis.set(0, 0, 1);
-            adjustedDirection = -direction;
             break;
         case 'B':
             cubeletsToRotate = cubeGroup.children.filter(c => Math.round(c.userData.z) === -1);
             axis.set(0, 0, -1);
-            adjustedDirection = -direction;
             break;
         case 'R':
             cubeletsToRotate = cubeGroup.children.filter(c => Math.round(c.userData.x) === 1);
             axis.set(1, 0, 0);
-            adjustedDirection = -direction;
             break;
         case 'L':
             cubeletsToRotate = cubeGroup.children.filter(c => Math.round(c.userData.x) === -1);
             axis.set(-1, 0, 0);
-            adjustedDirection = -direction;
             break;
         default:
             console.warn(`Invalid face: ${face}`);
@@ -503,8 +496,8 @@ function rotateFace(face, direction, onComplete) {
     }
 
     let angle = 0;
-    const targetAngle = (Math.PI / 2) * adjustedDirection;
-    const rotationSpeed = (Math.PI / 2) / 20; // Adjust for desired speed
+    const targetAngle = (Math.PI / 2) * rotationAmount * direction;
+    const rotationSpeed = (Math.PI / 2) / 20; // Adjust for desired turn speed
 
     function rotate() {
         const delta = Math.min(rotationSpeed, Math.abs(targetAngle - angle));
@@ -516,9 +509,8 @@ function rotateFace(face, direction, onComplete) {
         });
 
         if (Math.abs(angle - targetAngle) < 0.0001) {
-            // Correct for floating-point errors
+            // Snap rotations to multiples of 90 degrees
             cubeletsToRotate.forEach(cubelet => {
-                // Snap rotations to multiples of 90 degrees
                 cubelet.rotation.x = Math.round(cubelet.rotation.x / (Math.PI / 2)) * (Math.PI / 2);
                 cubelet.rotation.y = Math.round(cubelet.rotation.y / (Math.PI / 2)) * (Math.PI / 2);
                 cubelet.rotation.z = Math.round(cubelet.rotation.z / (Math.PI / 2)) * (Math.PI / 2);
@@ -541,14 +533,16 @@ function rotateFace(face, direction, onComplete) {
             // Process the next move in the queue
             if (moveQueue.length > 0) {
                 const nextMove = moveQueue.shift();
-                rotateFace(nextMove.face, nextMove.direction, nextMove.onComplete);
+                rotateFace(nextMove.face, nextMove.direction, nextMove.rotationAmount, nextMove.onComplete);
             }
             return;
         }
+
         requestAnimationFrame(rotate);
     }
     rotate();
 }
+
 
 
 function rotateAroundWorldAxis(object, axis, radians) {
@@ -570,34 +564,31 @@ function parseAndExecuteMoves(moves) {
     // Handle moves as a string or an array
     const moveList = Array.isArray(moves) ? moves : moves.trim().split(/\s+/);
 
-    console.log(moveList.length);
+    console.log(moveList);
 
     moveList.forEach(move => {
         if (!move) return;
 
         const face = move.charAt(0).toUpperCase();
         let direction = 1;
+        let rotationAmount = 1;  // Default to 90°
 
         if (move.length > 1) {
             const modifier = move.slice(1);
             if (modifier === "'") {
-                direction = -1;
+                direction = -1;  // Counterclockwise
             } else if (modifier === '2') {
-                // Double move: execute twice
-                rotateFace(face, direction, () => {
-                    rotateFace(face, direction);
-                });
-                return;
+                rotationAmount = 2;  // Double move (180°)
             } else {
                 console.warn(`Invalid move modifier: ${modifier}`);
                 return;
             }
         }
 
-        rotateFace(face, direction);
-        
+        rotateFace(face, -direction, rotationAmount);
     });
 }
+
 
 
 
