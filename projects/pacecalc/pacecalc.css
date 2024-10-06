@@ -1,0 +1,32 @@
+/* Center the text in the table */
+table th, table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff; /* White for odd rows */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light grey for even rows */
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+table th {
+    background-color: rgb(215, 232, 255); /* Light blue background for the header */
+    font-weight: bold;
+    color: black;
+}
+
+p.lead {
+    margin-bottom: 20px;
+}
+
+#pace-form {
+    margin-top: 20px;
+}
