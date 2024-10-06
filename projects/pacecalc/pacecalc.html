@@ -9,6 +9,7 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="../../style/custom.css" rel="stylesheet">
   <link rel="stylesheet" href="pacecalc.css">  
+  <link rel="stylesheet" href="assets/textboxstyle.css"> 
 
   <!-- Favicon Links -->
   <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png">
@@ -57,8 +58,8 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-10 col-md-10 text-left">
-                    <p class="lead">This tool allows you to calculate your running pace, splits, and speed. Enter any two out of time, distance, and  pace and the calculator will compute the unknown. It also provides a tabular breakdown for each km or mi split, showing cumulative distance, cumulative time, pace and speed. Plan your race like pro!</p>
+                <div class="col-10 col-md-8 text-left">
+                    <p class="lead">This tool allows you to calculate between your pace, distance and target time. Enter any two out of time, distance, and  pace and the calculator will compute the unknown. It also provides a tabular breakdown for each km or mile split, showing cumulative distance, cumulative time, pace and speed. Plan your race like pro!</p>
                 </div>
             </div>
             
@@ -67,13 +68,24 @@
                 <div class="col-8 col-md-6">
                     <form id="pace-form" class="mb-5">
                         <div class="form-group">
-                            <label for="targetTime">Target Time (hh:mm:ss)</label>
-                            <input type="text" id="targetTime" class="form-control" placeholder="e.g. 01:45:00">
+                            <label for="time">Target Time:</label>
+                            <div class="d-flex">
+                                <input type="number" id="hours" class="input-group__input" placeholder="hh" min="0" style="width: 100px;">
+                                <span class="mx-2">hours</span>
+                                <input type="number" id="minutes" class="input-group__input" placeholder="mm" min="0" max="59" style="width: 100px;">
+                                <span class="mx-2">minutes</span>
+                                <input type="number" id="seconds" class="input-group__input" placeholder="ss" min="0" max="59" style="width: 100px;">
+                                <span class="mx-2">seconds</span>
+                            </div>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="distance">Distance</label>
-                            <input type="number" id="distance" class="form-control" placeholder="Enter distance">
+                            <label for="distance">Distance:</label>
+                            <div>
+                                <input type="number" id="distance" class="input-group__input" placeholder="Enter distance">
+                            </div>
                         </div>
+
                         <div class="form-group">
                             <label>Unit</label><br>
                             <div class="form-check form-check-inline">
@@ -84,11 +96,20 @@
                                 <input class="form-check-input" type="radio" name="distanceUnit" id="miUnit" value="mi">
                                 <label class="form-check-label" for="miUnit">mi</label>
                             </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="distanceUnit" id="nmUnit" value="nm">
+                                <label class="form-check-label" for="nmUnit">nm</label>
+                            </div>
                         </div>
+
                         <div class="form-group">
-                            <label for="pace">Pace (min/km or min/mi)</label>
-                            <input type="text" id="pace" class="form-control" placeholder="e.g. 5:00">
+                            <label for="pace">Pace:</label>
+                            <div>
+                                <input type="text" id="pace" class="input-group__input" placeholder="Enter pace">
+                            </div>
                         </div>
+
+                        <!-- Calculate Button -->
                         <button type="button" id="calculate-btn" class="btn btn-primary btn-block">Calculate</button>
                     </form>
                 </div>
@@ -99,20 +120,9 @@
                 <div class="col-8 col-md-6">
                     <h3 class="text-center">Results</h3>
                     <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Distance</th>
-                                <th>Time</th>
-                                <th>Pace (min/km)</th>
-                                <th>Pace (min/mi)</th>
-                                <th>Speed (km/h)</th>
-                                <th>Speed (mph)</th>
-                            </tr>
-                        </thead>
-                        <tbody id="results-table">
-                            <!-- Populated by JavaScript -->
-                        </tbody>
-                    </table>                    
+                        <thead></thead>
+                        <tbody id="results-table"></tbody>
+                    </table>          
                 </div>
             </div>
 

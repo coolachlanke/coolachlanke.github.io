@@ -30,3 +30,17 @@ p.lead {
 #pace-form {
     margin-top: 20px;
 }
+
+.form-group label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#calculate-btn {
+    margin-top: 40px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+}
+
+
