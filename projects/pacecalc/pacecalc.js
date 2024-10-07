@@ -1,57 +1,71 @@
+// Variables to store current and previous value
+let time = 0;
+let distance = 0;
+let pace = 0;
+
+let previousTime = null;
+let previousDistance = null;
+let previousPace = null;
+
 // Main function that handles form submission and determines which field is empty
 document.getElementById('calculate-btn').addEventListener('click', function() {
-    // Get values from the time inputs (target time)
-    const timeHours = parseInt(document.getElementById('hours').value) || 0;
-    const timeMinutes = parseInt(document.getElementById('minutes').value) || 0;
-    const timeSeconds = parseInt(document.getElementById('seconds').value) || 0;
-
-    if (!timeHours) {
-        document.getElementById('hours').value = 0;
-    }
-    if (!timeMinutes) {
-        document.getElementById('minutes').value = 0;
-    }
-    if (!timeSeconds) {
-        document.getElementById('seconds').value = 0;
-    }
-
-    // Combine hours, minutes, and seconds into a single formatted time string
-    let targetTime = (timeHours * 3600) + (timeMinutes * 60) + timeSeconds;
-
-    // Get values from the new pace inputs
-    const paceMinutes = parseInt(document.getElementById('pace-minutes').value) || 0;
-    const paceSeconds = parseInt(document.getElementById('pace-seconds').value) || 0;
-
-    // Convert pace to total seconds
-    let pace = (paceMinutes * 60) + paceSeconds;
-
-    let distance = parseFloat(document.getElementById('distance').value);
+// Get data from input fields
+    time = (Math.round(time) !== getTime()) ? getTime() : time;
+    pace = (Math.round(pace) !== getPace()) ? getPace() : pace;
+    distance = (distance.toFixed(2) !== getDistance()) ? getDistance() : distance;
     const unit = document.querySelector('input[name="distanceUnit"]:checked').value;
 
-    // Determine which input is empty and calculate the missing value
-    if (!timeHours && !timeMinutes && !timeSeconds) {
+    // If there's already data in all three inputs (i.e. the user is trying different combinations), then apply rules to null one of the fields and recalculate
+    if (time && distance && pace) {
+        // Detect which value was changed
+        if (time !== previousTime) {
+            // Time has changed, recalculate pace
+            pace = null;
+            document.getElementById('pace-minutes').value = null;
+            document.getElementById('pace-seconds').value = null;
+        } else if (distance !== previousDistance) {
+            // Distance has changed, recalculate time
+            time = null;
+            document.getElementById('hours').value = null;
+            document.getElementById('minutes').value = null;
+            document.getElementById('seconds').value = null;
+        } else if (pace !== previousPace) {
+            // Pace has changed, recalculate time
+            time = null;
+            document.getElementById('hours').value = null;
+            document.getElementById('minutes').value = null;
+            document.getElementById('seconds').value = null;
+        }
+    }
+
+    // Now, solve for the single missing value
+    if (distance && pace && !time) {
         // Calculate missing time
-        targetTime = calculateTime(distance, pace, unit);
-        document.getElementById('hours').value = Math.floor((targetTime / 3600));
-        document.getElementById('minutes').value = Math.floor((targetTime / 60));
-        document.getElementById('seconds').value = Math.round((targetTime % 60));
-    } else if (!distance) {
+        time = distance * pace;
+        document.getElementById('hours').value = Math.floor((time / 3600));
+        document.getElementById('minutes').value = Math.floor(((time % 3600) / 60));
+        document.getElementById('seconds').value = Math.round((time % 60));
+    } else if (!distance && pace && time) {
         // Calculate missing distance
-        distance = calculateDistance(targetTime, pace, unit);
-        console.log(distance);
+        distance = time / pace;
         document.getElementById('distance').value = distance.toFixed(2);
-    } else if (!paceMinutes && !paceSeconds) {
+    } else if (distance && !pace && time) {
         // Calculate missing pace and update the pace input boxes
-        pace = calculatePace(targetTime, distance, unit);
+        pace = time / distance;
         document.getElementById('pace-minutes').value = Math.floor(pace / 60);
         document.getElementById('pace-seconds').value = Math.round((pace % 60));
-    } else {
-        alert("Leave one field blank to calculate.");
+    } else if (!(distance && pace && time)){
+        alert("Underdetermined! Please enter more data.");
         return;
     }
 
+    // Store the current values for comparison on next change
+    previousTime = time;
+    previousDistance = distance;
+    previousPace = pace;
+
     // Update the results table
-    updateResultsTable(targetTime, distance, pace, unit);
+    updateResultsTable(time, distance, pace, unit);
 });
 
 
@@ -68,23 +82,34 @@ document.querySelectorAll('input[name="distanceUnit"]').forEach((radio) => {
 });
 
 
+function getTime() {
+    const timeHours = parseInt(document.getElementById('hours').value) || 0;
+    const timeMinutes = parseInt(document.getElementById('minutes').value) || 0;
+    const timeSeconds = parseInt(document.getElementById('seconds').value) || 0;
 
-// Function to calculate the missing time
-function calculateTime(distance, pace, unit) {
-    const targetTime = distance * pace;
-    return targetTime;
+    if (timeHours || timeMinutes || timeSeconds) {
+        document.getElementById('hours').value = timeHours ? timeHours : 0;
+        document.getElementById('minutes').value = timeMinutes ? timeMinutes : 0;
+        document.getElementById('seconds').value = timeSeconds ? timeSeconds : 0;
+    }
+
+    return (timeHours * 3600) + (timeMinutes * 60) + timeSeconds;
 }
 
-// Function to calculate the missing distance
-function calculateDistance(targetTime, pace, unit) {
-    const distance = targetTime / pace;
-    return distance;
+function getPace() {
+    let paceMinutes = parseInt(document.getElementById('pace-minutes').value) || 0;
+    let paceSeconds = parseInt(document.getElementById('pace-seconds').value) || 0;
+
+    if (paceMinutes || paceSeconds) {
+        document.getElementById('pace-minutes').value = paceMinutes ? paceMinutes : 0;
+        document.getElementById('pace-seconds').value = paceSeconds ? paceSeconds : 0;
+    }
+
+    return (paceMinutes * 60) + paceSeconds;
 }
 
-// Function to calculate the missing pace
-function calculatePace(targetTime, distance, unit) {
-    const pace = targetTime / distance;
-    return pace;
+function getDistance() {
+    return parseFloat(document.getElementById('distance').value);
 }
 
 // Convert distance to kilometers
