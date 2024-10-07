@@ -37,10 +37,29 @@ p.lead {
 }
 
 #calculate-btn {
-    margin-top: 40px;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-size: 1.2rem;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1;
+    border-style: none;
+    outline: none;
+    height: 2.5em;
+    padding: 0em 1em;
+    background-image: linear-gradient(120deg, #f09 0%, #0ff 50%, #9f0 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border-radius: 5em;
+    background-size: 200% 100%;
+    transition: background-position 0.3s ease-out;
+}
+
+#calculate-btn:hover {
+    background-position: 100% 0;
+}
+
+.btn:focus, .btn:active, .btn:hover {
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 
