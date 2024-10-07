@@ -65,27 +65,37 @@
             
             <!-- Input Form -->
             <div class="row justify-content-center">
-                <div class="col-8 col-md-6">
+                <div class="col-8 col-md-4">
                     <form id="pace-form" class="mb-5">
-                        <div class="form-group">
-                            <label for="time">Target Time:</label>
-                            <div class="d-flex">
-                                <input type="number" id="hours" class="input-group__input" placeholder="hh" min="0" style="width: 100px;">
-                                <span class="mx-2">hours</span>
-                                <input type="number" id="minutes" class="input-group__input" placeholder="mm" min="0" max="59" style="width: 100px;">
-                                <span class="mx-2">minutes</span>
-                                <input type="number" id="seconds" class="input-group__input" placeholder="ss" min="0" max="59" style="width: 100px;">
-                                <span class="mx-2">seconds</span>
-                            </div>
-                        </div>
-                        
                         <div class="form-group">
                             <label for="distance">Distance:</label>
                             <div>
-                                <input type="number" id="distance" class="input-group__input" placeholder="Enter distance">
+                                <input type="number" id="distance" class="input-group__input" placeholder="Enter distance" style="width: 190px;">
+                                <span id="distance-unit" class="mx-2" style="font-size: 1.8rem; font-weight: bold;">km</span>
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label for="time">Target Time:</label>
+                            <div class="d-flex align-items-center">
+                                <input type="number" id="hours" class="input-group__input" placeholder="hh" min="0" style="width: 100px;">
+                                <span class="mx-2" style="font-size: 1.8rem; font-weight: bold;">:</span>
+                                <input type="number" id="minutes" class="input-group__input" placeholder="mm" min="0" max="59" style="width: 100px;">
+                                <span class="mx-2" style="font-size: 1.8rem; font-weight: bold;">:</span>
+                                <input type="number" id="seconds" class="input-group__input" placeholder="ss" min="0" max="59" style="width: 100px;">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pace">Pace:</label>
+                            <div class="d-flex">
+                                <input type="number" id="pace-minutes" class="input-group__input" placeholder="mm" min="0" style="width: 100px;">
+                                <span class="mx-2" style="font-size: 1.8rem; font-weight: bold;">:</span>
+                                <input type="number" id="pace-seconds" class="input-group__input" placeholder="ss" min="0" max="59" style="width: 100px;">
+                                <span id="pace-unit" class="mx-2" style="font-size: 1.8rem; font-weight: bold;">/ km</span>
+                            </div>
+                        </div>
+                        
                         <div class="form-group">
                             <label>Unit:</label><br>
                             <div class="form-check form-check-inline">
@@ -102,13 +112,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="pace">Pace:</label>
-                            <div>
-                                <input type="text" id="pace" class="input-group__input" placeholder="Enter pace">
-                            </div>
-                        </div>
-
                         <!-- Calculate Button -->
                         <button type="button" id="calculate-btn" class="btn btn-primary btn-block">Calculate</button>
                     </form>
@@ -118,7 +121,6 @@
             <!-- Result Section -->
             <div class="row justify-content-center">
                 <div class="col-8 col-md-6">
-                    <h3 class="text-center">Results</h3>
                     <table class="table table-bordered">
                         <thead></thead>
                         <tbody id="results-table"></tbody>
