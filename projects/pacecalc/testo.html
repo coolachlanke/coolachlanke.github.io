@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chart.js Panning Test</title>
+    <!-- Include Chart.js and the Zoom plugin -->
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chart.js Zoom Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
+
+</head>
+<body>
+    <canvas id="myChart" width="800" height="400"></canvas>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: Array.from({ length: 100 }, (_, i) => i),
+                datasets: [{
+                    label: 'Dataset',
+                    data: Array.from({ length: 100 }, () => Math.random() * 100),
+                    borderColor: 'rgba(75,192,192,1)',
+                    fill: false,
+                    tension: 0.1,
+                }],
+            },
+            options: {
+                scales: {
+                    x: {
+                        type: 'linear',
+                    },
+                },
+                options: {
+                    // ... other chart options ...
+                    pan: {
+                        // Boolean to enable panning
+                        enabled: true,
+                        mode: 'x', // 'x', 'y', or 'xy'
+                        speed: 10, // Sensitivity of panning
+                    },
+                    zoom: {
+                        // Boolean to enable zooming
+                        enabled: true,
+                        mode: 'x', // 'x', 'y', or 'xy'
+                        sensitivity: 0.1, // Sensitivity of zooming
+                    },
+                },
+            },
+        });
+    </script>
+</body>
+</html>

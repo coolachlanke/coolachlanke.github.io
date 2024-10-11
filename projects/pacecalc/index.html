@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="assets/textboxstyle.css"> 
 
   <!-- Favicon Links -->
+  <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
   <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png">
   <link rel="manifest" href="../../images/favicon/site.webmanifest">
@@ -67,7 +68,7 @@
             <div class="row justify-content-center">
                 <div class="col-8 col-md-4">
                     <form id="pace-form" class="mb-5">
-                        <div class="form-group">
+                        <div id="distanceGroup" class="form-group">
                             <label>Distance:</label>
                             <div>
                                 <input type="number" id="distance" class="input-group__input" placeholder="Enter distance" style="width: 200px;">
@@ -86,7 +87,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div id="paceGroup" class="form-group">
                             <label>Pace:</label>
                             <div class="d-flex">
                                 <input type="number" id="pace-minutes" class="input-group__input" placeholder="mm" min="0" style="width: 100px;">
@@ -112,14 +113,73 @@
                             </div>
                         </div>
 
+                        <!-- Advanced Mode Checkbox -->
+                        <div class="form-group form-check">
+                            <input type="checkbox" id="advancedMode" class="form-check-input">
+                            <label class="form-check-label" for="advancedMode">Advanced Mode</label>
+                        </div>
+
+                        <!-- File Upload Input (initially hidden) -->
+                       <div class="form-group" id="fileUploadGroup" style="display: none;">
+                            <label for="activity-file">Upload Activity File (GPX/TCX):</label>
+                            <input type="file" id="activity-file" class="form-control-file" accept=".gpx,.tcx">
+                        </div>
+
                         <!-- Calculate Button -->
                         <button type="button" id="calculate-btn" class="btn btn-primary btn-block">Calculate</button>
                     </form>
                 </div>
             </div>
 
+            <!-- Advanced Mode Section (Initially Hidden) -->
+            <div id="advanced-section" style="display: none;">
+                <!-- Reset Zoom Button (Hidden by default) -->
+                <div class="row justify-content-center mt-4" id="reset-zoom-container" style="display: none;">
+                    <div class="col-8 col-md-4 text-center">
+                        <button id="resetZoomBtn" class="btn btn-secondary btn-block">Reset Zoom</button>
+                    </div>
+                </div>
+
+                <!-- Elevation Profile Graph -->
+                <div class="row justify-content-center mt-4">
+                    <div class="col-10 col-md-8">
+                        <div style="position: relative; height: 400px;">
+                            <canvas id="elevation-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grade Graph -->
+                <div class="row justify-content-center mt-4">
+                    <div class="col-10 col-md-8">
+                        <div style="position: relative; height: 400px;">
+                            <canvas id="grade-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GAP Graph -->
+                <div class="row justify-content-center mt-4">
+                    <div class="col-10 col-md-8">
+                        <div style="position: relative; height: 400px;">
+                            <canvas id="gap-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GAP Split Histogram -->
+                <div class="row justify-content-center mt-4">
+                    <div class="col-10 col-md-8">
+                        <div style="position: relative; height: 400px;">
+                            <canvas id="split-histogram-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
             <!-- Result Section -->
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mt-5">
                 <div class="col-8 col-md-6">
                     <table class="table table-bordered">
                         <thead></thead>
@@ -132,10 +192,19 @@
     </main>
 
     <!-- Footer -->
-    <footer class="text-center text-lg-start bg-light text-muted" style="background-color: #e3f2fd; padding: 20px; width: 100%;">
-        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <footer class="text-center text-lg-start bg-light text-muted" style="background-color: #e3f2fd; padding: 1px; position: relative; bottom: 0; width: 100%;">
+        <section class="d-flex justify-content-between align-items-center p-4">
             <div class="me-5 d-none d-lg-block">
                 <span>&copy; 2024 Lachlan Cooke</span>
+            </div>
+            <div class="social-menu ms-auto">
+                <ul class="d-flex">
+                  <li class="ms-3"><a href="https://www.linkedin.com/in/lachlancooke/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                  <li class="ms-3"><a href="https://github.com/coolachlanke" target="_blank"><i class="fab fa-github"></i></a></li>
+                  <li class="ms-3"><a href="https://www.instagram.com/coolachlanke/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                  <li class="ms-3"><a href="https://www.youtube.com/@magicbattery" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                  <li class="ms-3"><a href="https://www.strava.com/athletes/30032118" target="_blank"><i class="fab fa-strava"></i></a></li>
+                </ul>
             </div>
         </section>
     </footer>
@@ -144,6 +213,12 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.11/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Chart.js -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <!-- Chart.js Zoom Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
 
     <!-- Custom JavaScript -->
     <script src="pacecalc.js"></script>
