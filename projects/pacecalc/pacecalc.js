@@ -262,7 +262,7 @@ function updateResultsTableAdv(time, unit, averagePace, splits) {
         </tr>`;
 
     // Define the maximum difference for color scaling (for pace)
-    const maxDiff = 20; // Adjust as needed based on expected pace differences\\
+    const maxDiff = 40; // Adjust as needed based on expected pace differences\\
 
     // Calculate average pace for the selected unit
     const conversionFactors = {
@@ -294,7 +294,7 @@ function updateResultsTableAdv(time, unit, averagePace, splits) {
         }
 
         // Calculate pace difference
-        const diff = splitPace - avgPace; // Positive => slower
+        const diff = Math.round(splitPace) - Math.round(avgPace); // Positive => slower
 
         // Determine color based on pace difference
         const color = getColorForDifference(-diff, maxDiff);
@@ -315,9 +315,9 @@ function updateResultsTableAdv(time, unit, averagePace, splits) {
         const speed = splitSpeed.toFixed(2);
 
         // Format Net Elevation Gain
-        const formattedElevationGain = netElevationGain <= 0
-            ? `${Math.abs(netElevationGain).toFixed(2)} m ↑` // Positive gain
-            : `${netElevationGain.toFixed(2)} m ↓`; // Negative gain (loss)
+        const formattedElevationGain = netElevationGain >= 0
+            ? `${netElevationGain.toFixed(2)} m ↑` // Positive gain
+            : `${Math.abs(netElevationGain).toFixed(2)} m ↓`; // Negative gain (loss)
 
         // Append row to tbody with colored pace cell
         tbody.innerHTML += `
@@ -498,86 +498,6 @@ function advancedCalculation(time, unit) {
     }
 }
 
-/*
-function calculateSplits(distanceDataKm, pgData, splitLength = 1, unit = 'km') {
-    // Validate unit parameter
-    const validUnits = ['km', 'mi', 'nm'];
-    const unitLower = unit.toLowerCase();
-    if (!validUnits.includes(unitLower)) {
-        throw new Error(`Invalid unit "${unit}". Valid units are 'km', 'mi', and 'nm'.`);
-    }
-
-    // Define conversion factors based on the unit
-    const conversionFactors = {
-        'km': 1,                // Base unit
-        'mi': 0.621371,         // 1 km = 0.621371 miles
-        'nm': 0.539957          // 1 km = 0.539957 nautical miles
-    };
-
-    const conversionFactor = conversionFactors[unitLower];
-    const isBaseUnit = conversionFactor === 1;
-
-    // Convert distance data to the target unit if necessary
-    const distanceData = isBaseUnit
-        ? distanceDataKm.slice() // Clone the array to prevent mutation
-        : distanceDataKm.map(km => km * conversionFactor); // Convert km to target unit
-
-    // Convert pace data to the target unit if necessary
-    const paceData = isBaseUnit
-        ? pgData.slice()
-        : pgData.map(paceKm => paceKm * (1 / conversionFactor)); // Convert min/km to min/mi or min/nm
-
-    // Define the total number of splits
-    const totalSplits = Math.ceil(distanceData[distanceData.length - 1] / splitLength);
-
-    // Initialize array to store split times and distances
-    const splits = [];
-
-    // Loop over each split
-    for (let splitIndex = 0; splitIndex < totalSplits; splitIndex++) {
-        const splitStart = splitIndex * splitLength;
-        const splitEnd = (splitIndex + 1) * splitLength;
-
-        let splitTime = 0; // Time for the current split in minutes
-        let splitDistance = 0; // Distance for the current split in the specified unit
-
-        // Loop over the data points and sum up time intervals within the split
-        for (let i = 0; i < distanceData.length - 1; i++) {
-            const x0 = distanceData[i];
-            const x1 = distanceData[i + 1];
-
-            // Check if the interval [x0, x1] overlaps with the split range
-            if (x1 <= splitStart || x0 >= splitEnd) {
-                continue; // No overlap
-            }
-
-            // Calculate the overlapping segment
-            const segmentStart = Math.max(x0, splitStart);
-            const segmentEnd = Math.min(x1, splitEnd);
-            const deltaX = segmentEnd - segmentStart; // Distance in the specified unit
-
-            // Corresponding pace for this interval
-            const pace = paceData[i]; // Pace in min/km, min/mi, or min/nm
-
-            // Time for this segment
-            const deltaT = pace * deltaX; // Time in minutes
-
-            splitTime += deltaT;
-            splitDistance += deltaX;
-        }
-
-        // Store the split time and distance, rounded to two decimal places
-        splits.push({
-            splitNumber: splitIndex + 1,
-            splitDistance: Math.round(splitDistance * 100) / 100, // e.g., 1 km, 0.62 mi, or 0.29 nm
-            splitTime: Math.round(splitTime * 100) / 100 // Time in minutes
-        });
-    }
-
-    return splits;
-}
-*/
-
 function calculateSplits(distanceDataKm, pgData, elevationDataKm, splitLength = 1, unit = 'km') {
     // Validate unit parameter
     const validUnits = ['km', 'mi', 'nm'];
@@ -639,6 +559,11 @@ function calculateSplits(distanceDataKm, pgData, elevationDataKm, splitLength = 
         }
 
         // If distance is beyond the provided data, return the last elevation point
+
+        if (distance === 0) {
+            return elevationData[0];
+        }
+
         return elevationData[elevationData.length - 1];
     }
 
