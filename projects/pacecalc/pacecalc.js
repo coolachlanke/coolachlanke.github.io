@@ -249,65 +249,112 @@ function updateResultsTableAdv(time, unit, averagePace, splits) {
 
     tbody.innerHTML = ''; // Clear previous results
 
-    // Define alternate unit based on the selected unit
-    const alternateUnit = unit === 'km' ? 'mi' : unit === 'mi' ? 'km' : 'nm';
-
-    // Update table header
+    // Update table header to include Net Elevation Gain
     thead.innerHTML = `
         <tr>
-            <th>Distance</th>
+            <th>Distance (${unit})</th>
             <th>Time</th>
             <th>Pace (min/${unit})</th>
             <th>Mean Pace (min/${unit})</th>
-            <th>Diff (min)</th>
+            <th>Diff (min/${unit})</th>
             <th>Speed (${unit}/h)</th>
+            <th>Net Elevation Gain</th>
         </tr>`;
 
-    const distanceInKm = convertToKm(distance, unit);
-    const paceInKm = time / distanceInKm; // Pace in min/km
-    const speedInKm = 60 / paceInKm; // Speed in km/h
+    // Define the maximum difference for color scaling (for pace)
+    const maxDiff = 20; // Adjust as needed based on expected pace differences\\
+
+    // Calculate average pace for the selected unit
+    const conversionFactors = {
+        'km': 1.0,
+        'mi': 1.60934,
+        'nm': 1.852
+    };
+    const avgPace = averagePace * conversionFactors[unit]; // Convert averagePace to selected unit
 
     // **Advanced Mode**: Use splitTimes to display elevation-dependent splits
     let cumulativeDistance = 0;
     let cumulativeTime = 0;
-    let splitPace, splitSpeed, spitPaceAlt, splitSpeedAlt, diff;
+    let splitPace, splitSpeed, diff;
 
+    // Iterate over each split to populate the table
     splits.forEach(split => {
-        const { splitNumber, splitDistance, splitTime } = split;
+        const { splitNumber, splitDistance, splitTime, netElevationGain } = split;
 
         cumulativeTime += splitTime;
 
         if (splitDistance >= 0.99) {
             cumulativeDistance += 1.00;
-            splitPace = 60 * splitTime / 1.00; // Pace in min/km
-            splitSpeed = 60 * 1.00 / splitTime; // Speed inlet 
-            splitPaceAlt = splitPace * (alternateUnit === 'mi' ? 1.60934 : 1.852);
-            splitSpeedAlt = splitSpeed * (unit === 'nm' ? 0.539957 : 0.621371);
+            splitPace = 60 * splitTime / 1.00; // Pace in min/unit (assuming splitDistance =1.0)
+            splitSpeed = 60 * 1.00 / splitTime; // Speed in unit/h
         } else {
             cumulativeDistance += splitDistance;
-            splitPace = 60 * splitTime / splitDistance; // Pace in min/km
-            splitSpeed = 60 * splitDistance / splitTime; // Speed inlet 
-            splitPaceAlt = splitPace * (alternateUnit === 'mi' ? 1.60934 : 1.852);
-            splitSpeedAlt = splitSpeed * (unit === 'nm' ? 0.539957 : 0.621371);
+            splitPace = 60 * splitTime / splitDistance; // Pace in min/unit
+            splitSpeed = 60 * splitDistance / splitTime; // Speed in unit/h
         }
 
-        if ((splitPace - averagePace) < 0) {
-            diff = "-" + formatTime(Math.round(averagePace) - Math.round(splitPace));
+        // Calculate pace difference
+        const diff = splitPace - avgPace; // Positive => slower
+
+        // Determine color based on pace difference
+        const color = getColorForDifference(-diff, maxDiff);
+
+        const formattedTime = formatTime(60 * cumulativeTime);
+        const formattedPace = formatTime(splitPace);
+        const formattedAvgPace = formatTime(avgPace);
+
+        // Calculate diff formatted
+        let diffFormatted = '';
+        if (diff < 0) {
+            diffFormatted = "-" + formatTime(Math.abs(diff));
         } else {
-            diff = formatTime(Math.round(splitPace) - Math.round(averagePace));
+            diffFormatted = "+" + formatTime(diff);
         }
 
+        // Calculate speed
+        const speed = splitSpeed.toFixed(2);
+
+        // Format Net Elevation Gain
+        const formattedElevationGain = netElevationGain <= 0
+            ? `${Math.abs(netElevationGain).toFixed(2)} m ↑` // Positive gain
+            : `${netElevationGain.toFixed(2)} m ↓`; // Negative gain (loss)
+
+        // Append row to tbody with colored pace cell
         tbody.innerHTML += `
             <tr>
                 <td>${cumulativeDistance.toFixed(2)} ${unit}</td>
-                <td>${formatTime(cumulativeTime * 60)}</td>
-                <td>${formatTime(splitPace)}</td>
-                <td>${formatTime(averagePace)}</td>
-                <td>${diff}</td>
-                <td>${splitSpeed.toFixed(2)}</td>
+                <td>${formattedTime}</td>
+                <td style="background-color: ${color};">${formattedPace}</td>
+                <td>${formattedAvgPace}</td>
+                <td>${diffFormatted}</td>
+                <td>${speed}</td>
+                <td>${formattedElevationGain}</td>
             </tr>`;
-        // Access other properties if needed
     });
+}
+
+function getColorForDifference(diff, maxDiff) {
+    // Clamp the difference to the range [-maxDiff, maxDiff]
+    const clampedDiff = Math.max(-maxDiff, Math.min(maxDiff, diff));
+    
+    if (clampedDiff > 0) {
+        // Faster pace: interpolate between white and green
+        const ratio = clampedDiff / maxDiff; // 0 to 1
+        const r = Math.round(255 * (1 - ratio));
+        const g = 255;
+        const b = Math.round(255 * (1 - ratio));
+        return `rgb(${r}, ${g}, ${b})`;
+    } else if (clampedDiff < 0) {
+        // Slower pace: interpolate between white and red
+        const ratio = Math.abs(clampedDiff) / maxDiff; // 0 to 1
+        const r = 255;
+        const g = Math.round(255 * (1 - ratio));
+        const b = Math.round(255 * (1 - ratio));
+        return `rgb(${r}, ${g}, ${b})`;
+    } else {
+        // No difference, return white
+        return `rgb(255, 255, 255)`;
+    }
 }
 
 
@@ -342,8 +389,6 @@ function advancedCalculation(time, unit) {
         parseGPXFile(file, function(data) {
             const { totalDistance, rawDistanceData, rawElevationData } = data;
 
-            // Perform calculations and plotting here
-
             // Smooth the elevation data
             const windowSizeElevation = 5;
             const smoothedElevationData = smoothData(rawElevationData, windowSizeElevation);
@@ -372,6 +417,7 @@ function advancedCalculation(time, unit) {
 
             // Adjust arrays to match lengths
             const adjustedDistanceData = resampledDistanceData.slice(1);
+            const adjustedElevationData = resampledElevationData.slice(1);
 
             // Smooth the grade data
             const windowSizeGrade = 5;
@@ -418,9 +464,6 @@ function advancedCalculation(time, unit) {
             let pFlat = time / denominatorSum; // p_f in s per km
             pFlat = pFlat / 60; // Convert to min/km
 
-            // console.log(`Total Time: ${time.toFixed(4)} hours`);
-            // console.log(`Flat Ground Pace (p_f): ${pFlat.toFixed(2)} min/km`);
-
             // **Calculate Grade-Adjusted Pace p_g(x)**
             const pgData = [];
             for (let i = 0; i < cappedGradeData.length; i++) {
@@ -439,7 +482,7 @@ function advancedCalculation(time, unit) {
             displayGapChart(distanceDataKm.slice(1), pgData);
 
             // Calculate split times using the separate function
-            const splits = calculateSplits(distanceDataKm, pgData, 1); // Split length = 1 km
+            const splits = calculateSplits(distanceDataKm, pgData, adjustedElevationData, 1, unit); // Split length = 1 km
 
             // **Plot the Split Histogram**
             displaySplitHistogram(splits, unit);
@@ -448,9 +491,6 @@ function advancedCalculation(time, unit) {
             const totalDistanceKm = distanceDataKm[distanceDataKm.length - 1];
             const averagePace = totalTimeInSeconds / totalDistanceKm;
 
-            // Show the reset zoom button
-            document.getElementById('reset-zoom-container').style.display = 'block';
-
             updateResultsTableAdv(time, unit, averagePace, splits);
         });
     } else {
@@ -458,10 +498,37 @@ function advancedCalculation(time, unit) {
     }
 }
 
+/*
+function calculateSplits(distanceDataKm, pgData, splitLength = 1, unit = 'km') {
+    // Validate unit parameter
+    const validUnits = ['km', 'mi', 'nm'];
+    const unitLower = unit.toLowerCase();
+    if (!validUnits.includes(unitLower)) {
+        throw new Error(`Invalid unit "${unit}". Valid units are 'km', 'mi', and 'nm'.`);
+    }
 
-function calculateSplits(distanceDataKm, pgData, splitLength = 1) {
+    // Define conversion factors based on the unit
+    const conversionFactors = {
+        'km': 1,                // Base unit
+        'mi': 0.621371,         // 1 km = 0.621371 miles
+        'nm': 0.539957          // 1 km = 0.539957 nautical miles
+    };
+
+    const conversionFactor = conversionFactors[unitLower];
+    const isBaseUnit = conversionFactor === 1;
+
+    // Convert distance data to the target unit if necessary
+    const distanceData = isBaseUnit
+        ? distanceDataKm.slice() // Clone the array to prevent mutation
+        : distanceDataKm.map(km => km * conversionFactor); // Convert km to target unit
+
+    // Convert pace data to the target unit if necessary
+    const paceData = isBaseUnit
+        ? pgData.slice()
+        : pgData.map(paceKm => paceKm * (1 / conversionFactor)); // Convert min/km to min/mi or min/nm
+
     // Define the total number of splits
-    const totalSplits = Math.ceil(distanceDataKm[distanceDataKm.length - 1] / splitLength);
+    const totalSplits = Math.ceil(distanceData[distanceData.length - 1] / splitLength);
 
     // Initialize array to store split times and distances
     const splits = [];
@@ -472,12 +539,12 @@ function calculateSplits(distanceDataKm, pgData, splitLength = 1) {
         const splitEnd = (splitIndex + 1) * splitLength;
 
         let splitTime = 0; // Time for the current split in minutes
-        let splitDistance = 0; // Distance for the current split in km
+        let splitDistance = 0; // Distance for the current split in the specified unit
 
         // Loop over the data points and sum up time intervals within the split
-        for (let i = 0; i < distanceDataKm.length - 1; i++) {
-            const x0 = distanceDataKm[i];
-            const x1 = distanceDataKm[i + 1];
+        for (let i = 0; i < distanceData.length - 1; i++) {
+            const x0 = distanceData[i];
+            const x1 = distanceData[i + 1];
 
             // Check if the interval [x0, x1] overlaps with the split range
             if (x1 <= splitStart || x0 >= splitEnd) {
@@ -487,10 +554,10 @@ function calculateSplits(distanceDataKm, pgData, splitLength = 1) {
             // Calculate the overlapping segment
             const segmentStart = Math.max(x0, splitStart);
             const segmentEnd = Math.min(x1, splitEnd);
-            const deltaX = segmentEnd - segmentStart; // Distance in km
+            const deltaX = segmentEnd - segmentStart; // Distance in the specified unit
 
             // Corresponding pace for this interval
-            const pace = pgData[i]; // Pace in min/km
+            const pace = paceData[i]; // Pace in min/km, min/mi, or min/nm
 
             // Time for this segment
             const deltaT = pace * deltaX; // Time in minutes
@@ -499,15 +566,144 @@ function calculateSplits(distanceDataKm, pgData, splitLength = 1) {
             splitDistance += deltaX;
         }
 
-        // Store the split time and distance
+        // Store the split time and distance, rounded to two decimal places
         splits.push({
             splitNumber: splitIndex + 1,
-            splitDistance: splitDistance, // e.g., 1 km or 0.2 km
-            splitTime: splitTime // Time in minutes
+            splitDistance: Math.round(splitDistance * 100) / 100, // e.g., 1 km, 0.62 mi, or 0.29 nm
+            splitTime: Math.round(splitTime * 100) / 100 // Time in minutes
         });
     }
 
     return splits;
+}
+*/
+
+function calculateSplits(distanceDataKm, pgData, elevationDataKm, splitLength = 1, unit = 'km') {
+    // Validate unit parameter
+    const validUnits = ['km', 'mi', 'nm'];
+    const unitLower = unit.toLowerCase();
+    if (!validUnits.includes(unitLower)) {
+        throw new Error(`Invalid unit "${unit}". Valid units are 'km', 'mi', and 'nm'.`);
+    }
+
+    // Validate elevation data length
+    if (elevationDataKm.length !== distanceDataKm.length) {
+        throw new Error("Elevation data length must match distance data length.");
+    }
+
+    // Define conversion factors based on the unit
+    const conversionFactors = {
+        'km': 1,                // Base unit
+        'mi': 0.621371,         // 1 km = 0.621371 miles
+        'nm': 0.539957          // 1 km = 0.539957 nautical miles
+    };
+
+    const conversionFactor = conversionFactors[unitLower];
+    const isBaseUnit = conversionFactor === 1;
+
+    // Convert distance data to the target unit if necessary
+    const distanceData = isBaseUnit
+        ? distanceDataKm.slice() // Clone the array to prevent mutation
+        : distanceDataKm.map(km => km * conversionFactor); // Convert km to target unit
+
+    // Convert pace data to the target unit if necessary
+    const paceData = isBaseUnit
+        ? pgData.slice()
+        : pgData.map(paceKm => paceKm * (1 / conversionFactor)); // Convert min/km to min/mi or min/nm
+
+    // Convert elevation data to the target unit if necessary
+    const elevationData = isBaseUnit
+        ? elevationDataKm.slice() // Clone the array to prevent mutation
+        : elevationDataKm.map(m => m * conversionFactor); // Convert meters to target unit if needed
+
+    // Define the total number of splits
+    const totalSplits = Math.ceil(distanceData[distanceData.length - 1] / splitLength);
+
+    // Initialize array to store split times, distances, and elevation gains
+    const splits = [];
+
+    // Helper function to interpolate elevation at a specific distance
+    function interpolateElevation(distance) {
+        // If the distance is exactly one of the data points
+        const exactIndex = distanceData.findIndex(d => d === distance);
+        if (exactIndex !== -1) {
+            return elevationData[exactIndex];
+        }
+
+        // Find the two data points between which the distance lies
+        for (let i = 0; i < distanceData.length - 1; i++) {
+            if (distanceData[i] < distance && distanceData[i + 1] > distance) {
+                const ratio = (distance - distanceData[i]) / (distanceData[i + 1] - distanceData[i]);
+                return elevationData[i] + ratio * (elevationData[i + 1] - elevationData[i]);
+            }
+        }
+
+        // If distance is beyond the provided data, return the last elevation point
+        return elevationData[elevationData.length - 1];
+    }
+
+    // Loop over each split
+    for (let splitIndex = 0; splitIndex < totalSplits; splitIndex++) {
+        const splitStart = splitIndex * splitLength;
+        const splitEnd = (splitIndex + 1) * splitLength;
+
+        let splitTime = 0; // Time for the current split in minutes
+        let splitDistance = 0; // Distance for the current split in the specified unit
+
+        // Loop over the data points and sum up time intervals within the split
+        for (let i = 0; i < distanceData.length - 1; i++) {
+            const x0 = distanceData[i];
+            const x1 = distanceData[i + 1];
+
+            // Check if the interval [x0, x1] overlaps with the split range
+            if (x1 <= splitStart || x0 >= splitEnd) {
+                continue; // No overlap
+            }
+
+            // Calculate the overlapping segment
+            const segmentStart = Math.max(x0, splitStart);
+            const segmentEnd = Math.min(x1, splitEnd);
+            const deltaX = segmentEnd - segmentStart; // Distance in the specified unit
+
+            // Corresponding pace for this interval
+            const pace = paceData[i]; // Pace in min/km, min/mi, or min/nm
+
+            // Time for this segment
+            const deltaT = pace * deltaX; // Time in minutes
+
+            splitTime += deltaT;
+            splitDistance += deltaX;
+        }
+
+        // Calculate net elevation gain for the split
+        const elevationStart = interpolateElevation(splitStart);
+        const elevationEnd = interpolateElevation(splitEnd);
+        const netElevationGain = elevationEnd - elevationStart; // Positive: Gain, Negative: Loss
+
+        // Store the split data, rounded to two decimal places
+        splits.push({
+            splitNumber: splitIndex + 1,
+            splitDistance: Math.round(splitDistance * 100) / 100, // e.g., 1 km, 0.62 mi, or 0.29 nm
+            splitTime: Math.round(splitTime * 100) / 100, // Time in minutes
+            netElevationGain: Math.round(netElevationGain * 100) / 100 // Elevation in meters (or converted unit)
+        });
+    }
+
+    return splits;
+}
+
+
+function findIndexClosest(array, target) {
+    let closestIndex = 0;
+    let smallestDiff = Math.abs(array[0] - target);
+    for (let i = 1; i < array.length; i++) {
+        const diff = Math.abs(array[i] - target);
+        if (diff < smallestDiff) {
+            smallestDiff = diff;
+            closestIndex = i;
+        }
+    }
+    return closestIndex;
 }
 
 
@@ -1028,6 +1224,7 @@ function syncZoomPan({ chart }) {
 document.getElementById('resetZoomBtn').addEventListener('click', function () {
     window.elevationChart.resetZoom();
     window.gradeChart.resetZoom();
+    window.gapChart.resetZoom();
 });
 
 
