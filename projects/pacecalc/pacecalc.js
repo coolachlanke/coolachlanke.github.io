@@ -21,6 +21,9 @@ document.getElementById('calculate-btn').addEventListener('click', function() {
         // Advanced Mode: Perform advanced calculation
         advancedCalculation(time, unit);
     } else { 
+        // Hide advanced mode if already shown
+        document.getElementById('advanced-section').style.display = 'none';
+
         pace = (Math.round(pace) !== getPace()) ? getPace() : pace;
         distance = (distance.toFixed(2) !== getDistance()) ? getDistance() : distance;
 
@@ -190,22 +193,23 @@ function updateResultsTable(time, distance, pace, unit) {
 
     const distanceInKm = convertToKm(distance, unit);
     const paceInKm = time / distanceInKm; // Pace in s/km
+    const speed = 3600 / pace;
     const speedInKm = 3600 / paceInKm; // Speed in km/h
 
     // Loop through each split unit and add a new row
     for (let i = 1; i <= Math.floor(distance); i++) {
         const rowDistance = i;
         const rowTime = formatTime((pace * i));
-        const rowPaceAlt = formatTime((paceInKm * (alternateUnit === 'mi' ? 1.60934 : 1.852)));
-        const rowSpeedAlt = speedInKm * (unit === 'nm' ? 0.539957 : 0.621371);
+        const rowPaceAlt = formatTime((paceInKm * (alternateUnit === 'km' ? 1.0 : alternateUnit === 'mi' ? 1.60934 : 1.852)));
+        const rowSpeedAlt = speedInKm * (alternateUnit === 'km' ? 1.0 : alternateUnit === 'nm' ? 0.539957 : 0.621371);
 
         tbody.innerHTML += `
             <tr>
                 <td>${rowDistance.toFixed(2)} ${unit}</td>
                 <td>${rowTime}</td>
-                <td>${formatTime(paceInKm)}</td>
+                <td>${formatTime(pace)}</td>
                 <td>${rowPaceAlt}</td>
-                <td>${speedInKm.toFixed(2)}</td>
+                <td>${speed.toFixed(2)}</td>
                 <td>${rowSpeedAlt.toFixed(2)}</td>
             </tr>`;
     }
@@ -258,7 +262,7 @@ function updateResultsTableAdv(time, unit, averagePace, splits) {
             <th>Mean Pace (min/${unit})</th>
             <th>Diff (min/${unit})</th>
             <th>Speed (${unit}/h)</th>
-            <th>Net Elevation Gain</th>
+            <th>Elevation Change</th>
         </tr>`;
 
     // Define the maximum difference for color scaling (for pace)
