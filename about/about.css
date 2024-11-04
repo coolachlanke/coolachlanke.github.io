@@ -20,3 +20,88 @@
     list-style-type: circle;
     margin-left: 20px;
 }
+
+
+/* Button Menu */
+.button-menu {
+    display: flex;
+    margin: 0px auto; /* Top and bottom margins of 40px, auto left and right */
+  }
+  
+  
+  .button-menu ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .button-menu ul li {
+    list-style: none;
+    margin: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  
+  .button-menu ul li a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: 0.3s;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    color: #000;
+    margin: 0;
+  }
+  
+  .button-menu ul li a i {
+    font-size: 30px;
+    line-height: 1;
+    transition: color 0.3s ease;
+  }
+  
+  .button-menu ul li a:hover {
+    transform: translate(0, -10%);
+  }
+  
+  .button-menu ul li a:hover i {
+    color: #fff;
+  }
+  
+  .button-menu ul li:nth-child(1) a:hover {
+    background-color: #0077b5;
+  }
+  
+  .button-menu ul li:nth-child(2) a:hover {
+    background-color: #28a745;
+  }
+  
+  .button-menu ul li:nth-child(3) a:hover {
+    background-color: #dc3545;
+  }
+  
+  /* New Styles for Text Labels */
+  .button-menu ul li span {
+    display: block;
+    margin-top: 10px; /* Adds space between the button and text */
+    font-size: 14px;
+    color: #000;
+  }
+  
+  .button-menu ul li a:hover + span {
+    color: #0077b5; /* Changes text color on hover for the Resume button */
+  }
+  
+  .button-menu ul li:nth-child(2) a:hover + span {
+    color: #28a745; /* Changes text color on hover for the Academic Transcript button */
+  }
+  
+  .button-menu ul li:nth-child(3) a:hover + span {
+    color: #dc3545; /* Changes text color on hover for the Contact button */
+  }
