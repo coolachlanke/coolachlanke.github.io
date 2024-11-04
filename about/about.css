@@ -1,0 +1,22 @@
+.education-entry {
+    margin-bottom: 30px;
+}
+
+.education-entry:last-child {
+    margin-bottom: 0;
+}
+
+.education-entry ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-bottom: 10px;
+}
+
+.education-entry ul li {
+    margin-bottom: 5px;
+}
+
+.education-entry ul ul {
+    list-style-type: circle;
+    margin-left: 20px;
+}
