@@ -6,17 +6,15 @@
   <title>Lachlan Cooke</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="../style/custom.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
+  <link href="../contact/contact.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
   <link rel="manifest" href="images/favicon/site.webmanifest">
 </head>
 <body>
-
-<!-- Main body content -->
-<div class="content-wrap">
-
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
       <a class="navbar-brand text-dark" href="/">
@@ -45,17 +43,45 @@
     </div>
   </nav>
 
-  <!-- Title -->
-  <div class="container">
-    <div class="row">
+  <!-- Main -->
+  <main>
+    <!-- Title -->
+    <div class="container">
+      <div class="row">
         <div class="col text-center mt-5">
-            <h1 class="display-4 font-weight-bolder">Contact</h1>
-            <p class="lead">Email: magicbattery1@gmail.com</p>
+          <h1 class="display-4 font-weight-bolder">Contact</h1>
+          <p class="lead">Contact me using the form below! Alternatively, feel free to reach out
+            via <a href="https://www.linkedin.com/in/lachlancooke/">LinkedIn</a> or
+            <a href="mailto:lachlanmcooke@gmail.com">email</a>.</p>
         </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+          <form id="contact-form" method="POST" action="https://formspree.io/f/xvgoapop">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" name="name" required placeholder="Your Name">
+            </div>
+            <div class="form-group mt-3">
+              <label for="email">Email Address</label>
+              <input type="email" class="form-control" id="email" name="_replyto" required placeholder="Your Email">
+            </div>
+            <div class="form-group mt-3">
+              <label for="message">Message</label>
+              <textarea class="form-control" id="message" name="message" rows="6" required placeholder="Your Message"></textarea>
+            </div>
+            <div class="text-center mt-4">
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      
     </div>
-  </div>
-  
-</div>
+  </main>
 
 
 <!-- Footer -->
@@ -80,5 +106,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.11/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="../contact/contact.js"></script>
 </body>
 </html>
