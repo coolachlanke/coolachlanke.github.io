@@ -37,7 +37,7 @@ function generatePDF() {
             header: true,
             complete: function(results) {
                 const data = results.data;
-                let newcomers = data.filter(row => row['WCA ID'] === ''); // Filter out the returning competitors
+                let newcomers = data.filter(row => row['WCA ID'] === '' || row['WCA ID'] === 'null'); // Filter out the returning competitors
                 newcomers = newcomers.filter(row => row['Name'] && row['Country'] && row['Birth Date'] && row['Gender']);
 
                 // Remove local names in parentheses from the 'Name' field and sort by name alphabetically
