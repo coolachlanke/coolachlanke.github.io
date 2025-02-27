@@ -1,0 +1,7 @@
+/* Scale up the canvas for better visibility */
+#mnist-canvas {
+    width: 280px;
+    height: 280px;
+    image-rendering: pixelated; /* Ensure the image doesn't blur when scaled */
+  }
+  

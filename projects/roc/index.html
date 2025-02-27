@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Radius of Curvature</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link href="../../style/custom.css" rel="stylesheet" />
+
+  <!-- Your custom ROC styles -->
+  <link rel="stylesheet" href="roc.css" />
+  
+  <!-- Optional Prism CSS if you plan to show code snippets -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
+  />
+
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  ></script>
+
+  <!-- Favicon Links -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="../../images/favicon/apple-touch-icon.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="../../images/favicon/favicon-32x32.png"
+  />
+  <link rel="manifest" href="../../images/favicon/site.webmanifest" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand text-dark" href="/">
+        <img
+          src="../../images/lc_site_lgooo.png"
+          alt="LC"
+          style="height: 48px; margin-right: 10px"
+        />
+        Lachlan Cooke
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link text-dark" href="/">Home</a></li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="/projects">Projects</a>
+          </li>
+          <li class="nav-item"><a class="nav-link text-dark" href="/about">About</a></li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main class="container mt-5">
+    <!-- Title and Description -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col text-center mt-5 mb-2">
+          <h1 class="display-4 font-weight-bolder">Radius of Curvature</h1>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-10 col-md-12 text-left">
+          <p class="lead">
+            This article chronicles my journey investigating the radius of curvature for
+            univariate and parametric curves (including 3D). We’ll derive the formulas,
+            visualize the concepts, and see where this knowledge can be applied,
+            including (perhaps) the design of screw threads.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table of Contents -->
+    <nav class="mt-5">
+      <h2>Table of Contents</h2>
+      <ul>
+        <li><a href="#introduction">Introduction & Motivation</a></li>
+        <li><a href="#univariate">Univariate Functions</a></li>
+        <li><a href="#param2D">Parametric Curves (2D)</a></li>
+        <li><a href="#param3D">Parametric Curves (3D)</a></li>
+        <li><a href="#examples">Visual Examples & Desmos</a></li>
+        <li><a href="#application">Application: Screw Thread Design</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </nav>
+
+    <!-- Introduction -->
+    <section id="introduction" class="mt-5">
+      <h2>1. Introduction & Motivation</h2>
+      <p>
+        Curvature describes how sharply a curve bends, and the 
+        <em>radius of curvature</em> (ROC) is the reciprocal of the 
+        curvature at a given point. Understanding ROC helps in 
+        geometric design, computer graphics, and physics.
+      </p>
+      <p>
+        My inspiration for this project was a random note about 
+        measuring the “bending” of a 2D function. This led me down 
+        a rabbit hole: from geometry class definitions, to calculus 
+        derivations, to verifying it all with parametric and 3D curves.
+      </p>
+    </section>
+
+    <!-- Univariate Functions -->
+    <section id="univariate" class="mt-5">
+      <h2>2. Radius of Curvature for Univariate Functions</h2>
+      <p>
+        Let’s start with a classic function \( y = f(x) \). The 
+        curvature \(\kappa\) at a point is given by:
+      </p>
+      <p>
+        $$
+        \kappa(x) = \frac{|y''(x)|}{\bigl(1 + (y'(x))^2 \bigr)^{3/2}}
+        $$
+      </p>
+      <p>
+        Hence, the radius of curvature \(R(x)\) is:
+      </p>
+      <p>
+        $$
+        R(x) = \frac{1}{\kappa(x)} = \frac{\bigl(1 + (y'(x))^2 \bigr)^{3/2}}{|y''(x)|}.
+        $$
+      </p>
+      <p>
+        In deriving this, we look at the geometry of the osculating 
+        circle—the circle that “best fits” the curve locally. 
+      </p>
+    </section>
+
+    <!-- Parametric Curves (2D) -->
+    <section id="param2D" class="mt-5">
+      <h2>3. Radius of Curvature for 2D Parametric Curves</h2>
+      <p>
+        When a curve is parameterized by \(x(t)\) and \(y(t)\) in 2D, 
+        the curvature becomes:
+      </p>
+      <p>
+        $$
+        \kappa(t) = 
+        \frac{\bigl| x'(t) y''(t) - y'(t) x''(t) \bigr|}
+             {\bigl(\bigl(x'(t)\bigr)^2 + \bigl(y'(t)\bigr)^2\bigr)^{3/2}}.
+        $$
+      </p>
+      <p>
+        And so the radius of curvature is simply:
+      </p>
+      <p>
+        $$
+        R(t) = \frac{1}{\kappa(t)}.
+        $$
+      </p>
+      <p>
+        This form of the equation is particularly handy when dealing with 
+        circles, ellipses, or other shapes where a natural parameterization 
+        (like angle or time) may be more convenient than just \(y=f(x)\).
+      </p>
+    </section>
+
+    <!-- Parametric Curves (3D) -->
+    <section id="param3D" class="mt-5">
+      <h2>4. Radius of Curvature for 3D Parametric Curves</h2>
+      <p>
+        In 3D, for a curve given by \(\mathbf{r}(t) = \langle x(t), y(t), z(t) \rangle\),
+        the curvature \(\kappa\) is:
+      </p>
+      <p>
+        $$
+        \kappa(t) = 
+        \frac{\|\mathbf{r}'(t) \times \mathbf{r}''(t)\|}
+             {\|\mathbf{r}'(t)\|^3}.
+        $$
+      </p>
+      <p>
+        As before, \(R(t) = 1/\kappa(t)\). Geometrically, this is tied to the
+        concept of the <em>osculating circle</em> that lies in the <em>osculating plane</em>
+        at each point of the 3D curve.
+      </p>
+      <p>
+        The cross-product in the numerator indicates that if the 
+        velocity and acceleration vectors are collinear 
+        (i.e., the motion is in a straight line), curvature is zero 
+        (infinite radius of curvature).
+      </p>
+    </section>
+
+    <!-- Examples & Desmos -->
+    <section id="examples" class="mt-5">
+      <h2>5. Visual Examples & Desmos</h2>
+      <p>
+        Below are a few interactive graphs illustrating these concepts. 
+        You can use the sliders (in Desmos) to see how curvature (or 
+        radius of curvature) evolves as you move along the curve.
+      </p>
+      
+      <!-- Example Embedding of a Desmos Graph -->
+      <div class="text-center mb-4">
+        <!-- Replace src with your actual Desmos embed link -->
+        <iframe
+          src="https://www.desmos.com/calculator/exampleEmbed"
+          width="100%"
+          height="500"
+          style="border: 1px solid #ccc"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <p>
+        In this Desmos demo, you can see the osculating circle
+        at a chosen parameter \(t\). Adjusting the slider changes the
+        point of tangency, and the circle automatically updates
+        to illustrate local curvature.
+      </p>
+    </section>
+
+    <!-- Application: Screw Thread Design -->
+    <section id="application" class="mt-5">
+      <h2>6. Application: Screw Thread Design</h2>
+      <p>
+        One practical application of ROC is in the design and 
+        manufacturing of screw threads. 
+        <strong>Screw threads</strong> can be modeled with helical 
+        curves, which are 3D parametric curves:
+      </p>
+      <p>
+        $$
+        x(t) = r \cos(t), \quad
+        y(t) = r \sin(t), \quad
+        z(t) = \frac{h}{2\pi} \, t,
+        $$
+      </p>
+      <p>
+        where \(r\) is the radius of the helix, and \(h\) is the 
+        pitch height per \(2\pi\) radians. By analyzing 
+        curvature (and torsion), we gain insight into how 
+        “steeply” the screw angle is cut, or how the thread 
+        might wear over time.
+      </p>
+      <p>
+        In many industrial settings, controlling the radius 
+        of curvature ensures that stress and wear patterns 
+        on the thread are maintained within safe limits.
+      </p>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion" class="mt-5">
+      <h2>7. Conclusion</h2>
+      <p>
+        Through exploring univariate, 2D, and 3D formulations of 
+        curvature and radius of curvature, we can appreciate the 
+        central importance of this geometric measure. It drives 
+        design considerations in mechanical engineering, computer 
+        graphics, and beyond.
+      </p>
+      <p>
+        The relationships between derivatives and curvature 
+        provide a powerful lens on how “bendy” shapes are, 
+        and hopefully, this page demonstrated just how 
+        straightforward and elegant the math behind curvature can be!
+      </p>
+      <p>
+        If you want to dive deeper, I encourage you to check out 
+        the embedded Desmos graphs, or even replicate these 
+        calculations in your own Python or MATLAB code to 
+        verify how the radius of curvature behaves 
+        for different test curves.
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer
+    class="text-center text-lg-start bg-light text-muted"
+    style="background-color: #e3f2fd; padding: 1px; position: relative; bottom: 0; width: 100%"
+  >
+    <section class="d-flex justify-content-between align-items-center p-4">
+      <div class="me-5 d-none d-lg-block">
+        <span>&copy; 2024 Lachlan Cooke</span>
+      </div>
+      <div class="social-menu ms-auto">
+        <ul class="d-flex">
+          <li class="ms-3">
+            <a
+              href="https://www.linkedin.com/in/lachlancooke/"
+              target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </li>
+          <li class="ms-3">
+            <a href="https://github.com/coolachlanke" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+          </li>
+          <li class="ms-3">
+            <a
+              href="https://www.instagram.com/coolachlanke/"
+              target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </li>
+          <li class="ms-3">
+            <a
+              href="https://www.youtube.com/@magicbattery"
+              target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </li>
+          <li class="ms-3">
+            <a
+              href="https://www.strava.com/athletes/30032118"
+              target="_blank"
+              ><i class="fab fa-strava"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </footer>
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.9.11/dist/umd/popper.min.js"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+  ></script>
+
+  <!-- Optional Prism JS if showing code snippets -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-python.min.js"></script>
+
+  <!-- Custom JS for your ROC page -->
+  <script src="roc.js"></script>
+</body>
+</html>
+
