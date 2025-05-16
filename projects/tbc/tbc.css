@@ -1,0 +1,42 @@
+/* /projects/tbc/tbc.css */
+
+/* Hero image styling */
+img[alt="PCB in action"] {
+  max-width: 600px;
+  margin: 1rem auto;
+  display: block;
+}
+
+.rounded-lg {
+  border-radius: 5rem !important;
+}
+
+/* Table of contents links */
+nav ul.list-unstyled li a {
+  color: #007bff;
+  text-decoration: none;
+}
+nav ul.list-unstyled li a:hover {
+  text-decoration: underline;
+}
+
+/* Section headings */
+main section h2 {
+  border-bottom: 2px solid #e3f2fd;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+/* Figure captions */
+figure figcaption {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Downloads list */
+#downloads ul li a {
+  color: #333;
+}
+#downloads ul li a:hover {
+  color: #007bff;
+}

@@ -1,0 +1,165 @@
+<!-- /projects/tbc/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3-Bit Discrete RTL Counter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../style/custom.css" rel="stylesheet">
+  <link rel="stylesheet" href="tbc.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
+
+  <!-- MathJax (equations) -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png">
+  <link rel="manifest" href="../../images/favicon/site.webmanifest">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand text-dark" href="/">
+        <img src="../../images/lc_site_lgooo.png" alt="LC" style="height: 48px; margin-right: 10px;">
+        Lachlan Cooke
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link text-dark" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="/projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="/about">About</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="container mt-5">
+    <!-- Hero / Title -->
+    <div class="text-center mt-5 mb-4">
+      <h1 class="display-4 font-weight-bolder">3-Bit Discrete RTL Counter</h1>
+      <p class="lead">Creating a 3-bit counter with RTL-logic, using raw NPN transistors and resistors.</p>
+      <img src="assets/tbc_img1.jpg" alt="PCB in action" class="img-fluid rounded-lg shadow-sm">
+    </div>
+
+    <!-- Table of Contents -->
+    <nav class="mt-5">
+      <h2>Contents</h2>
+      <ul class="list-unstyled">
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#pcb-design">PCB Design</a></li>
+        <li><a href="#build-process">Build Process</a></li>
+        <li><a href="#learnings">What I Learned</a></li>
+        <li><a href="#downloads">Downloads</a></li>
+      </ul>
+    </nav>
+
+    <!-- Sections -->
+    <section id="introduction" class="mt-5">
+      <h2>Introduction</h2>
+      <p>This project peels back the abstraction of modern logic ICs by constructing a 3-bit binary counter entirely out of discrete NPN BJTs (BC847), resistors, capacitors, and LEDs. It’s powered by USB-C (5 V) and toggles through 0→7 on each clock press.</p>
+    </section>
+
+    <section id="how-it-works" class="mt-5">
+      <h2>How It Works</h2>
+      <ul>
+        <li><strong>Logic Style:</strong> RTL NAND gates built from NPN transistors + pull-up resistors.</li>
+        <li><strong>Flip-Flops:</strong> D-type, edge-triggered on the falling edge of the clock.</li>
+        <li><strong>Counter:</strong> Three FFs in series → ripple counter.</li>
+        <li><strong>Clock:</strong> Manual push-button, hardware-debounced.</li>
+      </ul>
+      <figure>
+        <img src="assets/schematic.png" alt="Schematic diagram" class="img-fluid">
+        <figcaption class="text-muted text-center">Simplified schematic of one stage</figcaption>
+      </figure>
+    </section>
+
+    <section id="pcb-design" class="mt-5">
+      <h2>PCB Design</h2>
+      <p>Designed in KiCAD with a compact form factor. I paid extra attention to:</p>
+      <ul>
+        <li>Tracing each NAND gate without crossover.</li>
+        <li>Clear silkscreen labels for every transistor and resistor.</li>
+        <li>Rounded trace corners and generous via clearances.</li>
+      </ul>
+      <div class="row">
+        <div class="col-md-6"><img src="assets/board-top.jpg" alt="Board top" class="img-fluid rounded"></div>
+        <div class="col-md-6"><img src="assets/board-bottom.jpg" alt="Board bottom" class="img-fluid rounded"></div>
+      </div>
+    </section>
+
+    <section id="build-process" class="mt-5">
+      <h2>Build Process</h2>
+      <ol>
+        <li>Hand-soldered all SMD resistors & capacitors.</li>
+        <li>Placed BJTs and LEDs, checked orientation.</li>
+        <li>Debugged early fan-out issues by increasing pull-ups.</li>
+        <li>Cleaned with IPA and fitted into 3D-printed enclosure.</li>
+      </ol>
+    </section>
+
+    <section id="learnings" class="mt-5">
+      <h2>What I Learned</h2>
+      <p>Building logic from scratch taught me:</p>
+      <ul>
+        <li>The real impact of fan-out limits on voltage levels.</li>
+        <li>How timing skews arise in ripple counters.</li>
+        <li>Why integrated logic is so pervasive—so many transistors cram into each IC!</li>
+      </ul>
+    </section>
+
+    <section id="downloads" class="mt-5 mb-5">
+      <h2>Downloads</h2>
+      <ul>
+        <li><a href="assets/threebit_kicad.zip">KiCAD Project Files (ZIP)</a></li>
+        <li><a href="assets/schematic.pdf">Schematic PDF</a></li>
+        <li><a href="assets/BOM.csv">Bill of Materials (CSV)</a></li>
+        <li><a href="assets/enclosure.stl">3D-Print Enclosure STL</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-light text-muted" style="background-color: #e3f2fd; padding:1px; bottom:0; width:100%;">
+    <section class="d-flex justify-content-between align-items-center p-4">
+      <div class="me-5 d-none d-lg-block">
+        <span>&copy; 2025 Lachlan Cooke</span>
+      </div>
+      <div class="social-menu ms-auto">
+        <ul class="d-flex">
+          <li class="ms-3"><a href="https://www.linkedin.com/in/lachlancooke/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+          <li class="ms-3"><a href="https://github.com/coolachlanke" target="_blank"><i class="fab fa-github"></i></a></li>
+          <li class="ms-3"><a href="https://www.instagram.com/coolachlanke/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+          <li class="ms-3"><a href="https://www.youtube.com/@magicbattery" target="_blank"><i class="fab fa-youtube"></i></a></li>
+          <li class="ms-3"><a href="https://www.strava.com/athletes/30032118" target="_blank"><i class="fab fa-strava"></i></a></li>
+        </ul>
+      </div>
+    </section>
+  </footer>
+
+  <!-- JS libs -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.11/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-python.min.js"></script>
+
+  <!-- Your custom JS -->
+  <script src="tbc.js"></script>
+</body>
+</html>
