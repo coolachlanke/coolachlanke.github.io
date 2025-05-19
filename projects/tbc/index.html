@@ -18,6 +18,7 @@
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   <!-- Favicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png">
   <link rel="manifest" href="../../images/favicon/site.webmanifest">
@@ -53,17 +54,23 @@
     <div class="text-center mt-5 mb-4">
       <h1 class="display-4 font-weight-bolder">3-Bit Discrete RTL Counter</h1>
       <p class="lead">Creating a 3-bit counter with RTL-logic, using raw NPN transistors and resistors.</p>
+      <!-- load the model-viewer web component -->
+      <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
       <model-viewer
-        src="assets/threebitcounter.glb"
-        alt="3D model of the 3-bit counter in its enclosure"
+        src="assets/tbc_model.glb"
+        alt="3D model of the 3-bit counter"
         camera-controls
         auto-rotate
-        exposure="1"
-        shadow-intensity="1"
-        style="width:100vw; height:60vh; margin-left: calc(-50vw + 50%);"
-      >
+        rotation-per-second="40deg"
+        environment-image="https://modelviewer.dev/shared-assets/environments/neutral.hdr"
+        shadow-intensity="1.2"
+        exposure="1.2"
+        style="width:100vw; height:100vh; margin-left:calc(-50vw + 50%);">
       </model-viewer>
-      <img src="assets/tbc_img1.jpg" alt="PCB in action" class="img-fluid rounded-lg shadow-sm">
+
+
+      <!-- <img src="assets/tbc_img1.jpg" alt="PCB in action" class="img-fluid rounded-lg shadow-sm"> -->
     </div>
 
     <!-- Table of Contents -->
@@ -85,7 +92,7 @@
     <section id="introduction" class="mt-5">
       <h2>Introduction</h2>
       <p>In this project, we explore computing in its purest form. By foregoing the abstractions offered by microchips, integrated 
-        circuits and even logic gates, we develop and intuition and appreciation for the simplest building block underpinning
+        circuits and even logic gates, we develop an intuition and appreciation for the simplest building block underpinning
         modern computing - the transitor. Given that modern computers offer millions, sometimes billions of transistors inside a 
         single chip, we will focus our efforts here on a simpler logic device with a much lower transistor count. The 3-bit counter 
         is the perfect candidate. It has, as we will see, a relatively low transistor count, yet still posesses basic logical 
