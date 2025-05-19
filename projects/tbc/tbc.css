@@ -40,3 +40,20 @@ figure figcaption {
 #downloads ul li a:hover {
   color: #007bff;
 }
+
+/* 1) Initialize a counter on your main container */
+main {
+  counter-reset: section;          /* start counting at 0 */
+}
+
+/* 2) Increment on each section */
+main section {
+  counter-increment: section;      /* count += 1 per section */
+}
+
+/* 3) Prefix every h2 with the counter value */
+main section > h2::before {
+  content: counter(section) ". ";  /* e.g. "1. " */
+  color: inherit;                  /* use same heading color */
+}
+
