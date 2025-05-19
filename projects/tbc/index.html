@@ -53,6 +53,16 @@
     <div class="text-center mt-5 mb-4">
       <h1 class="display-4 font-weight-bolder">3-Bit Discrete RTL Counter</h1>
       <p class="lead">Creating a 3-bit counter with RTL-logic, using raw NPN transistors and resistors.</p>
+      <model-viewer
+        src="assets/threebitcounter.glb"
+        alt="3D model of the 3-bit counter in its enclosure"
+        camera-controls
+        auto-rotate
+        exposure="1"
+        shadow-intensity="1"
+        style="width:100vw; height:60vh; margin-left: calc(-50vw + 50%);"
+      >
+      </model-viewer>
       <img src="assets/tbc_img1.jpg" alt="PCB in action" class="img-fluid rounded-lg shadow-sm">
     </div>
 
@@ -204,6 +214,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-python.min.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
 
   <!-- Your custom JS -->
   <script src="tbc.js"></script>
