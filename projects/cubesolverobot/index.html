@@ -58,14 +58,14 @@
     <!-- Main -->
     <main class="container">
         <!-- Title + 3D Model -->
-        <div class="text-center mt-5 mb-4">
+        <div class="text-center mt-5">
           <h1 class="display-4 font-weight-bolder">Rubik's Cube Solving Robot</h1>
           <p class="lead">In this project, we built a robot that scans and solves a Rubik’s cube.</p>
           <!-- load the model-viewer web component -->
           <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
         </div>
 
-        <div class="d-flex justify-content-center mb-5">
+        <div class="d-flex justify-content-center">
           <model-viewer
             src="assets/cube_solve_robot_3d_model.glb"
             alt="3D model of the Rubik's Cube robot"
@@ -74,11 +74,11 @@
             rotation-per-second="40deg"
             environment-image="https://modelviewer.dev/shared-assets/environments/neutral.hdr"
             shadow-intensity="1.2"
-            disable-zoom
             exposure="1.2"
+            disable-pan
             style="
               width: 100vw;
-              height: 100vh;
+              height: 90vh;
               display: block;
               margin: 0 auto;
             ">
