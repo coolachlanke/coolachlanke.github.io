@@ -1,11 +1,5 @@
 /* /projects/cubesolverobot/cubesolverobot.css */
 
-/* Hero image styling */
-img[alt="PCB in action"] {
-  max-width: 600px;
-  margin: 1rem auto;
-  display: block;
-}
 
 .rounded-lg {
   border-radius: 5rem !important;
