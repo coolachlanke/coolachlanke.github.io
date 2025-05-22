@@ -1,0 +1,227 @@
+<!-- /projects/threebitcounter/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3-Bit Discrete RTL Counter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../style/custom.css" rel="stylesheet">
+  <link rel="stylesheet" href="threebitcounter.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
+
+  <!-- MathJax (equations) -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Favicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png">
+  <link rel="manifest" href="../../images/favicon/site.webmanifest">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand text-dark" href="/">
+        <img src="../../images/lc_site_lgooo.png" alt="LC" style="height: 48px; margin-right: 10px;">
+        Lachlan Cooke
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link text-dark" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="/projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="/about">About</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="container mt-5">
+    <!-- Title + 3D Model -->
+    <div class="text-center mt-5 mb-4">
+      <h1 class="display-4 font-weight-bolder">3-Bit Discrete RTL Counter</h1>
+      <p class="lead">Creating a 3-bit counter with RTL-logic, using raw NPN transistors and resistors.</p>
+      <!-- load the model-viewer web component -->
+      <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+      <model-viewer
+        src="assets/tbc_model.glb"
+        alt="3D model of the 3-bit counter"
+        camera-controls
+        auto-rotate
+        rotation-per-second="40deg"
+        environment-image="https://modelviewer.dev/shared-assets/environments/neutral.hdr"
+        shadow-intensity="1.2"
+        exposure="1.2"
+        style="width:100vw; height:100vh; margin-left:calc(-50vw + 50%);">
+      </model-viewer>
+    </div>
+
+    <!-- Table of Contents -->
+    <nav class="mt-5">
+      <h2>Contents</h2>
+      <ul class="list-unstyled">
+        <li><a href="#introduction">1. Introduction</a></li>
+        <li><a href="#the-three-bit-counter">2. The 3-bit Counter</a></li>
+        <li><a href="#digital-logic-design">3. Designing Digital Logic Blocks</a></li>
+        <li><a href="#simulation">4. Simulation</a></li>
+        <li><a href="#resistor-transistor-logic">5. Resistor Transistor Logic</a></li>
+        <li><a href="#pcb-design">6. PCB Design with KiCAD 8</a></li>
+        <li><a href="#finished-design">7. Finshed Design</a></li>
+        <li><a href="#conclusion">8. Conclusion</a></li>
+      </ul>
+    </nav>
+
+    <!-- Sections -->
+    <section id="introduction" class="mt-5">
+      <h2>Introduction</h2>
+      <p>In this project, we explore computing in its purest form. By foregoing the abstractions offered by microchips, integrated 
+        circuits and even logic gates, we develop an intuition and appreciation for the simplest building block underpinning
+        modern computing - the transistor. Given that modern computers offer millions, sometimes billions of transistors inside a 
+        single chip, we will focus our efforts here on a simpler logic device with a much lower transistor count. The 3-bit counter 
+        is the perfect candidate. It has, as we will see, a relatively low transistor count, yet still posesses basic logical 
+        structures present in the most modern of computers. In this project, we will start with an overview and block diagram of a 
+        3-bit counter, explore the bipolar junction transistor (BJT), build and simiulate a digital circuit, and finally design, 
+        assemble and test the circuit on a printed circuit board (PCB).</p>
+    </section>
+
+    <section id="the-three-bit-counter" class="mt-5">
+      <h2>The 3-bit Counter</h2>
+      <p>A 3-bit counter is a simple digital circuit made up of three <em>flip-flop</em> circuits (one per bit) that steps through 
+         every binary value from 000 to 111 (0–7 in decimal) and then wraps back around to 000. Each clock pulse advances the count 
+         by one, with the least significant bit toggling every pulse and higher bits toggling only when the bit below rolls over. This
+         gives a neat, orderly binary sequence, which we will visualise via three LEDs for the binary output, and a seven-segment 
+         display for decimal output.</p>
+      <figure class="diagram-container text-center">
+          <img
+            src="assets/tbc_block_diagram_white_trans.svg"
+            alt="Functional block diagram"
+            class="img-fluid"
+          >
+          <figcaption class="text-muted mt-2">
+            Figure 2.1 - Functional block diagram.
+          </figcaption>
+        </figure>
+      <p>The functional block diagram in Figure 2.1 illustrates the flow of data between high-level logic blocks in the circuit. 
+         Most notable are the D flip-flops (three - one each for \(S_{0}\), \(S_{1}\) and \(S_{2}\)), next-state combinational logic 
+         blocks and the binary and decimal outputs. Note that to drive the decimal output via the 7-segment display, we need a '7-segment 
+         decoder' logic block to drive the necessary segments for each input number. Lastly, a clock pulse is provided to the three
+         flip-flops to synchronise the system. We will explore how each of these blocks work in the following section.
+      </p>
+    </section>
+
+    <section id="digital-logic-design" class="mt-5">
+      <h2>Designing Digital Building Blocks</h2>
+      <p>Designed in KiCAD with a compact form factor. I paid extra attention to:</p>
+      <ul>
+        <li>Tracing each NAND gate without crossover.</li>
+        <li>Clear silkscreen labels for every transistor and resistor.</li>
+        <li>Rounded trace corners and generous via clearances.</li>
+      </ul>
+      <div class="row">
+        <div class="col-md-6"><img src="assets/board-top.jpg" alt="Board top" class="img-fluid rounded"></div>
+        <div class="col-md-6"><img src="assets/board-bottom.jpg" alt="Board bottom" class="img-fluid rounded"></div>
+      </div>
+    </section>
+
+    <section id="simulation" class="mt-5">
+      <h2>Simulation</h2>
+      <ol>
+        <li>Hand-soldered all SMD resistors & capacitors.</li>
+        <li>Placed BJTs and LEDs, checked orientation.</li>
+        <li>Debugged early fan-out issues by increasing pull-ups.</li>
+        <li>Cleaned with IPA and fitted into 3D-printed enclosure.</li>
+      </ol>
+    </section>
+
+    <section id="resistor-transistor-logic" class="mt-5">
+      <h2>Resistor Transistor Logic - Crossing from Digital to Analog</h2>
+      <p>Building logic from scratch taught me:</p>
+      <ul>
+        <li>The real impact of fan-out limits on voltage levels.</li>
+        <li>How timing skews arise in ripple counters.</li>
+        <li>Why integrated logic is so pervasive—so many transistors cram into each IC!</li>
+      </ul>
+    </section>
+
+    <section id="pcb-design" class="mt-5 mb-5">
+      <h2>PCB Design with KiCAD 8</h2>
+      <ul>
+        <li><a href="assets/threebit_kicad.zip">KiCAD Project Files (ZIP)</a></li>
+        <li><a href="assets/schematic.pdf">Schematic PDF</a></li>
+        <li><a href="assets/BOM.csv">Bill of Materials (CSV)</a></li>
+        <li><a href="assets/enclosure.stl">3D-Print Enclosure STL</a></li>
+      </ul>
+      <ul>
+        <li><strong>Logic Style:</strong> RTL NAND gates built from NPN transistors + pull-up resistors.</li>
+        <li><strong>Flip-Flops:</strong> D-type, edge-triggered on the falling edge of the clock.</li>
+        <li><strong>Counter:</strong> Three FFs in series → ripple counter.</li>
+        <li><strong>Clock:</strong> Manual push-button, hardware-debounced.</li>
+      </ul>
+    </section>
+
+    <section id="finished-design" class="mt-5">
+      <h2>Finished Design</h2>
+      <p>Building logic from scratch taught me:</p>
+      <ul>
+        <li>The real impact of fan-out limits on voltage levels.</li>
+        <li>How timing skews arise in ripple counters.</li>
+        <li>Why integrated logic is so pervasive—so many transistors cram into each IC!</li>
+      </ul>
+    </section>
+
+    <section id="conclusion" class="mt-5">
+      <h2>Conclusion</h2>
+      <p>Building logic from scratch taught me:</p>
+      <ul>
+        <li>The real impact of fan-out limits on voltage levels.</li>
+        <li>How timing skews arise in ripple counters.</li>
+        <li>Why integrated logic is so pervasive—so many transistors cram into each IC!</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-light text-muted" style="background-color: #e3f2fd; padding:1px; bottom:0; width:100%;">
+    <section class="d-flex justify-content-between align-items-center p-4">
+      <div class="me-5 d-none d-lg-block">
+        <span>&copy; 2025 Lachlan Cooke</span>
+      </div>
+      <div class="social-menu ms-auto">
+        <ul class="d-flex">
+          <li class="ms-3"><a href="https://www.linkedin.com/in/lachlancooke/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+          <li class="ms-3"><a href="https://github.com/coolachlanke" target="_blank"><i class="fab fa-github"></i></a></li>
+          <li class="ms-3"><a href="https://www.instagram.com/coolachlanke/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+          <li class="ms-3"><a href="https://www.youtube.com/@magicbattery" target="_blank"><i class="fab fa-youtube"></i></a></li>
+          <li class="ms-3"><a href="https://www.strava.com/athletes/30032118" target="_blank"><i class="fab fa-strava"></i></a></li>
+        </ul>
+      </div>
+    </section>
+  </footer>
+
+  <!-- JS libs -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.11/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-python.min.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+
+  <!-- Your custom JS -->
+  <script src="threebitcounter.js"></script>
+</body>
+</html>
