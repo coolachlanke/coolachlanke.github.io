@@ -48,15 +48,16 @@
     </div>
   </nav>
 
-  <!-- Main content -->
-  <main class="container mt-5">
+  <!-- Main -->
+  <main class="container">
     <!-- Title + 3D Model -->
     <div class="text-center mt-5 mb-4">
       <h1 class="display-4 font-weight-bolder">3-Bit Discrete RTL Counter</h1>
       <p class="lead">Creating a 3-bit counter with RTL-logic, using raw NPN transistors and resistors.</p>
-      <!-- load the model-viewer web component -->
-      <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    </div>
 
+    <div class="d-flex justify-content-center">
+      <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
       <model-viewer
         src="assets/tbc_model.glb"
         alt="3D model of the 3-bit counter"
@@ -66,7 +67,12 @@
         environment-image="https://modelviewer.dev/shared-assets/environments/neutral.hdr"
         shadow-intensity="1.2"
         exposure="1.2"
-        style="width:100vw; height:100vh; margin-left:calc(-50vw + 50%);">
+        style="
+          width: 100vw;
+          height: 90vh;
+          display: block;
+          margin: 0 auto;
+        ">
       </model-viewer>
     </div>
 
