@@ -1,0 +1,241 @@
+<!-- /projects/threebitcounter/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LED Smart Glasses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../style/custom.css" rel="stylesheet">
+  <link rel="stylesheet" href="threebitcounter.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
+
+  <!-- MathJax (equations) -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Favicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png">
+  <link rel="manifest" href="../../images/favicon/site.webmanifest">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand text-dark" href="/">
+        <img src="../../images/lc_site_lgooo.png" alt="LC" style="height: 48px; margin-right: 10px;">
+        Lachlan Cooke
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link text-dark" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="/projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="/about">About</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main class="container">
+    <!-- Title + 3D Model -->
+    <div class="text-center mt-5 mb-4">
+      <h1 class="display-4 font-weight-bolder">LED Smart Glasses</h1>
+      <p class="lead">Colourful RGB LED party glasses using WS2812B chips, ESP32-C3 and WiFi.</p>
+    </div>
+
+    <div class="d-flex justify-content-center mb-5">
+      <model-viewer
+        src="assets/lsg_glasses_3d_model_web2.glb"
+        alt="LED Smart Glasses"
+        camera-controls
+        camera-orbit="0deg 90deg 0.3m"
+        auto-rotate
+        rotation-per-second="20deg"
+        interaction-prompt="none"
+        environment-image="https://modelviewer.dev/shared-assets/environments/neutral.hdr"
+        shadow-intensity="1.2"
+        exposure="1.2"
+        style="
+          width:120vw;
+          height:80vh;
+          margin:0 calc(-10vw) 0;
+          display:block;
+        ">
+      </model-viewer>
+    </div>
+
+    <!-- Table of Contents -->
+    <nav class="mt-5">
+      <h2>Contents</h2>
+      <ul class="list-unstyled">
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#design-goal">Design Goal</a></li>
+        <li><a href="#early-prototype">Early Prototype</a></li>
+        <li><a href="#mechanical-design">Mechanical Design</a></li>
+        <li><a href="#electrical-design">Electrical Design</a></li>
+        <li><a href="#software-design">Software Design</a></li>
+        <li><a href="#assembly">Assembly and Testing</a></li>
+        <li><a href="#finished-design">Finished Design</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </nav>
+
+    <!-- Sections -->
+    <section id="introduction" class="mt-5">
+      <h2>Introduction</h2>
+      <p>In this project, we explore computing in its purest form. By foregoing the abstractions offered by microchips, integrated 
+        circuits and even logic gates, we develop an intuition and appreciation for the simplest building block underpinning
+        modern computing - the transistor. Given that modern computers offer millions, sometimes billions of transistors inside a 
+        single chip, we will focus our efforts here on a simpler logic device with a much lower transistor count. The 3-bit counter 
+        is the perfect candidate. It has, as we will see, a relatively low transistor count, yet still posesses basic logical 
+        structures present in the most modern of computers. In this project, we will start with an overview and block diagram of a 
+        3-bit counter, explore the bipolar junction transistor (BJT), build and simiulate a digital circuit, and finally design, 
+        assemble and test the circuit on a printed circuit board (PCB).</p>
+    </section>
+
+    <section id="design-goal" class="mt-5">
+      <h2>Design Goal</h2>
+      <p>A WS218B chips is...</p>
+      <figure class="diagram-container text-center">
+          <img
+            src="assets/tbc_block_diagram_white_trans.svg"
+            alt="Functional block diagram"
+            class="img-fluid"
+          >
+          <figcaption class="text-muted mt-2">
+            Figure 2.1 - Functional block diagram.
+          </figcaption>
+        </figure>
+      <p>The functional block diagram in Figure 2.1 illustrates the flow of data between high-level logic blocks in the circuit. 
+         Most notable are the D flip-flops (three - one each for \(S_{0}\), \(S_{1}\) and \(S_{2}\)), next-state combinational logic 
+         blocks and the binary and decimal outputs. Note that to drive the decimal output via the 7-segment display, we need a '7-segment 
+         decoder' logic block to drive the necessary segments for each input number. Lastly, a clock pulse is provided to the three
+         flip-flops to synchronise the system. We will explore how each of these blocks work in the following section.
+      </p>
+    </section>
+
+    <section id="early-prototype" class="mt-5">
+      <h2>Early Prototype</h2>
+      <p>Designed in KiCAD with a compact form factor. I paid extra attention to:</p>
+      <ul>
+        <li>Tracing each NAND gate without crossover.</li>
+        <li>Clear silkscreen labels for every transistor and resistor.</li>
+        <li>Rounded trace corners and generous via clearances.</li>
+      </ul>
+      <div class="row">
+        <div class="col-md-6"><img src="assets/board-top.jpg" alt="Board top" class="img-fluid rounded"></div>
+        <div class="col-md-6"><img src="assets/board-bottom.jpg" alt="Board bottom" class="img-fluid rounded"></div>
+      </div>
+    </section>
+
+    <section id="mechnical-design" class="mt-5">
+      <h2>Mechnical Design</h2>
+      <ol>
+        <li>Hand-soldered all SMD resistors & capacitors.</li>
+        <li>Placed BJTs and LEDs, checked orientation.</li>
+        <li>Debugged early fan-out issues by increasing pull-ups.</li>
+        <li>Cleaned with IPA and fitted into 3D-printed enclosure.</li>
+      </ol>
+    </section>
+
+    <section id="electrical-design" class="mt-5">
+      <h2>Electrical Design</h2>
+      <p>Building logic from scratch taught me:</p>
+      <ul>
+        <li>The real impact of fan-out limits on voltage levels.</li>
+        <li>How timing skews arise in ripple counters.</li>
+        <li>Why integrated logic is so pervasive—so many transistors cram into each IC!</li>
+      </ul>
+    </section>
+
+    <section id="software-design" class="mt-5 mb-5">
+      <h2>Software Design</h2>
+      <ul>
+        <li><a href="assets/threebit_kicad.zip">KiCAD Project Files (ZIP)</a></li>
+        <li><a href="assets/schematic.pdf">Schematic PDF</a></li>
+        <li><a href="assets/BOM.csv">Bill of Materials (CSV)</a></li>
+        <li><a href="assets/enclosure.stl">3D-Print Enclosure STL</a></li>
+      </ul>
+      <ul>
+        <li><strong>Logic Style:</strong> RTL NAND gates built from NPN transistors + pull-up resistors.</li>
+        <li><strong>Flip-Flops:</strong> D-type, edge-triggered on the falling edge of the clock.</li>
+        <li><strong>Counter:</strong> Three FFs in series → ripple counter.</li>
+        <li><strong>Clock:</strong> Manual push-button, hardware-debounced.</li>
+      </ul>
+    </section>
+
+    <section id="assembly" class="mt-5">
+      <h2>Assembly and Testing</h2>
+      <p>Building logic from scratch taught me:</p>
+      <ul>
+        <li>The real impact of fan-out limits on voltage levels.</li>
+        <li>How timing skews arise in ripple counters.</li>
+        <li>Why integrated logic is so pervasive—so many transistors cram into each IC!</li>
+      </ul>
+    </section>
+
+    <section id="finished-design" class="mt-5">
+      <h2>Finished Design</h2>
+      <p>Building logic from scratch taught me:</p>
+      <ul>
+        <li>The real impact of fan-out limits on voltage levels.</li>
+        <li>How timing skews arise in ripple counters.</li>
+        <li>Why integrated logic is so pervasive—so many transistors cram into each IC!</li>
+      </ul>
+    </section>
+
+    <section id="conclusion" class="mt-5">
+      <h2>Conclusion</h2>
+      <p>Building these LED Smart Glasses was...</p>
+      <ul>
+        <li>The real impact of fan-out limits on voltage levels.</li>
+        <li>How timing skews arise in ripple counters.</li>
+        <li>Why integrated logic is so pervasive—so many transistors cram into each IC!</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-light text-muted" style="background-color: #e3f2fd; padding:1px; bottom:0; width:100%;">
+    <section class="d-flex justify-content-between align-items-center p-4">
+      <div class="me-5 d-none d-lg-block">
+        <span>&copy; 2025 Lachlan Cooke</span>
+      </div>
+      <div class="social-menu ms-auto">
+        <ul class="d-flex">
+          <li class="ms-3"><a href="https://www.linkedin.com/in/lachlancooke/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+          <li class="ms-3"><a href="https://github.com/coolachlanke" target="_blank"><i class="fab fa-github"></i></a></li>
+          <li class="ms-3"><a href="https://www.instagram.com/coolachlanke/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+          <li class="ms-3"><a href="https://www.youtube.com/@magicbattery" target="_blank"><i class="fab fa-youtube"></i></a></li>
+          <li class="ms-3"><a href="https://www.strava.com/athletes/30032118" target="_blank"><i class="fab fa-strava"></i></a></li>
+        </ul>
+      </div>
+    </section>
+  </footer>
+
+  <!-- JS libs -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.11/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-python.min.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+
+  <!-- Your custom JS -->
+  <script src="threebitcounter.js"></script>
+</body>
+</html>
