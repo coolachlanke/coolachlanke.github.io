@@ -57,10 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // pick your track
       viewer.animationName = 'CoverSlide';
-      // disable looping
-      viewer.animationLoop = false;
-      // start it
-      viewer.play();
+      await viewer.updateComplete;
+      viewer.play({repetitions: 1});
 
       // When it finishes, re-enable auto-rotate and the button (if you want)
       viewer.autoRotate = true;
