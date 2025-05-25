@@ -1,4 +1,4 @@
-<!-- /projects/threebitcounter/index.html -->
+<!-- /projects/ledsmartglasses/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +9,7 @@
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="../../style/custom.css" rel="stylesheet">
-  <link rel="stylesheet" href="threebitcounter.css">
+  <link rel="stylesheet" href="ledsmartglasses.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
 
   <!-- MathJax (equations) -->
@@ -56,15 +56,26 @@
       <p class="lead">Colourful RGB LED party glasses using WS2812B chips, ESP32-C3 and WiFi.</p>
     </div>
 
+    <div class="text-center mt-4">
+      <button id="revealPCB" class="btn btn-primary">
+        Reveal PCB
+      </button>
+    </div>
+
     <div class="d-flex justify-content-center mb-5">
+      
+
       <model-viewer
-        src="assets/lsg_glasses_3d_model_web2.glb"
+        id="viewer"
+        src="assets/lsg_glasses_3d_model_web_ani3.glb"
         alt="LED Smart Glasses"
         camera-controls
         camera-orbit="0deg 90deg 0.3m"
         auto-rotate
         rotation-per-second="20deg"
         interaction-prompt="none"
+        animation-name="CoverSliss"
+        animation-loop="false"
         environment-image="https://modelviewer.dev/shared-assets/environments/neutral.hdr"
         shadow-intensity="1.2"
         exposure="1.2"
@@ -236,6 +247,6 @@
 
 
   <!-- Your custom JS -->
-  <script src="threebitcounter.js"></script>
+  <script type="module" src="ledsmartglasses.js"></script>
 </body>
 </html>
