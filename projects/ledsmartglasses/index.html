@@ -53,29 +53,21 @@
     <!-- Title + 3D Model -->
     <div class="text-center mt-5 mb-4">
       <h1 class="display-4 font-weight-bolder">LED Smart Glasses</h1>
-      <p class="lead">Colourful RGB LED party glasses using WS2812B chips, ESP32-C3 and WiFi.</p>
+      <p class="lead">Colourful party glasses using WS2812B RGB LED chips, ESP32-C3 and WiFi.</p>
     </div>
 
-    <div class="text-center mt-4">
-      <button id="revealPCB" class="btn btn-primary">
-        Reveal PCB
-      </button>
-    </div>
+    
 
     <div class="d-flex justify-content-center mb-5">
-      
-
       <model-viewer
         id="viewer"
-        src="assets/lsg_glasses_3d_model_web_ani3.glb"
+        src="assets/lsg_glasses_3d_model_web_ani9.glb"
         alt="LED Smart Glasses"
         camera-controls
         camera-orbit="0deg 90deg 0.3m"
         auto-rotate
         rotation-per-second="20deg"
         interaction-prompt="none"
-        animation-name="CoverSliss"
-        animation-loop="false"
         environment-image="https://modelviewer.dev/shared-assets/environments/neutral.hdr"
         shadow-intensity="1.2"
         exposure="1.2"
@@ -86,6 +78,9 @@
           display:block;
         ">
       </model-viewer>
+    </div>
+    <div class="text-center mt-4">
+      <button id="toggleCover" class="btn btn-primary">Cover ON</button>
     </div>
 
     <!-- Table of Contents -->
@@ -107,14 +102,13 @@
     <!-- Sections -->
     <section id="introduction" class="mt-5">
       <h2>Introduction</h2>
-      <p>In this project, we explore computing in its purest form. By foregoing the abstractions offered by microchips, integrated 
-        circuits and even logic gates, we develop an intuition and appreciation for the simplest building block underpinning
-        modern computing - the transistor. Given that modern computers offer millions, sometimes billions of transistors inside a 
-        single chip, we will focus our efforts here on a simpler logic device with a much lower transistor count. The 3-bit counter 
-        is the perfect candidate. It has, as we will see, a relatively low transistor count, yet still posesses basic logical 
-        structures present in the most modern of computers. In this project, we will start with an overview and block diagram of a 
-        3-bit counter, explore the bipolar junction transistor (BJT), build and simiulate a digital circuit, and finally design, 
-        assemble and test the circuit on a printed circuit board (PCB).</p>
+      <p>In this project, we combine the colourful and vibrant capabilities of WS2812B RGB LEDs with the connectivity and 
+        processing power of the ESP32-C3 to create fully app-controlled, WiFi-enabled party glasses. By individually driving 96
+        addressable LEDs around the frame, we will use mathematical functions in C++ code to display eye-catching animations, and 
+        even respond to music — all controlled over WiFi via a custom smartphone app. On the hardware side, we will design and assemble
+        two PCBs, one densely packed with WS2812B LEDs to be mounted on the frame, and a logic PCB to house the ESP32-C3, user controls, 
+        power supply and other necessary electronics. These smart glasses demonstrate a modern approach to PCB design, microcontroller programming and
+        wireless communications to turn an everyday item into an interactive light show.</p>
     </section>
 
     <section id="design-goal" class="mt-5">
