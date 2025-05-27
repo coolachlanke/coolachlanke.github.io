@@ -49,7 +49,7 @@
   </nav>
 
   <!-- Main -->
-  <main class="container">
+  <main id="top" class="container" style="max-width:100ch; margin:0 auto;">
     <!-- Title + 3D Model -->
     <div class="text-center mt-5 mb-4">
       <h1 class="display-4 font-weight-bolder">3-Bit Discrete RTL Counter</h1>
@@ -112,8 +112,8 @@
          every binary value from 000 to 111 (0–7 in decimal) and then wraps back around to 000. Each clock pulse advances the count 
          by one, with the least significant bit toggling every pulse and higher bits toggling only when the bit below rolls over. This
          gives a neat, orderly binary sequence, which we will visualise via three LEDs for the binary output, and a seven-segment 
-         display for decimal output.</p>
-      <figure class="diagram-container text-center">
+         display for decimal output.
+         <figure class="diagram-container text-center">
           <img
             src="assets/tbc_block_diagram_white_trans.svg"
             alt="Functional block diagram"
@@ -122,27 +122,117 @@
           <figcaption class="text-muted mt-2">
             Figure 2.1 - Functional block diagram.
           </figcaption>
-        </figure>
-      <p>The functional block diagram in Figure 2.1 illustrates the flow of data between high-level logic blocks in the circuit. 
+        </figure>The functional block diagram in Figure 2.1 illustrates the flow of data between high-level logic blocks in the circuit. 
          Most notable are the D flip-flops (three - one each for \(S_{0}\), \(S_{1}\) and \(S_{2}\)), next-state combinational logic 
-         blocks and the binary and decimal outputs. Note that to drive the decimal output via the 7-segment display, we need a '7-segment 
-         decoder' logic block to drive the necessary segments for each input number. Lastly, a clock pulse is provided to the three
+         blocks and the binary and decimal outputs. To drive the decimal output via the 7-segment display, we need a 
+         '7-segment decoder' logic block to drive the necessary LED segments for each input number. Lastly, a clock pulse is provided to the three
          flip-flops to synchronise the system. We will explore how each of these blocks work in the following section.
       </p>
     </section>
 
+    <section id="resistor-transistor-logic" class="mt-5">
+      <h2>Resistor Transistor Logic - Crossing from Digital to Analog</h2>
+      <p>You are probably already familiar with the primitive logic functions, NOT, AND, OR, NAND, NOR, XOR and XNOR. In the simplest case
+        these logic functions transform two binary inputs A and B into a binary output, C, corresponding to the given function. For example,
+        Figure 3.1 shows the NAND gate symbol alongside its <em>truth table</em>. The NAND gate is surprisingly versatile and will 
+        be of prime importance in the following <a href="#digital-logic-design">digital design section</a>.</p>
+        <figure class="diagram-container text-center">
+          <img src="assets/tbc_nand.svg" alt="NAND gate" class="img-fluid">
+          <!-- LaTeX‐style truth table rendered by MathJax -->
+          <p>
+            \[
+            \begin{array}{cc|c}
+              A & B & Y = \overline{A \,+\, B} \\ \hline
+              0 & 0 & 1 \\
+              0 & 1 & 1 \\
+              1 & 0 & 1 \\
+              1 & 1 & 0
+            \end{array}
+            \]
+          </p>
+          <figcaption class="text-muted mt-2">Figure 3.1 — NAND gate.</figcaption>
+        </figure>
+      <p>These digital logic gates are powerful in and of themselves, and allow the construction of more complex digital building blocks, 
+        eventually up to a full CPU. However, how can we build logic gates in the real world? The symbol itself is a 'black-box',
+        abstracting details away from the actual implementation. Surprisingly, logic gates can be implemented in various ways, for example, water 
+        values, relays, Minecraft redstone and of course, transistors. There are many <em>logic families</em> available which use 
+        transistor logic. We have selected resistor–transistor logic (RTL) for this project due to its simplicty, from both an implementation 
+        and education standpoint.</p>
+      <p>Resistor–Transistor Logic (RTL) emerged in the early 1960s as one of the first practical digital families built from discrete 
+        components. By combining simple resistors for pull-up bias and NPN transistors for pull-down switching, RTL enabled the 
+        construction of basic logic gates—NOT, AND, NAND, NOR, etc. The lead to transistor counts far lower than earlier relay or vacuum-tube 
+        systems. Widely used in early computer prototypes and minicomputers, RTL laid the groundwork for more advanced families (DTL, TTL) by 
+        demonstrating how discrete components could reliably implement Boolean functions at kilohertz-scale clock rates. Interestingly,
+        RTL was the logic family used in the guidance computers of the Apollo missions!</p>
+      <p>RTL is remarkably simple, the only components required are NPN bipolar junction transistors (BJTs) and resistors. In each gate, 
+        NPN transistors act as pull-down switches, while resistors provide pull-up bias. We use a 0-5 V logic voltage scale, with 
+        [0-1] V meaning '0' (LOW) and [3-5] V meaning a '1' (HIGH). In general, AND functions are implemented with BJTs in 
+        series, and OR functions with BJTs in parallel. In fact, the natural logic formed by these gates is NAND and NOR, respectively. 
+        To save on components (additional NOT gates), we restrict ourselves to these three logic functions. (Aside: one can actually show
+        that any other logic function can be built purely from NAND gates). After experimentation with noise immunity, rise time and
+        (critically) <em>fan-out</em>, 1 kΩ pull-ups were standardised for the collector resistance, whilst 10 kΩ would be used on the  
+        gate-inputs to isolate transistor bases and limit drive current. Fan-out refers to the phenomenon where the logical tolerances 
+        of a logic gate degrade as it drives an increasing number of inputs. For example, if we connect the output of an RTL NAND gate 
+        to the inputs of 6 later-stage gates, each will load some base current through the collector resistor of the previous stage. 
+        A voltage divider expression was used to derive a function for the loss in ability of driving a logic HIGH as fan-out increased. 
+        As 3V was deemed tolerable to push the BJTs into saturation for a logic HIGH, a rough fan-out limit of 6-8 was calculated and 
+        simulatied in JScircuit. Figure 3.1 shows a 2-input RTL NAND gate simulation in JScircuit. Based on the input switches, one 
+        can see that this behaviour is consistent with the NAND gate in Figure 3.1. Note that the output produces a clean 5 V when 
+        the inputs are LOW, however this voltage will sag when the output drives a gate downstream. Additionally, the output cannot 
+       reach a true 0 V due to the V_CE(sat) of the transistors.</p>
+        <figure class="diagram-container text-center mt-4">
+          <div class="row">
+            <div class="col-md-6">
+              <img
+                src="assets/tbc_rtlnand_1.svg"
+                alt="RTL NAND simulation with A=0, B=0"
+                class="img-fluid rounded"
+              >
+              <figcaption class="text-muted">
+                Figure 3.2 — Input A = 5V, B = 0V => Y = 5V
+              </figcaption>
+            </div>
+            <div class="col-md-6">
+              <img
+                src="assets/tbc_rtlnand_2.svg"
+                alt="RTL NAND simulation with A=1, B=1"
+                class="img-fluid rounded"
+              >
+              <figcaption class="text-muted">
+                Figure 3.3 — Input A = 5V, B = 5V => Y ~= 0V
+              </figcaption>
+            </div>
+          </div>
+        </figure>
+    </section>
+
     <section id="digital-logic-design" class="mt-5">
-      <h2>Designing Digital Building Blocks</h2>
-      <p>Designed in KiCAD with a compact form factor. I paid extra attention to:</p>
-      <ul>
-        <li>Tracing each NAND gate without crossover.</li>
-        <li>Clear silkscreen labels for every transistor and resistor.</li>
-        <li>Rounded trace corners and generous via clearances.</li>
-      </ul>
-      <div class="row">
-        <div class="col-md-6"><img src="assets/board-top.jpg" alt="Board top" class="img-fluid rounded"></div>
-        <div class="col-md-6"><img src="assets/board-bottom.jpg" alt="Board bottom" class="img-fluid rounded"></div>
-      </div>
+      <h2>Designing Digital Logic Blocks</h2>
+      <p>At the heart of the 3-bit counter are three fundamental subsystems: the edge-triggered master–slave D flip-flops that 
+        store each bit, the next-state toggle logic that determines exactly when each flip-flop should change state, and the 
+        seven-segment decoder network that converts the binary count into signals for the decimal display. Each of these blocks 
+        must operate reliably using only discrete resistor–transistor logic (RTL) components, so we must carefully balance speed, 
+        noise margin, and component count while keeping the entire design simple enough for hand-assembly.</p>
+      <h3>3.1 Flip‑Flop Implementation</h3>
+      <p>The D flip‑flop (DFF) is implemented as two gated latches—master and slave—each constructed from cross‑coupled NAND 
+        gates and input‑gating transistors. On the falling edge of the clock, the master latch closes and the slave latch opens, 
+        capturing the input and securely storing it. We chose 10 kΩ pull‑up resistors and 4.7 kΩ interconnect resistors to optimise 
+        propagation delay and maintain robust noise immunity. SPICE simulations confirmed clean edge‑trigger behavior, with setup 
+        and hold times around 20 ns and negligible metastability.</p>
+      <figure class="diagram-container text-center">
+        <img src="assets/tbc_d_latch.svg" alt="D-latch digital circuit" class="img-fluid">
+        <figcaption class="text-muted mt-2">Figure 4.1 — D-latch digital circuit</figcaption>
+      </figure>
+      <h3>3.2 Next‑State Logic Simplification</h3>
+      <p>The combinational logic feeding each D‑FF toggles the stored bit precisely when its lower‑order bit rolls over from 1→0. 
+        By plotting Karnaugh maps for each toggle function, we derived minimal sum‑of‑products expressions. For example, the middle 
+        bit follows D1 = Q0 ⊕ Q1 = (Q0 & ¬Q1) + (¬Q0 & Q1). We then converted this into NAND‑only form: D1 = NAND( NAND(Q0, Q1), 
+        NAND(¬Q0, ¬Q1) ), which reduces transistor count and keeps the design within RTL paradigms.</p>
+      <h3>3.3 Seven‑Segment Decoder Network</h3>
+      <p>The final stage converts the three‑bit binary count into segment signals for the LED display. Each of the seven segments 
+        corresponds to a distinct combination of the three bits; we used Karnaugh‑map grouping to share common terms and minimise 
+        the total gate count. Each segment line uses two‑input NAND gates followed by current‑limiting resistors (2.2 kΩ) to protect 
+        the LEDs. In testing, this network toggled cleanly at up to 1 MHz clock rates without visible flicker.</p>
     </section>
 
     <section id="simulation" class="mt-5">
@@ -153,16 +243,6 @@
         <li>Debugged early fan-out issues by increasing pull-ups.</li>
         <li>Cleaned with IPA and fitted into 3D-printed enclosure.</li>
       </ol>
-    </section>
-
-    <section id="resistor-transistor-logic" class="mt-5">
-      <h2>Resistor Transistor Logic - Crossing from Digital to Analog</h2>
-      <p>Building logic from scratch taught me:</p>
-      <ul>
-        <li>The real impact of fan-out limits on voltage levels.</li>
-        <li>How timing skews arise in ripple counters.</li>
-        <li>Why integrated logic is so pervasive—so many transistors cram into each IC!</li>
-      </ul>
     </section>
 
     <section id="pcb-design" class="mt-5 mb-5">
