@@ -84,9 +84,9 @@
       <ul class="list-unstyled">
         <li><a href="#introduction">1. Introduction</a></li>
         <li><a href="#the-three-bit-counter">2. The 3-bit Counter</a></li>
-        <li><a href="#digital-logic-design">3. Designing Digital Logic Blocks</a></li>
+        <li><a href="#resistor-transistor-logic">3. Resistor Transistor Logic</a></li>
+        <li><a href="#digital-logic-design">4. Designing Digital Logic Blocks</a></li>
         <li><a href="#simulation">4. Simulation</a></li>
-        <li><a href="#resistor-transistor-logic">5. Resistor Transistor Logic</a></li>
         <li><a href="#pcb-design">6. PCB Design with KiCAD 8</a></li>
         <li><a href="#finished-design">7. Finshed Design</a></li>
         <li><a href="#conclusion">8. Conclusion</a></li>
@@ -332,15 +332,15 @@
       <p>The next-state logic for \(S_1\) is more complex. Let us first consider how this works in the familiar decimal system. When any 
         column in a decimal number, i.e. units, tens, hundreds, etc. reaches '9', the next increment will <em>overflow</em> that column 
         and cause a carry of '1' to be added to the next column. This is simpler in binary as the maximum number in any binary-place is 
-        '1'. Thus, glancing back to the state-transition table in Figure 4.1.1, we see that S_1 should only toggle on the next rising-edge 
-        if S_0 is currently a '1'. Note that this toggling functionality would make the logic trivial if we were using a \
-        <em>T flip-flop</em>. Alternatively, following the standard boolean arithmetic SOP procedure, we see that S_1 is only a '1' on 
-        the next edge if it is S_1 = 0 AND S_0 = 1, OR if S_1 = 1 AND S_0 = 0. Again, we can see this algebraically in Figure 4.2.3.
+        '1'. Thus, glancing back to the state-transition table in Figure 4.1.1, we see that \(S_1\) should only toggle on the next rising-edge 
+        if \(S_0\) is currently a '1'. Note that this toggling functionality would make the logic trivial if we were using a
+        <em>T flip-flop</em>. Alternatively, following the standard boolean arithmetic SOP procedure, we see that \(S_1\) is only a '1' on 
+        the next edge if it is \(S_1 = 0\) AND \(S_0 = 1\), OR if \(S_1 = 1\) AND \(S_0 = 0\). Again, we can see this algebraically in Figure 4.2.3.
         
       <p>Thus, the next-state logic for the \(S_1\) DFF (\(NSL_1\)) is the XOR of \(S_0^{\,n}\) and \(S_{1}^{\,n}\). This simple 
         expression is nice, but recally we can only implement NAND, NOT and NOR with RTL logic. For simplicity, we aim for just NAND 
         and NOT. Hence, we cannot directly implememt the XOR function. To develop a 'NAND-friendly' expression, we need to 'unsimplify' 
-        using a special logical result called <em>De Morgan's Theorem</em>, which states the following</p>
+        using a special result called <em>De Morgan's Theorem</em>, which states the following</p>
         <figure class="diagram-container text-center my-5">
           <p>
           \[
@@ -444,6 +444,11 @@
       </ul>
     </section>
   </main>
+
+  <!-- Back-to-Top -->
+  <div class="text-center my-5">
+    <button id="backToTop" class="btn btn-primary">Back to Top</button>
+  </div>
 
   <!-- Footer -->
   <footer class="text-center text-lg-start bg-light text-muted" style="background-color: #e3f2fd; padding:1px; bottom:0; width:100%;">
