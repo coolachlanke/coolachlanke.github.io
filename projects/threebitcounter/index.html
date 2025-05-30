@@ -126,9 +126,9 @@
             Figure 2.1 - Functional block diagram.
           </figcaption>
         </figure>The functional block diagram in Figure 2.1 illustrates the flow of data between high-level logic blocks in the circuit. 
-         Most notable are the D flip-flops (three - one each for \(S_{0}\), \(S_{1}\) and \(S_{2}\)), next-state combinational logic 
-         blocks and the binary and decimal outputs. To drive the decimal output via the 7-segment display, we need a 
-         '7-segment decoder' logic block to drive the necessary LED segments for each input number. Lastly, a clock pulse is provided to the three
+         Most notable are the three D flip-flops (one each for \(S_{0}\), \(S_{1}\) and \(S_{2}\)), next-state combinational logic 
+         blocks and the binary and 7-segment decoder. To drive the decimal output via the 7-segment display, we need a 
+         7-segment decoder logic block to drive the necessary LED segments for each input number. Lastly, a clock pulse is provided to the three
          flip-flops to synchronise the system. We will explore how each of these blocks work in the following section.
       </p>
     </section>
@@ -221,7 +221,7 @@
         seven-segment decoder network that converts the binary count into signals for the decimal display. Each of these blocks 
         must operate reliably using only discrete RTL components, so we must carefully balance speed, 
         noise immunity, and component count while keeping the entire design simple enough for hand-assembly.</p>
-      <h3 class="mt-5">4.1 Flip‑Flop Implementation</h3>
+      <h3 class="mt-5">4.1 D Flip‑Flop</h3>
       <p>Flip-flops are the fundamental digital circuit responsible for volatile memory. They are the key to how computers can store 
          data. For this project, we have 3-bit in our counter, which means we mean to store 3 state bits. Each flip-flop can store 1 bit, 
          so we will need 3 of them. The key to computer memory is feedback and the ability to settle into stable states. Whenever feedback 
@@ -259,7 +259,7 @@
       </figure>
       Given our RTL implementation, we can easily build 3 DFFs using BJTs and resistors. Next we consider how to drive the data inputs.
       
-      <h3 class="mt-5">4.2 Next‑State Logic Simplification</h3>
+      <h3 class="mt-5">4.2 Next‑State Logic</h3>
       <p>Now we can store 3-bit numbers, but how do we get the circuit to count? The answer is to design combinational logic blocks 
         which drive the data inputs of the DFFs. Every rising edge of the clock, the <em>state</em> of the counter must update. 
         Thus, our counter is in fact a <em>finite state machine</em> (FSM). There are 8 total states, corresponding to the range of
@@ -373,7 +373,8 @@
         Solid!</p>
       <p>The next-state logic block for \(S_2\) is left as an exercise to the reader, and has the final expression given in Figure 4.2.5.</p>
       <figure class="diagram-container text-center my-5">
-        <p>
+        <img src="assets/tbc_nsl_s2.svg" alt="S_2 next-state logic NAND circuit." class="img-fluid w-75 mb-3">
+        <p class="mt-3">
         \[
         \begin{aligned}
           S_{2}^{\,n+1}
@@ -382,17 +383,94 @@
         \]
         </p>
         <figcaption class="text-muted mt-2">
-          Figure 4.2.5 — Simplified SOP expression for \(S_{2}^{\,n+1}\).
+          Figure 4.2.5 — Simplified SOP expression for \(S_{2}^{\,n+1}\) and logic circuit implementation.
         </figcaption>
     </figure> 
     <p>This expression uses 4 NAND gates. Note that two of these gates are 3-input NAND gates. This is easily achieved by adding 
       a third input resistor and BJT in series to the other two in Figure 3.2.</p>  
 
-    <h3 class="mt-5">4.3 Seven‑Segment Decoder Network</h3>
-      <p>The final stage converts the three‑bit binary count into segment signals for the LED display. Each of the seven segments 
-        corresponds to a distinct combination of the three bits; we used Karnaugh‑map grouping to share common terms and minimise 
-        the total gate count. Each segment line uses two‑input NAND gates followed by current‑limiting resistors (2.2 kΩ) to protect 
-        the LEDs. In testing, this network toggled cleanly at up to 1 MHz clock rates without visible flicker.</p>
+    <h3 class="mt-5">4.3 7‑Segment Decoder</h3>
+      <p>The final combinational logic block converts the 3-bit binary count into segment signals for the LED decimal display. 
+         Each of the seven segments corresponds to an LED inside the physical 7-segment display depicted in Figure 4.3.1. Later, we 
+        will need to tweak our 7-segment decoder to actually drive the the LEDs inside the common-cathode 7-seg display we will use. 
+        For now, a '1' or HIGH output will suffice in our analysis to turn a segment on.</p>
+      <figure class="diagram-container text-center my-5">
+          <img src="assets/tbc_sevenseg_digits.png" alt="7-segment digit patterns" class="img-fluid w-75">
+          <figcaption class="text-muted mt-2">
+            Figure 4.3.1 — 7-segment digit patterns.
+          </figcaption>
+      </figure>
+      <p>To gain an intuitive understanding for the logic we must design, let us think about the problem mathematically. Effectively, we are 
+      trying to implement a function of 3 variables, to 7 variables - i.e. 3 inputs (\(S_2, S_1, S_0\)), to 7 outputs 
+      (\(a, b, c, d, e, f, g\)). Additionally, the input and output variables live inside the <em>binary field</em>, \(\mathbb{F}_2\). This a fancy
+      algebraic way of saying our binary variables, like \(S_1\), can only take on the values of '0' and '1', and may be operated on by 
+      any of our logical function, NAND, NOT, etc. Mathematically, the 7-segment decoder function, \(f\), is correctly represented with 
+      the notation in Figure 4.3.2. The image shows the functional representation of our desired combinational logic function. The 
+      remainder of this subsection will investigate the logic inside.</p>
+      <figure class="diagram-container text-center my-5">
+        <p>
+        \[
+          \begin{aligned}
+            &f:\;\mathbb{F}_2^3 \;\longrightarrow\;\mathbb{F}_2^7, 
+            \quad (S_2,S_1,S_0)\;\mapsto\;(a,b,c,d,e,f,g)
+          \end{aligned}
+        \]
+        </p>
+        <img src="assets/tbc_sevenseg_func.svg" alt="7-segment function" class="img-fluid w-50">
+        <figcaption class="text-muted mt-2">
+          Figure 4.3.2 – 7-segment decoder function representation.
+        </figcaption>
+      </figure>
+      <p>In order to implement this function, we need to repose the problem as 7 independent functions of the 3 inputs, then analyse the 
+      truth table and SOP expression for each. For example \(f_{a}:\;\mathbb{F}_2^3 \;\longrightarrow\;\mathbb{F}_2, \quad (S_2,S_1,S_0)\;
+      \mapsto\;a\) represents the single output segment \(a\) as a function of the 3 input bits. We will provide full derivations of 
+      the simplifed functions for \(a\) and \(b\), leaving \(c, d, e, f\) and \(g\) as exercises to the reader.</p>
+      <p>Firstly, we write out the truth table for the 7-seg decoder function by analysing the digit patterns in Figure 4.3.1.</p>
+      <figure class="diagram-container text-center my-5">
+        <!-- LaTeX‐style truth table rendered by MathJax -->
+        <p>
+        \[
+          \begin{array}{ccc|ccccccc}
+            S_{2} & S_{1} & S_{0} & a & b & c & d & e & f & g \\ \hline
+            0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\  % 0
+            0 & 0 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 \\  % 1
+            0 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 0 & 1 \\  % 2
+            0 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 1 \\  % 3
+            1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 \\  % 4
+            1 & 0 & 1 & 1 & 0 & 1 & 1 & 0 & 1 & 1 \\  % 5
+            1 & 1 & 0 & 1 & 0 & 1 & 1 & 1 & 1 & 1 \\  % 6
+            1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0     % 7
+          \end{array}
+        \]
+        </p>
+        <figcaption class="text-muted mt-2">
+          Figure 4.3.3 — 7-segment decoder truth table.
+        </figcaption>
+      </figure> 
+      <p>Next, we derive and simplify the SOP expressions for \(a\) and \(b\). In this subsection, we will use <em>Karnaugh maps</em> 
+      for simplification.</p>
+      <p>For segment \(a\), we wish to find minimised SOP expression \(a = f_{a}\left(S_0, S_1, S_2\right)\). As there are less than 
+         five variables, we may use a Karnaugh map to find the minimised SOP expression. Karnaugh maps provide an easy graphical way 
+         to find minimised boolean expressions for binary functions of 4 or less variables. In the Karnaugh map in Figure 4.3.4, we 
+         use Gray code to enumerate the rows and columns, with the ability to pair \(S_0\) and \(S_1\) across the columns. Then, for 
+         a minimised SOP expression, we circle all the '1' in as few as possible rectangles, which must contain a power of two '1's. 
+         Confusingly, the map must be thought of as <em>toroidal</em> (i.e. a donut) to catch the 'wrap-around' simplifications.
+      </p>
+      <figure class="diagram-container text-center my-5">
+        <img src="assets/tbc_a_km.svg" alt="'a' segment k-map" class="img-fluid w-75 mb-3">
+        <p>
+          \[
+            \begin{aligned}
+              \implies a &= f_{a}\left(S_0, S_1, S_2\right) = S_1 + S_{2}S_{0} + \overline{S_{2}S_{1}}
+            \end{aligned}
+          \]
+        </p>
+        <figcaption class="text-muted mt-2">
+          Figure 4.3.3 — Segment \(a\) Karnaught map, followed by minimised SOP expression.
+        </figcaption>
+      </figure> 
+      
+
 
     </section>
 
