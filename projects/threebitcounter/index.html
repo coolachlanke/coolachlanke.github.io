@@ -142,7 +142,7 @@
           <p>
             \[
             \begin{array}{cc|c}
-              A & B & Y = \overline{A \,+\, B} \\ \hline
+              A & B & Y = \overline{A \,\cdot\, B} \\ \hline
               0 & 0 & 1 \\
               0 & 1 & 1 \\
               1 & 0 & 1 \\
@@ -152,20 +152,22 @@
           </p>
           <figcaption class="text-muted mt-2">Figure 3.1 — NAND gate.</figcaption>
         </figure>
-      <p>These logic gates are powerful in and of themselves and allow the construction of more complex digital building blocks, 
-        eventually all the way to a full CPU. However, how can we build logic gates in the real world? The symbol itself is a 'black-box',
+      <p>These logic gates are powerful and allow the construction of more complex digital building blocks, 
+        eventually all the way to a full CPU. However, how can we build logic gates in the real world? The symbol above is a 'black-box',
         abstracting details away from the actual implementation. Surprisingly, logic gates can be implemented in various ways, for example, water 
-        valves, relays, Minecraft redstone and of course, transistors. There are many <em>logic families</em> available which use 
-        transistor logic. We have selected resistor–transistor logic (RTL) for this project due to its simplicty, from both an implementation 
-        and education standpoint.</p>
+        valves, relays, Minecraft redstone and of course, transistors. There are various <em>logic families</em> which use 
+        transistor logic. For this project, we have selected resistor–transistor logic (RTL) due to its simplicty, from both an implementation 
+        and educational standpoint.</p>
       <p>Resistor–Transistor Logic (RTL) emerged in the early 1960s as one of the first practical digital families built from discrete 
         components. By combining simple resistors for pull-up bias and NPN transistors for pull-down switching, RTL enabled the 
         construction of basic logic. This lead to transistor counts far lower than earlier relay or vacuum-tube 
         systems. Widely used in early computer prototypes and minicomputers, RTL laid the groundwork for more advanced families (DTL, TTL) by 
         demonstrating how discrete components could reliably implement Boolean functions at kilohertz-scale clock rates. Interestingly,
-        RTL was the logic family used in the guidance computers of the Apollo missions!</p>
+        RTL was used for the guidance computers of the Apollo missions!</p>
       <p>RTL is remarkably simple, the only components required are NPN bipolar junction transistors (BJTs) and resistors. In each gate, 
-        NPN transistors act as pull-down switches, while resistors provide pull-up bias. We use a 0-5 V logic voltage scale, with 
+        NPN transistors act as pull-down switches, while resistors provide pull-up bias. It is important that we operate all BJTs in their
+        'saturation' mode, where they act like a switch than a current amplifier. We spare the details, but one should appreciate 
+        the analog electronics going on here. For logic, we use a 0-5 V voltage scale, with 
         [0-1] V meaning '0' (LOW) and [3-5] V meaning a '1' (HIGH). In general, AND functions are implemented with BJTs in 
         series, and OR functions with BJTs in parallel. In fact, the natural logic formed by these gates is NAND and NOR, respectively. 
         To save on components (additional NOT gates), we restrict ourselves to these three logic functions. (Aside: one can actually show
@@ -173,9 +175,9 @@
         (critically) <em>fan-out</em>, 1 kΩ pull-ups were standardised for the collector resistance, whilst 10 kΩ would be used on the  
         gate-inputs to isolate transistor bases and limit drive current. Fan-out refers to the phenomenon where the logical tolerances 
         of a logic gate degrade as it drives an increasing number of inputs. For example, if we connect the output of an RTL NAND gate 
-        to the inputs of 6 later-stage gates, each will load some base current through the collector resistor of the previous stage. 
+        to the inputs of 6 downstream gates, each will load some base current through the collector resistor of the previous stage. 
         A voltage divider expression was used to derive a function for the loss in ability of driving a logic HIGH as fan-out increased. 
-        As 3V was deemed tolerable to push the BJTs into saturation for a logic HIGH, a rough fan-out limit of 6-8 was calculated and 
+        As 3 V was deemed tolerable to push the BJTs into saturation to pull down to a 'healthy' LOW, a rough fan-out limit of 6-8 was calculated and 
         simulatied in JScircuit. Figure 3.1 shows a 2-input RTL NAND gate simulation in JScircuit. Based on the input switches, one 
         can see that this behaviour is consistent with the NAND gate in Figure 3.1. Note that the output produces a clean 5 V when 
         the inputs are LOW, however this voltage will sag when the output drives a gate downstream. Additionally, the output cannot 
@@ -204,30 +206,193 @@
             </div>
           </div>
         </figure>
+        With our physical building blocks ready to go, we can proceed with building digital logic blocks.
     </section>
 
     <section id="digital-logic-design" class="mt-5">
       <h2>Designing Digital Logic Blocks</h2>
-      <p>At the heart of the 3-bit counter are three fundamental subsystems: the edge-triggered master–slave D flip-flops that 
-        store each bit, the next-state toggle logic that determines exactly when each flip-flop should change state, and the 
+      <p>At the heart of the 3-bit counter are three fundamental digital logic blocks: the  D flip-flops that 
+        store each bit, the next-state toggle logic that determines when each flip-flop should change state, and the 
         seven-segment decoder network that converts the binary count into signals for the decimal display. Each of these blocks 
-        must operate reliably using only discrete resistor–transistor logic (RTL) components, so we must carefully balance speed, 
-        noise margin, and component count while keeping the entire design simple enough for hand-assembly.</p>
+        must operate reliably using only discrete RTL components, so we must carefully balance speed, 
+        noise immunity, and component count while keeping the entire design simple enough for hand-assembly.</p>
       <h3>3.1 Flip‑Flop Implementation</h3>
-      <p>The D flip‑flop (DFF) is implemented as two gated latches—master and slave—each constructed from cross‑coupled NAND 
-        gates and input‑gating transistors. On the falling edge of the clock, the master latch closes and the slave latch opens, 
-        capturing the input and securely storing it. We chose 10 kΩ pull‑up resistors and 4.7 kΩ interconnect resistors to optimise 
-        propagation delay and maintain robust noise immunity. SPICE simulations confirmed clean edge‑trigger behavior, with setup 
-        and hold times around 20 ns and negligible metastability.</p>
-      <figure class="diagram-container text-center">
-        <img src="assets/tbc_d_latch.svg" alt="D-latch digital circuit" class="img-fluid">
-        <figcaption class="text-muted mt-2">Figure 4.1 — D-latch digital circuit</figcaption>
+      <p>Flip-flops are the fundamental digital circuit responsible for volatile memory. They are the key to how computers can store 
+         data. For this project, we have 3-bit in our counter, which means we mean to store 3 state bits. Each flip-flop can store 1 bit, 
+         so we will need 3 of them. The key to computer memory is feedback and the ability to settle into stable states. Whenever feedback 
+         is involved, digital circuits will generally be non-combinational - i.e. they possess memory. The D flip-flop is an example of a 
+         <em>sequential circuit</em>. In order to construct the D flip-flop, we must first conside the D latch, shown in Figure 3.1.1.</p>
+      <figure class="diagram-container text-center my-5">
+          <img src="assets/tbc_d_latch.svg" alt="D-latch digital circuit" class="img-fluid w-75">
+          <p>
+            \[
+            \begin{array}{c c c|c}
+              \mathrm{CLK} & D & Q_{\text{new}} \\ \hline
+              0 & 0 & Q_{\text{old}} \\
+              0 & 1 & Q_{\text{old}} \\
+              1 & 0 & 0 \\
+              1 & 1 & 1
+            \end{array}
+            \]
+          </p>
+          <figcaption class="text-muted mt-2">
+            Figure 3.1.1 — D-latch digital circuit and truth table.
+          </figcaption>
       </figure>
+      <p>One may consider each case of the output Q and trace the signals back through the cross-coupled NAND gates to convince oneself of 
+      the truth table in Figure 4.1. Effectively, the latch is 'transparent' to the data signal (D) when CLK is HIGH, and 'opaque' when 
+      it is LOW. However, imagine the is a glitch in the data signal during the clock HIGH period. In this case, this glitch will be 
+      passed to the output Q. This is undesirable. We would like the circuit to <em>sample</em> D instantenously at the 
+      <em>rising edge</em> of the clock. Doing so results in the D flip-flop.</p>
+      <p>The D flip‑flop (DFF) is implemented as two D-latches, master and slave. On the falling edge of the clock, the master latch closes 
+        and the slave latch opens, capturing the input effectively instantenously and securely storing it. In order for this to work on 
+        the rising edge of the clock, we must feed the inverse (NOT) of CLK into the slave's clock input. The final D flip-flop is shown, 
+        in Figure 3.1.2, using D-latch blocks.</p>
+      <figure class="diagram-container text-center my-5">
+        <img src="assets/tbc_dff_ms.svg" alt="D flkip-flop digital circuit" class="img-fluid w-75">
+        <figcaption class="text-muted mt-2">Figure 3.1.2 — D flop-flop digital circuit, showing master and slave D-latches.</figcaption>
+      </figure>
+      Given our RTL implementation, we can easily build 3 DFFs using BJTs and resistors. Next we consider how to drive the data inputs.
       <h3>3.2 Next‑State Logic Simplification</h3>
-      <p>The combinational logic feeding each D‑FF toggles the stored bit precisely when its lower‑order bit rolls over from 1→0. 
-        By plotting Karnaugh maps for each toggle function, we derived minimal sum‑of‑products expressions. For example, the middle 
-        bit follows D1 = Q0 ⊕ Q1 = (Q0 & ¬Q1) + (¬Q0 & Q1). We then converted this into NAND‑only form: D1 = NAND( NAND(Q0, Q1), 
-        NAND(¬Q0, ¬Q1) ), which reduces transistor count and keeps the design within RTL paradigms.</p>
+      <p>Now we can store 3-bit numbers, but how do we get the circuit to count? The answer is to design combinational logic blocks 
+        which drive the data inputs of the DFFs. Every rising edge of the clock, the <em>state</em> of the counter must update. 
+        Thus, our counter is in fact a <em>finite state machine</em> (FSM). There are 8 total states, corresponding to the range of
+        a 3-bit number, i.e. the integers 0 (000) through 7 (111). On each rising clock edge, the FSM must transition from state n 
+        to state n + 1. This seems easy, however our state is <em>binary encoded</em> with 3 bits. We will call them \(S_0\), \(S_1\) and \(S_2\) from 
+        least to most significant. Given this, the decision of when each bit must toggle is non-trivial. In a simple sequential circuit such as a shift-register, this logic is simple - the 
+        output bit of one DFF (i.e. \(Q_n\)) simply flows into the input of the next (\(D_{n+1}\)). In this section, we develop the combinational 
+        logic blocks required to drive the data inputs of each DFF.</p>
+      <figure class="diagram-container text-center my-5">
+          <p>
+          \[
+            \begin{array}{c|ccc|ccc}
+              \text{Decimal} & S_2^{n} & S_1^{n} & S_0^{n} & S_2^{n+1} & S_1^{n+1} & S_0^{n+1} \\ \hline
+               0 & 0 & 0 & 0 & 0 & 0 & 1\\
+               1 & 0 & 0 & 1 & 0 & 1 & 0\\
+               2 & 0 & 1 & 0 & 0 & 1 & 1\\
+               3 & 0 & 1 & 1 & 1 & 0 & 0\\
+               4 & 1 & 0 & 0 & 1 & 0 & 1\\
+               5 & 1 & 0 & 1 & 1 & 1 & 0\\
+               6 & 1 & 1 & 0 & 1 & 1 & 1\\
+               7 & 1 & 1 & 1 & 0 & 0 & 0
+            \end{array}
+          \]
+          </p>
+          <figcaption class="text-muted mt-2">
+            Figure 3.2.1 — 3-bit binary count next-state transition table.
+          </figcaption>
+      </figure>
+      <p>Let us first analyse how binary counting works, from one 3-bit number to the next. See Figure 3.2.1. Looking down the columns for each 
+         \(S_n\) we see the \(S_0\) simply toggles on each transition between '0' and '1'. \(S_1\) toggles in a similar way, exceot it toggles on every 2nd 
+         transition. Cosistent with this pattern, \(S_2\) toggles on every 4th transition. From this, we can already see that the input for the \(S_0\)
+         DFF, i.e. \(S_{0}^{\,n}\) is simply the inverse (NOT) of the output \(Q_1\), or \(S_{0}^{\,n+1}\)! Following the standard sum-of-products (SOP) 
+         boolean algebra simplication procedure, we prove this obvious result in figure 3.2.2. </p>
+      <figure class="diagram-container text-center my-5">
+          <p>
+          \[
+          \begin{aligned}
+            S_{0}^{\,n+1}
+            &= \overline{S_2^{\,n}}\,\overline{S_1^{\,n}}\,\overline{S_0^{\,n}}
+              + \overline{S_2^{\,n}}\,S_1^{\,n}\,\overline{S_0^{\,n}}
+              + S_2^{\,n}\,\overline{S_1^{\,n}}\,\overline{S_0^{\,n}}
+              + S_2^{\,n}\,S_1^{\,n}\,\overline{S_0^{\,n}}
+            \\[6pt]
+            &= \overline{S_0^{\,n}}
+              \Bigl(\overline{S_2^{\,n}}\,\overline{S_1^{\,n}}
+                  + \overline{S_2^{\,n}}\,S_1^{\,n}
+                  + S_2^{\,n}\,\overline{S_1^{\,n}}
+                  + S_2^{\,n}\,S_1^{\,n}\Bigr)
+            \\[6pt]
+            &= \overline{S_0^{\,n}}
+              \Bigl(\overline{S_2^{\,n}}\Bigl(\overline{S_1^{\,n}} + S_1^{\,n}\Bigr) + S_2^{\,n}\Bigl(\overline{S_1^{\,n}} + S_1^{\,n}\Bigr)\Bigr)
+            \\[6pt]
+            &= \overline{S_0^{\,n}}
+              \Bigl(\overline{S_2^{\,n}} \cdot 1 + S_2^{\,n} \cdot 1\Bigr)
+            \\[6pt]
+            &= \overline{S_0^{\,n}}
+              \Bigl(\overline{S_2^{\,n}} + S_2^{\,n}\Bigr)
+            \\[6pt]
+            &= \overline{S_0^{\,n}} \cdot 1
+            \\[6pt]
+            &= \overline{S_0^{\,n}}
+          \end{aligned}
+          \]
+          </p>
+          <figcaption class="text-muted mt-2">
+            Figure 3.2.2 — Boolean algebra simplification of the SOP expression for \(S_{0}^{\,n+1}\).
+          </figcaption>
+      </figure> 
+      <p>Thus, the next-state logic block for the \(S_0\) DFF (\(NSL_0\)) is simply a NOT gate.</p>
+      <p>The next-state logic for \(S_1\) is more complex. Let us first consider how this works in the familiar decimal system. When any 
+        column in a decimal number, i.e. units, tens, hundreds, etc. reaches '9', the next increment will <em>overflow</em> that column 
+        and cause a carry of '1' to be added to the next column. This is simpler in binary as the maximum number in any binary-place is 
+        '1'. Thus, glancing back to the state-transition table in Figure 3.1.1, we see that S_1 should only toggle on the next rising-edge 
+        if S_0 is currently a '1'. Note that this toggling functionality would make this logical trivial if we were using a \
+        <em>T flip-flop</em>. Alternatively, following the standard boolean arithmetic SOP procedure, we see that S_1 is only a '1' on 
+        the next edge if it is S_1 = 0 AND S_0 = 1, OR if S_1 = 1 AND S_0 = 0. Again, we can see this algebraically in Figure 3.2.3.
+        <figure class="diagram-container text-center my-5">
+          <p>
+          \[
+          \begin{aligned}
+            S_{1}^{\,n+1}
+            &= \overline{S_2^{\,n}}\,\overline{S_1^{\,n}}\,S_0^{\,n}
+              + \overline{S_2^{\,n}}\,S_1^{\,n}\,\overline{S_0^{\,n}}
+              + S_2^{\,n}\,\overline{S_1^{\,n}}\,S_0^{\,n}
+              + S_2^{\,n}\,S_1^{\,n}\,\overline{S_0^{\,n}}
+            \\[6pt]
+            &= \overline{S_1^{\,n}}S_0^{\,n}\Bigl(S_2^{\,n} + \overline{S_2^{\,n}}\Bigr) + 
+            S_1^{\,n}\overline{S_0^{\,n}}\Bigl(S_2^{\,n} + \overline{S_2^{\,n}}\Bigr)
+            \\[6pt]
+            &= \overline{S_1^{\,n}}S_0^{\,n} \cdot 1 + S_1^{\,n}\overline{S_0^{\,n}} \cdot 1
+            \\[6pt]
+            &= \overline{S_1^{\,n}}S_0^{\,n} + S_1^{\,n}\overline{S_0^{\,n}}
+            \\[6pt]
+            &= S_0^{\,n} \oplus S_1^{\,n}
+            \\[6pt]
+          \end{aligned}
+          \]
+          </p>
+          <figcaption class="text-muted mt-2">
+            Figure 3.2.3 — Boolean algebra simplification of the SOP expression for \(S_{1}^{\,n+1}\).
+          </figcaption>
+      </figure> 
+      <p>Thus, the next-state logic for the \(S_1\) DFF (\(NSL_1\)) is the XOR of \(S_0^{\,n}\) and \(S_{1}^{\,n}\). This simple 
+        expression is nice, but recally we can only implement NAND, NOT and NOR with RTL logic. For simplicity, we aim for just NAND 
+        and NOT. Hence, we cannot directly implememt the XOR function. To develop a 'NAND-friendly' expression, we need to 'unsimplify' 
+        using a special logical result called <em>De Morgan's Theorem</em>, which states the following</p>
+        <figure class="diagram-container text-center my-5">
+          <p>
+          \[
+            \begin{alignedat}{2}
+              \overline{A + B} &= \overline{A}\,\overline{B}, 
+              &\quad
+              \overline{A\,B} &= \overline{A} + \overline{B}
+            \end{alignedat}
+          \]
+          </p>
+        </figure>
+      <p>In simple words, this theorem states that we may 'push' negations through a logical (from input to output, or vica versa), so 
+        long as we change ORs to ANDs and ANDs to ORs. Now we 'NAND-friendly' simplify \(S_{1}^{\,n+1}\) in Figure 3.2.4.</p>
+      <figure class="diagram-container text-center my-5">
+          <p>
+          \[
+          \begin{aligned}
+            S_{1}^{\,n+1} &= \overline{S_1^{\,n}}S_0^{\,n} + S_1^{\,n}\overline{S_0^{\,n}} \\[6pt]
+            &= \overline{\overline{\overline{S_1^{\,n}}S_0^{\,n}}} + \overline{\overline{S_1^{\,n}\overline{S_0^{\,n}}}} \\[6pt]
+            &= \overline{\overline{\overline{S_1^{\,n}}S_0^{\,n}} \cdot \overline{S_1^{\,n}\overline{S_0^{\,n}}}} \\[6pt]
+          \end{aligned}
+          \]
+          </p>
+          <figcaption class="text-muted mt-2">
+            Figure 3.2.4 — NAND-friendly simplification of the SOP expression for \(S_{1}^{\,n+1}\).
+          </figcaption>
+      </figure> 
+      <p>The expression above uses 5 gates, 2 NOT and 3 NAND. As \(\overline{S_0^{\,n}}\) and \(\overline{S_1^{\,n}}\) will already be
+        available from the \(\overline{Q}\) outputs of the DFF, the \(S_1\) next-state logic block really only consumes 3 NAND gates. 
+        Solid!</p>
+      <p>The next-state logic block for \(S_2\) is left as an exercise to the reader, and has the final expression given in Figure 3.2.5.</p>
+      
+        
       <h3>3.3 Seven‑Segment Decoder Network</h3>
       <p>The final stage converts the three‑bit binary count into segment signals for the LED display. Each of the seven segments 
         corresponds to a distinct combination of the three bits; we used Karnaugh‑map grouping to share common terms and minimise 

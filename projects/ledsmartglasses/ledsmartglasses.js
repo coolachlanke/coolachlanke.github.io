@@ -70,3 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+// disrupt, agentic, 
