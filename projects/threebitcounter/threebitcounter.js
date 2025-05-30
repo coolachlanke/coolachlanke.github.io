@@ -14,6 +14,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Smooth-scroll for back-to-top
+document.getElementById('backToTop').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
 // Highlight active section in TOC on scroll
 window.addEventListener('scroll', () => {
   const sections = document.querySelectorAll('main section');

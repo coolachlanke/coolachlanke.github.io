@@ -27,6 +27,15 @@ main section h2 {
   margin-bottom: 1rem;
 }
 
+/* Contents heading */
+nav h2 {
+  border-top: 2px solid #e3f2fd;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;  /* keep same spacing below as your section h2s */
+}
+
+
 /* Figure captions */
 figure figcaption {
   font-size: 0.9rem;
