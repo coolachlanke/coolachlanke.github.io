@@ -79,39 +79,24 @@
     </div>
 
     <!-- Table of Contents -->
-    <nav class="mt-5">
-      <div class="card shadow-sm bg-white rounded-lg overflow-hidden">
-        <div class="card-header bg-white border-0 pb-0">
-          <h2 class="h5 font-weight-bold text-primary mb-2">Contents</h2>
+    <div class="toc-list-container mt-5">
+      <div class="card toc-list">
+        <div class="card-header">
+          <h2>Contents</h2>
         </div>
-        <ul class="list-group list-group-flush toc-list">
-          <li class="list-group-item">
-            <a href="#introduction" class="list-group-item-action">1. Introduction</a>
-          </li>
-          <li class="list-group-item">
-            <a href="#the-three-bit-counter" class="list-group-item-action">2. The 3-bit Counter</a>
-          </li>
-          <li class="list-group-item">
-            <a href="#resistor-transistor-logic" class="list-group-item-action">3. Resistor-Transistor Logic</a>
-          </li>
-          <li class="list-group-item">
-            <a href="#digital-logic-design" class="list-group-item-action">4. Designing Digital Logic Blocks</a>
-          </li>
-          <li class="list-group-item">
-            <a href="#simulation" class="list-group-item-action">5. Simulation</a>
-          </li>
-          <li class="list-group-item">
-            <a href="#pcb-design" class="list-group-item-action">6. PCB Design with KiCAD 8</a>
-          </li>
-          <li class="list-group-item">
-            <a href="#finished-design" class="list-group-item-action">7. Finished Design</a>
-          </li>
-          <li class="list-group-item">
-            <a href="#conclusion" class="list-group-item-action">8. Conclusion</a>
-          </li>
-        </ul>
+        <div class="list-group list-group-flush">
+          <a href="#introduction" class="list-group-item list-group-item-action">1. Introduction</a>
+          <a href="#the-three-bit-counter" class="list-group-item list-group-item-action">2. The 3-bit Counter</a>
+          <a href="#resistor-transistor-logic" class="list-group-item list-group-item-action">3. Resistor-Transistor Logic</a>
+          <a href="#digital-logic-design" class="list-group-item list-group-item-action">4. Designing Digital Logic Blocks</a>
+          <a href="#simulation" class="list-group-item list-group-item-action">5. Simulation</a>
+          <a href="#pcb-design" class="list-group-item list-group-item-action">6. PCB Design with KiCAD 8</a>
+          <a href="#finished-design" class="list-group-item list-group-item-action">7. Finished Design</a>
+          <a href="#conclusion" class="list-group-item list-group-item-action">8. Conclusion</a>
+        </div>
       </div>
-    </nav>
+    </div>
+    
 
 
 
@@ -160,7 +145,7 @@
       <p>You are probably already familiar with the primitive logic functions, NOT, AND, OR, XOR and their negations. In the simplest case
         these logic functions transform two binary inputs A and B into a binary output, Y, corresponding to the given function. For example,
         Figure 3.1 shows the NAND gate alongside its <em>truth table</em>. The NAND gate is surprisingly versatile and will 
-        be of prime importance in the following <a href="#digital-logic-design">digital design section</a>.</p>
+        be of prime importance in the following <a href="#digital-logic-design">digital design</a> section.</p>
         <figure class="diagram-container text-center">
           <img src="assets/tbc_nand.svg" alt="NAND gate" class="img-fluid">
           <!-- LaTeX‐style truth table rendered by MathJax -->
@@ -555,22 +540,16 @@
       connecting the appropriate inputs and outputs. This is shown in Figure 4.3.8.
     </p>
     <figure class="diagram-container text-center my-5">
-      <img src="assets/tbc_b_cct.svg" alt="'a' segment k-map" class="img-fluid w-75 mb-3">
+      <img src="assets/tbc_seven_seg_bd.svg" alt="7-segment decoder functional block diagram" class="img-fluid w-50 mb-3">
       <figcaption class="text-muted mt-2">
-        Figure 4.3.8 — 7-segment decoder implementation using sub-circuits \(f_{a}\) to \(f_{g}\).
+        Figure 4.3.8 — 7-segment decoder functional block diagram.
       </figcaption>
     </figure>
     <p>
-      With this complete, we simply package the sub-circuits for \(f_{a}\) to \(f_{g}\) into the 7-segment decoder block, 
-      connecting the appropriate inputs and outputs. This is shown in Figure 4.3.8.
-    </p>
-    <figure class="diagram-container text-center my-5">
-      <img src="assets/tbc_b_cct.svg" alt="'a' segment k-map" class="img-fluid w-75 mb-3">
-      <figcaption class="text-muted mt-2">
-        Figure 4.3.9 — NAND-friendly SOP expression and circuit realisation for \(f_{b}\).
-      </figcaption>
-    </figure>
-      
+      Lastly, to reduce gate count, and hence components, we may re-use gate outputs which appear in other expressions. For example, 
+      the \(\overline{S_{2}S_{0}}\) term from \(f_{a}\) also appears in the expressions for \(f_{d}\) and \(f_{e}\), and are hence 
+      reused. The full circuit diagram for the 7-segment decoder will be provided in the <a href="#simulation">simulation</a> section.
+    </p> 
 
 
     </section>
