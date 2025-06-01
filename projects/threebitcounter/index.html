@@ -80,18 +80,40 @@
 
     <!-- Table of Contents -->
     <nav class="mt-5">
-      <h2>Contents</h2>
-      <ul class="list-unstyled">
-        <li><a href="#introduction">1. Introduction</a></li>
-        <li><a href="#the-three-bit-counter">2. The 3-bit Counter</a></li>
-        <li><a href="#resistor-transistor-logic">3. Resistor Transistor Logic</a></li>
-        <li><a href="#digital-logic-design">4. Designing Digital Logic Blocks</a></li>
-        <li><a href="#simulation">4. Simulation</a></li>
-        <li><a href="#pcb-design">6. PCB Design with KiCAD 8</a></li>
-        <li><a href="#finished-design">7. Finshed Design</a></li>
-        <li><a href="#conclusion">8. Conclusion</a></li>
-      </ul>
+      <div class="card shadow-sm bg-white rounded-lg overflow-hidden">
+        <div class="card-header bg-white border-0 pb-0">
+          <h2 class="h5 font-weight-bold text-primary mb-2">Contents</h2>
+        </div>
+        <ul class="list-group list-group-flush toc-list">
+          <li class="list-group-item">
+            <a href="#introduction" class="list-group-item-action">1. Introduction</a>
+          </li>
+          <li class="list-group-item">
+            <a href="#the-three-bit-counter" class="list-group-item-action">2. The 3-bit Counter</a>
+          </li>
+          <li class="list-group-item">
+            <a href="#resistor-transistor-logic" class="list-group-item-action">3. Resistor-Transistor Logic</a>
+          </li>
+          <li class="list-group-item">
+            <a href="#digital-logic-design" class="list-group-item-action">4. Designing Digital Logic Blocks</a>
+          </li>
+          <li class="list-group-item">
+            <a href="#simulation" class="list-group-item-action">5. Simulation</a>
+          </li>
+          <li class="list-group-item">
+            <a href="#pcb-design" class="list-group-item-action">6. PCB Design with KiCAD 8</a>
+          </li>
+          <li class="list-group-item">
+            <a href="#finished-design" class="list-group-item-action">7. Finished Design</a>
+          </li>
+          <li class="list-group-item">
+            <a href="#conclusion" class="list-group-item-action">8. Conclusion</a>
+          </li>
+        </ul>
+      </div>
     </nav>
+
+
 
 
     <!-- INTRODUCTION -->
@@ -167,25 +189,7 @@
         systems. Widely used in early computer prototypes and minicomputers, RTL laid the groundwork for more advanced families (DTL, TTL) by 
         demonstrating how discrete components could reliably implement Boolean functions at kilohertz-scale clock rates. Interestingly,
         RTL was used for the guidance computers of the Apollo missions!</p>
-      <p>RTL is remarkably simple, the only components required are NPN bipolar junction transistors (BJTs) and resistors. In each gate, 
-        NPN transistors act as pull-down switches, while resistors provide pull-up bias. It is important that we operate all BJTs in their
-        'saturation' mode, where they act like a switch than a current amplifier. We spare the details, but one should appreciate 
-        the analog electronics going on here. For logic, we use a 0-5 V voltage scale, with 
-        [0-1] V meaning '0' (LOW) and [3-5] V meaning a '1' (HIGH). In general, AND functions are implemented with BJTs in 
-        series, and OR functions with BJTs in parallel. In fact, the natural logic formed by these gates is NAND and NOR, respectively. 
-        To save on components (additional NOT gates), we restrict ourselves to these three logic functions. (Aside: one can actually show
-        that any other logic function can be built purely from NAND gates). After experimentation with noise immunity, rise time and
-        (critically) <em>fan-out</em>, 1 kΩ pull-ups were standardised for the collector resistance, whilst 10 kΩ would be used on the  
-        gate-inputs to isolate transistor bases and limit drive current. Fan-out refers to the phenomenon where the logical tolerances 
-        of a logic gate degrade as it drives an increasing number of inputs. For example, if we connect the output of an RTL NAND gate 
-        to the inputs of 6 downstream gates, each will load some base current through the collector resistor of the previous stage. 
-        A voltage divider expression was used to derive a function for the loss in ability of driving a logic HIGH as fan-out increased. 
-        As 3 V was deemed tolerable to push the BJTs into saturation to pull down to a 'healthy' LOW, a rough fan-out limit of 6-8 was calculated and 
-        simulatied in JScircuit. Figure 3.1 shows a 2-input RTL NAND gate simulation in JScircuit. Based on the input switches, one 
-        can see that this behaviour is consistent with the NAND gate in Figure 3.1. Note that the output produces a clean 5 V when 
-        the inputs are LOW, however this voltage will sag when the output drives a gate downstream. Additionally, the output cannot 
-       reach a true 0 V due to the V_CE(sat) of the transistors.</p>
-        <figure class="diagram-container text-center mt-4">
+      <figure class="diagram-container text-center mt-4">
           <div class="row">
             <div class="col-md-6">
               <img
@@ -208,8 +212,28 @@
               </figcaption>
             </div>
           </div>
-        </figure>
-        With our physical gate implementations ready to go, we can proceed with building digital logic blocks.
+      </figure>
+      <p>RTL is remarkably simple, the only components required are NPN bipolar junction transistors (BJTs) and resistors. In each gate, 
+        NPN transistors act as pull-down switches, while resistors provide pull-up bias. It is important that we operate all BJTs in their
+        'saturation' mode, where they act like a switch than a current amplifier. We spare the details, but one should appreciate 
+        the analog electronics going on here. For logic, we use a 0-5 V voltage scale, with 
+        [0-1] V meaning '0' (LOW) and [3-5] V meaning a '1' (HIGH). In general, AND functions are implemented with BJTs in 
+        series, and OR functions with BJTs in parallel. In fact, the natural logic formed by these gates is NAND and NOR, respectively. 
+        To save on components (additional NOT gates), we restrict ourselves to these three logic functions. (Aside: one can actually show
+        that any other logic function can be built purely from NAND gates). After experimentation with noise immunity, rise time and
+        (critically) <em>fan-out</em>, 1 kΩ pull-ups were standardised for the collector resistance, whilst 10 kΩ would be used on the  
+        gate-inputs to isolate transistor bases and limit drive current. Fan-out refers to the phenomenon where the logical tolerances 
+        of a logic gate degrade as it drives an increasing number of inputs. For example, if we connect the output of an RTL NAND gate 
+        to the inputs of 6 downstream gates, each will load some base current through the collector resistor of the previous stage. 
+        A voltage divider expression was used to derive a function for the loss in ability of driving a logic HIGH as fan-out increased. 
+        As 3 V was deemed tolerable to push the BJTs into saturation to pull down to a 'healthy' LOW, a rough fan-out limit of 6-8 was calculated and 
+        simulatied in JScircuit. Figure 3.2 and 3.3 show a 2-input RTL NAND gate simulation in JScircuit. Based on the input switch 
+        configurations in either figure, one can see that this behaviour is consistent with the NAND gate in Figure 3.1. Note that the 
+        output produces a clean 5 V when the inputs are LOW, however this voltage will sag when the output drives a gate downstream. 
+        Additionally, the output cannot reach a true 0 V due to the V_CE(sat) of the transistors.
+      </p>
+      <p>With our physical gate implementations ready to go, we can proceed with building digital logic blocks.</p>
+
     </section>
 
 
@@ -228,7 +252,7 @@
          is involved, digital circuits will generally be non-combinational - i.e. they possess memory. The D flip-flop is an example of a 
          <em>sequential circuit</em>. In order to construct the D flip-flop, we must first conside the D latch, shown in Figure 4.1.1.</p>
       <figure class="diagram-container text-center my-5">
-          <img src="assets/tbc_d_latch.svg" alt="D-latch digital circuit" class="img-fluid w-75">
+          <img src="assets/tbc_d_latch.svg" alt="D-latch digital circuit" class="img-fluid w-75 mb-3">
           <p>
             \[
             \begin{array}{c c c|c}
@@ -449,7 +473,8 @@
       </figure> 
       <p>Next, we derive and simplify the SOP expressions for \(a\) and \(b\). In this subsection, we will use <em>Karnaugh maps</em> 
       for simplification.</p>
-      <p>For segment \(a\), we wish to find minimised SOP expression \(a = f_{a}\left(S_0, S_1, S_2\right)\). As there are less than 
+      <p>
+        For segment \(a\), we wish to find minimised SOP expression \(a = f_{a}\left(S_0, S_1, S_2\right)\). As there are less than 
          five variables, we may use a Karnaugh map to find the minimised SOP expression. Karnaugh maps provide an easy graphical way 
          to find minimised boolean expressions for binary functions of 4 or less variables. In the Karnaugh map in Figure 4.3.4, we 
          use Gray code to enumerate the rows and columns, with the ability to pair \(S_0\) and \(S_1\) across the columns. Then, for 
@@ -461,14 +486,90 @@
         <p>
           \[
             \begin{aligned}
-              \implies a &= f_{a}\left(S_0, S_1, S_2\right) = S_1 + S_{2}S_{0} + \overline{S_{2}S_{1}}
+              \implies a &= f_{a}\left(S_0, S_1, S_2\right) = S_1 + S_{2}S_{0} + \overline{S_{2}}\,\overline{S_{1}}
             \end{aligned}
           \]
         </p>
         <figcaption class="text-muted mt-2">
-          Figure 4.3.3 — Segment \(a\) Karnaught map, followed by minimised SOP expression.
+          Figure 4.3.4 — Segment \(a\) Karnaugh map, followed by minimised SOP expression.
         </figcaption>
       </figure> 
+      <p>This process is repeated for segment \(b\). The relevant Karnaugh map and minimised SOP expression for 
+         \(f_{b}\left(S_0, S_1, S_2\right)\) is shown in Figure 4.3.5.
+      </p>
+      <figure class="diagram-container text-center my-5">
+        <img src="assets/tbc_b_km.svg" alt="'a' segment k-map" class="img-fluid w-75 mb-3">
+        <p>
+          \[
+            \begin{aligned}
+              \implies b &= f_{b}\left(S_0, S_1, S_2\right) = \overline{S_2} + S_{1}S_{0} + \overline{S_{1}}\,\overline{S_{0}}
+            \end{aligned}
+          \]
+        </p>
+        <figcaption class="text-muted mt-2">
+          Figure 4.3.5 — Segment \(b\) Karnaugh map, followed by minimised SOP expression.
+        </figcaption>
+      </figure>
+      <p>
+         After repeating for segments \(c, d, e, f\) and \(g\), we need to think about the implementation of the decoder. Which
+         logic circuits are we going to put inside the box in Figure 4.3.2 to acheive the desired behaviour. The groundwork is 
+         already complete in our minimised SOP expressions above. For each of the decoder's 7 outputs, \(a, b, c, d, e, f, g\), 
+         we now have a logic function in terms of the 3 inputs \(S_0, S_1, S_2\). Hence, we can implement the decoder as 7 
+         independent sub-circuits, with each one constructed from simply reading off the SOP expressions above. However, recall 
+         that in our RTL implementation, we prefer NAND/NOT logic. As such, we will first manipulate the SOP expressions for 
+         \(f_{a}\) to \(f_{g}\) to be NAND-friendly. For \(a\) and \(b\) these expressions are given in Figures 4.3.6 and 4.3.7, 
+         respectively, along with logic circuit. Note that \(S_0, S_1, S_2\) and \(\overline{S_0}, \overline{S_1}, \overline{S_2}\) 
+         are available directly from the output of the flip-flops.
+     </p>
+     <figure class="diagram-container text-center my-5">
+      <img src="assets/tbc_a_cct.svg" alt="'a' segment k-map" class="img-fluid w-75 mb-3">
+      <p>
+        \[
+          \begin{aligned}
+            a &= f_{a}\left(S_0, S_1, S_2\right) = \overline{\overline{S_1} \cdot \overline{S_{2}S_{1}} \cdot \overline{\overline{S_2}\,\overline{S_1}}} \\
+          \end{aligned}
+        \]
+      </p>
+      <figcaption class="text-muted mt-2">
+        Figure 4.3.6 — NAND-friendly SOP expression and circuit realisation for \(f_{a}\).
+      </figcaption>
+    </figure>
+    <figure class="diagram-container text-center my-5">
+      <img src="assets/tbc_b_cct.svg" alt="'a' segment k-map" class="img-fluid w-75 mb-3">
+      <p>
+        \[
+          \begin{aligned}
+            b &= f_{b}\left(S_0, S_1, S_2\right) = \overline{S_2 \cdot \overline{S_{1}S_{0}} \cdot \overline{\overline{S_1}\,\overline{S_0}}}
+          \end{aligned}
+        \]
+      </p>
+      <figcaption class="text-muted mt-2">
+        Figure 4.3.7 — NAND-friendly SOP expression and circuit realisation for \(f_{b}\).
+      </figcaption>
+    </figure>
+    <p>
+      This process is repeated for segments \(c, d, e, f\) and \(g\).
+    </p>
+    <p>
+      With this complete, we simply package the sub-circuits for \(f_{a}\) to \(f_{g}\) into the 7-segment decoder block, 
+      connecting the appropriate inputs and outputs. This is shown in Figure 4.3.8.
+    </p>
+    <figure class="diagram-container text-center my-5">
+      <img src="assets/tbc_b_cct.svg" alt="'a' segment k-map" class="img-fluid w-75 mb-3">
+      <figcaption class="text-muted mt-2">
+        Figure 4.3.8 — 7-segment decoder implementation using sub-circuits \(f_{a}\) to \(f_{g}\).
+      </figcaption>
+    </figure>
+    <p>
+      With this complete, we simply package the sub-circuits for \(f_{a}\) to \(f_{g}\) into the 7-segment decoder block, 
+      connecting the appropriate inputs and outputs. This is shown in Figure 4.3.8.
+    </p>
+    <figure class="diagram-container text-center my-5">
+      <img src="assets/tbc_b_cct.svg" alt="'a' segment k-map" class="img-fluid w-75 mb-3">
+      <figcaption class="text-muted mt-2">
+        Figure 4.3.9 — NAND-friendly SOP expression and circuit realisation for \(f_{b}\).
+      </figcaption>
+    </figure>
       
 
 
