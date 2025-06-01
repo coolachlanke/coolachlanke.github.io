@@ -69,63 +69,87 @@ main section > h2::before {
 /* -------------------------------------------------------------------
    “Table of Contents” (toc-list) Custom Styles
    ------------------------------------------------------------------- */
-
-/* Ensure the card is a bit narrower inside the main container (optional) */
-.toc-list-container {
-  max-width: 380px;       /* adjust as desired */
-  margin: 0 auto;         /* center if you want it not full-width */
-}
-
-/* Remove default list-group highlights so we can add our own blue left border on .active */
-.toc-list .list-group-item {
-  border-left: 4px solid transparent; /* Reserve space for left indicator */
-  transition: background-color 0.15s ease, color 0.15s ease;
-}
-
-/* Default link styling inside list-group */
-.toc-list .list-group-item-action {
-  color: #495057;           /* Muted‐dark gray text */
-  font-weight: 500;         /* Slightly semibold */
-  padding-left: 1rem;       /* Move text in from border a bit */
-}
-
-/* Hover & focus state (same background, no border change) */
-.toc-list .list-group-item-action:hover,
-.toc-list .list-group-item-action:focus {
-  background-color: #f7f9fa;  /* Very light gray */
-  color: #343a40;             /* Darker gray on hover */
-  text-decoration: none;
-}
-
-/* Active link (the section currently in view) */
-.toc-list .list-group-item-action.active {
-  border-left-color: #007bff; /* Blue indicator on left */
-  background-color: #e9f4ff;  /* Light blue background */
-  color: #007bff;             /* Bootstrap primary blue text */
-  font-weight: 600;
-}
-
-/* Remove any default “active” background Bootstrap might add */
-.toc-list .list-group-item-action.active:hover {
-  background-color: #e9f4ff;  /* Keep same light-blue on hover */
-}
-
-/* If you want a bit more breathing room between “Contents” heading and first item: */
-.toc-list .list-group-item:first-child {
-  margin-top: 0.5rem;
-}
-
-/* Optional: add a thin separator line between the card header and list group */
-.card-header + .list-group-flush {
-  border-top: 1px solid #e3e6ea;
-}
-
-/* Adjust the “Contents” heading style */
-.card-header h2 {
-  font-size: 1.125rem;       /* Equivalent to .h5 in Bootstrap */
-  margin-bottom: 0.25rem;
-  padding-left: 0.5rem;      /* Indent so it lines up with list items */
-}
-
-/* Prevent the card from “jumping” when border appears (we already reserved space above) */
+      .toc-list-container {
+        margin: 0 auto;
+        width: 100vw;
+        max-width: 100%;
+      }
+      
+      .toc-list .card {
+        border-radius: 1rem; 
+        border: 1px solid #e3e6ea;
+      }
+      
+      .toc-list .card-header {
+        border-bottom: none;   
+        background-color: transparent;
+        padding-bottom: 0;
+      }
+      
+      /* 2) Style the “Contents” heading: black + larger */
+      .toc-list .card-header h2 {
+        font-size: 1.75rem;     
+        color: #000;        
+        margin: 0;        
+        padding: 1rem 0 0.5rem 1rem;
+        border-bottom: 2px solid #e3f2fd;
+      }
+      
+      /* 3) Make each list‐item link take up 100% width, and move
+            the left‐border indicator onto the <a> itself. */
+      .toc-list .list-group-flush {
+        margin: 0;              /* no extra margins */
+        padding: 0;             /* no padding around UL */
+      }
+      
+      .toc-list .list-group-item {
+        padding: 0;             /* zero out default padding */
+        border: none;           /* remove default Bootstrap border */
+      }
+      
+      .toc-list .list-group-item-action {
+        display: block;         /* force full‐width clickable area */
+        width: 100%;            /* cover entire parent */
+        padding: 0.75rem 1rem;  /* comfortable vertical + horizontal padding */
+        color: #495057;         /* muted‐dark gray text by default */
+        font-weight: 500;       /* a bit semibold */
+        border-left: 4px solid transparent; /* reserve space for left indicator */
+        transition:
+          background-color 0.15s ease,
+          color 0.15s ease,
+          border-left-color 0.15s ease;
+      }
+      
+      /* 4) Hover & focus state (light gray background, no left stripe change) */
+      .toc-list .list-group-item-action:hover,
+      .toc-list .list-group-item-action:focus {
+        background-color: #f7f9fa; /* very light gray */
+        color: #343a40;            /* darker gray on hover */
+        text-decoration: none;
+      }
+      
+      /* 5) Active link (section currently in view): 
+            blue left border + light‐blue fill + blue text */
+      .toc-list .list-group-item-action.active {
+        border-left-color: #007bff; /* bright Bootstrap‐blue stripe */
+        background-color: #e9f4ff;  /* light‐blue background */
+        color: #007bff;             /* blue text */
+        font-weight: 600;           /* bold enough to stand out */
+      }
+      
+      /* 6) Keep the same light‐blue on hover even when already active */
+      .toc-list .list-group-item-action.active:hover {
+        background-color: #e9f4ff;
+        color: #007bff;
+      }
+      
+      /* 7) If you want a bit more breathing room between “Contents” header
+            and the first item, you can push down the first <li> a little: */
+      .toc-list .list-group-item-action:first-child {
+        margin-top: 0.5rem;
+      }
+      
+      /* 8) Finally, prevent any jumping when the left border appears:
+            (we already reserved 4px of transparent border on every <a>). */
+      
 
