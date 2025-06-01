@@ -66,3 +66,66 @@ main section > h2::before {
   color: inherit;                  /* use same heading color */
 }
 
+/* -------------------------------------------------------------------
+   “Table of Contents” (toc-list) Custom Styles
+   ------------------------------------------------------------------- */
+
+/* Ensure the card is a bit narrower inside the main container (optional) */
+.toc-list-container {
+  max-width: 380px;       /* adjust as desired */
+  margin: 0 auto;         /* center if you want it not full-width */
+}
+
+/* Remove default list-group highlights so we can add our own blue left border on .active */
+.toc-list .list-group-item {
+  border-left: 4px solid transparent; /* Reserve space for left indicator */
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Default link styling inside list-group */
+.toc-list .list-group-item-action {
+  color: #495057;           /* Muted‐dark gray text */
+  font-weight: 500;         /* Slightly semibold */
+  padding-left: 1rem;       /* Move text in from border a bit */
+}
+
+/* Hover & focus state (same background, no border change) */
+.toc-list .list-group-item-action:hover,
+.toc-list .list-group-item-action:focus {
+  background-color: #f7f9fa;  /* Very light gray */
+  color: #343a40;             /* Darker gray on hover */
+  text-decoration: none;
+}
+
+/* Active link (the section currently in view) */
+.toc-list .list-group-item-action.active {
+  border-left-color: #007bff; /* Blue indicator on left */
+  background-color: #e9f4ff;  /* Light blue background */
+  color: #007bff;             /* Bootstrap primary blue text */
+  font-weight: 600;
+}
+
+/* Remove any default “active” background Bootstrap might add */
+.toc-list .list-group-item-action.active:hover {
+  background-color: #e9f4ff;  /* Keep same light-blue on hover */
+}
+
+/* If you want a bit more breathing room between “Contents” heading and first item: */
+.toc-list .list-group-item:first-child {
+  margin-top: 0.5rem;
+}
+
+/* Optional: add a thin separator line between the card header and list group */
+.card-header + .list-group-flush {
+  border-top: 1px solid #e3e6ea;
+}
+
+/* Adjust the “Contents” heading style */
+.card-header h2 {
+  font-size: 1.125rem;       /* Equivalent to .h5 in Bootstrap */
+  margin-bottom: 0.25rem;
+  padding-left: 0.5rem;      /* Indent so it lines up with list items */
+}
+
+/* Prevent the card from “jumping” when border appears (we already reserved space above) */
+

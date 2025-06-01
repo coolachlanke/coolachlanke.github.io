@@ -34,3 +34,28 @@ window.addEventListener('scroll', () => {
     link.classList.toggle('font-weight-bold', link.getAttribute('href') === `#${currentId}`);
   });
 });
+
+// ---------------------------------------
+// Highlight the current TOC link on scroll
+// ---------------------------------------
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('main section[id]');
+  let currentId = '';
+
+  sections.forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top <= 100 && rect.bottom > 100) {
+      currentId = sec.id;
+    }
+  });
+
+  document.querySelectorAll('.toc-list .list-group-item-action').forEach(link => {
+    const hrefId = link.getAttribute('href').substring(1);
+    if (hrefId === currentId) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+});
+
