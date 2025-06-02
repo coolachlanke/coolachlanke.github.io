@@ -35,9 +35,8 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// ---------------------------------------
+
 // Highlight the current TOC link on scroll
-// ---------------------------------------
 window.addEventListener('scroll', () => {
   const sections = document.querySelectorAll('main section[id]');
   let currentId = '';
