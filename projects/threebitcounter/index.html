@@ -98,9 +98,6 @@
     </div>
     
 
-
-
-
     <!-- INTRODUCTION -->
     <section id="introduction" class="mt-5">
       <h2>Introduction</h2>
@@ -558,12 +555,129 @@
     <!-- SIMULATION -->
     <section id="simulation" class="mt-5">
       <h2>Simulation</h2>
-      <ol>
-        <li>Hand-soldered all SMD resistors & capacitors.</li>
-        <li>Placed BJTs and LEDs, checked orientation.</li>
-        <li>Debugged early fan-out issues by increasing pull-ups.</li>
-        <li>Cleaned with IPA and fitted into 3D-printed enclosure.</li>
-      </ol>
+      <p>
+        With the theoretical groundwork complete, we now simulate the digital building blocks expored in the previous section and analyse 
+        their behaviour to ensure they will function correctly in the real circuit. By progressively simulating and combining each block, 
+        we eventually work up to the full 3-bit counter as given in Figure 2.1. We use <a target="_blank" href="https://www.falstad.com/circuit/circuitjs.html">JScircuit</a> 
+        as our simulation platform, due to its ability to simulate digital logic and its highly-interactive and visual interface.
+      </p>
+      <p>
+        The simulation in Figure 5.1 shows the complete NAND-friendly implementation of the 7-segment decoder, with gate resuse where 
+        appropriate. One can see from top to bottom that the circuit has the same structure as the block diagram in Figure 4.3.8. There are 
+        a total of 18 NAND gates, and 3 NOT gates, but recall the NOT function on \(S_0, S_1\) and \(S_2\) will actually come from 
+        \(\overline{Q}\) of the flip-flops. Notice that there are six 3-input and one 4-input NAND gates. Therefore, the total transistor 
+        count for the decoder will be \(N_{T} = (11)(2) + (6)(3) + (1)(4) = 44\).
+      </p>
+      <p>
+        <em>Use the mouse wheel to zoom, and middle-mouse button to pan in the simulation below. The three inputs underneath 
+          \(S_0, S_1, S_2\) (either "L" or "H") can be clicked to toggle. Try all combinations from 000 to 111 to test that the decoder 
+          works!
+        </em>
+      </p>
+      <figure class="diagram-container text-center my-5">
+        <div class="embed-container" style="position:relative; padding-bottom:100%; height:0; overflow:hidden; margin-bottom:1rem;">
+          <iframe
+            src="https://www.falstad.com/circuit/circuitjs.html?noToolbar=1&ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgAZEJmwm7vt178WYFFAkAzAIYAbAM4NqkNgEkhgpppphCA-lRhIEnbghR59Zi91bjDIGQqVIV6puctaRNPFW8SRhRqZsTiAR40IoKG0MamHmFWieF2gY5yispsAO7c2HgGofZQucUSKVYqeUwF-NjhwiANpTVNLTyaMWW1hSDEepH8A635fWJeOnoTozy64DZzg91gCOS6-iNgSUwjVOSGZRvcIyyLez0zu4MzYFGzdSAoNP5Nz4dtgu8a9fY9j5hwp4nhg-jVgYDrF5um15lcps1sHpqkJ5tgkWN6hiUTw-OBCK88UjLDjfFRiZjmoQSUcCck0gEcWlHmdLI8cQgki9-JySjiRjRTqcWvzBi1jrU-qsIEwUM9aKcZoLkc1qCYakqhXplbM5fwyWZ7gaOfdTgh7oyeub9Xihv1kT09QrBsCdRybDqPDZITinQgxKi9P6wYGKAGloiHdLKfNZXhLPMqOJ4tHevwGRYEwGkxITKmnXcRLd7uS1Y74+ALZnwNnHfKrpCZr7QQsvI2HTV29xq4m6+m6biqMdSXiJQbLamAQhBtWUNOJMngpO+thzN2K6uSiU8-7u-KWTN2ar4p35dzyufffu+nG2X1fRub9XN7r99Tuy2Kc3xBTZS25x2H7iAB66WCBTIBge4YrLuaYgASbYVghC5lsu-AYE+FYYUU9AprBjwYJAIjVoRRSLuq3bzrKLwCC21EfLR4TfFoLaEPOKj5vKhB0TM3ElPwJ6gSApFCdSNKdkhFaylxFbfsJRF7uhCk4nifHcHiDFMBp+IOO6liesCvKzIZOyPEZpLzMGoaEPKFl6DZIiPA5r78Gxyysex5YJlW86FrqvlVvWJaOgFxFUd8Jo2jy9xicZMVSU5slWjYRlepYoKacCGWUtlHJcnA5QYO+eXiEVXgEcVPQGr+BrYbMtU3gR95VV8NGdPwfiaU0nWUj1D6WHw-jVsh-XCU+LZ1XJdV-qVyk9KpPE2GpHGwU6hReDM60oYJ0kdV0LZ4DCjEgId0QeYBu0nR0IF4CKIV6LdTHzoN-n2W1Tovb6z3vUhNEok6LRrb4oxAxtNhbStMqPMQVYVjDZG5mwaHID9CZEQ45FI-h4xgBit41tiTxluCSRleUYCQLZVpJBT8pwbTBj-DjaDk2ImU02z5OU4znHpujtg2BTf3HsEElZnjja4xdksSy2FOeZ2cuQOF9bK9LFZC0NNGay5yB0423O6kr+stvDRviGb+Nm-986A75-M29M-OsijDHPsBGvPOJlJhJMeK+-V-uLA1jM1NDA4IgMXXzFH1lU7zCzAy7YjA6WVAUbK86PZR0woHdna+XnTH1kX9UxxHcKrCGEasGu9NVw84xq0Io7NyOQ7N4O-Q2L62vOwWDuOn373a17uqj0nBZj5DMZEMRnsxETO09nPikLEd9Nj3aKfe9vW-WvBSXgjY2Vpa2mWCxY-iPBMbue0ntzT2wAAeAi47YFprEWOi0M04gAMooBfoaJALA6BmEgDcGivwQD-3YK-XE9AwFIKiN-KgMD-4qCAA"
+            style="position:absolute; top:0px; left:0; width:100%; height:calc(100% + 0px); border:1px solid #ccc;"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <figcaption class="text-muted mt-2">
+          Figure 5.1 — 7-segment decoder simulation in JScircuit.
+        </figcaption>
+      </figure>
+      <p>
+        Next, we simulate the counter itself. Recall from Figure 2.1 that this consists of 3 D flip-flop circuits, each with data input \(D\) 
+        fed from the corresponding 'next-state logic' block. Further, Figures 4.1.1 and 4.1.2 remind us how the D flip-flop are implemented 
+        with logic gates. The simulation below shows the counter sequenitally count from \(000_{2}\) (1) to \(111_{2}\) (10), and then repeat. 
+        This output is displayed via 3 LEDs, one for each bit. Also provided is an analog output for each bit, showing either a perfect 0 V 
+        or 5 V. Recall that this ideal behaviour is not possible when we implement the RTL logic in the physical circuit In the simulation, 
+        the clock signal is provided from a square wave source with a constant period. However, in our physical implementation the clock will 
+        be controlled by a button press.
+      </p>
+      <figure class="diagram-container text-center my-5">
+        <video autoplay loop muted playsinline style="max-width: 100%; height: auto;">
+          <source src="assets/tbc_sim2.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption class="text-muted mt-2">
+          Figure 5.2 — 3-bit counter circuit simulation in JScircuit. D flip-flops and next-state logic blocks are labelled.
+        </figcaption>
+      </figure>
+      <p>
+        One can see that the output is updated on the positive or rising-edge of the clock, whilst the intermediate state of the flip-flops 
+        update on the negative or falling edge. Recall from Figure 4.1.1 that the 'slave' D-latch is triggered by \(\overline{CLK}\), not 
+        \(CLK\).
+      </p>
+      <p>
+        Lastly, we combine the two simulations above to produce a digital simulation of our entire 3-bit counter system. The result is shown 
+        in Figure 5.3. Note that the binary LED output has been omitted for clarity. Notice that we have the same flip-flops and next-state 
+        logic as in Figure 5.2, however the output bits \(S_0, S_1\) and \(S_2\) are now connected to the input of the 7-segment decoder 
+        circuit, as was depicted in Figure 5.1. Again, the clock for this circuit is driven by a square wave source, unlike the <a href="#pcb-design">physical circuit</a> 
+        design in the following section.
+      </p>
+      <figure class="diagram-container text-center my-5">
+        <video autoplay loop muted playsinline style="max-width: 100%; height: auto;">
+          <source src="assets/tbc_sim3.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption class="text-muted mt-2">
+          Figure 5.3 — Complete 3-bit counter simulation in JScircuit. Binary LED output excluded for clarity.
+        </figcaption>
+      </figure>
+      <p>
+        The flip-flops count cleanly and the the 7-segment decoder works nicely and displays the correct digit on the 7-segment display. Notice 
+        that the simulation in Figure 5.3 has acutually missed a few NOT gate cancellations and neglected to use the negations of 
+        \(S_0, S_1\) and \(S_2\) from the \(\overline{Q}\) output of the flip-flops - whoops!
+      </p>
+      <p>
+        To realise this circuit physically, we need to use the RTL principles developed in <a href="#resistor-transistor-logic">section 2</a>. 
+        Whilst clean and functional, the simulation in Figure 5.3 uses ideal logic gates which consume zero current, are magically powered 
+        and have infinite input and zero output impedance. We need to now translate the digital circuit in Figure 5.3 into the final realisable 
+        circuit using RTL logic. As we have already developed the necessary theory, we simply replace the NAND and NOT gates in Figure 5.3 with 
+        the implementations in Figure 3.2. To rehash - this involves one NPN BJT for each gate input, alongside a base \(1k\Omega\) 
+        resistor. The BJTs are connected in series, and pulled up to 5V by a \(10k\Omega\) collector pull-up resistor. Recall also that we 
+        estimated that with typical NPN BJT parameters and the resistor values chosen, we should be able to handle a fan-out of roughly 
+        6-8. The NOT gate for \(\overline{CLK}\) and \(S_0, S_1, S_2\) inputs to the 7-seg decoder suffer from significant fanout (5 V HIGH 
+        reduced to around 3.1 V), yet this is still ample to bias the BJTs into saturation. As long as we are careful in how we logically 
+        interpret our outputs, the circuit will work.
+      </p>
+      <p>
+        In Figure 5.4, the D flip-flop and next-state logic for bit \(S_0\) is implemented with the RTL gates derived earlier. One can 
+        see that fan-out is an issue in the output as logic HIGH sitting around 3.9 V instead of 5 V. Also, logic LOW is around 144 mV due to 
+        the \(V_{CE(\text{sat})}\) of the BJT.
+      </p>
+      <figure class="diagram-container text-center my-5">
+        <video autoplay loop muted playsinline style="max-width: 100%; height: auto;">
+          <source src="assets/tbc_sim4.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption class="text-muted mt-2">
+          Figure 5.4 — D flip-flop simulation for \(S_0\) with RTL logic. \(S_0'\) next-state logic (NOT gate) implemented to show the counting 
+          effect of the \(S_0\) bit (i.e. a toggle).
+        </figcaption>
+      </figure>
+      <p>
+        The entire RTL circuit is not simulated due to degraded simulation performance with over 100 transistors. Transistors are governed 
+        the <em>Ebers-Moll equation</em>, which has a non-analytic inverse and thus requires a numerical scheme to solve. Doing this across many 
+        transistors connected to each other in complex ways inevitably causes things to bottleneck. 
+      </p>
+      <figure class="text-center my-5">
+        <p>
+          \[
+            I_C = I_S e^{\frac{V_{BE}}{V_T}} \quad \text{and} \quad V_{BE} = V_T \ln \left( \frac{I_C}{I_S} \right)
+          \]
+        </p>
+        <figcaption class="text-muted mt-2">
+          Figure 5.5 — Ebers-Moll model of a BJT: collector current \( I_C \) depends exponentially on base-emitter voltage \( V_{BE} \), with \( I_S \) being the scale current and \( V_T \) the thermal voltage (\(\approx 26\,\text{mV}\) at room temp).
+        </figcaption>
+      </figure>
+      <p>
+        With results of the above simulations, we confidently proceed into building the physical circuit schematic and routing up a PCB.  
+      </p>
+
+      
     </section>
 
     <section id="pcb-design" class="mt-5 mb-5">
@@ -584,22 +698,85 @@
 
     <section id="finished-design" class="mt-5">
       <h2>Finished Design</h2>
-      <p>Building logic from scratch taught me:</p>
-      <ul>
-        <li>The real impact of fan-out limits on voltage levels.</li>
-        <li>How timing skews arise in ripple counters.</li>
-        <li>Why integrated logic is so pervasive—so many transistors cram into each IC!</li>
-      </ul>
+      <p>
+        With the PCB assembled and the bugs taken care of, we finally see the counter working in all its glory. Figure 7.1 shows the 
+        final assembly with the PCB mounted inside a 3D printed case. The video in Figure 7.2 shows the manual operation of a complete 
+        cycle from \(000_{2}\) (0) to \(111_{2}\) (7). What follows is an evaluation of the final design along with an outline of future 
+        experiments to measure the counter's performance.
+      </p>
+      <figure class="text-center my-5">
+        <video autoplay loop muted playsinline style="max-width: 100%; height: auto;">
+          <source src="assets/tbc_rotate.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption class="text-muted mt-2">
+          Figure 7.1 — Final assembled 3-bit RTL counter PCB in its enclosure.
+        </figcaption>
+      </figure>      
+      
+      <figure class="text-center my-5">
+        <video autoplay loop muted playsinline style="max-width: 100%; height: auto;">
+          <source src="assets/tbc_demo.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption class="text-muted mt-2">
+          Figure 7.2 — Interactive demonstration of manual input control using tactile switch for incrementing the 3-bit counter.
+        </figcaption>
+      </figure>
+      <p>
+        Upon powering up from a USB-C source, the circuit produces a stable 5 V on \(V_{CC}\), and the green power LED turns on. The circuit 
+        boots up to the 0-state typically, but depending on slight variations in power supply, I have seen it start on the 7-state. This isssue 
+        is due to the fact that our finite state machine lacks a 'reset' state, i.e. an additional button which takes us from whichever state we 
+        are currently on to the 0-state. States before 'reset' has been pressed would typically be seen as invalid and may cause significant 
+        issues is real-world systems. For a 3-bit counter which wraps around from 7 to 0 anyway, this is of little concern. 
+      </p>
+      <p>
+        When the button is pressed, the circuit changes state on the positive clock edge as desired. Changes are immediately seen on the binary 
+        LED output, as well as the 7-segment display. One future experiment may be to use an oscilloscope to measure the 
+        <em>propogation delay</em> along the <em>critical path</em>, i.e. the path through the circuit which encounters the maximal number of 
+        gates - and hence has the maximal delay. Propogation delay is caused by the parasitic capacitances assoicated with the gates' resistors 
+        and transistor. This creates a typical RC charging curve rather than instantenous transitions. This is what fundamentally limits the 
+        speed of computation.
+      </p>
+      <p>
+        Whilst the circuit works perfectly and seems to have fantastic signal integrity, it may have been nice to add some extra bulk capacitance 
+        physically close to the gates in the 7-seg decoder and flip-flops just to ensure a clean and stable 5 V supply. Additionally, the CLK 
+        button is correctly hardware debounced with an time constant of roughly \(\tau = 60\,\text{ms}\), yet partially activating the button 
+        by carefully pressing it (deliberately) on its side can cause some bouncing. In such cases the counter rapidly transitions through its 
+        states, often appearing to be skipping numbers. 
+      </p>
+      <p>
+        It may also be nice to use the oscilloscope to determine the maximum frequency our counter can handle. In this experiment, we would 
+        bypass the CLK button, instead connecting it to the output of a 5V square wave function generator. We would then plot this input and 
+        one of the output bits on the scope, increasing the frequency until some undesirable behaviour starts to happen. I believe this limit 
+        will be intimately linked to the propogation delay along the critical path.
+      </p>
+      <p>
+        Lastly, the counter is of very high build quality and looks great inside its 3D printed case (in a cool red/blue co-extruded 
+        filament!). The silkscreen is informative, showing clearly the input and outputs (both decimal and binary), alongside a silkscreen 
+        block diagram (similar to Figure 1.2) showing the function of the components encircled by each block. Power delivery is easy, with 
+        USB-C cables and sources being readily available in modern times. All considered the counter provides great educational 
+        value, whilst maintaining a beautifully rudimentary and chaotic design.
+      </p>
+
     </section>
 
     <section id="conclusion" class="mt-5">
       <h2>Conclusion</h2>
-      <p>Building logic from scratch taught me:</p>
-      <ul>
-        <li>The real impact of fan-out limits on voltage levels.</li>
-        <li>How timing skews arise in ripple counters.</li>
-        <li>Why integrated logic is so pervasive—so many transistors cram into each IC!</li>
-      </ul>
+      <p>
+        In summary, this project has successfully explored computing in its purest form. By starting with an analysis of 
+        resistor-transistor logic (RTL), we were able to develop a framework for realising sequential logic circuits in the real world, 
+        using the saturation mode of bipolar junction transistors (BJTs) to perform logic operations, such as NAND and NOT. Using
+        only these two logic gates, we were able to develop digital logic blocks such as the D flip-flop to store bit state, 
+        next-state combinational logic and a 3-bit to 7-segment decoder. The simulations provided us with an appreciation for the idealities 
+        we assume when building circuits from pure logic gates, verses real-world RTL limitations. We saw especially how fan-out limits 
+        the practical design. Using KiCAD 8, we then built the entire counter from RTL gate subcircuits, complete with USB-C power, 
+        binary and decimal outputs, an input button and various helpful indicator LEDs and silkscreen markings. Assembly proved frustrating, 
+        yet we were able to methodically work back through our assumptions to solve problems, and use creative solutions to wire things up 
+        correctly. The result was a functional, fully working interactive 3-bit counter, with a stunning design and rich educational value. 
+        This project has cemented the basics of digital logic, allowing the reader to move onto larger, more complex circuits such as 
+        CPLDs, FPGAs and of course, the CPU.
+      </p>
     </section>
   </main>
 
