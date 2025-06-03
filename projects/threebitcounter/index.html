@@ -56,7 +56,7 @@
       <p class="lead">Interactive 3-bit counter using RTL-logic, built from raw transistors and resistors.</p>
     </div>
 
-    <div class="d-flex justify-content-center">
+    <div id="model-viewer" class="d-flex justify-content-center">
       <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
       <model-viewer
         src="assets/tbc_model.glb"
@@ -105,9 +105,9 @@
         circuits and even logic gates, we develop an intuition and appreciation for the simplest building block underpinning
         modern computing - the transistor. Given that modern computers offer millions, sometimes billions of transistors inside a 
         single chip, we will focus our efforts here on a simpler logic device with a much lower transistor count. The 3-bit counter 
-        is the perfect candidate. It has, as we will see, a relatively low transistor count, yet still posesses basic logical 
+        is the perfect candidate. It has, as we will see, a relatively low transistor count, yet still possesses basic logical 
         structures present in the most modern of computers. In this project, we will start with an overview and block diagram of a 
-        3-bit counter, explore the bipolar junction transistor (BJT), build and simiulate a digital circuit, and finally design, 
+        3-bit counter, explore the bipolar junction transistor (BJT), build and simulate a digital circuit, and finally design, 
         assemble and test the circuit on a printed circuit board (PCB).</p>
     </section>
 
@@ -232,7 +232,7 @@
          data. For this project, we have 3-bit in our counter, which means we mean to store 3 state bits. Each flip-flop can store 1 bit, 
          so we will need 3 of them. The key to computer memory is feedback and the ability to settle into stable states. Whenever feedback 
          is involved, digital circuits will generally be non-combinational - i.e. they possess memory. The D flip-flop is an example of a 
-         <em>sequential circuit</em>. In order to construct the D flip-flop, we must first conside the D latch, shown in Figure 4.1.1.</p>
+         <em>sequential circuit</em>. In order to construct the D flip-flop, we must first consider the D latch, shown in Figure 4.1.1.</p>
       <figure class="diagram-container text-center my-5">
           <img src="assets/tbc_d_latch.svg" alt="D-latch digital circuit" class="img-fluid w-75 mb-3">
           <p>
@@ -344,8 +344,8 @@
         the next edge if it is \(S_1 = 0\) AND \(S_0 = 1\), OR if \(S_1 = 1\) AND \(S_0 = 0\). Again, we can see this algebraically in Figure 4.2.3.
         
       <p>Thus, the next-state logic for the \(S_1\) DFF (\(NSL_1\)) is the XOR of \(S_0^{\,n}\) and \(S_{1}^{\,n}\). This simple 
-        expression is nice, but recally we can only implement NAND, NOT and NOR with RTL logic. For simplicity, we aim for just NAND 
-        and NOT. Hence, we cannot directly implememt the XOR function. To develop a 'NAND-friendly' expression, we need to 'unsimplify' 
+        expression is nice, but recall we can only implement NAND, NOT and NOR with RTL logic. For simplicity, we aim for just NAND 
+        and NOT. Hence, we cannot directly implement the XOR function. To develop a 'NAND-friendly' expression, we need to 'unsimplify' 
         using a special result called <em>De Morgan's Theorem</em>, which states the following</p>
         <figure class="diagram-container text-center my-5">
           <p>
@@ -358,7 +358,7 @@
           \]
           </p>
         </figure>
-      <p>In simple words, this theorem states that we may 'push' negations through a logic function (from input to output, or vica versa), so 
+      <p>In simple words, this theorem states that we may 'push' negations through a logic function (from input to output, or vice versa), so 
         long as we change ORs to ANDs and ANDs to ORs. Now we 'NAND-friendly' simplify \(S_{1}^{\,n+1}\) in Figure 4.2.4.</p>
       <figure class="diagram-container text-center my-5">
           <p>
@@ -430,7 +430,7 @@
       <p>In order to implement this function, we need to repose the problem as 7 independent functions of the 3 inputs, then analyse the 
       truth table and SOP expression for each. For example \(f_{a}:\;\mathbb{F}_2^3 \;\longrightarrow\;\mathbb{F}_2, \quad (S_2,S_1,S_0)\;
       \mapsto\;a\) represents the single output segment \(a\) as a function of the 3 input bits. We will provide full derivations of 
-      the simplifed functions for \(a\) and \(b\), leaving \(c, d, e, f\) and \(g\) as exercises to the reader.</p>
+      the simplified functions for \(a\) and \(b\), leaving \(c, d, e, f\) and \(g\) as exercises to the reader.</p>
       <p>Firstly, we write out the truth table for the 7-seg decoder function by analysing the digit patterns in Figure 4.3.1.</p>
       <figure class="diagram-container text-center my-5">
         <!-- LaTeX‐style truth table rendered by MathJax -->
@@ -494,7 +494,7 @@
       </figure>
       <p>
          After repeating for segments \(c, d, e, f\) and \(g\), we need to think about the implementation of the decoder. Which
-         logic circuits are we going to put inside the box in Figure 4.3.2 to acheive the desired behaviour. The groundwork is 
+         logic circuits are we going to put inside the box in Figure 4.3.2 to achieve the desired behaviour. The groundwork is 
          already complete in our minimised SOP expressions above. For each of the decoder's 7 outputs, \(a, b, c, d, e, f, g\), 
          we now have a logic function in terms of the 3 inputs \(S_0, S_1, S_2\). Hence, we can implement the decoder as 7 
          independent sub-circuits, with each one constructed from simply reading off the SOP expressions above. However, recall 
@@ -639,7 +639,7 @@
         the implementations in Figure 3.2. To rehash - this involves one NPN BJT for each gate input, alongside a base \(1k\Omega\) 
         resistor. The BJTs are connected in series, and pulled up to 5V by a \(10k\Omega\) collector pull-up resistor. Recall also that we 
         estimated that with typical NPN BJT parameters and the resistor values chosen, we should be able to handle a fan-out of roughly 
-        6-8. The NOT gate for \(\overline{CLK}\) and \(S_0, S_1, S_2\) inputs to the 7-seg decoder suffer from significant fanout (5 V HIGH 
+        6-8. The NOT gate for \(\overline{CLK}\) and \(S_0, S_1, S_2\) inputs to the 7-seg decoder suffer from significant fan-out (5 V HIGH 
         reduced to around 3.1 V), yet this is still ample to bias the BJTs into saturation. As long as we are careful in how we logically 
         interpret our outputs, the circuit will work.
       </p>
@@ -660,7 +660,7 @@
       </figure>
       <p>
         The entire RTL circuit is not simulated due to degraded simulation performance with over 100 transistors. Transistors are governed 
-        the <em>Ebers-Moll equation</em>, which has a non-analytic inverse and thus requires a numerical scheme to solve. Doing this across many 
+        by the <em>Ebers-Moll equation</em>, which has a non-analytic inverse and thus requires a numerical scheme to solve. Doing this across many 
         transistors connected to each other in complex ways inevitably causes things to bottleneck. 
       </p>
       <figure class="text-center my-5">
@@ -674,7 +674,7 @@
         </figcaption>
       </figure>
       <p>
-        With results of the above simulations, we confidently proceed into building the physical circuit schematic and routing up a PCB.  
+        With the results of the above simulations, we confidently proceed into building the physical circuit schematic and routing up a PCB.  
       </p>
 
       
@@ -682,18 +682,241 @@
 
     <section id="pcb-design" class="mt-5 mb-5">
       <h2>PCB Design with KiCAD 8</h2>
-      <ul>
-        <li><a href="assets/threebit_kicad.zip">KiCAD Project Files (ZIP)</a></li>
-        <li><a href="assets/schematic.pdf">Schematic PDF</a></li>
-        <li><a href="assets/BOM.csv">Bill of Materials (CSV)</a></li>
-        <li><a href="assets/enclosure.stl">3D-Print Enclosure STL</a></li>
+      <p>
+        Building the physical circuit is a three step process. Firstly, we must capture the schematic into KiCAD's schematic editor (eeschema).
+        Secondly, we design the PCB by laying out components and routing them up. Lastly, the board is carefully assembled and tested 
+        piece-by-piece, until the board is functional (there will be inevitably be errrors!).
+      </p>
+      <h3 class="mt-5">6.1 Schematic Capture</h3>
+      <p>
+        Schematic capture involves defining all symbols (or using preloaded library symbols), placing them on the schematic, and wiring nodes together to 
+        produce the desired circuit. For readability, we place component blocks such as the USB-C power supply, the DFFs and the 7-seg decoder 
+        in blue boxes. Further, abiding by the engineering principles of regularity and modularity, we define our NAND and NOT gates as 
+        sub-circuits, which simply appear as yellow boxes in Figure 6.1.2. A few of these sub-circuit definitions are given in Figure 6.1.3. One 
+        can see how the inputs and output are appropriately defined according to the RTL gate structure explored in Figure 3.2.
+      </p>
+      <p>
+        Whilst this circuit matches the simulation in Figure 5.3, there are some key differences:
+      </p>
+      <ul style="list-style-type: disc; padding-left: 1.2em;">
+        <li style="margin-bottom: 0.5em;">Logic gates are physically implemented in RTL inside each subcircuit (yellolw boxes), i.e. two base resistors, two BJTs and 
+            one collector resistor for the 2-input NAND gate.
+        </li>
+        <li style="margin-bottom: 0.5em;">We need to consider power. USB-C is used due to its simplicity and widespread use. The power module requires a USB-C receptacle 
+            (6-pin), \(4.7k\Omega\) CC resistors to tell the source to supply power, bulk capacitance to filter supply noise, a test 
+            point and a power indicator LED (green).
+        </li>
+        <li style="margin-bottom: 0.5em;">The clock is sourced from the user's interaction with a tactile push button. This button must produce a clean 5 V and 0 V,  
+            depending on its state, and critically must be <em>debounced</em>! Buttons may 'bounce' when the internal conductors vibrate 
+            between a state of contact and non-contact, often on very small timescales. This happens due to the mechanical properties of 
+            the material uses, and the nature of the button's restoring mechanism. A button not properly debounced could cause, 3, 10, 50, 
+            who knows how many transitions, when the user presses the button once. In our circuit, this would mean one button press could 
+            advanced the counter 50 times in one press! To debounce the button, we add an RC low-pass filter to it. This limits how quickly 
+            the voltage level of the clock can changed. The induced delay must be turned such that the user does not notice, yet it is longer 
+            than the typical duration of the bounce - removing their effect entirely. Using the equation below, we choose 
+            \(R = 10k\Omega\) and \(C = 100nF\) to produce a \(\tau = RC = 1 ms\) time constant. Observing the step response in Figure 6.1.1 
+            we see that the voltage will still rise in a time that appears 'instantanous' to the user, yet still removes bounce.
+            <figure class="diagram-container text-center my-5">
+              <img src="assets/tbc_debounce.png" alt="'a' segment k-map" class="img-fluid w-50 mb-3">
+              <figcaption class="text-muted mt-2">
+                Figure 6.1.1 — RC low-pass filter step response showing one time-constant rise-time.
+              </figcaption>
+            </figure>
+        </li>
+        <li style="margin-bottom: 0.5em;">Lastly, we effectively use NOT gates to drive the LEDs as they act as a buffer between the 'logic side' and 'power side' of the 
+            circuit. As we are using 0805 sized surface mount LEDs, we use \(220\Omega\) collector resistors to drive the LED at around 
+            \(10mA\) (will also depend on forward voltage \(\iff\) colour).
+        </li>
       </ul>
-      <ul>
-        <li><strong>Logic Style:</strong> RTL NAND gates built from NPN transistors + pull-up resistors.</li>
-        <li><strong>Flip-Flops:</strong> D-type, edge-triggered on the falling edge of the clock.</li>
-        <li><strong>Counter:</strong> Three FFs in series → ripple counter.</li>
-        <li><strong>Clock:</strong> Manual push-button, hardware-debounced.</li>
-      </ul>
+      <p>
+        Pan and zoom around the schematic in Figure 6.1.2. to see each module and the wiring between symbols. Note that labelled nets are considered to 
+        be the same physical location (i.e. connected). Figure 6.1.3 shows the definition of the gate subcircuits.
+      </p>   
+      <figure class="text-center my-5">
+        <iframe src="assets/tbc_schem.pdf" style="width: 100%; height: 800px;" frameborder="0"></iframe>
+        <figcaption class="text-muted mt-2">
+          Figure 6.1.2 — Full KiCAD schematic for the 3-bit counter circuit, viewable via scroll and zoom controls.
+        </figcaption>
+      </figure>
+      <figure class="diagram-container text-center mt-4">
+        <div class="row">
+          <div class="col-md-6">
+            <img
+              src="assets/tbc_nand3_sch.png"
+              alt="3-input RTL NAND gate subcircuit"
+              class="img-fluid rounded"
+            >
+            <figcaption class="text-muted">
+              Figure 6.1.3 — 3-input RTL NAND gate subcircuit.
+            </figcaption>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="assets/tbc_nand4_sch.png"
+              alt="4-input RTL NAND gate subcircuit"
+              class="img-fluid rounded"
+            >
+            <figcaption class="text-muted">
+              Figure 6.1.4 — 4-input RTL NAND gate subcircuit. The \(220\Omega\) collector resistor is use to drive one of the LED segments.
+            </figcaption>
+          </div>
+        </div>
+      </figure>
+      <p>
+        Note the various test-points in the schematic above. They seem inconvenient now, but will extremely valuable during assembly! Before 
+        moving onto PCB design, we run the <em>electrical rules checker</em> to ensure the circuit is electrically sound.
+      </p>
+
+      <h3 class="mt-5">6.2 PCB Layout & Routing</h3>
+      <p>
+        With the schematic entered, we open up 'pcbnew' and import all components from our schematic into the PCB editor. Upon doing this, 
+        there is a mess of line going everywhere - this is called the <em>rats nest</em> and is a graphical guide to the connections we must 
+        make during routing to make the PCB agree with the circuit in our schematic. Additionally, every symbol needs a footprint to physically 
+        land on the pcb, through-hole pins, SMT solder pads, indication of polarity, etc. Common components like 0603 resistors and capacitors 
+        already have footprints via the KiCAD parts library. Components without footprints must have one designated. This can be designed in the 
+        footprint editor.
+      </p>
+      <p>
+        The PCB design process is a creative one. This part of the project is easily the most time consuming. I spent many hours developing a 
+        logical layout of components, only to tear it all down and try something else. The design I settled on is a compromise of presenting 
+        circuit modules in an integrated way, clearly segregating them while showing their interconnections, whilst enabling dense 
+        and efficient routing of the actual components. 
+        The silkscreen shows the full block diagram of the circuit, similar to Figure 2.1. Whilst traces are routed in which ever direction is 
+        most appropriate, lines on the silkscreen show how the modules connect. The button input and binary/decimal outputs are 
+        clearly and marked and labelled. The USB-C receptacle is mounted on the bottom-left, along with all power circuitry.
+      </p>
+      <p>
+        To reduce complexity, each logic gate was arranged with resistors and BJTs matching their position and orientations in the schematic. 
+        Components were placed as close as was reasonable, due to the high component count. This made gate routing easy, and most often traces 
+        were short and straight. Each gate is powered by a small via that drops straight down to layer 3 (5V). The final PCB layout is shown 
+        in Figure 6.2.1.
+      </p>
+      <div class="text-center my-5">
+        <button onclick="cyclePcbView()" class="btn btn-primary mb-3" id="pcbToggleBtn">
+          Show Copper Pour: OFF
+        </button>
+
+        <div id="pcb-2d-render">
+          <img src="assets/tbc_pcb_render.png" alt="2D rendered PCB" style="max-width: 90%; height: auto;">
+        </div>
+      
+        <div id="pcb-copper-off" style="display: none;">
+          <img src="assets/tbc_pcb_nocop.png" alt="PCB without copper pour" style="max-width: 90%; height: auto;">
+        </div>
+      
+        <div id="pcb-copper-on" style="display: none;">
+          <img src="assets/tbc_pcb_copper.png" alt="PCB with copper pour" style="max-width: 90%; height: auto;">
+        </div>
+      
+        <figcaption class="text-muted mt-2">
+          Figure 6.2.1 — PCB layout views. Cycle between copper pour ON, copper pour OFF, and 2D render using the button above.
+        </figcaption>
+      </div>
+      <p>
+        The board uses a 4-layer stackup. This means internally there are 4 copper layers, each with FR4 dielectric between them. This choice 
+        was made as the routing for this board is quite complex due to the ~300 components. More layers gives more routing flexibility, and 
+        avoids situations that run into 'dead ends'. The top and bottom layers are both used for signal routing, whilst layer 2 is an 
+        uninterrupted ground plane and layer 3 is a 5V plane with minimal routing. Having a continous ground and flexible routing options means 
+        traces can be more direct and signal integrity improved. Remaining space on the top and bottom layers are filled with copper connected 
+        to ground, with many <em>stitching vias</em> to ensure good grounding throughout.
+      </p>
+      <p>
+        With the PCB design complete, the gerbers and drill files were exported and the board plus components were ordered from JLCPCB.
+      </p>
+      
+
+      <h3 class="mt-5">6.3 Assembly and Testing</h3>
+      <p>
+        A week later, the blank boards arrived from <a target="_blank" href="https://jlcpcb.com/">JLCPCB</a>, along with the components.
+      </p>
+      <figure class="diagram-container text-center my-5">
+        <img src="assets/tbc_order.jpg" alt="'a' segment k-map" class="img-fluid w-50 mb-3">
+        <figcaption class="text-muted mt-2">
+          Figure 6.3.1 — JLCPCB order.
+        </figcaption>
+      </figure>
+      <p>
+        PCB assembly is a delicate process. Assemble too many components before testing and any error will be incredibly difficult to debug. 
+        The best approach stems from starting at the absolute basic, and only proceeding with further assembly when everything until that 
+        point is verified to be working. The general method I used to assembly the board is outlined below. Keep in mind that some of these 
+        steps take minutes, while some take days. The golden tool for this step is the <em>multimeter</em>. It is particularly useful 
+        for measuring continuity, voltage, resistance and capacitance in this design.
+      </p>
+      <ol>
+        <li style="margin-bottom: 0.5em;">Probe the blank board to ensure GND and 5V plane are connected to all necessary pads (or at least a large sample of them).</li>
+        <li style="margin-bottom: 0.5em;">Solder on USB-C receptable and CC resistors. Check 5V is received, then finish power supply.</li>
+        <li style="margin-bottom: 0.5em;">Assemble button, RC debounce filter and CLK LED (see the video in Figure 6.3.2). Check that the voltage on CLK transitions cleanly and does not bounce (see Figure 6.3.3)</li>
+        <li style="margin-bottom: 0.5em;">Assemble RTL NOT gate to produce \(\overline{CLK}\). Check gate works as intended. Note inital fan-out voltage drop CLK. I.e. 
+            HIGH output from CLK is no longer a perfect 5V.
+        </li>
+        <li style="margin-bottom: 0.5em;">Assembly just one of the NAND gates in the \(S_0\) master latch. Use wires from 5V/GND and multimeter to test functionality 
+            according to the NAND truth table.
+        </li>
+        <li style="margin-bottom: 0.5em;">Assemble D-latch feedback path and test 'memory' functionality (this is in fact an SR-latch). Solder in the last three gates 
+            to produce the entire D-latch. Test behaviour matches exact D-latch behaviour.
+        </li>
+        <li style="margin-bottom: 0.5em;">Assemble second (slave) D-latch and solder up the next-state logic (simple NOT gate for \(S_0\)). Now, test \(S_0\) D flip-flop 
+            works correctly, only updating on the positive edge of the clock/button press. Given the nature of the \(S_0\) bit, the \(Q\) 
+            output of the flip-flop should toggle between ~0V and ~3V (due to fan-out reduction).
+        </li>
+        <li style="margin-bottom: 0.5em;">Wire \(S_0\) output to indicator LED.</li>
+        <li style="margin-bottom: 0.5em;">Repeat for all other flip-flops - counter should now be working with correct binary LED output.</li>
+        <li style="margin-bottom: 0.5em;">Install 7-segment display, manually testing segments illuminate with \(220\Omega\) resistor and wire from 5V. Solder up 
+            the \(f_{a}\) sub-circuit of the decoder and test that segment \(a\) illuminated correctly given the current decimal output.
+        </li>
+        <li style="margin-bottom: 0.5em;">Finish soldering 7-segment decoder and extensively test the working PCB.</li>
+      </ol>
+      <figure class="text-center my-5">
+        <video autoplay loop muted playsinline style="max-width: 100%; height: auto;">
+          <source src="assets/tbc_solder_live.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption class="text-muted mt-2">
+          Figure 6.3.2 — Soldering demonstration of tactile push button.
+        </figcaption>
+      </figure>
+      <p>
+        This process is methodical and makes the isolation of errors simple. Whilst seemingly straightforward, this process was very frustrating 
+        and at times seemed like 'magic' was the difference between things working and not working. For example, when assembling the slave D-latch 
+        for the \(S_0\) flip flop, the \(Q\) and \(\overline{Q}\) outputs seems to be the same voltage sometimes, and sometimes the wrong way 
+        around. This was baffling as the first (master) latch was tested and working! After several hundred probes by the multimeter, and 
+        manually energising the inputs of various NAND gates, I found the problem - I had neglected to solder just one leg of one transistor. 
+        Whilst the other two were secured soldered on, the third leg was making an intermittent connection to its pad which seemed to depend 
+        on which way the wind was blowing! Mistakes like this train you to not overlook the simple stuff.
+      </p>
+      <p>
+        When only the power and push button were soldered on, I decided to dig into and verify the debouncing of the button. To do this, 
+        I energised the board from a USB-C battery bank and connected the output of the button to channel 1 on a digital oscilloscope. 
+        By scaling the voltage and time axis appropriately, to about \(2ms\)/div, the super fast button transitions became clear. Before soldering 
+        the RC filter on, many button bounces could be seen on each press when zooming in liberally to the \(100 \mu\)s/div range. With the RC 
+        filter soldered on, the result is as shown in the background of Figure 6.3.2.
+      </p>
+      <figure class="diagram-container text-center my-5">
+        <img src="assets/tbc_ass1.jpg" alt="Partially assembled PCB" class="img-fluid w-50 mb-3">
+        <figcaption class="text-muted mt-2">
+          Figure 6.3.3 — Partially assembled PCB showing debounced button transition on oscilloscope.
+        </figcaption>
+      </figure>
+      <p>
+        One can see the gentle rise from 0-5V with no bouncing present. Interestingly, I used two cursors to approximately measure the 63% 
+        rise-time. To no surprise it was roughly \(10ms = \tau \). Overkill? Yes - but this experiment confirms the button is debounced 
+        correctly.
+      </p>
+      <p>
+        The assembled functional board is shown in Figure 6.3.4. Note the red jumper between two pads in the 7-seg decoder. I made a mistake 
+        and routed \(S_0\) to the input of one of the NAND gates, when it should have been \(S_2\). Can you find this error in the schematic? Luckily
+        the erroneous pad could be left exposed (as it was needed to connect later gates), and the resistor could be 'tombstoned' on its 
+        other pad, and bridged over to source \(S_2\) from the input of a nearby gate. Techniques such as jumping between pads, cutting traces and 
+        'soldering in 3D' are common workarounds for simple mistakes in PCB design - mistakes should be expected!
+      </p>
+      <figure class="diagram-container text-center my-5">
+        <img src="assets/tbc_ass2.jpg" alt="Fully assembled PCB" class="img-fluid w-50 mb-3">
+        <figcaption class="text-muted mt-2">
+          Figure 6.3.4 — Fully assembled PCB showing zero-state.
+        </figcaption>
+      </figure>
+      
+      
     </section>
 
     <section id="finished-design" class="mt-5">
@@ -701,7 +924,7 @@
       <p>
         With the PCB assembled and the bugs taken care of, we finally see the counter working in all its glory. Figure 7.1 shows the 
         final assembly with the PCB mounted inside a 3D printed case. The video in Figure 7.2 shows the manual operation of a complete 
-        cycle from \(000_{2}\) (0) to \(111_{2}\) (7). What follows is an evaluation of the final design along with an outline of future 
+        cycle from \(000_{2}\) (0) to \(111_{2}\) (7). Following that is an evaluation of the final design along with an outline of future 
         experiments to measure the counter's performance.
       </p>
       <figure class="text-center my-5">
@@ -710,10 +933,9 @@
           Your browser does not support the video tag.
         </video>
         <figcaption class="text-muted mt-2">
-          Figure 7.1 — Final assembled 3-bit RTL counter PCB in its enclosure.
+          Figure 7.1 — Final assembled 3-bit RTL counter in its enclosure.
         </figcaption>
-      </figure>      
-      
+      </figure>
       <figure class="text-center my-5">
         <video autoplay loop muted playsinline style="max-width: 100%; height: auto;">
           <source src="assets/tbc_demo.webm" type="video/webm">
@@ -723,6 +945,11 @@
           Figure 7.2 — Interactive demonstration of manual input control using tactile switch for incrementing the 3-bit counter.
         </figcaption>
       </figure>
+      <div class="text-center mb-5 mt-5">
+        <a href="#model-viewer" class="btn btn-primary">
+          Interactive 3D View
+        </a>
+      </div>
       <p>
         Upon powering up from a USB-C source, the circuit produces a stable 5 V on \(V_{CC}\), and the green power LED turns on. The circuit 
         boots up to the 0-state typically, but depending on slight variations in power supply, I have seen it start on the 7-state. This isssue 
@@ -733,8 +960,8 @@
       <p>
         When the button is pressed, the circuit changes state on the positive clock edge as desired. Changes are immediately seen on the binary 
         LED output, as well as the 7-segment display. One future experiment may be to use an oscilloscope to measure the 
-        <em>propogation delay</em> along the <em>critical path</em>, i.e. the path through the circuit which encounters the maximal number of 
-        gates - and hence has the maximal delay. Propogation delay is caused by the parasitic capacitances assoicated with the gates' resistors 
+        <em>propagation delay</em> along the <em>critical path</em>, i.e. the path through the circuit which encounters the maximal number of 
+        gates - and hence has the maximal delay. Propagation delay is caused by the parasitic capacitances associated with the gates' resistors 
         and transistor. This creates a typical RC charging curve rather than instantenous transitions. This is what fundamentally limits the 
         speed of computation.
       </p>
@@ -749,7 +976,7 @@
         It may also be nice to use the oscilloscope to determine the maximum frequency our counter can handle. In this experiment, we would 
         bypass the CLK button, instead connecting it to the output of a 5V square wave function generator. We would then plot this input and 
         one of the output bits on the scope, increasing the frequency until some undesirable behaviour starts to happen. I believe this limit 
-        will be intimately linked to the propogation delay along the critical path.
+        will be intimately linked to the propagation delay along the critical path.
       </p>
       <p>
         Lastly, the counter is of very high build quality and looks great inside its 3D printed case (in a cool red/blue co-extruded 

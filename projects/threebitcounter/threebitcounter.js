@@ -58,3 +58,29 @@ window.addEventListener('scroll', () => {
   });
 });
 
+// Toggle PCB view - copper pours on or off
+let currentPcbView = 0; // 0: on, 1: off, 2: 3D
+
+  function cyclePcbView() {
+    const views = [
+      document.getElementById("pcb-2d-render"),
+      document.getElementById("pcb-copper-off"),
+      document.getElementById("pcb-copper-on")
+    ];
+
+    const labels = [
+      "Show Copper Pour: OFF",
+      "Show Copper Pour: ON",
+      "Show 2D Render"
+    ];
+
+    // Hide all
+    views.forEach(view => view.style.display = "none");
+
+    // Show current
+    currentPcbView = (currentPcbView + 1) % views.length;
+    views[currentPcbView].style.display = "block";
+
+    // Update button label
+    document.getElementById("pcbToggleBtn").textContent = labels[currentPcbView];
+  }
