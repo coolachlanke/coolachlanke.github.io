@@ -821,10 +821,20 @@
         avoids situations that run into 'dead ends'. The top and bottom layers are both used for signal routing, whilst layer 2 is an 
         uninterrupted ground plane and layer 3 is a 5V plane with minimal routing. Having a continous ground and flexible routing options means 
         traces can be more direct and signal integrity improved. Remaining space on the top and bottom layers are filled with copper connected 
-        to ground, with many <em>stitching vias</em> to ensure good grounding throughout.
+        to ground, with many <em>stitching vias</em> to ensure good grounding throughout. The timelapse in Figure 6.2.2 shows the routing 
+        process for the 7-seg decoder.
       </p>
+      <figure class="text-center my-5">
+        <video autoplay loop muted playsinline style="max-width: 100%; height: auto;">
+          <source src="assets/tbc_routing_timelapse_trim.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption class="text-muted mt-2">
+          Figure 6.2.2 — Timelapse of the routing process in KiCAD 8.
+        </figcaption>
+      </figure>
       <p>
-        With the PCB design complete, the gerbers and drill files were exported and the board plus components were ordered from JLCPCB.
+        With the PCB design complete, the gerbers and drill files were exported and the board as well as components were ordered from JLCPCB.
       </p>
       
 
