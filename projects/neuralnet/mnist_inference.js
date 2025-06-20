@@ -1,24 +1,20 @@
-// Get canvas and context
+// -----------------------------------  USER INPUT CANVAS ----------------------------------- //
 const canvas = document.getElementById('mnist-canvas');
 const ctx = canvas.getContext('2d');
 
-// Set initial background to black (MNIST style)
 ctx.fillStyle = 'black';
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-// Draw settings
 ctx.lineWidth = 1;
 ctx.strokeStyle = 'white';
 
 let drawing = false;
 
-// Mouse listeners for drawing
 canvas.addEventListener('mousedown', e => { drawing = true; draw(e); });
 canvas.addEventListener('mouseup', () => drawing = false);
 canvas.addEventListener('mouseout', () => drawing = false);
 canvas.addEventListener('mousemove', draw);
 
-// Get cursor position on the canvas
 function getPos(e) {
   const rect = canvas.getBoundingClientRect();
   const scaleX = canvas.width / rect.width;
@@ -29,7 +25,6 @@ function getPos(e) {
   };
 }
 
-// Draw a 1x1 white pixel at the cursor
 let lastPos = null;
 
 function draw(e) {
@@ -68,65 +63,118 @@ canvas.addEventListener('mouseout', () => {
   lastPos = null;
 });
 
-// Clear canvas function (linked to button)
 function clearCanvas() {
   ctx.fillStyle = 'black';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
-
-
-// ---------------------------------------------------------------------- //
-function predictImage() {
-  const imageData = ctx.getImageData(0, 0, 28, 28);
-  const data = imageData.data;
-
-  const grayscale = [];
-  for (let i = 0; i < data.length; i += 4) {
-    grayscale.push((data[i] / 255).toFixed(2));
-  }
-
-  // Build LaTeX \bmatrix string
-  let latex = '\\[\\begin{bmatrix}\n';
-  for (let i = 0; i < 28; i++) {
-    const row = [];
-    for (let j = 0; j < 28; j++) {
-      const val = grayscale[i * 28 + j];
-      let display = parseFloat(val).toString();
-        if (display.length < 4) {
-        display += '\\phantom{0}'.repeat(4 - display.length);
-        }
-
-        row.push(display);
-    }
-    latex += row.join(' & ') + (i < 27 ? ' \\\\\n' : '\n');
-  }
-  latex += '\\end{bmatrix}\\]';
-
-  // Insert into preview div
-  const container = document.getElementById('latex-matrix');
-  container.innerHTML = latex;
-
-  // Trigger MathJax rendering
-  if (window.MathJax) {
-    MathJax.typesetPromise();
-  }
-
-}
-
 
 function toggleMatrixVisibility() {
   const checkbox = document.getElementById('toggleMatrix');
   const wrapper = document.getElementById('matrix-wrapper');
 
   if (checkbox.checked) {
-    wrapper.classList.remove('d-none');
+    wrapper.style.display = 'flex';
   } else {
-    wrapper.classList.add('d-none');
+    wrapper.style.display = 'none';
   }
 }
 
-// Make sure checkbox state controls visibility on load
-window.addEventListener('DOMContentLoaded', toggleMatrixVisibility);
+function renderMatrixFromGrayscale(grayscale) {
+  let latex = '\\[\\begin{bmatrix}\n';
+  for (let i = 0; i < 28; i++) {
+    const row = [];
+    for (let j = 0; j < 28; j++) {
+      const val = grayscale[i * 28 + j];
+      let display = parseFloat(val).toString();
+      if (display.length < 4) {
+        display += '\\phantom{0}'.repeat(4 - display.length);
+      }
+      row.push(display);
+    }
+    latex += row.join(' & ') + (i < 27 ? ' \\\\\n' : '\n');
+  }
+  latex += '\\end{bmatrix}\\]';
+
+  const container = document.getElementById('latex-matrix');
+  container.innerHTML = latex;
+
+  const checkbox = document.getElementById('toggleMatrix');
+  if (!checkbox.checked) {
+    checkbox.checked = true;
+  }
+
+  if (window.MathJax) {
+    MathJax.typesetPromise().then(() => {
+      toggleMatrixVisibility();
+    });
+  } else {
+    toggleMatrixVisibility();
+  }
+}
+
+async function predictImage() {
+    if (!pyodide) {
+        alert("Model not loaded yet. Please wait...");
+        return;
+    }
+
+  const imageData = ctx.getImageData(0, 0, 28, 28);
+  const data = imageData.data;
+
+  const grayscale = [];
+  for (let i = 0; i < data.length; i += 4) {
+    grayscale.push((data[i] / 255).toPrecision(8)); // normalize pixel value to [0, 1]
+  }
+  renderMatrixFromGrayscale(grayscale);
+
+  const pyInput = grayscale.join(", ");
+
+  // Python code from the predict.py script via Pyodide
+  const pythonCode = `
+input_image = np.array([${pyInput}], dtype=np.float32).reshape((784, 1))
+z1 = forward_prop(input_image, W_1, b_1)
+a1 = sigmoid(z1)
+z2 = forward_prop(a1, W_2, b_2)
+y_hat = softmax(z2)
+int(np.argmax(y_hat))
+`;
+
+  const prediction = await pyodide.runPythonAsync(pythonCode);
+
+  alert("Predicted digit: " + prediction);
+}
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  toggleMatrixVisibility();
+});
+
+
+// -----------------------------------  NEURAL NET FORWARD PROP ----------------------------------- //
+let pyodide;
+
+async function loadPyodideAndPackages() {
+  pyodide = await loadPyodide();
+  await pyodide.loadPackage("numpy");
+}
+
+async function setupPyodideModel() {
+  if (!pyodide) {
+    await loadPyodideAndPackages();
+  }
+
+  // Fetch and mount model_parameters.npz
+  const modelBinary = await fetch("assets/model_parameters.npz").then(res => res.arrayBuffer());
+  pyodide.FS.writeFile("model_parameters.npz", new Uint8Array(modelBinary));
+
+  // Fetch and run predict.py to load definitions
+  const predictPy = await fetch("assets/predict.py").then(res => res.text());
+  pyodide.runPython(predictPy);
+}
+
+// Call this once after page load
+setupPyodideModel();
+
 
 
 
