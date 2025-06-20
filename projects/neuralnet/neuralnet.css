@@ -1,7 +1,157 @@
-/* Scale up the canvas for better visibility */
+/* /projects/neuralnet/neuralnet.css */
+
+/* Hero image styling */
+img[alt="PCB in action"] {
+  max-width: 600px;
+  margin: 1rem auto;
+  display: block;
+}
+
+.rounded-lg {
+  border-radius: 5rem !important;
+}
+
+/* Table of contents links */
+nav ul.list-unstyled li a {
+  color: #007bff;
+  text-decoration: none;
+}
+nav ul.list-unstyled li a:hover {
+  text-decoration: underline;
+}
+
+/* Section headings */
+main section h2 {
+  border-bottom: 2px solid #e3f2fd;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+/* Contents heading */
+nav h2 {
+  border-top: 2px solid #e3f2fd;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;  /* keep same spacing below as your section h2s */
+}
+
+
+/* Figure captions */
+figure figcaption {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
 #mnist-canvas {
-    width: 280px;
-    height: 280px;
-    image-rendering: pixelated; /* Ensure the image doesn't blur when scaled */
-  }
-  
+  image-rendering: pixelated;
+  width: 420px;
+  height: 420px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background: black;
+  cursor: crosshair;
+}
+
+main {
+  counter-reset: section;
+}
+
+main section {
+  counter-increment: section;
+}
+
+main section > h2::before {
+  content: counter(section) ". ";
+  color: inherit;   
+}
+
+/* -------------------------------------------------------------------
+   “Table of Contents” (toc-list) Custom Styles
+   ------------------------------------------------------------------- */
+      .toc-list-container {
+        margin: 0 auto;
+        width: 100vw;
+        max-width: 100%;
+      }
+      
+      .toc-list .card {
+        border-radius: 1rem; 
+        border: 1px solid #e3e6ea;
+      }
+      
+      .toc-list .card-header {
+        border-bottom: none;   
+        background-color: transparent;
+        padding-bottom: 0;
+      }
+      
+      /* 2) Style the “Contents” heading: black + larger */
+      .toc-list .card-header h2 {
+        font-size: 1.75rem;     
+        color: #000;        
+        margin: 0;        
+        padding: 1rem 0 0.5rem 1rem;
+        border-bottom: 2px solid #e3f2fd;
+      }
+      
+      /* 3) Make each list‐item link take up 100% width, and move
+            the left‐border indicator onto the <a> itself. */
+      .toc-list .list-group-flush {
+        margin: 0;              /* no extra margins */
+        padding: 0;             /* no padding around UL */
+      }
+      
+      .toc-list .list-group-item {
+        padding: 0;             /* zero out default padding */
+        border: none;           /* remove default Bootstrap border */
+      }
+      
+      .toc-list .list-group-item-action {
+        display: block;         /* force full‐width clickable area */
+        width: 100%;            /* cover entire parent */
+        padding: 0.75rem 1rem;  /* comfortable vertical + horizontal padding */
+        color: #495057;         /* muted‐dark gray text by default */
+        font-weight: 500;       /* a bit semibold */
+        border-left: 4px solid transparent; /* reserve space for left indicator */
+        transition:
+          background-color 0.15s ease,
+          color 0.15s ease,
+          border-left-color 0.15s ease;
+      }
+      
+      /* 4) Hover & focus state (light gray background, no left stripe change) */
+      .toc-list .list-group-item-action:hover,
+      .toc-list .list-group-item-action:focus {
+        background-color: #f7f9fa; /* very light gray */
+        color: #343a40;            /* darker gray on hover */
+        text-decoration: none;
+      }
+      
+      /* 5) Active link (section currently in view): 
+            blue left border + light‐blue fill + blue text */
+      .toc-list .list-group-item-action.active {
+        border-left-color: #007bff; /* bright Bootstrap‐blue stripe */
+        background-color: #e9f4ff;  /* light‐blue background */
+        color: #007bff;             /* blue text */
+        font-weight: 600;           /* bold enough to stand out */
+      }
+      
+      /* 6) Keep the same light‐blue on hover even when already active */
+      .toc-list .list-group-item-action.active:hover {
+        background-color: #e9f4ff;
+        color: #007bff;
+      }
+      
+      /* 7) If you want a bit more breathing room between “Contents” header
+            and the first item, you can push down the first <li> a little: */
+      .toc-list .list-group-item-action:first-child {
+        margin-top: 0.5rem;
+      }
+
+.math-latex-scale {
+  font-size: 12px;
+  display: inline-block;
+  text-align: center;
+}
+
+

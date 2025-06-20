@@ -1,209 +1,866 @@
+<!-- /projects/neuralnet/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MNIST Handwritten Digit Classifier</title>
+  <title>Scratch-built Neural Network</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="../../style/custom.css" rel="stylesheet">
-  <link rel="stylesheet" href="neuralnet.css">  
-  <link rel="stylesheet" href="assets/textboxstyle.css">
+  <link rel="stylesheet" href="neuralnet.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
 
-
-  <!-- MathJax -->
+  <!-- MathJax (equations) -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async
-   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-  <!-- Favicon Links -->
+  <!-- Favicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png">
   <link rel="manifest" href="../../images/favicon/site.webmanifest">
+
+  <!-- Analytics -->
+  <script defer data-domain="lachlancooke.com" src="https://plausible.io/js/script.js"></script>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-        <a class="navbar-brand text-dark" href="/">
-            <img src="../../images/lc_site_lgooo.png" alt="LC" style="height: 48px; margin-right: 10px;">
-            Lachlan Cooke
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="/projects">Projects</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="/about">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="/contact">Contact</a>
-            </li>
-            </ul>
-        </div>
-        </div>
-    </nav>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand text-dark" href="/">
+        <img src="../../images/lc_site_lgooo.png" alt="LC" style="height: 48px; margin-right: 10px;">
+        Lachlan Cooke
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link text-dark" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="/projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="/about">About</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Main -->
-    <main class="container mt-5">
-        <!-- Title and Description -->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col text-center mt-5 mb-2">
-                    <h1 class="display-4 font-weight-bolder">MNIST Handwritten Digit Classifier</h1>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-10 col-md-8 text-left">
-                    <p class="lead">MNIST handwritten digit neural classifier built from raw linear algebra and calculus.</p>
-                </div>
-            </div>
+  <!-- Main -->
+  <main id="top" class="container" style="max-width:100ch; margin:0 auto;">
+    <!-- Title -->
+    <div class="text-center mt-5 mb-4">
+      <h1 class="display-4 font-weight-bolder">Scratch-built Neural Network</h1>
+      <p class="lead">Neural network designed to classify MNIST handwritten digits, built from raw linear algebra and calculus.</p>
+    </div>
+
+    <!-- Interactive Model Canvas -->
+    <div class="d-flex flex-column align-items-center mt-4 mb-5">
+      <canvas id="mnist-canvas" width="28" height="28"></canvas>
+
+      <div class="d-flex justify-content-center mt-3">
+        <button onclick="clearCanvas()" class="btn btn-outline-dark" style="margin-right: 1rem;">Clear</button>
+        <button onclick="predictImage()" class="btn btn-outline-primary">Predict</button>
+      </div>
+    </div>
+    <!-- Toggle checkbox below -->
+    <div class="form-check form-switch mt-3 text-center">
+      <input class="form-check-input" type="checkbox" id="toggleMatrix" onchange="toggleMatrixVisibility()">
+      <label class="form-check-label" for="toggleMatrix">Show Matrix</label>
+    </div>
+    
+
+    <!-- Matrix wrapper (initially hidden) -->
+    <div id="matrix-wrapper" class="d-flex justify-content-center d-none">
+      <div id="latex-matrix" class="math-latex-scale"></div>
+    </div>
+
+
+
+    <!-- Table of Contents -->
+    <div class="toc-list-container mt-5">
+      <div class="card toc-list">
+        <div class="card-header">
+          <h2>Contents</h2>
         </div>
-      
-        <!-- Table of Contents -->
-        <nav class="mt-5">
-          <h2>Table of Contents</h2>
-          <ul>
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#examples">Examples of Handwritten Digits</a></li>
-            <li><a href="#architecture">Neural Network Architecture</a></li>
-            <li><a href="#derivation">Mathematical Derivation</a></li>
-            <li><a href="#implementation">Python Implementation</a></li>
-            <li><a href="#conclusion">Conclusion</a></li>
-          </ul>
-        </nav>
-      
-        <!-- Introduction -->
-        <section id="introduction" class="mt-5">
-          <h2>Introduction</h2>
-          <p>In this project, we delve into the world of neural networks by building a classifier for handwritten digits using the MNIST dataset. We will explore the architecture of neural networks, derive the mathematical foundations, and implement the model in Python.</p>
-        </section>
-      
-        <!-- Examples of Handwritten Digits -->
-        <section id="examples" class="mt-5">
-          <h2>Examples of Handwritten Digits</h2>
-          <p>Below are examples of images from the MNIST dataset along with their corresponding labels.</p>
-          <!-- MNIST Display Section -->
-          <div class="text-center">
-            <canvas id="mnist-canvas" width="28" height="28" style="border:1px solid #000000;"></canvas>
-            <p id="image-label" class="mt-2"></p>
-            <button id="random-button" class="btn btn-primary mt-3">Random</button>
-          </div>
-        </section>
-      
-        <!-- Neural Network Architecture -->
-        <section id="architecture" class="mt-5">
-          <h2>Neural Network Architecture</h2>
-          <p>We will use a simple feedforward neural network with one hidden layer. The architecture is as follows:</p>
-          <ul>
-            <li>Input Layer: 784 neurons (28x28 pixels)</li>
-            <li>Hidden Layer: 128 neurons</li>
-            <li>Output Layer: 10 neurons (digits 0-9)</li>
-          </ul>
-          <p>The network uses the sigmoid activation function and is trained using stochastic gradient descent.</p>
-        </section>
-      
-        <!-- Mathematical Derivation -->
-        <section id="derivation" class="mt-5">
-          <h2>Mathematical Derivation</h2>
-          <p>The output of the neural network is computed as follows:</p>
+        <div class="list-group list-group-flush">
+          <a href="#introduction" class="list-group-item list-group-item-action">1. Introduction</a>
+          <a href="#handwrittenmnist" class="list-group-item list-group-item-action">2. Handwritten Digits and the MNIST Set</a>
+          <a href="#neural-network-architecture" class="list-group-item list-group-item-action">3. Neural Network Architecture</a>
+          <a href="#forward-propagation" class="list-group-item list-group-item-action">4. Forward Propagation</a>
+          <a href="#backpropagation-from-scratch" class="list-group-item list-group-item-action">5. Backpropagation from Scratch</a>
+          <a href="#training-loop-and-optimisation" class="list-group-item list-group-item-action">6. Training Loop and Optimisation</a>
+          <a href="#validation-and-results" class="list-group-item list-group-item-action">7. Validation and Results</a>
+          <a href="#insights-and-learnings" class="list-group-item list-group-item-action">8. Insights and Learnings</a>
+          <a href="#conclusion" class="list-group-item list-group-item-action">9. Conclusion</a>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- INTRODUCTION -->
+    <section id="introduction" class="mt-5">
+      <h2>Introduction</h2>
+      <p>In this project, we uncover the rich mathematics that gives rise to modern machine learning and artificial 
+        intelligence. Nowadays, artificial intelligence (AI) is being used across a wide range of applications. From large language models (LLMs) 
+        such as OpenAI's <em>ChatGPT</em> and Anthropic's <em>Claude</em>, to vision systems in self-driving cars, 
+        AI is taking centre stage and affects the lives of us all. In this project, we turn the the complexity down to analyse how seemingly 'dumb' 
+        models can make accuracte predicitons when trained on large amounts of data. In this, case we will focus on handwritten 
+        digit classification. Given 10s of thousands of training images, we will train a neural network model to learn the 
+        underlying structure of digit classification, and validate it to see if it can make accurate predications on 
+        unseen data. Better yet, we will forgo modern python frameworks such as PyTorch and TensorFlow to understand the 
+        mathematical algorithms and operations involved from scratch.
+      </p>
+    </section>
+
+
+    <!-- THE THREE BIT COUNTER -->
+    <section id="handwrittenmnist" class="mt-5">
+      <h2>Handwritten Digits and the MNIST Set</h2>
+      <p>The MNIST handwritten digits dataset is one of the most famous...
+         <figure class="diagram-container text-center">
+          <img
+            src="assets/tbc_block_diagram_white_trans.svg"
+            alt="Functional block diagram"
+            class="img-fluid"
+          >
+          <figcaption class="text-muted mt-2">
+            Figure 2.1 - Functional block diagram.
+          </figcaption>
+        </figure>la.
+      </p>
+    </section>
+
+    <section id="resistor-transistor-logic" class="mt-5">
+      <h2>Resistor Transistor Logic - Crossing from Digital to Analog</h2>
+      <p>You are probably already familiar with the primitive logic functions, NOT, AND, OR, XOR and their negations. In the simplest case
+        these logic functions transform two binary inputs A and B into a binary output, Y, corresponding to the given function. For example,
+        Figure 3.1 shows the NAND gate alongside its <em>truth table</em>. The NAND gate is surprisingly versatile and will 
+        be of prime importance in the following <a href="#digital-logic-design">digital design</a> section.</p>
+        <figure class="diagram-container text-center">
+          <img src="assets/tbc_nand.svg" alt="NAND gate" class="img-fluid">
+          <!-- LaTeX‐style truth table rendered by MathJax -->
           <p>
-            $$\begin{align*}
-            \mathbf{z}^{(1)} &= \mathbf{W}^{(1)} \mathbf{x} + \mathbf{b}^{(1)} \\
-            \mathbf{a}^{(1)} &= \sigma(\mathbf{z}^{(1)}) \\
-            \mathbf{z}^{(2)} &= \mathbf{W}^{(2)} \mathbf{a}^{(1)} + \mathbf{b}^{(2)} \\
-            \mathbf{a}^{(2)} &= \sigma(\mathbf{z}^{(2)})
-            \end{align*}$$
+            \[
+            \begin{array}{cc|c}
+              A & B & Y = \overline{A \,\cdot\, B} \\ \hline
+              0 & 0 & 1 \\
+              0 & 1 & 1 \\
+              1 & 0 & 1 \\
+              1 & 1 & 0
+            \end{array}
+            \]
           </p>
-          <p>Where:</p>
-          <ul>
-            <li>\(\mathbf{x}\) is the input vector.</li>
-            <li>\(\mathbf{W}^{(l)}\) and \(\mathbf{b}^{(l)}\) are the weights and biases of layer \(l\).</li>
-            <li>\(\sigma(z)\) is the sigmoid activation function: \(\sigma(z) = \frac{1}{1 + e^{-z}}\).</li>
-          </ul>
-          <p>The loss is calculated using the cross-entropy function, and gradients are computed for backpropagation.</p>
-        </section>
-      
-        <!-- Python Implementation -->
-        <section id="implementation" class="mt-5">
-          <h2>Python Implementation</h2>
-          <p>The following Python code demonstrates the implementation of the neural network described above.</p>
-          <pre><code class="language-python">
-      import numpy as np
-      
-      class NeuralNetwork:
-          def __init__(self):
-              # Initialize weights and biases
-              self.W1 = np.random.randn(128, 784) * 0.01
-              self.b1 = np.zeros((128, 1))
-              self.W2 = np.random.randn(10, 128) * 0.01
-              self.b2 = np.zeros((10, 1))
-      
-          def sigmoid(self, z):
-              return 1 / (1 + np.exp(-z))
-      
-          def feedforward(self, x):
-              z1 = np.dot(self.W1, x) + self.b1
-              a1 = self.sigmoid(z1)
-              z2 = np.dot(self.W2, a1) + self.b2
-              a2 = self.sigmoid(z2)
-              return a2
-          </code></pre>
-          <p>This class initializes the network parameters and defines methods for the activation function and feedforward computation.</p>
-        </section>
-      
-        <!-- Conclusion -->
-        <section id="conclusion" class="mt-5">
-          <h2>Conclusion</h2>
-          <p>We have explored the fundamentals of neural networks by building and training a model to classify handwritten digits. The concepts and implementations provided lay the groundwork for more advanced studies in deep learning.</p>
-        </section>
-      
-      </main>      
-
-    <!-- Footer -->
-    <footer class="text-center text-lg-start bg-light text-muted" style="background-color: #e3f2fd; padding: 1px; position: relative; bottom: 0; width: 100%;">
-        <section class="d-flex justify-content-between align-items-center p-4">
-            <div class="me-5 d-none d-lg-block">
-                <span>&copy; 2024 Lachlan Cooke</span>
+          <figcaption class="text-muted mt-2">Figure 3.1 — NAND gate.</figcaption>
+        </figure>
+      <p>These logic gates are powerful and allow the construction of more complex digital building blocks, 
+        eventually all the way to a full CPU. However, how can we build logic gates in the real world? The symbol above is a 'black-box',
+        abstracting details away from the actual implementation. Surprisingly, logic gates can be implemented in various ways, for example, water 
+        valves, relays, Minecraft redstone and of course, transistors. There are various <em>logic families</em> which use 
+        transistor logic. For this project, we have selected resistor–transistor logic (RTL) due to its simplicty, from both an implementation 
+        and educational standpoint.</p>
+      <p>Resistor–Transistor Logic (RTL) emerged in the early 1960s as one of the first practical digital families built from discrete 
+        components. By combining simple resistors for pull-up bias and NPN transistors for pull-down switching, RTL enabled the 
+        construction of basic logic. This lead to transistor counts far lower than earlier relay or vacuum-tube 
+        systems. Widely used in early computer prototypes and minicomputers, RTL laid the groundwork for more advanced families (DTL, TTL) by 
+        demonstrating how discrete components could reliably implement Boolean functions at kilohertz-scale clock rates. Interestingly,
+        RTL was used for the guidance computers of the Apollo missions!</p>
+      <figure class="diagram-container text-center mt-4">
+          <div class="row">
+            <div class="col-md-6">
+              <img
+                src="assets/tbc_rtlnand_1.svg"
+                alt="RTL NAND simulation with A=0, B=0"
+                class="img-fluid rounded"
+              >
+              <figcaption class="text-muted">
+                Figure 3.2 — RTL NAND gate: A = 5V, B = 0V => Y = 5V
+              </figcaption>
             </div>
-            <div class="social-menu ms-auto">
-                <ul class="d-flex">
-                  <li class="ms-3"><a href="https://www.linkedin.com/in/lachlancooke/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                  <li class="ms-3"><a href="https://github.com/coolachlanke" target="_blank"><i class="fab fa-github"></i></a></li>
-                  <li class="ms-3"><a href="https://www.instagram.com/coolachlanke/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                  <li class="ms-3"><a href="https://www.youtube.com/@magicbattery" target="_blank"><i class="fab fa-youtube"></i></a></li>
-                  <li class="ms-3"><a href="https://www.strava.com/athletes/30032118" target="_blank"><i class="fab fa-strava"></i></a></li>
-                </ul>
+            <div class="col-md-6">
+              <img
+                src="assets/tbc_rtlnand_2.svg"
+                alt="RTL NAND simulation with A=1, B=1"
+                class="img-fluid rounded"
+              >
+              <figcaption class="text-muted">
+                Figure 3.3 — RTL NAND gate: A = 5V, B = 5V => Y ~= 0V
+              </figcaption>
             </div>
-        </section>
-    </footer>
+          </div>
+      </figure>
+      <p>RTL is remarkably simple, the only components required are NPN bipolar junction transistors (BJTs) and resistors. In each gate, 
+        NPN transistors act as pull-down switches, while resistors provide pull-up bias. It is important that we operate all BJTs in their
+        'saturation' mode, where they act like a switch than a current amplifier. We spare the details, but one should appreciate 
+        the analog electronics going on here. For logic, we use a 0-5 V voltage scale, with 
+        [0-1] V meaning '0' (LOW) and [3-5] V meaning a '1' (HIGH). In general, AND functions are implemented with BJTs in 
+        series, and OR functions with BJTs in parallel. In fact, the natural logic formed by these gates is NAND and NOR, respectively. 
+        To save on components (additional NOT gates), we restrict ourselves to these three logic functions. (Aside: one can actually show
+        that any other logic function can be built purely from NAND gates). After experimentation with noise immunity, rise time and
+        (critically) <em>fan-out</em>, 1 kΩ pull-ups were standardised for the collector resistance, whilst 10 kΩ would be used on the  
+        gate-inputs to isolate transistor bases and limit drive current. Fan-out refers to the phenomenon where the logical tolerances 
+        of a logic gate degrade as it drives an increasing number of inputs. For example, if we connect the output of an RTL NAND gate 
+        to the inputs of 6 downstream gates, each will load some base current through the collector resistor of the previous stage. 
+        A voltage divider expression was used to derive a function for the loss in ability of driving a logic HIGH as fan-out increased. 
+        As 3 V was deemed tolerable to push the BJTs into saturation to pull down to a 'healthy' LOW, a rough fan-out limit of 6-8 was calculated and 
+        simulatied in JScircuit. Figure 3.2 and 3.3 show a 2-input RTL NAND gate simulation in JScircuit. Based on the input switch 
+        configurations in either figure, one can see that this behaviour is consistent with the NAND gate in Figure 3.1. Note that the 
+        output produces a clean 5 V when the inputs are LOW, however this voltage will sag when the output drives a gate downstream. 
+        Additionally, the output cannot reach a true 0 V due to the V_CE(sat) of the transistors.
+      </p>
+      <p>With our physical gate implementations ready to go, we can proceed with building digital logic blocks.</p>
 
-    <!-- jQuery and Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.11/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-python.min.js"></script>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
-    <!-- Chart.js Zoom Plugin -->
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
+    <!-- DIGITAL LOGIC DESIGN -->
+    <section id="digital-logic-design" class="mt-5">
+      <h2>Designing Digital Logic Blocks</h2>
+      <p>At the heart of the 3-bit counter are three fundamental digital logic blocks: the  D flip-flops that 
+        store each bit, the next-state toggle logic that determines when each flip-flop should change state, and the 
+        seven-segment decoder network that converts the binary count into signals for the decimal display. Each of these blocks 
+        must operate reliably using only discrete RTL components, so we must carefully balance speed, 
+        noise immunity, and component count while keeping the entire design simple enough for hand-assembly.</p>
+      <h3 class="mt-5">4.1 D Flip‑Flop</h3>
+      <p>Flip-flops are the fundamental digital circuit responsible for volatile memory. They are the key to how computers can store 
+         data. For this project, we have 3-bit in our counter, which means we mean to store 3 state bits. Each flip-flop can store 1 bit, 
+         so we will need 3 of them. The key to computer memory is feedback and the ability to settle into stable states. Whenever feedback 
+         is involved, digital circuits will generally be non-combinational - i.e. they possess memory. The D flip-flop is an example of a 
+         <em>sequential circuit</em>. In order to construct the D flip-flop, we must first consider the D latch, shown in Figure 4.1.1.</p>
+      <figure class="diagram-container text-center my-5">
+          <img src="assets/tbc_d_latch.svg" alt="D-latch digital circuit" class="img-fluid w-75 mb-3">
+          <p>
+            \[
+            \begin{array}{c c c|c}
+              \mathrm{CLK} & D & Q_{\text{new}} \\ \hline
+              0 & 0 & Q_{\text{old}} \\
+              0 & 1 & Q_{\text{old}} \\
+              1 & 0 & 0 \\
+              1 & 1 & 1
+            \end{array}
+            \]
+          </p>
+          <figcaption class="text-muted mt-2">
+            Figure 4.1.1 — D-latch digital circuit and truth table.
+          </figcaption>
+      </figure>
+      <p>One may consider each case of the output Q and trace the signals back through the cross-coupled NAND gates to convince oneself of 
+      the truth table in Figure 4.1. Effectively, the latch is 'transparent' to the data signal (D) when CLK is HIGH, and 'opaque' when 
+      it is LOW. However, imagine the is a glitch in the data signal during the clock HIGH period. In this case, this glitch will be 
+      passed to the output Q. This is undesirable. We would like the circuit to <em>sample</em> D instantenously at the 
+      <em>rising edge</em> of the clock. Doing so results in the D flip-flop.</p>
+      <p>The D flip‑flop (DFF) is implemented as two D-latches, master and slave. On the falling edge of the clock, the master latch closes 
+        and the slave latch opens, capturing the input effectively instantenously and securely storing it. In order for this to work on 
+        the rising edge of the clock, we must feed the inverse (NOT) of CLK into the slave's clock input. The final D flip-flop is shown, 
+        in Figure 4.1.2, using D-latch blocks.</p>
+      <figure class="diagram-container text-center my-5">
+        <img src="assets/tbc_dff_ms.svg" alt="D flkip-flop digital circuit" class="img-fluid w-75">
+        <figcaption class="text-muted mt-2">Figure 4.1.2 — D flip-flop digital circuit, showing master and slave D-latches.</figcaption>
+      </figure>
+      Given our RTL implementation, we can easily build 3 DFFs using BJTs and resistors. Next we consider how to drive the data inputs.
+      
+      <h3 class="mt-5">4.2 Next‑State Logic</h3>
+      <p>Now we can store 3-bit numbers, but how do we get the circuit to count? The answer is to design combinational logic blocks 
+        which drive the data inputs of the DFFs. Every rising edge of the clock, the <em>state</em> of the counter must update. 
+        Thus, our counter is in fact a <em>finite state machine</em> (FSM). There are 8 total states, corresponding to the range of
+        a 3-bit number, i.e. the integers 0 (000) through 7 (111). On each rising clock edge, the FSM must transition from state n 
+        to state n + 1. This seems easy, however our state is <em>binary encoded</em> with 3 bits. We will call them \(S_0\), \(S_1\) and \(S_2\) from 
+        least to most significant. Given this, the decision of when each bit must toggle is non-trivial. In a simple sequential circuit such as a shift-register, this logic is simple - the 
+        output bit of one DFF (i.e. \(Q_n\)) simply flows into the input of the next (\(D_{n+1}\)). In this section, we develop the combinational 
+        logic blocks required to drive the data inputs of each DFF.</p>
+      <figure class="diagram-container text-center my-5">
+          <p>
+          \[
+            \begin{array}{c|ccc|ccc}
+              \text{Decimal} & S_2^{n} & S_1^{n} & S_0^{n} & S_2^{n+1} & S_1^{n+1} & S_0^{n+1} \\ \hline
+               0 & 0 & 0 & 0 & 0 & 0 & 1\\
+               1 & 0 & 0 & 1 & 0 & 1 & 0\\
+               2 & 0 & 1 & 0 & 0 & 1 & 1\\
+               3 & 0 & 1 & 1 & 1 & 0 & 0\\
+               4 & 1 & 0 & 0 & 1 & 0 & 1\\
+               5 & 1 & 0 & 1 & 1 & 1 & 0\\
+               6 & 1 & 1 & 0 & 1 & 1 & 1\\
+               7 & 1 & 1 & 1 & 0 & 0 & 0
+            \end{array}
+          \]
+          </p>
+          <figcaption class="text-muted mt-2">
+            Figure 4.2.1 — 3-bit binary count next-state transition table.
+          </figcaption>
+      </figure>
+      <p>Let us first analyse how binary counting works, from one 3-bit number to the next. See Figure 4.2.1. Looking down the columns for each 
+         \(S_n\) we see the \(S_0\) simply toggles on each transition between '0' and '1'. \(S_1\) toggles in a similar way, exceot it toggles on every 2nd 
+         transition. Cosistent with this pattern, \(S_2\) toggles on every 4th transition. From this, we can already see that the input for the \(S_0\)
+         DFF, i.e. \(S_{0}^{\,n}\) is simply the inverse (NOT) of the output \(Q_1\), or \(S_{0}^{\,n+1}\)! Following the standard sum-of-products (SOP) 
+         boolean algebra simplication procedure, we prove this obvious result in Figure 4.2.2. </p>
+      <figure class="diagram-container text-center my-5">
+          <p>
+          \[
+          \begin{aligned}
+            S_{0}^{\,n+1}
+            &= \overline{S_2^{\,n}}\,\overline{S_1^{\,n}}\,\overline{S_0^{\,n}}
+              + \overline{S_2^{\,n}}\,S_1^{\,n}\,\overline{S_0^{\,n}}
+              + S_2^{\,n}\,\overline{S_1^{\,n}}\,\overline{S_0^{\,n}}
+              + S_2^{\,n}\,S_1^{\,n}\,\overline{S_0^{\,n}}
+            \\[6pt]
+            &= \overline{S_0^{\,n}}
+              \Bigl(\overline{S_2^{\,n}}\,\overline{S_1^{\,n}}
+                  + \overline{S_2^{\,n}}\,S_1^{\,n}
+                  + S_2^{\,n}\,\overline{S_1^{\,n}}
+                  + S_2^{\,n}\,S_1^{\,n}\Bigr)
+            \\[6pt]
+            &= \overline{S_0^{\,n}}
+              \Bigl(\overline{S_2^{\,n}}\Bigl(\overline{S_1^{\,n}} + S_1^{\,n}\Bigr) + S_2^{\,n}\Bigl(\overline{S_1^{\,n}} + S_1^{\,n}\Bigr)\Bigr)
+            \\[6pt]
+            &= \overline{S_0^{\,n}}
+              \Bigl(\overline{S_2^{\,n}} \cdot 1 + S_2^{\,n} \cdot 1\Bigr)
+            \\[6pt]
+            &= \overline{S_0^{\,n}}
+              \Bigl(\overline{S_2^{\,n}} + S_2^{\,n}\Bigr)
+            \\[6pt]
+            &= \overline{S_0^{\,n}} \cdot 1
+            \\[6pt]
+            &= \overline{S_0^{\,n}}
+          \end{aligned}
+          \]
+          </p>
+          <figcaption class="text-muted mt-2">
+            Figure 4.2.2 — Boolean algebra simplification of the SOP expression for \(S_{0}^{\,n+1}\).
+          </figcaption>
+      </figure> 
+      <p>Thus, the next-state logic block for the \(S_0\) DFF (\(NSL_0\)) is simply a NOT gate.</p>
+      <p>The next-state logic for \(S_1\) is more complex. Let us first consider how this works in the familiar decimal system. When any 
+        column in a decimal number, i.e. units, tens, hundreds, etc. reaches '9', the next increment will <em>overflow</em> that column 
+        and cause a carry of '1' to be added to the next column. This is simpler in binary as the maximum number in any binary-place is 
+        '1'. Thus, glancing back to the state-transition table in Figure 4.1.1, we see that \(S_1\) should only toggle on the next rising-edge 
+        if \(S_0\) is currently a '1'. Note that this toggling functionality would make the logic trivial if we were using a
+        <em>T flip-flop</em>. Alternatively, following the standard boolean arithmetic SOP procedure, we see that \(S_1\) is only a '1' on 
+        the next edge if it is \(S_1 = 0\) AND \(S_0 = 1\), OR if \(S_1 = 1\) AND \(S_0 = 0\). Again, we can see this algebraically in Figure 4.2.3.
+        
+      <p>Thus, the next-state logic for the \(S_1\) DFF (\(NSL_1\)) is the XOR of \(S_0^{\,n}\) and \(S_{1}^{\,n}\). This simple 
+        expression is nice, but recall we can only implement NAND, NOT and NOR with RTL logic. For simplicity, we aim for just NAND 
+        and NOT. Hence, we cannot directly implement the XOR function. To develop a 'NAND-friendly' expression, we need to 'unsimplify' 
+        using a special result called <em>De Morgan's Theorem</em>, which states the following</p>
+        <figure class="diagram-container text-center my-5">
+          <p>
+          \[
+            \begin{alignedat}{2}
+              \overline{A + B} &= \overline{A}\,\overline{B}, 
+              &\quad
+              \overline{A\,B} &= \overline{A} + \overline{B}
+            \end{alignedat}
+          \]
+          </p>
+        </figure>
+      <p>In simple words, this theorem states that we may 'push' negations through a logic function (from input to output, or vice versa), so 
+        long as we change ORs to ANDs and ANDs to ORs. Now we 'NAND-friendly' simplify \(S_{1}^{\,n+1}\) in Figure 4.2.4.</p>
+      <figure class="diagram-container text-center my-5">
+          <p>
+          \[
+          \begin{aligned}
+            S_{1}^{\,n+1} &= \overline{S_1^{\,n}}S_0^{\,n} + S_1^{\,n}\overline{S_0^{\,n}} \\[6pt]
+            &= \overline{\overline{\overline{S_1^{\,n}}S_0^{\,n}}} + \overline{\overline{S_1^{\,n}\overline{S_0^{\,n}}}} \\[6pt]
+            &= \overline{\overline{\overline{S_1^{\,n}}S_0^{\,n}} \cdot \overline{S_1^{\,n}\overline{S_0^{\,n}}}} \\[6pt]
+          \end{aligned}
+          \]
+          </p>
+          <figcaption class="text-muted mt-2">
+            Figure 4.2.4 — NAND-friendly simplification of the SOP expression for \(S_{1}^{\,n+1}\).
+          </figcaption>
+      </figure> 
+      <p>The expression above uses 5 gates, 2 NOT and 3 NAND. As \(\overline{S_0^{\,n}}\) and \(\overline{S_1^{\,n}}\) will already be
+        available from the \(\overline{Q}\) outputs of the DFFs, the \(S_1\) next-state logic block really only consumes 3 NAND gates. 
+        Solid!</p>
+      <p>The next-state logic block for \(S_2\) is left as an exercise to the reader, and has the final expression given in Figure 4.2.5.</p>
+      <figure class="diagram-container text-center my-5">
+        <img src="assets/tbc_nsl_s2.svg" alt="S_2 next-state logic NAND circuit." class="img-fluid w-75 mb-3">
+        <p class="mt-3">
+        \[
+        \begin{aligned}
+          S_{2}^{\,n+1}
+          &= \overline{\overline{\overline{S_{2}^{\,n}}S_{1}^{\,n}S_{0}^{\,n}} \cdot \overline{S_{2}^{\,n}\overline{S_{1}^{\,n}S_{0}^{\,n}}}}\\[6pt]
+        \end{aligned}
+        \]
+        </p>
+        <figcaption class="text-muted mt-2">
+          Figure 4.2.5 — Simplified SOP expression for \(S_{2}^{\,n+1}\) and logic circuit implementation.
+        </figcaption>
+    </figure> 
+    <p>This expression uses 4 NAND gates. Note that two of these gates are 3-input NAND gates. This is easily achieved by adding 
+      a third input resistor and BJT in series to the other two in Figure 3.2.</p>  
 
-    <!-- Custom JavaScript -->
-    <script src="neuralnet.js"></script>
+    <h3 class="mt-5">4.3 7‑Segment Decoder</h3>
+      <p>The final combinational logic block converts the 3-bit binary count into segment signals for the LED decimal display. 
+         Each of the seven segments corresponds to an LED inside the physical 7-segment display depicted in Figure 4.3.1. Later, we 
+        will need to tweak our 7-segment decoder to actually drive the the LEDs inside the common-cathode 7-seg display we will use. 
+        For now, a '1' or HIGH output will suffice in our analysis to turn a segment on.</p>
+      <figure class="diagram-container text-center my-5">
+          <img src="assets/tbc_sevenseg_digits.png" alt="7-segment digit patterns" class="img-fluid w-75">
+          <figcaption class="text-muted mt-2">
+            Figure 4.3.1 — 7-segment digit patterns.
+          </figcaption>
+      </figure>
+      <p>To gain an intuitive understanding for the logic we must design, let us think about the problem mathematically. Effectively, we are 
+      trying to implement a function of 3 variables, to 7 variables - i.e. 3 inputs (\(S_2, S_1, S_0\)), to 7 outputs 
+      (\(a, b, c, d, e, f, g\)). Additionally, the input and output variables live inside the <em>binary field</em>, \(\mathbb{F}_2\). This a fancy
+      algebraic way of saying our binary variables, like \(S_1\), can only take on the values of '0' and '1', and may be operated on by 
+      any of our logical function, NAND, NOT, etc. Mathematically, the 7-segment decoder function, \(f\), is correctly represented with 
+      the notation in Figure 4.3.2. The image shows the functional representation of our desired combinational logic function. The 
+      remainder of this subsection will investigate the logic inside.</p>
+      <figure class="diagram-container text-center my-5">
+        <p>
+        \[
+          \begin{aligned}
+            &f:\;\mathbb{F}_2^3 \;\longrightarrow\;\mathbb{F}_2^7, 
+            \quad (S_2,S_1,S_0)\;\mapsto\;(a,b,c,d,e,f,g)
+          \end{aligned}
+        \]
+        </p>
+        <img src="assets/tbc_sevenseg_func.svg" alt="7-segment function" class="img-fluid w-50">
+        <figcaption class="text-muted mt-2">
+          Figure 4.3.2 – 7-segment decoder function representation.
+        </figcaption>
+      </figure>
+      <p>In order to implement this function, we need to repose the problem as 7 independent functions of the 3 inputs, then analyse the 
+      truth table and SOP expression for each. For example \(f_{a}:\;\mathbb{F}_2^3 \;\longrightarrow\;\mathbb{F}_2, \quad (S_2,S_1,S_0)\;
+      \mapsto\;a\) represents the single output segment \(a\) as a function of the 3 input bits. We will provide full derivations of 
+      the simplified functions for \(a\) and \(b\), leaving \(c, d, e, f\) and \(g\) as exercises to the reader.</p>
+      <p>Firstly, we write out the truth table for the 7-seg decoder function by analysing the digit patterns in Figure 4.3.1.</p>
+      <figure class="diagram-container text-center my-5">
+        <!-- LaTeX‐style truth table rendered by MathJax -->
+        <p>
+        \[
+          \begin{array}{ccc|ccccccc}
+            S_{2} & S_{1} & S_{0} & a & b & c & d & e & f & g \\ \hline
+            0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\  % 0
+            0 & 0 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 \\  % 1
+            0 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 0 & 1 \\  % 2
+            0 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 1 \\  % 3
+            1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 \\  % 4
+            1 & 0 & 1 & 1 & 0 & 1 & 1 & 0 & 1 & 1 \\  % 5
+            1 & 1 & 0 & 1 & 0 & 1 & 1 & 1 & 1 & 1 \\  % 6
+            1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0     % 7
+          \end{array}
+        \]
+        </p>
+        <figcaption class="text-muted mt-2">
+          Figure 4.3.3 — 7-segment decoder truth table.
+        </figcaption>
+      </figure> 
+      <p>Next, we derive and simplify the SOP expressions for \(a\) and \(b\). In this subsection, we will use <em>Karnaugh maps</em> 
+      for simplification.</p>
+      <p>
+        For segment \(a\), we wish to find minimised SOP expression \(a = f_{a}\left(S_0, S_1, S_2\right)\). As there are less than 
+         five variables, we may use a Karnaugh map to find the minimised SOP expression. Karnaugh maps provide an easy graphical way 
+         to find minimised boolean expressions for binary functions of 4 or less variables. In the Karnaugh map in Figure 4.3.4, we 
+         use Gray code to enumerate the rows and columns, with the ability to pair \(S_0\) and \(S_1\) across the columns. Then, for 
+         a minimised SOP expression, we circle all the '1' in as few as possible rectangles, which must contain a power of two '1's. 
+         Confusingly, the map must be thought of as <em>toroidal</em> (i.e. a donut) to catch the 'wrap-around' simplifications.
+      </p>
+      <figure class="diagram-container text-center my-5">
+        <img src="assets/tbc_a_km.svg" alt="'a' segment k-map" class="img-fluid w-75 mb-3">
+        <p>
+          \[
+            \begin{aligned}
+              \implies a &= f_{a}\left(S_0, S_1, S_2\right) = S_1 + S_{2}S_{0} + \overline{S_{2}}\,\overline{S_{1}}
+            \end{aligned}
+          \]
+        </p>
+        <figcaption class="text-muted mt-2">
+          Figure 4.3.4 — Segment \(a\) Karnaugh map, followed by minimised SOP expression.
+        </figcaption>
+      </figure> 
+      <p>This process is repeated for segment \(b\). The relevant Karnaugh map and minimised SOP expression for 
+         \(f_{b}\left(S_0, S_1, S_2\right)\) is shown in Figure 4.3.5.
+      </p>
+      <figure class="diagram-container text-center my-5">
+        <img src="assets/tbc_b_km.svg" alt="'a' segment k-map" class="img-fluid w-75 mb-3">
+        <p>
+          \[
+            \begin{aligned}
+              \implies b &= f_{b}\left(S_0, S_1, S_2\right) = \overline{S_2} + S_{1}S_{0} + \overline{S_{1}}\,\overline{S_{0}}
+            \end{aligned}
+          \]
+        </p>
+        <figcaption class="text-muted mt-2">
+          Figure 4.3.5 — Segment \(b\) Karnaugh map, followed by minimised SOP expression.
+        </figcaption>
+      </figure>
+      <p>
+         After repeating for segments \(c, d, e, f\) and \(g\), we need to think about the implementation of the decoder. Which
+         logic circuits are we going to put inside the box in Figure 4.3.2 to achieve the desired behaviour. The groundwork is 
+         already complete in our minimised SOP expressions above. For each of the decoder's 7 outputs, \(a, b, c, d, e, f, g\), 
+         we now have a logic function in terms of the 3 inputs \(S_0, S_1, S_2\). Hence, we can implement the decoder as 7 
+         independent sub-circuits, with each one constructed from simply reading off the SOP expressions above. However, recall 
+         that in our RTL implementation, we prefer NAND/NOT logic. As such, we will first manipulate the SOP expressions for 
+         \(f_{a}\) to \(f_{g}\) to be NAND-friendly. For \(a\) and \(b\) these expressions are given in Figures 4.3.6 and 4.3.7, 
+         respectively, along with logic circuit. Note that \(S_0, S_1, S_2\) and \(\overline{S_0}, \overline{S_1}, \overline{S_2}\) 
+         are available directly from the output of the flip-flops.
+     </p>
+     <figure class="diagram-container text-center my-5">
+      <img src="assets/tbc_a_cct.svg" alt="'a' segment k-map" class="img-fluid w-75 mb-3">
+      <p>
+        \[
+          \begin{aligned}
+            a &= f_{a}\left(S_0, S_1, S_2\right) = \overline{\overline{S_1} \cdot \overline{S_{2}S_{1}} \cdot \overline{\overline{S_2}\,\overline{S_1}}} \\
+          \end{aligned}
+        \]
+      </p>
+      <figcaption class="text-muted mt-2">
+        Figure 4.3.6 — NAND-friendly SOP expression and circuit realisation for \(f_{a}\).
+      </figcaption>
+    </figure>
+    <figure class="diagram-container text-center my-5">
+      <img src="assets/tbc_b_cct.svg" alt="'a' segment k-map" class="img-fluid w-75 mb-3">
+      <p>
+        \[
+          \begin{aligned}
+            b &= f_{b}\left(S_0, S_1, S_2\right) = \overline{S_2 \cdot \overline{S_{1}S_{0}} \cdot \overline{\overline{S_1}\,\overline{S_0}}}
+          \end{aligned}
+        \]
+      </p>
+      <figcaption class="text-muted mt-2">
+        Figure 4.3.7 — NAND-friendly SOP expression and circuit realisation for \(f_{b}\).
+      </figcaption>
+    </figure>
+    <p>
+      This process is repeated for segments \(c, d, e, f\) and \(g\).
+    </p>
+    <p>
+      With this complete, we simply package the sub-circuits for \(f_{a}\) to \(f_{g}\) into the 7-segment decoder block, 
+      connecting the appropriate inputs and outputs. This is shown in Figure 4.3.8.
+    </p>
+    <figure class="diagram-container text-center my-5">
+      <img src="assets/tbc_seven_seg_bd.svg" alt="7-segment decoder functional block diagram" class="img-fluid w-50 mb-3">
+      <figcaption class="text-muted mt-2">
+        Figure 4.3.8 — 7-segment decoder functional block diagram.
+      </figcaption>
+    </figure>
+    <p>
+      Lastly, to reduce gate count, and hence components, we may re-use gate outputs which appear in other expressions. For example, 
+      the \(\overline{S_{2}S_{0}}\) term from \(f_{a}\) also appears in the expressions for \(f_{d}\) and \(f_{e}\), and are hence 
+      reused. The full circuit diagram for the 7-segment decoder will be provided in the <a href="#simulation">simulation</a> section.
+    </p> 
+
+
+    </section>
+
+
+    <!-- SIMULATION -->
+    <section id="simulation" class="mt-5">
+      <h2>Simulation</h2>
+      <p>
+        We sim
+      </p>
+
+      
+    </section>
+
+    <section id="pcb-design" class="mt-5 mb-5">
+      <h2>PCB Design with KiCAD 8</h2>
+      <p>
+        Building the physical circuit is a three step process. Firstly, we must capture the schematic into KiCAD's schematic editor (eeschema).
+        Secondly, we design the PCB by laying out components and routing them up. Lastly, the board is carefully assembled and tested 
+        piece-by-piece, until the board is functional (there will be inevitably be errrors!).
+      </p>
+      <h3 class="mt-5">6.1 Schematic Capture</h3>
+      <p>
+        Schematic capture involves defining all symbols (or using preloaded library symbols), placing them on the schematic, and wiring nodes together to 
+        produce the desired circuit. For readability, we place component blocks such as the USB-C power supply, the DFFs and the 7-seg decoder 
+        in blue boxes. Further, abiding by the engineering principles of regularity and modularity, we define our NAND and NOT gates as 
+        sub-circuits, which simply appear as yellow boxes in Figure 6.1.2. A few of these sub-circuit definitions are given in Figure 6.1.3. One 
+        can see how the inputs and output are appropriately defined according to the RTL gate structure explored in Figure 3.2.
+      </p>
+      <p>
+        Whilst this circuit matches the simulation in Figure 5.3, there are some key differences:
+      </p>
+      <ul style="list-style-type: disc; padding-left: 1.2em;">
+        <li style="margin-bottom: 0.5em;">Logic gates are physically implemented in RTL inside each subcircuit (yellolw boxes), i.e. two base resistors, two BJTs and 
+            one collector resistor for the 2-input NAND gate.
+        </li>
+        <li style="margin-bottom: 0.5em;">We need to consider power. USB-C is used due to its simplicity and widespread use. The power module requires a USB-C receptacle 
+            (6-pin), \(4.7k\Omega\) CC resistors to tell the source to supply power, bulk capacitance to filter supply noise, a test 
+            point and a power indicator LED (green).
+        </li>
+        <li style="margin-bottom: 0.5em;">The clock is sourced from the user's interaction with a tactile push button. This button must produce a clean 5 V and 0 V,  
+            depending on its state, and critically must be <em>debounced</em>! Buttons may 'bounce' when the internal conductors vibrate 
+            between a state of contact and non-contact, often on very small timescales. This happens due to the mechanical properties of 
+            the material uses, and the nature of the button's restoring mechanism. A button not properly debounced could cause, 3, 10, 50, 
+            who knows how many transitions, when the user presses the button once. In our circuit, this would mean one button press could 
+            advanced the counter 50 times in one press! To debounce the button, we add an RC low-pass filter to it. This limits how quickly 
+            the voltage level of the clock can changed. The induced delay must be turned such that the user does not notice, yet it is longer 
+            than the typical duration of the bounce - removing their effect entirely. Using the equation below, we choose 
+            \(R = 10k\Omega\) and \(C = 100nF\) to produce a \(\tau = RC = 1 ms\) time constant. Observing the step response in Figure 6.1.1 
+            we see that the voltage will still rise in a time that appears 'instantanous' to the user, yet still removes bounce.
+            <figure class="diagram-container text-center my-5">
+              <img src="assets/tbc_debounce.png" alt="'a' segment k-map" class="img-fluid w-50 mb-3">
+              <figcaption class="text-muted mt-2">
+                Figure 6.1.1 — RC low-pass filter step response showing one time-constant rise-time.
+              </figcaption>
+            </figure>
+        </li>
+        <li style="margin-bottom: 0.5em;">Lastly, we effectively use NOT gates to drive the LEDs as they act as a buffer between the 'logic side' and 'power side' of the 
+            circuit. As we are using 0805 sized surface mount LEDs, we use \(220\Omega\) collector resistors to drive the LED at around 
+            \(10mA\) (will also depend on forward voltage \(\iff\) colour).
+        </li>
+      </ul>
+      <p>
+        Pan and zoom around the schematic in Figure 6.1.2. to see each module and the wiring between symbols. Note that labelled nets are considered to 
+        be the same physical location (i.e. connected). Figure 6.1.3 shows the definition of the gate subcircuits.
+      </p>   
+      <figure class="text-center my-5">
+        <iframe src="assets/tbc_schem.pdf" style="width: 100%; height: 800px;" frameborder="0"></iframe>
+        <figcaption class="text-muted mt-2">
+          Figure 6.1.2 — Full KiCAD schematic for the 3-bit counter circuit, viewable via scroll and zoom controls.
+        </figcaption>
+      </figure>
+      <figure class="diagram-container text-center mt-4">
+        <div class="row">
+          <div class="col-md-6">
+            <img
+              src="assets/tbc_nand3_sch.png"
+              alt="3-input RTL NAND gate subcircuit"
+              class="img-fluid rounded"
+            >
+            <figcaption class="text-muted">
+              Figure 6.1.3 — 3-input RTL NAND gate subcircuit.
+            </figcaption>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="assets/tbc_nand4_sch.png"
+              alt="4-input RTL NAND gate subcircuit"
+              class="img-fluid rounded"
+            >
+            <figcaption class="text-muted">
+              Figure 6.1.4 — 4-input RTL NAND gate subcircuit. The \(220\Omega\) collector resistor is use to drive one of the LED segments.
+            </figcaption>
+          </div>
+        </div>
+      </figure>
+      <p>
+        Note the various test-points in the schematic above. They seem inconvenient now, but will extremely valuable during assembly! Before 
+        moving onto PCB design, we run the <em>electrical rules checker</em> to ensure the circuit is electrically sound.
+      </p>
+
+      <h3 class="mt-5">6.2 PCB Layout & Routing</h3>
+      <p>
+        With the schematic entered, we open up 'pcbnew' and import all components from our schematic into the PCB editor. Upon doing this, 
+        there is a mess of lines going everywhere - this is called the <em>rats nest</em> and is a graphical guide to the connections we must 
+        make during routing to make the PCB agree with the circuit in our schematic. Additionally, every symbol needs a footprint to physically 
+        land on the pcb, through-hole pins, SMT solder pads, indication of polarity, etc. Common components like 0603 resistors and capacitors 
+        already have footprints via the KiCAD parts library. Components without footprints must have one designated. This can be designed in the 
+        footprint editor.
+      </p>
+      <p>
+        The PCB design process is a creative one. This part of the project is easily the most time consuming. I spent many hours developing a 
+        logical layout of components, only to tear it all down and try something else. The design I settled on is a compromise of presenting 
+        circuit modules in an integrated way, clearly segregating them while showing their interconnections, whilst enabling dense 
+        and efficient routing of the actual components. 
+        The silkscreen shows the full block diagram of the circuit, similar to Figure 2.1. Whilst traces are routed in which ever direction is 
+        most appropriate, lines on the silkscreen show how the modules connect. The button input and binary/decimal outputs are 
+        clearly and marked and labelled. The USB-C receptacle is mounted on the bottom-left, along with all power circuitry.
+      </p>
+      <p>
+        To reduce complexity, each logic gate was arranged with resistors and BJTs matching their position and orientations in the schematic. 
+        Components were placed as close as was reasonable, due to the high component count. This made gate routing easy, and most often traces 
+        were short and straight. Each gate is powered by a small via that drops straight down to layer 3 (5V). The final PCB layout is shown 
+        in Figure 6.2.1.
+      </p>
+      <div class="text-center my-5">
+        <button onclick="cyclePcbView()" class="btn btn-primary mb-3" id="pcbToggleBtn">
+          Show Copper Pour: OFF
+        </button>
+
+        <div id="pcb-2d-render">
+          <img src="assets/tbc_pcb_render.png" alt="2D rendered PCB" style="max-width: 90%; height: auto;">
+        </div>
+      
+        <div id="pcb-copper-off" style="display: none;">
+          <img src="assets/tbc_pcb_nocop.png" alt="PCB without copper pour" style="max-width: 90%; height: auto;">
+        </div>
+      
+        <div id="pcb-copper-on" style="display: none;">
+          <img src="assets/tbc_pcb_copper.png" alt="PCB with copper pour" style="max-width: 90%; height: auto;">
+        </div>
+      
+        <figcaption class="text-muted mt-2">
+          Figure 6.2.1 — PCB layout views. Cycle between copper pour ON, copper pour OFF, and 2D render using the button above.
+        </figcaption>
+      </div>
+      <p>
+        The board uses a 4-layer stackup. This means internally there are 4 copper layers, each with FR4 dielectric between them. This choice 
+        was made as the routing for this board is quite complex due to the ~300 components. More layers gives more routing flexibility, and 
+        avoids situations that run into 'dead ends'. The top and bottom layers are both used for signal routing, whilst layer 2 is an 
+        uninterrupted ground plane and layer 3 is a 5V plane with minimal routing. Having a continous ground and flexible routing options means 
+        traces can be more direct and signal integrity improved. Remaining space on the top and bottom layers are filled with copper connected 
+        to ground, with many <em>stitching vias</em> to ensure good grounding throughout. The timelapse in Figure 6.2.2 shows the routing 
+        process for the 7-seg decoder.
+      </p>
+      <figure class="text-center my-5">
+        <video autoplay loop muted playsinline style="max-width: 100%; height: auto;">
+          <source src="assets/tbc_routing_timelapse_trim_compressed.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption class="text-muted mt-2">
+          Figure 6.2.2 — Timelapse of the routing process in KiCAD 8.
+        </figcaption>
+      </figure>
+      <p>
+        With the PCB design complete, the gerbers and drill files were exported and the board as well as components were ordered from JLCPCB.
+      </p>
+      
+
+      <h3 class="mt-5">6.3 Assembly and Testing</h3>
+      <p>
+        A week later, the blank boards arrived from <a target="_blank" href="https://jlcpcb.com/">JLCPCB</a>, along with the components.
+      </p>
+      <figure class="diagram-container text-center my-5">
+        <img src="assets/tbc_order.jpg" alt="'a' segment k-map" class="img-fluid w-50 mb-3">
+        <figcaption class="text-muted mt-2">
+          Figure 6.3.1 — JLCPCB order.
+        </figcaption>
+      </figure>
+      <p>
+        PCB assembly is a delicate process. Assemble too many components before testing and any error will be incredibly difficult to debug. 
+        The best approach stems from starting at the absolute basic, and only proceeding with further assembly when everything until that 
+        point is verified to be working. The general method I used to assembly the board is outlined below. Keep in mind that some of these 
+        steps take minutes, while some take days. The golden tool for this step is the <em>multimeter</em>. It is particularly useful 
+        for measuring continuity, voltage, resistance and capacitance in this design.
+      </p>
+      <ol>
+        <li style="margin-bottom: 0.5em;">Probe the blank board to ensure GND and 5V plane are connected to all necessary pads (or at least a large sample of them).</li>
+        <li style="margin-bottom: 0.5em;">Solder on USB-C receptable and CC resistors. Check 5V is received, then finish power supply.</li>
+        <li style="margin-bottom: 0.5em;">Assemble button, RC debounce filter and CLK LED (see the video in Figure 6.3.2). Check that the voltage on CLK transitions cleanly and does not bounce (see Figure 6.3.3)</li>
+        <li style="margin-bottom: 0.5em;">Assemble RTL NOT gate to produce \(\overline{CLK}\). Check gate works as intended. Note inital fan-out voltage drop CLK. I.e. 
+            HIGH output from CLK is no longer a perfect 5V.
+        </li>
+        <li style="margin-bottom: 0.5em;">Assembly just one of the NAND gates in the \(S_0\) master latch. Use wires from 5V/GND and multimeter to test functionality 
+            according to the NAND truth table.
+        </li>
+        <li style="margin-bottom: 0.5em;">Assemble D-latch feedback path and test 'memory' functionality (this is in fact an SR-latch). Solder in the last three gates 
+            to produce the entire D-latch. Test behaviour matches exact D-latch behaviour.
+        </li>
+        <li style="margin-bottom: 0.5em;">Assemble second (slave) D-latch and solder up the next-state logic (simple NOT gate for \(S_0\)). Now, test \(S_0\) D flip-flop 
+            works correctly, only updating on the positive edge of the clock/button press. Given the nature of the \(S_0\) bit, the \(Q\) 
+            output of the flip-flop should toggle between ~0V and ~3V (due to fan-out reduction).
+        </li>
+        <li style="margin-bottom: 0.5em;">Wire \(S_0\) output to indicator LED.</li>
+        <li style="margin-bottom: 0.5em;">Repeat for all other flip-flops - counter should now be working with correct binary LED output.</li>
+        <li style="margin-bottom: 0.5em;">Install 7-segment display, manually testing segments illuminate with \(220\Omega\) resistor and wire from 5V. Solder up 
+            the \(f_{a}\) sub-circuit of the decoder and test that segment \(a\) illuminated correctly given the current decimal output.
+        </li>
+        <li style="margin-bottom: 0.5em;">Finish soldering 7-segment decoder and extensively test the working PCB.</li>
+      </ol>
+      <figure class="text-center my-5">
+        <video autoplay loop muted playsinline style="max-width: 100%; height: auto;">
+          <source src="assets/tbc_solder_live.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption class="text-muted mt-2">
+          Figure 6.3.2 — Soldering demonstration of tactile push button.
+        </figcaption>
+      </figure>
+      <p>
+        This process is methodical and makes the isolation of errors simple. Whilst seemingly straightforward, this process was very frustrating 
+        and at times seemed like 'magic' was the difference between things working and not working. For example, when assembling the slave D-latch 
+        for the \(S_0\) flip flop, the \(Q\) and \(\overline{Q}\) outputs seems to be the same voltage sometimes, and sometimes the wrong way 
+        around. This was baffling as the first (master) latch was tested and working! After several hundred probes by the multimeter, and 
+        manually energising the inputs of various NAND gates, I found the problem - I had neglected to solder just one leg of one transistor. 
+        Whilst the other two were secured soldered on, the third leg was making an intermittent connection to its pad which seemed to depend 
+        on which way the wind was blowing! Mistakes like this train you to not overlook the simple stuff.
+      </p>
+      <p>
+        When only the power and push button were soldered on, I decided to dig into and verify the debouncing of the button. To do this, 
+        I energised the board from a USB-C battery bank and connected the output of the button to channel 1 on a digital oscilloscope. 
+        By scaling the voltage and time axis appropriately, to about \(2ms\)/div, the super fast button transitions became clear. Before soldering 
+        the RC filter on, many button bounces could be seen on each press when zooming in liberally to the \(100 \mu\)s/div range. With the RC 
+        filter soldered on, the result is as shown in the background of Figure 6.3.2.
+      </p>
+      <figure class="diagram-container text-center my-5">
+        <img src="assets/tbc_ass1.jpg" alt="Partially assembled PCB" class="img-fluid w-50 mb-3">
+        <figcaption class="text-muted mt-2">
+          Figure 6.3.3 — Partially assembled PCB showing debounced button transition on oscilloscope.
+        </figcaption>
+      </figure>
+      <p>
+        One can see the gentle rise from 0-5V with no bouncing present. Interestingly, I used two cursors to approximately measure the 63% 
+        rise-time. To no surprise it was roughly \(10ms = \tau \). Overkill? Yes - but this experiment confirms the button is debounced 
+        correctly.
+      </p>
+      <p>
+        The assembled functional board is shown in Figure 6.3.4. Note the red jumper between two pads in the 7-seg decoder. I made a mistake 
+        and routed \(S_0\) to the input of one of the NAND gates, when it should have been \(S_2\). Can you find this error in the schematic? Luckily
+        the erroneous pad could be left exposed (as it was needed to connect later gates), and the resistor could be 'tombstoned' on its 
+        other pad, and bridged over to source \(S_2\) from the input of a nearby gate. Techniques such as jumping between pads, cutting traces and 
+        'soldering in 3D' are common workarounds for simple mistakes in PCB design - mistakes should be expected!
+      </p>
+      <figure class="diagram-container text-center my-5">
+        <img src="assets/tbc_ass2.jpg" alt="Fully assembled PCB" class="img-fluid w-50 mb-3">
+        <figcaption class="text-muted mt-2">
+          Figure 6.3.4 — Fully assembled PCB showing zero-state.
+        </figcaption>
+      </figure>
+      
+      
+    </section>
+
+    <section id="finished-design" class="mt-5">
+      <h2>Finished Design</h2>
+      <p>
+        Fin des
+      </p>
+
+    </section>
+
+    <section id="conclusion" class="mt-5">
+      <h2>Conclusion</h2>
+      <p>
+        NNs are dope
+      </p>
+    </section>
+  </main>
+
+  <!-- Back-to-Top -->
+  <div class="text-center my-5">
+    <button id="backToTop" class="btn btn-primary">Back to Top</button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-light text-muted" style="background-color: #e3f2fd; padding:1px; bottom:0; width:100%;">
+    <section class="d-flex justify-content-between align-items-center p-4">
+      <div class="me-5 d-none d-lg-block">
+        <span>&copy; 2025 Lachlan Cooke</span>
+      </div>
+      <div class="social-menu ms-auto">
+        <ul class="d-flex">
+          <li class="ms-3"><a href="https://www.linkedin.com/in/lachlancooke/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+          <li class="ms-3"><a href="https://github.com/coolachlanke" target="_blank"><i class="fab fa-github"></i></a></li>
+          <li class="ms-3"><a href="https://www.instagram.com/coolachlanke/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+          <li class="ms-3"><a href="https://www.youtube.com/@magicbattery" target="_blank"><i class="fab fa-youtube"></i></a></li>
+          <li class="ms-3"><a href="https://www.strava.com/athletes/30032118" target="_blank"><i class="fab fa-strava"></i></a></li>
+        </ul>
+      </div>
+    </section>
+  </footer>
+
+  <!-- JS libs -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.11/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-python.min.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+
+  <!-- Custom JS -->
+  <script src="neuralnet.js"></script>          <!-- UI glue + canvas -->
+  <script src="mnist_inference.js"></script>    <!-- Math + model -->
 
 </body>
 </html>
