@@ -124,22 +124,40 @@
     <!-- THE THREE BIT COUNTER -->
     <section id="handwrittenmnist" class="mt-5">
       <h2>Handwritten Digits and the MNIST Set</h2>
-      <p>The MNIST handwritten digits dataset is one of the most famous...
-         <figure class="diagram-container text-center">
-          <img
-            src="assets/tbc_block_diagram_white_trans.svg"
-            alt="Functional block diagram"
-            class="img-fluid"
-          >
-          <figcaption class="text-muted mt-2">
-            Figure 2.1 - Functional block diagram.
-          </figcaption>
-        </figure>la.
+      <p>Humans are imperfect. One notable example of this is the way we hand-write digits. Some choose to strikethrough their '7's, some 
+        choose to draw '4's in one stroke, while others draw '9's that look like a 'g'. Generally, however, the human brain is able to
+        process the visual appearance of a variety of differently drawn digits, and classify them, almost instantenously, as belonging to one 
+        of the classes 0-9. This is remarkable as no two handwritten digits are the same. One '9' may have a 0.2mm thicker stem than another, 
+        while another '6' might have a circle with a radius 0.15mm smaller. With the neural network developed in <a href="#neural-network-architecture">section 3</a>,
+        we will attempt to emulate what the human brain does with powerful mathematics and computation.
       </p>
+      <p>Any machine learning model requires a large amount of data to learn the complex relationships between inputs and their labelled classes. 
+        For this project, we will use the MNIST handwritten digit dataset, which has the following characterisics
+        <ul>
+          <li>The MNIST dataset contains 70,000 labeled images of handwritten digits (0–9).</li>
+          <li>The set is partitioned into 60,000 training and 10,000 test images.</li>
+          <li>Each image is \(28 \times 28\) pixels in grayscale, representing a single digit.</li>
+          <li>Pixel values are integers from 0 to 255 representing darkness</li>
+          <li>Labels are digits 0-9 as ground truth.</li>
+        </ul>
+        This dataset is a benchmark widely used in machine learning and computer vision. The current world record for the highest percentage 
+        accuracy on the test set is 99.87%, set by the 'Branching/Merging CNN + Homogeneous Vector Capsules' model from the following 
+        <a href="https://paperswithcode.com/paper/a-branching-and-merging-convolutional-network">paper</a>. Figure 2.1 shows examples of images
+        in the test set, alongside their ground-truth labels. Click the button to see more examples.
+      </p>
+      <figure class="diagram-container text-center mt-5">
+          <canvas id="test-example" width="28" height="28" style="width: 280px; height: 280px; image-rendering: pixelated; border: 1px solid #000;"></canvas>
+          <p id="image-label" class="mt-2 text-muted">Label: -</p>
+          <button id="random-example" class="btn btn-primary mt-3">Show Random Test Image</button>
+          <figcaption class="text-muted mt-2">
+            Figure 2.1 - Handwritten digit examples from the MNIST test set.
+          </figcaption>
+        </figure>
+
     </section>
 
-    <section id="resistor-transistor-logic" class="mt-5">
-      <h2>Resistor Transistor Logic - Crossing from Digital to Analog</h2>
+    <section id="#neural-network-architecture" class="mt-5">
+      <h2>Neural Network Architecture</h2>
       <p>Vector (Victor)
       </p>
       
@@ -147,10 +165,9 @@
       <p>Flea
       </p> 
 
-    <h3 class="mt-5">4.3 7‑Segment Decoder</h3>
-      <p>Gret
-      </p>
-
+      <h3 class="mt-5">4.3 7‑Segment Decoder</h3>
+        <p>Gret
+        </p>
 
     </section>
 

@@ -57,3 +57,54 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
+
+// MNIST test-set random images
+let testImages, testLabels, testImageCount = 0;
+
+async function loadTestSet() {
+  const [imgRes, lblRes] = await Promise.all([
+    fetch("assets/MNIST_HRD/t10k-images.idx3-ubyte"),
+    fetch("assets/MNIST_HRD/t10k-labels.idx1-ubyte")
+  ]);
+
+  const imgBuffer = await imgRes.arrayBuffer();
+  const lblBuffer = await lblRes.arrayBuffer();
+
+  const imgBytes = new Uint8Array(imgBuffer);
+  const lblBytes = new Uint8Array(lblBuffer);
+
+  // Read image count from bytes 4–7
+  testImageCount = (imgBytes[4] << 24) | (imgBytes[5] << 16) | (imgBytes[6] << 8) | imgBytes[7];
+  testImages = imgBytes.slice(16); // strip header
+  testLabels = lblBytes.slice(8);  // strip header
+}
+
+function showRandomTestImage() {
+  const canvas = document.getElementById("test-example");
+  const ctx = canvas.getContext("2d");
+  const imageData = ctx.createImageData(28, 28);
+
+  const index = Math.floor(Math.random() * testImageCount);
+  const offset = index * 28 * 28;
+
+  for (let i = 0; i < 28 * 28; i++) {
+    const val = testImages[offset + i];
+    imageData.data[i * 4 + 0] = val;
+    imageData.data[i * 4 + 1] = val;
+    imageData.data[i * 4 + 2] = val;
+    imageData.data[i * 4 + 3] = 255; // fully opaque
+  }
+
+  ctx.putImageData(imageData, 0, 0);
+
+  document.getElementById("image-label").innerText = "Label: " + testLabels[index];
+}
+
+document.getElementById("random-example").addEventListener("click", showRandomTestImage);
+
+window.addEventListener("DOMContentLoaded", async () => {
+  await loadTestSet();
+  showRandomTestImage();
+});
+
