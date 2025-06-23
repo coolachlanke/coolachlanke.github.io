@@ -74,10 +74,9 @@ async function loadTestSet() {
   const imgBytes = new Uint8Array(imgBuffer);
   const lblBytes = new Uint8Array(lblBuffer);
 
-  // Read image count from bytes 4–7
   testImageCount = (imgBytes[4] << 24) | (imgBytes[5] << 16) | (imgBytes[6] << 8) | imgBytes[7];
-  testImages = imgBytes.slice(16); // strip header
-  testLabels = lblBytes.slice(8);  // strip header
+  testImages = imgBytes.slice(16);
+  testLabels = lblBytes.slice(8);
 }
 
 function showRandomTestImage() {
@@ -93,18 +92,18 @@ function showRandomTestImage() {
     imageData.data[i * 4 + 0] = val;
     imageData.data[i * 4 + 1] = val;
     imageData.data[i * 4 + 2] = val;
-    imageData.data[i * 4 + 3] = 255; // fully opaque
+    imageData.data[i * 4 + 3] = 255;
   }
 
   ctx.putImageData(imageData, 0, 0);
 
-  document.getElementById("image-label").innerText = "Label: " + testLabels[index];
+  // Set label in both places
+  document.getElementById("image-digit").innerText = testLabels[index];
 }
 
-document.getElementById("random-example").addEventListener("click", showRandomTestImage);
-
+// ✅ Wait for DOM before doing anything
 window.addEventListener("DOMContentLoaded", async () => {
   await loadTestSet();
-  showRandomTestImage();
+  document.getElementById("random-example").addEventListener("click", showRandomTestImage);
+  showRandomTestImage(); // load one by default
 });
-

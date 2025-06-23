@@ -81,9 +81,6 @@
     </div>
 
 
-
-
-
     <!-- Table of Contents -->
     <div class="toc-list-container mt-5">
       <div class="card toc-list">
@@ -121,18 +118,19 @@
     </section>
 
 
-    <!-- THE THREE BIT COUNTER -->
+    <!-- Handwritten Digits and the MNIST Set -->
     <section id="handwrittenmnist" class="mt-5">
       <h2>Handwritten Digits and the MNIST Set</h2>
       <p>Humans are imperfect. One notable example of this is the way we hand-write digits. Some choose to strikethrough their '7's, some 
-        choose to draw '4's in one stroke, while others draw '9's that look like a 'g'. Generally, however, the human brain is able to
-        process the visual appearance of a variety of differently drawn digits, and classify them, almost instantenously, as belonging to one 
+        choose to draw '4's in one stroke, while others draw '9's that look like a 'g'. Generally however, the human brain is able to
+        process the visual appearance of a variety of differently drawn digits, and classify them, almost instantanously, as belonging to one 
         of the classes 0-9. This is remarkable as no two handwritten digits are the same. One '9' may have a 0.2mm thicker stem than another, 
         while another '6' might have a circle with a radius 0.15mm smaller. With the neural network developed in <a href="#neural-network-architecture">section 3</a>,
         we will attempt to emulate what the human brain does with powerful mathematics and computation.
       </p>
       <p>Any machine learning model requires a large amount of data to learn the complex relationships between inputs and their labelled classes. 
-        For this project, we will use the MNIST handwritten digit dataset, which has the following characterisics
+        For this project, we will use the MNIST handwritten digit dataset introduced by LeCun et al. at Bell Labs in 1998. It has the following 
+        characteristics
         <ul>
           <li>The MNIST dataset contains 70,000 labeled images of handwritten digits (0–9).</li>
           <li>The set is partitioned into 60,000 training and 10,000 test images.</li>
@@ -142,18 +140,57 @@
         </ul>
         This dataset is a benchmark widely used in machine learning and computer vision. The current world record for the highest percentage 
         accuracy on the test set is 99.87%, set by the 'Branching/Merging CNN + Homogeneous Vector Capsules' model from the following 
-        <a href="https://paperswithcode.com/paper/a-branching-and-merging-convolutional-network">paper</a>. Figure 2.1 shows examples of images
+        <a href="https://arxiv.org/abs/2001.09136" target="_blank">paper</a>. Figure 2.1 shows examples of images
         in the test set, alongside their ground-truth labels. Click the button to see more examples.
       </p>
-      <figure class="diagram-container text-center mt-5">
-          <canvas id="test-example" width="28" height="28" style="width: 280px; height: 280px; image-rendering: pixelated; border: 1px solid #000;"></canvas>
-          <p id="image-label" class="mt-2 text-muted">Label: -</p>
-          <button id="random-example" class="btn btn-primary mt-3">Show Random Test Image</button>
-          <figcaption class="text-muted mt-2">
-            Figure 2.1 - Handwritten digit examples from the MNIST test set.
-          </figcaption>
-        </figure>
+      <figure class="diagram-container text-center mt-3">
+        <div class="d-flex justify-content-center align-items-center mb-3" style="gap: 40px;">
+          <!-- Canvas: handwritten digit -->
+          <canvas id="test-example" width="28" height="28" 
+            style="width: 280px; height: 280px; image-rendering: pixelated; border: 1px solid #000; border-radius: 8px;">
+          </canvas>
 
+          <!-- Arrow -->
+          <div style="font-size: 160px;">→</div>
+
+          <!-- Label -->
+          <div class="text-center">
+            <div id="image-digit" style="font-size: 250px;">?</div>
+          </div>
+        </div>
+
+        <button id="random-example" class="btn btn-primary mt-1 mb-4">Show Random Test Image</button>
+
+        <figcaption class="text-muted mt-2">
+          Figure 2.1 - Handwritten digit examples from the MNIST test set.
+        </figcaption>
+      </figure>
+      <p>There is clearly much variation between handwritten digits. This mostly comes down to the individual's handwriting legibility, but there 
+        are also some cultural differences. For example, the '7' with the strikethrough or the '1' with a hat. Figure 2.2 shows 20 examples of 
+        each digit.
+      </p>
+      <figure class="diagram-container text-center mt-5">
+        <img src="assets/nn_digits.png" alt="200 MNIST examples" class="img-fluid w-10 mb-3">
+
+        <figcaption class="text-muted mt-2">
+          Figure 2.2 - 200 examples from the MNIST set showing variation between each digit.
+        </figcaption>
+      </figure>
+      <p>Inevitably, given enough humans and written digits there will be handwritten digits so illegible that even a human could not decipher 
+      what the intention was. If anything, this reinforces the important of clear writing! Figure 1.3 shows ambiguous examples from the MNIST 
+      set, along their questionable labels.
+      </p>
+      <figure class="diagram-container text-center mt-5">
+        <img src="assets/nn_mnist_bad.webp" alt="Bad MNIST digits" class="img-fluid w-70 mb-3">
+
+        <figcaption class="text-muted mt-2">
+          Figure 2.3 - Ambiguous examples from the MNIST set.
+        </figcaption>
+      </figure>
+      <p>Keep in mind, statistical machine learning is not perfect and neither is the human brain. 
+        Nevertheless, <em>most of the time</em> we can read handwritten digits with minimal ambiguity. This reliable structure is ultimately 
+        what we try to unearth in this project through careful formulation and training of a neural network.
+      </p>
     </section>
 
     <section id="#neural-network-architecture" class="mt-5">
@@ -252,7 +289,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-python.min.js"></script>
   <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
-
 
 
   <!-- Custom JS -->
