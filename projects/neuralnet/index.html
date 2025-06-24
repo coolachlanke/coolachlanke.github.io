@@ -91,7 +91,7 @@
           <a href="#introduction" class="list-group-item list-group-item-action">1. Introduction</a>
           <a href="#handwrittenmnist" class="list-group-item list-group-item-action">2. Handwritten Digits and the MNIST Set</a>
           <a href="#neural-network-architecture" class="list-group-item list-group-item-action">3. Neural Network Architecture</a>
-          <a href="#forward-propagation" class="list-group-item list-group-item-action">4. Forward Propagation</a>
+          <a href="#forward-propagation-loss" class="list-group-item list-group-item-action">4. Forward Propagation and Loss</a>
           <a href="#backpropagation-from-scratch" class="list-group-item list-group-item-action">5. Backpropagation from Scratch</a>
           <a href="#training-loop-and-optimisation" class="list-group-item list-group-item-action">6. Training Loop and Optimisation</a>
           <a href="#validation-and-results" class="list-group-item list-group-item-action">7. Validation and Results</a>
@@ -187,24 +187,112 @@
           Figure 2.3 - Ambiguous examples from the MNIST set.
         </figcaption>
       </figure>
-      <p>Keep in mind, statistical machine learning is not perfect and neither is the human brain. 
-        Nevertheless, <em>most of the time</em> we can read handwritten digits with minimal ambiguity. This reliable structure is ultimately 
-        what we try to unearth in this project through careful formulation and training of a neural network.
+      <p>Keep in mind, statistical machine learning is not perfect and neither is human inference. 
+        Nevertheless, <em>most of the time</em> us humans can read handwritten digits with minimal ambiguity. This reliable structure 
+        is ultimately what we try to unearth in this project through careful formulation and training of a neural network.
       </p>
     </section>
 
+    <!-- Neural Network Architecture -->
     <section id="#neural-network-architecture" class="mt-5">
       <h2>Neural Network Architecture</h2>
-      <p>Vector (Victor)
+      <p>In this section we introduce the machine learning model used to classify the digits. This, of course, is the 
+        neural network. A neural network is a layered mathematical model made up of nodes (neurons) connected by edges (weights). It takes 
+        an input (like a grid of pixel values), processes it through one or more hidden layers, and produces an output such as a probability
+        distribution over classes. One can think of a neural network as a highly non-linear function which typically maps a large number of 
+        inputs to one or more outputs. The non-linearity is what allows the model to mould itself in complex ways and learn the underlying 
+        function which maps inputs to their correct labels. We will define what we mean by 'non-linearity' later in this chapter.
+        In a typical diagram, such as that in Figure 3.1, you'll see input neurons on the left, hidden layers in the 
+        middle, and output neurons on the right, with every connection representing a learned weight. The neural network models how biological
+        neurons and synapses (equivalent to weights/edges) work in the brain. Thus, if trained correctly this model should be able to understand 
+        complex patterns within spatial image data, just like humans do, to make the correct classification.
       </p>
-      
-      <h3 class="mt-5">4.2 Next‑State Logic</h3>
-      <p>Flea
-      </p> 
+      <figure class="diagram-container text-center mt-5">
+        <img src="assets/nn_netarchit.svg"
+            alt="Neural Network Diagram"
+            class="img-fluid mb-3"
+            style="width: 60%; max-width: 700px; height: auto;">
+        <figcaption class="text-muted mt-2">
+          Figure 3.1 – A simple neural network.
+        </figcaption>
+      </figure>
+      <p>Each layer of the neural network in Figure 3.1 is explained below.
+      </p>
+      <ul>
+          <li><strong>Input Layer:</strong> On the far left, we see the input neurons. There is no computation inside an input neuron as they corrrespond directly to the 
+            <em>features</em> of our input. In the case of the MNIST handwritten digits, which are \(28 \times 28\) pixel images, there are a 
+            total of \(28 \times 28 = 784\) input feautures. This means our neural network will require \(784\) input neurons on the input layer. 
+            These input features are denoted \(x_i\) and correspond to the dimensions of the input space. This high number of dimensions (i.e. pixels) dictate the granularity 
+            and quality of the input. For example, if there were only \(3 \times 3 = 9\) pixels in the image, it is clear that there would not be 
+            enough 'room' to distinctively draw the digits '0' to '9'. On the other hand, if we were to take an extremely high resolution like
+            \(1,000 \times 1,000 = 1,000,000\) pixels for our images, there would be too much detail in each digit. This additional 
+            quality doesn't make the digits any more recognisable. This also, as the reader will later learn, would result in weight matrices with 
+            billions of parameters. This would be effectively impossible to train without a large GPU cluster. The \(28 \times 28\) 
+            input size provides a balance of not polluting the model with extraneous information, whilst giving enough quality to represent digits
+            in an easily recognisable way.
+          </li>
+          <li><strong>Hidden Layer:</strong> In the centre, we find the hidden layer. A neural network can have many hidden layers, with any number of neurons. Adding more than 
+            around three hidden layers results in so-called <em>deep learning</em>. The number of hidden layers and the number of hidden neurons 
+            determine the flexibility of the model. The outputs of the hidden neurons are denoted by \(z_{i}^{(n)}\), which denotes the \(i\)-th neuron in 
+            the \(n\)-th hidden layer. If we have too few hidden neurons, the model will not be flexible enough. Conversely, if we 
+            have too many hidden neurons, our model will learn to rely on the training data too much and effectively start memorising it. Thus, the
+            model misses the essence of the problem which is to judge the shapes and contours in each image to determine the most appropriate digit.
+            Instead rather, the model will just learn "this is training example 15239 and I remember it's a '9'". Memorisation is not learning. This 
+            is so-called <em>overfitting</em>. To combat overfitting, several <em>regularizsation</em> techniques have been establish, such as dropout 
+            and max-pooling, which aim to break the fine neural 'memory' structures that result in overfitting.
+          </li>
+          <li><strong>Output Layer:</strong> On the right, we find the output layer. This layer is responsible for taking the outputs of the final hidden 
+            layer and, for the classification problem, producing series of <em>pseudoprobabilities</em> corresponding to the model's confidence 
+            that the given input belongs to each class. Hence, the number of output neurons is equal to the number of classes. For our problem
+            there will be 10 output neurons, one for each of the digits '0' to '9'. The <em>predication function</em> that we will later define 
+            will be responsible for taking the final hidden layer outputs and producing a pseudoprobability strictly in the range of 0 (near 
+            impossible) to 1 (near certain). We denote the outputs \(\hat{y_i}\) with a little hat to indicate that they are predications, 
+            not the actual ground truth associated with the training example (which is called \(y_i\)).
+          </li>
+      </ul>
+      <p>Now that we understand the structure of the neural network and each of the layers, it is natural to wonder what all the connections (edges) 
+        mean and how the network actually processes data. First of all, in a graph nodes may be connected by edges in any way. In the case of a 
+        neural network the layers are typically <em>fully connected</em>, meaning every node in one layer connects to every other 
+        node in the following layer. The network should also be read from left-to-right. Input features, \(x_i\), come into the model on the left 
+        and they <em>forward propogate</em> via the edges to neurons in the following layer, some mathematics is performed, then those outputs follow 
+        the same process until we are left with out outputs, \(\hat{y_i}\). The details of that mathematics is given in Figure 3.2.
+      </p>
+      <figure class="diagram-container text-center mt-5">
+        <img src="assets/nn_neuronsum.svg"
+            alt="Neural Network Neuron Sum + Activation"
+            class="img-fluid mb-3"
+            style="width: 100%; max-width: 900px; height: auto;">
+        <figcaption class="text-muted mt-2">
+          Figure 3.2 – Flow diagram showing weighted sum and activation used to produce hidden neuron output \(z_{1}^{(1)}\)
+        </figcaption>
+      </figure>
+      <p>Figure 3.2 is actually a truncated version of Figure 3.1, showing only the input neurons and the first neuron in the 1st (and only) hidden 
+        layer. The output of this neuron is \(z_{1}^{(1)}\). Following the diagram, the first step is to take the weighted sum of each input \(x_i\) 
+        and the weight corresponding to edge between the origin and destination node. The destination node in this case is the first node in the 
+        hidden layer, so the first index in each weight is '1'. After the sum we also add the bias term \(b_{1}^{(i)}\). The bias allows the model to 
+        be even more flexible by introducing an offset which is independent of the input values. Think about it as the '\(b\)' term in the linear function 
+        \(y = mx + b\). Following that, we feed the weighted sum plus bias into a non-linear <em>activation function</em>. The output of this is the 
+        familiar \(z_{1}^{(1)}\) from Figure 3.1. Whilst Figure 3.2 describes what happens for \(z_{1}^{(1)}\) only, the other \(z_{i}^{(n)}\) follow 
+        the exact same process, with input data always coming from the previous layer. The exception to this is the output layer, which operates the 
+        same, except with a different activation function.
+      </p>
+      <p>With the neural network structure defined and the feed forward process intuitively understood, we now motivate the selection 
+        of various functions which give the network properties we like. These are the <em>loss function</em>, <em>prediction function</em> and
+        the <em>activation function</em>.
+      </p>
 
-      <h3 class="mt-5">4.3 7‑Segment Decoder</h3>
-        <p>Gret
+      <h3 class="mt-5">Acitvation Function</h3>
+        <p>The non-linear activation step is paramount in allowing the network to create the high levels of flexibility required to learn 
+          complex relationships. In fact, when we start discussing the linear algebra behind these operations in <a href="#forward-propagation">section 4</a>, 
+          we will see that if no activation function is present, or it is linear, the effect of subsequent layers is nil and the model's output 
+          will simply be a linear combination of the inputs. Besides being non-linear 
         </p>
+      
+      <h3 class="mt-5">Prediction Function</h3>
+      <p>As alluded earlier, the predication function is a special activation function which is only used on the ouput layer of the network 
+        to pseudoprobabilities for the outputs \(y_{i}\). These outputs correspond to each of the possible classes and are called 
+        <em>logits</em>.
+      </p>
 
     </section>
 
