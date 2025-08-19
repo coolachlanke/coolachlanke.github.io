@@ -91,7 +91,7 @@
           <a href="#introduction" class="list-group-item list-group-item-action">1. Introduction</a>
           <a href="#handwrittenmnist" class="list-group-item list-group-item-action">2. Handwritten Digits and the MNIST Set</a>
           <a href="#neural-network-architecture" class="list-group-item list-group-item-action">3. Neural Network Architecture</a>
-          <a href="#forward-propagation-loss" class="list-group-item list-group-item-action">4. Forward Propagation and Loss</a>
+          <a href="#forward-propagation-loss" class="list-group-item list-group-item-action">4. Forward Propagation and Measuring Loss</a>
           <a href="#backpropagation-from-scratch" class="list-group-item list-group-item-action">5. Backpropagation from Scratch</a>
           <a href="#training-loop-and-optimisation" class="list-group-item list-group-item-action">6. Training Loop and Optimisation</a>
           <a href="#validation-and-results" class="list-group-item list-group-item-action">7. Validation and Results</a>
@@ -276,9 +276,7 @@
         the exact same process, with input data always coming from the previous layer. The exception to this is the output layer, which operates the 
         same, except with a different activation function.
       </p>
-      <p>With the neural network structure defined and the feed forward process intuitively understood, we now motivate the selection 
-        of various functions which give the network properties we like. These are the <em>loss function</em>, <em>prediction function</em> and
-        the <em>activation function</em>.
+      <p>Lastly, we motivate the selection of the activation and prediction functions.
       </p>
 
       <h3 class="mt-5">Acitvation Function</h3>
@@ -297,9 +295,9 @@
     </section>
 
 
-    <!-- SIMULATION -->
-    <section id="simulation" class="mt-5">
-      <h2>Simulation</h2>
+    <!-- Forward Propagation and Measuring Loss -->
+    <section id="feed-forward-loss" class="mt-5">
+      <h2>Forward Propagation and Measuring Loss</h2>
       <p>
         We sim
       </p>
